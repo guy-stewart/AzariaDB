@@ -1,0 +1,2 @@
+
+sqlite3 kamioza.db -init build.sql '.exit'
