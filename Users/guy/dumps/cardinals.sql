@@ -1,4 +1,4 @@
-drop table [if exists] cardinals;
+drop table if exists cardinals;
 create table cardinals
 (
     [from]      text unique primary key not null,
