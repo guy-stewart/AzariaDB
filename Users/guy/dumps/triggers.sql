@@ -58,4 +58,4 @@ insert into triggers values ('IDV_TM1PAN',627,160,1065,300,'IDV_VESTPAN2', -1);
 insert into triggers values ('IDV_TM1PAN',1454,50,1600,300,'IDV_TMPLPTH4', 225);
 insert into triggers values ('IDV_TM1PAN',2028,160,2459,300,'IDV_VESTPAN1', -1);
 insert into triggers values ('IDV_SIGNPAN',106,116,202,195,'IDV_SIGNPANENG', -1);
-insert into triggers values ('IDV_SIGNPANENG',106,116,202,195,'IDV_NAT1a', -1);
+insert into triggers values ('IDV_SIGNPANENG',106,116,202,195,'IDV_NAT1a', 1);

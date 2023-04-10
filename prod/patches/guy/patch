@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sqlite3 ~/AzariaCD/data/sql/kamioza.db -init patch.sql '.exit'

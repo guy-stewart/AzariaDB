@@ -1,6 +1,5 @@
 drop table if exists machines;
-create table machines
-(
+create table machines ( 
     [id]            int unique primary key not null,
     [name]          text,
     [view_id]       int,
@@ -72,6 +71,20 @@ insert into machines values (0x23,'0x0023',0x20,'IDV_TOPMENU',1916,222,2044,277,
 insert into machines values (0x24,'0x0024',0x20,'IDV_TOPMENU',2216,219,2344,274,2,'M_BTN_1phase','0x0026', 0x26, '0x0024', 0x24, '', 0x0, '', 0x0 );
 insert into machines values (0x25,'0x0025',0x20,'IDV_TOPMENU',2568,216,2696,271,2,'M_BTN_1phase','0x0023', 0x23, '0x0025', 0x25, '', 0x0, '', 0x0 );
 insert into machines values (0x26,'0x0026',0x20,'IDV_TOPMENU',3000,215,3128,270,2,'M_BTN_1phase','0x0028', 0x28, '0x0026', 0x26, '', 0x0, '', 0x0 );
+insert into machines values (0xca,'S03_oBOUNCELIGHT',0xc8,'IDV_ORIE',485,77,496,268,2,'M_PLANTBIN','IDD_CITLOCK', 0x1700, 'IDS_LGHTANIM', 0xc9, '60', 0x3c, '', 0x0 );
+insert into machines values (0xcb,'S03_pBOUNCELIGHT',0xc8,'IDV_ORIE',218,77,224,268,2,'M_PLANTBIN','IDD_VILLOCK', 0x1702, 'IDS_LGHTANIM', 0xc9, '60', 0x3c, '', 0x0 );
+insert into machines values (0xcc,'S03_qBOUNCELIGHT',0xc8,'IDV_ORIE',3154,77,3164,268,2,'M_PLANTBIN','IDD_CITLOCK', 0x1700, 'IDS_LGHTANIM', 0xc9, '60', 0x3c, '', 0x0 );
+insert into machines values (0xcd,'S03_rBOUNCELIGHT',0xc8,'IDV_ORIE',2888,77,2898,268,2,'M_PLANTBIN','IDD_VILLOCK', 0x1702, 'IDS_LGHTANIM', 0xc9, '60', 0x3c, '', 0x0 );
+insert into machines values (0xce,'S03_sBOUNCELIGHT',0xc8,'IDV_ORIE',2621,77,2630,268,2,'M_PLANTBIN','IDD_CITLOCK', 0x1700, 'IDS_LGHTANIM', 0xc9, '60', 0x3c, '', 0x0 );
+insert into machines values (0xcf,'S03_tBOUNCELIGHT',0xc8,'IDV_ORIE',2353,77,2363,268,2,'M_PLANTBIN','IDD_VILLOCK', 0x1702, 'IDS_LGHTANIM', 0xc9, '60', 0x3c, '', 0x0 );
+insert into machines values (0xd0,'S03_uBOUNCELIGHT',0xc8,'IDV_ORIE',2087,77,2096,268,2,'M_PLANTBIN','IDD_CITLOCK', 0x1700, 'IDS_LGHTANIM', 0xc9, '60', 0x3c, '', 0x0 );
+insert into machines values (0xd1,'S03_vBOUNCELIGHT',0xc8,'IDV_ORIE',1820,77,1829,268,2,'M_PLANTBIN','IDD_VILLOCK', 0x1702, 'IDS_LGHTANIM', 0xc9, '60', 0x3c, '', 0x0 );
+insert into machines values (0xd2,'S03_wBOUNCELIGHT',0xc8,'IDV_ORIE',1554,77,1562,268,2,'M_PLANTBIN','IDD_ROOTBLUE', 0x2138, 'IDS_LGHTANIM', 0xc9, '60', 0x3c, '', 0x0 );
+insert into machines values (0xd3,'S03_xBOUNCELIGHT',0xc8,'IDV_ORIE',1286,77,1295,268,2,'M_PLANTBIN','IDD_ROOTWHITE', 0x2139, 'IDS_LGHTANIM', 0xc9, '60', 0x3c, '', 0x0 );
+insert into machines values (0xd4,'S03_yBOUNCELIGHT',0xc8,'IDV_ORIE',1019,77,1028,268,2,'M_PLANTBIN','IDD_ROOTBLUE', 0x2138, 'IDS_LGHTANIM', 0xc9, '60', 0x3c, '', 0x0 );
+insert into machines values (0xd5,'S03_zBOUNCELIGHT',0xc8,'IDV_ORIE',750,77,760,268,2,'M_PLANTBIN','IDD_ROOTWHITE', 0x2139, 'IDS_LGHTANIM', 0xc9, '60', 0x3c, '', 0x0 );
+insert into machines values (0xd6,'S03_DOORANIM',0xc8,'IDV_ORIE',305,55,406,260,2,'M_PLANTBIN','IDD_GOBTRFLY', 0x6012, 'IDS_DOORANIM', 0xcb, '60', 0x3c, '', 0x0 );
+insert into machines values (0xc9,'S03_aSPEAKERTREE',0xc8,'IDV_ORIE',2978,200,3072,270,2,'M_BIN','IDD_SPEAKER', 0xc8, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x21b,'ID(0)+S02_VIAL__XX',0x204,'IDV_LOCKERCU00',214,92,318,124,0,'M02_VIAL','ID(0)+S02_NUM1__XX', 0x222, 'ID(0)+S02_LOCK__XX', 0x21c, 'ID(0)+S02_NUM10_XX', 0x223, '', 0x0 );
 insert into machines values (0x21c,'ID(0)+S02_LOCK__XX',0x204,'IDV_LOCKERCU00',44,165,137,243,0,'M02_LOCK','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x21d,'ID(0)+S02_BIN___XX',0x204,'IDV_LOCKERCU00',20,20,200,140,0,'M02_BIN','S02_EBIN__00+0', 0x200, '0', 0x0, '0', 0x0, '', 0x0 );
@@ -499,7 +512,13 @@ insert into machines values (0x120d,'0x120d',0x1223,'IDV_TMCUT',570,100,600,187,
 insert into machines values (0x1234,'S12_o1BERRYTREE',0x1504,'IDV_TMPLPTH4',322,187,479,272,2,'M_BIN','IDD_REDBERRY', 0x2126, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1235,'S12_o2BERRYTREE',0x1504,'IDV_TMPLPTH4',2570,160,2728,212,2,'M_BIN','IDD_BLUEBERRY', 0x2125, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1236,'S12_o3BERRYTREE',0x1505,'IDV_TMPLPTH5',724,207,825,228,2,'M_BIN','IDD_LOG', 0x1170, '', 0x0, '', 0x0, '', 0x0 );
-insert into machines values (0x1700,'S17_aLOCKSOCKET',0x1703,'IDV_aMINEPAN',177,116,232,163,0,'M17_LOCKSOCKET','S17_aDOORWAY', 0x1702, 'S17_aLOCKBURN', 0x1701, '', 0x0, '', 0x0 );
+insert into machines values (0x1237,'S12_ROOTBIN',0x1505,'IDV_TMPLPTH5',1944,207,1994,257,2,'M_PLANTBIN','IDD_ROOTWHITE', 0x2139, 'IDS_ROOTPLANT', 0x2137, '60', 0x3c, '', 0x0 );
+insert into machines values (0x172a,'S17_aCLOCKBIN',0x1701,'IDV_QUARSA',2671,213,2720,289,2,'M_PLANTBIN','IDD_CITLOCK', 0x1700, 'IDS_CLOCKBIN', 0x1709, '60', 0x3c, '', 0x0 );
+insert into machines values (0x172b,'S17_bCLOCKBIN',0x1701,'IDV_QUARSA',557,224,600,269,2,'M_PLANTBIN','IDD_VILLOCK', 0x1702, 'IDS_VLOCKBIN', 0x1708, '60', 0x3c, '', 0x0 );
+insert into machines values (0x172c,'S17_cCLOCKBIN',0x1702,'IDV_QUARSB',2671,213,2720,289,2,'M_PLANTBIN','IDD_VILLOCK', 0x1702, 'IDS_VLOCKBIN', 0x1708, '60', 0x3c, '', 0x0 );
+insert into machines values (0x172d,'S17_dCLOCKBIN',0x1702,'IDV_QUARSB',557,224,600,269,2,'M_PLANTBIN','IDD_CITLOCK', 0x1700, 'IDS_CLOCKBIN', 0x1709, '60', 0x3c, '', 0x0 );
+insert into machines values (0x172e,'S17_eCLOCKBIN',0x1702,'IDV_QUARSB',1186,203,1220,253,2,'M_PLANTBIN','IDD_VILLOCK', 0x1702, 'IDS_VLOCKBIN', 0x1708, '60', 0x3c, '', 0x0 );
+insert into machines values (0x1700,'S17_aLOCKSOCKET',0x1703,'IDV_aMINEPAN',172,115,232,163,0,'M17_LOCKSOCKET','S17_aDOORWAY', 0x1702, 'S17_aLOCKBURN', 0x1701, '', 0x0, '', 0x0 );
 insert into machines values (0x1701,'S17_aLOCKBURN',0x1703,'IDV_aMINEPAN',128,20,128,20,0,'M17_LOCKBURN','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1702,'S17_aDOORWAY',0x1703,'IDV_aMINEPAN',280,75,480,274,0,'M17_DOORWAY','IDV_aCV1aPAN', 0x1704, 'S17_aFFIELD1', 0x1703, '', 0x0, '', 0x0 );
 insert into machines values (0x1703,'S17_aFFIELD1',0x1703,'IDV_aMINEPAN',280,82,280,82,0,'M17_FFIELD','S17_aFFIELD2', 0x1704, '', 0x0, '', 0x0, '', 0x0 );
@@ -507,7 +526,7 @@ insert into machines values (0x1704,'S17_aFFIELD2',0x1703,'IDV_aMINEPAN',280,156
 insert into machines values (0x1705,'S17_aFFIELD3',0x1703,'IDV_aMINEPAN',280,223,280,223,0,'M17_FFIELD','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1706,'S17_aMINE',0x1705,'IDV_aCV1bPAN',2900,200,3200,300,0,'M17_MINE','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1707,'S17_aFOULWIND',0x1705,'IDV_aCV1bPAN',0,0,0,0,0,'M17_FOULWIND','IDV_aCV1bPAN', 0x1705, '', 0x0, '', 0x0, '', 0x0 );
-insert into machines values (0x1708,'S17_bLOCKSOCKET',0x1706,'IDV_bMINEPAN',177,116,232,163,0,'M17_LOCKSOCKET','S17_bDOORWAY', 0x170a, 'S17_bLOCKBURN', 0x1709, '', 0x0, '', 0x0 );
+insert into machines values (0x1708,'S17_bLOCKSOCKET',0x1706,'IDV_bMINEPAN',172,115,232,163,0,'M17_LOCKSOCKET','S17_bDOORWAY', 0x170a, 'S17_bLOCKBURN', 0x1709, '', 0x0, '', 0x0 );
 insert into machines values (0x1709,'S17_bLOCKBURN',0x1706,'IDV_bMINEPAN',128,20,128,20,0,'M17_LOCKBURN','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x170a,'S17_bDOORWAY',0x1706,'IDV_bMINEPAN',280,75,480,274,0,'M17_DOORWAY','IDV_bCV1aPAN', 0x1707, 'S17_bFFIELD1', 0x170b, '', 0x0, '', 0x0 );
 insert into machines values (0x170b,'S17_bFFIELD1',0x1706,'IDV_bMINEPAN',280,82,280,82,0,'M17_FFIELD','S17_bFFIELD2', 0x170c, '', 0x0, '', 0x0, '', 0x0 );
@@ -515,7 +534,7 @@ insert into machines values (0x170c,'S17_bFFIELD2',0x1706,'IDV_bMINEPAN',280,156
 insert into machines values (0x170d,'S17_bFFIELD3',0x1706,'IDV_bMINEPAN',280,223,280,223,0,'M17_FFIELD','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x170e,'S17_bMINE',0x1708,'IDV_bCV1bPAN',2900,200,3200,300,0,'M17_MINE','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x170f,'S17_bFOULWIND',0x1708,'IDV_bCV1bPAN',0,0,0,0,0,'M17_FOULWIND','IDV_bCV1bPAN', 0x1708, '', 0x0, '', 0x0, '', 0x0 );
-insert into machines values (0x1710,'S17_cLOCKSOCKET',0x1709,'IDV_cMINEPAN',177,116,232,163,0,'M17_LOCKSOCKET','S17_cDOORWAY', 0x1712, 'S17_cLOCKBURN', 0x1711, '', 0x0, '', 0x0 );
+insert into machines values (0x1710,'S17_cLOCKSOCKET',0x1709,'IDV_cMINEPAN',172,115,232,163,0,'M17_LOCKSOCKET','S17_cDOORWAY', 0x1712, 'S17_cLOCKBURN', 0x1711, '', 0x0, '', 0x0 );
 insert into machines values (0x1711,'S17_cLOCKBURN',0x1709,'IDV_cMINEPAN',128,20,128,20,0,'M17_LOCKBURN','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1712,'S17_cDOORWAY',0x1709,'IDV_cMINEPAN',280,75,480,274,0,'M17_DOORWAY','IDV_cCV1aPAN', 0x170a, 'S17_cFFIELD1', 0x1713, '', 0x0, '', 0x0 );
 insert into machines values (0x1713,'S17_cFFIELD1',0x1709,'IDV_cMINEPAN',280,82,280,82,0,'M17_FFIELD','S17_cFFIELD2', 0x1714, '', 0x0, '', 0x0, '', 0x0 );
@@ -523,7 +542,7 @@ insert into machines values (0x1714,'S17_cFFIELD2',0x1709,'IDV_cMINEPAN',280,156
 insert into machines values (0x1715,'S17_cFFIELD3',0x1709,'IDV_cMINEPAN',280,223,280,223,0,'M17_FFIELD','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1716,'S17_cMINE',0x170b,'IDV_cCV1bPAN',2900,200,3200,300,0,'M17_MINE','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1717,'S17_cFOULWIND',0x170b,'IDV_cCV1bPAN',0,0,0,0,0,'M17_FOULWIND','IDV_cCV1bPAN', 0x170b, '', 0x0, '', 0x0, '', 0x0 );
-insert into machines values (0x1718,'S17_dLOCKSOCKET',0x170c,'IDV_dMINEPAN',177,116,232,163,0,'M17_LOCKSOCKET','S17_dDOORWAY', 0x171a, 'S17_dLOCKBURN', 0x1719, '', 0x0, '', 0x0 );
+insert into machines values (0x1718,'S17_dLOCKSOCKET',0x170c,'IDV_dMINEPAN',172,115,232,163,0,'M17_LOCKSOCKET','S17_dDOORWAY', 0x171a, 'S17_dLOCKBURN', 0x1719, '', 0x0, '', 0x0 );
 insert into machines values (0x1719,'S17_dLOCKBURN',0x170c,'IDV_dMINEPAN',128,20,128,20,0,'M17_LOCKBURN','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x171a,'S17_dDOORWAY',0x170c,'IDV_dMINEPAN',280,75,480,274,0,'M17_DOORWAY','IDV_dCV1aPAN', 0x170d, 'S17_dFFIELD1', 0x171b, '', 0x0, '', 0x0 );
 insert into machines values (0x171b,'S17_dFFIELD1',0x170c,'IDV_dMINEPAN',280,82,280,82,0,'M17_FFIELD','S17_dFFIELD2', 0x171c, '', 0x0, '', 0x0, '', 0x0 );
@@ -531,7 +550,7 @@ insert into machines values (0x171c,'S17_dFFIELD2',0x170c,'IDV_dMINEPAN',280,156
 insert into machines values (0x171d,'S17_dFFIELD3',0x170c,'IDV_dMINEPAN',280,223,280,223,0,'M17_FFIELD','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x171e,'S17_dMINE',0x170e,'IDV_dCV1bPAN',2900,200,3200,300,0,'M17_MINE','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x171f,'S17_dFOULWIND',0x170e,'IDV_dCV1bPAN',0,0,0,0,0,'M17_FOULWIND','IDV_dCV1bPAN', 0x170e, '', 0x0, '', 0x0, '', 0x0 );
-insert into machines values (0x1720,'S17_eLOCKSOCKET',0x170f,'IDV_eMINEPAN',177,116,232,163,0,'M17_LOCKSOCKET','S17_eDOORWAY', 0x1722, 'S17_eLOCKBURN', 0x1721, '', 0x0, '', 0x0 );
+insert into machines values (0x1720,'S17_eLOCKSOCKET',0x170f,'IDV_eMINEPAN',172,115,232,163,0,'M17_LOCKSOCKET','S17_eDOORWAY', 0x1722, 'S17_eLOCKBURN', 0x1721, '', 0x0, '', 0x0 );
 insert into machines values (0x1721,'S17_eLOCKBURN',0x170f,'IDV_eMINEPAN',128,20,128,20,0,'M17_LOCKBURN','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1722,'S17_eDOORWAY',0x170f,'IDV_eMINEPAN',280,75,480,274,0,'M17_DOORWAY','IDV_eCV1aPAN', 0x1710, 'S17_eFFIELD1', 0x1723, '', 0x0, '', 0x0 );
 insert into machines values (0x1723,'S17_eFFIELD1',0x170f,'IDV_eMINEPAN',280,82,280,82,0,'M17_FFIELD','S17_eFFIELD2', 0x1724, '', 0x0, '', 0x0, '', 0x0 );
@@ -564,6 +583,7 @@ insert into machines values (0x2206,'S22_FISH1',0x2201,'IDV_PARCHPAN',165,185,26
 insert into machines values (0x2207,'S22_FISH2',0x2201,'IDV_PARCHPAN',273,185,376,226,2,'M22_SHIELD','SCROLL_FISH2', 0xb, 'IDS_FISHSCRL', 0x2223, '', 0x0, '', 0x0 );
 insert into machines values (0x2208,'S22_FISH3',0x2201,'IDV_PARCHPAN',381,185,483,226,2,'M22_SHIELD','SCROLL_FISH3', 0xc, 'IDS_FISHSCRL', 0x2223, '', 0x0, '', 0x0 );
 insert into machines values (0x2209,'S22_NYSTROM',0x2201,'IDV_PARCHPAN',302,231,259,280,2,'M22_SHIELD','SCROLL_NYSTROM', 0xd, 'IDS_VIALSCRL', 0x2224, '', 0x0, '', 0x0 );
+insert into machines values (0x23fb,'S24_ROOTBIN',0x2402,'IDV_EYEB',2083,183,2120,220,2,'M_PLANTBIN','IDD_ROOTBLUE', 0x2138, 'IDS_ROOTPLANT', 0x2137, '60', 0x3c, '', 0x0 );
 insert into machines values (0x2400,'S24_EYEPLATE1',0x2403,'IDV_EYEC1P',200,28,260,63,0,'M24_EYEPLATE','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x2401,'S24_EYEPLATE2',0x2403,'IDV_EYEC1P',266,32,324,68,0,'M24_EYEPLATE','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x2402,'S24_EYEPLATE3',0x2403,'IDV_EYEC1P',333,38,390,73,0,'M24_EYEPLATE','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
@@ -578,6 +598,14 @@ insert into machines values (0x2505,'S25_OPN1',0x2506,'IDV_WALL1IN',95,126,404,2
 insert into machines values (0x2506,'S25_OPN2',0x2508,'IDV_WALL2IN',2717,138,3028,298,2,'M25_OPNDOOR','IDS_OPN2', 0x2507, 'IDV_HIDDENR1', 0x2511, '', 0x0, '', 0x0 );
 insert into machines values (0x2503,'S25_WALLCU1E',0x2509,'IDV_PL1P',162,70,476,158,2,'M24_EYETEXT','IDS_WALL1CUE', 0x2504, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x2504,'S25_WALLCU2E',0x2510,'IDV_PL2P',165,78,479,218,2,'M24_EYETEXT','IDS_WALL2CUE', 0x2505, '', 0x0, '', 0x0, '', 0x0 );
+insert into machines values (0x2513,'S25_aHIDDENSCROLL',0x2511,'IDV_HIDDENR1',2583,223,2620,300,2,'M_PLANTBIN','IDD_ROOTWHITE', 0x2139, 'IDS_HR1SA', 0x2513, '60', 0x3c, '', 0x0 );
+insert into machines values (0x2516,'S25_dHIDDENSCROLL',0x2511,'IDV_HIDDENR1',613,203,665,258,2,'M_PLANTBIN','IDD_ROOTWHITE', 0x2139, 'IDS_HR1SD', 0x2516, '60', 0x3c, '', 0x0 );
+insert into machines values (0x2518,'S25_aHIDDENTEMP',0x2511,'IDV_HIDDENR1',2638,217,2690,270,2,'M_PLANTBIN','IDD_ROOTWHITE', 0x2139, 'IDS_HR1TA', 0x2518, '60', 0x3c, '', 0x0 );
+insert into machines values (0x251a,'S25_cHIDDENTEMP',0x2511,'IDV_HIDDENR1',820,208,871,260,2,'M_PLANTBIN','IDD_ROOTWHITE', 0x2139, 'IDS_HR1TC', 0x251a, '60', 0x3c, '', 0x0 );
+insert into machines values (0x251b,'S25_2aHIDDENSCROLL',0x2512,'IDV_HIDDENR2',2509,214,2559,264,2,'M_PLANTBIN','IDD_ROOTWHITE', 0x2139, 'IDS_HR2SA', 0x251b, '60', 0x3c, '', 0x0 );
+insert into machines values (0x251d,'S25_2cHIDDENSCROLL',0x2512,'IDV_HIDDENR2',232,214,282,264,2,'M_PLANTBIN','IDD_ROOTWHITE', 0x2139, 'IDS_HR2SC', 0x251d, '60', 0x3c, '', 0x0 );
+insert into machines values (0x251e,'S25_2aHIDDENTEMP',0x2512,'IDV_HIDDENR2',2323,212,2373,262,2,'M_PLANTBIN','IDD_ROOTWHITE', 0x2139, 'IDS_HR2TA', 0x251e, '60', 0x3c, '', 0x0 );
+insert into machines values (0x2520,'S25_2cHIDDENTEMP',0x2512,'IDV_HIDDENR2',393,226,443,276,2,'M_PLANTBIN','IDD_ROOTWHITE', 0x2139, 'IDS_HR2TC', 0x2520, '60', 0x3c, '', 0x0 );
 insert into machines values (0x2600,'S26_BANISH+0',0x2612,'IDV_BANISH',1438,237,1478,277,2,'M26_BANISH','0x2506', 0x2506, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x2601,'S26_BANISH+1',0x2612,'IDV_BANISH',836,227,876,267,2,'M26_BANISH','0x2508', 0x2508, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x2602,'S26_BANISH+2',0x2612,'IDV_BANISH',42,219,82,259,2,'M26_BANISH','0x1705', 0x1705, '', 0x0, '', 0x0, '', 0x0 );

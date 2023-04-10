@@ -6,7 +6,6 @@ create table spr_names
     [id]        int
 );
 
-insert into spr_names values ('0','null',0x0);
 insert into spr_names values ('IDS_HANDIDLE','handidle',0x1);
 insert into spr_names values ('IDS_HANDMACH','handmach',0x2);
 insert into spr_names values ('IDS_HANDLEFT','handleft',0x3);
