@@ -328,6 +328,7 @@ insert into machines values (0x30a,'ID(26)+S02_DN1___XX',0x21e,'IDV_LOCKERCU26',
 insert into machines values (0x30b,'ID(26)+S02_DN10__XX',0x21e,'IDV_LOCKERCU26',231,72,257,89,0,'M02_DN10','ID(26)+S02_VIAL__XX', 0x305, 'ID(26)+S02_LOCK__XX', 0x306, '', 0x0, '', 0x0 );
 insert into machines values (0x30c,'ID(26)+S02_NUM1__XX',0x21e,'IDV_LOCKERCU26',263,39,286,62,0,'M02_NUM1','ID(26)+S02_VIAL__XX', 0x305, 'ID(26)+S02_LOCK__XX', 0x306, '', 0x0, '', 0x0 );
 insert into machines values (0x30d,'ID(26)+S02_NUM10_XX',0x21e,'IDV_LOCKERCU26',232,40,255,63,0,'M02_NUM10','ID(26)+S02_VIAL__XX', 0x305, 'ID(26)+S02_LOCK__XX', 0x306, '', 0x0, '', 0x0 );
+insert into machines values (0x7143,'S04_CITYDIG',0x227,'IDV_ctyh',1953,207,2025,250,2,'M_PLANTBIN','IDD_YFLWRSPT', 0x2128, 'IDS_SANDDIRT3', 0x2140, '10', 0xa, '', 0x0 );
 insert into machines values (0x402,'S04_KEYCLAMP_1',0x241,'IDV_ckeycf01',222,91,342,178,0,'M04_KEYCLAMP','S04_REDSLIDER_1', 0x403, 'S04_GRNSLIDER_1', 0x404, 'S04_BLUSLIDER_1', 0x405, '', 0x0 );
 insert into machines values (0x403,'S04_REDSLIDER_1',0x241,'IDV_ckeycf01',78,103,100,188,0,'M04_SLIDER','IDS_RED_SLIDE', 0x203, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x404,'S04_GRNSLIDER_1',0x241,'IDV_ckeycf01',105,103,127,188,0,'M04_SLIDER','IDS_GRN_SLIDE', 0x205, '', 0x0, '', 0x0, '', 0x0 );
@@ -455,7 +456,7 @@ insert into machines values (0x824,'S08_TEMPHOLD+9*INSTS_PER_MANREP',0x810,'IDV_
 insert into machines values (0x825,'S08_HOPPER+9*INSTS_PER_MANREP',0x810,'IDV_MANREP10',167,247,255,300,0,'M08_HOPPER','S08_TEMPHOLD+9*INSTS_PER_MANREP', 0x824, 'S08_BIN+9*INSTS_PER_MANREP', 0x827, 'S08_BEEM+9*INSTS_PER_MANREP', 0x826, '', 0x0 );
 insert into machines values (0x826,'S08_BEEM+9*INSTS_PER_MANREP',0x810,'IDV_MANREP10',155,23,160,28,0,'M08_BEEM','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x827,'S08_BIN+9*INSTS_PER_MANREP',0x810,'IDV_MANREP10',180,80,236,136,0,'M08_BIN','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
-insert into machines values (0x1000,'S10_DRYPIT',0x1002,'IDV_SCN10PIT',13,230,379,300,0,'M10_DRYPIT','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
+insert into machines values (0x1000,'S10_DRYPIT',0x1002,'IDV_SCN10PIT',30,205,379,300,0,'M10_DRYPIT','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1001,'S10_FLOWER',0x1002,'IDV_SCN10PIT',139,31,273,127,0,'M10_FLOWER','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1110,'S11_FIRE',0x1101,'IDV_FA1PAN',785,210,890,250,0,'M11_FIRE','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1111,'S11_GRILL',0x1101,'IDV_FA1PAN',774,163,890,200,0,'M11_GRILL','S11_FIRE', 0x1110, 'S11_ASCENT', 0x1112, '', 0x0, '', 0x0 );
@@ -477,6 +478,7 @@ insert into machines values (0x1137,'S11_FISHSTATIONh',0x1104,'IDV_FH1PAN',1300,
 insert into machines values (0x1160,'S11_GRUBBIN0',0x1106,'IDV_GRBDRT2',20,8,262,218,2,'M_OBJECTBIN','IDD_BAIT0', 0x1130, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x3001,'S30_PATH2',0x1127,'IDV_PATH1',140,120,300,280,0,'M_ANIBIN','IDS_EYESPELL', 0xb09c, 'IDD_EYESPELL', 0x77a5, '60', 0x3c, '', 0x0 );
 insert into machines values (0x7141,'S30_PATHBUG',0x1128,'IDV_PATH2',413,10,618,137,0,'M_ANIBIN','IDS_BUGTREE', 0xb06d, 'IDD_BAIT1', 0x1131, '60', 0x3c, '', 0x0 );
+insert into machines values (0x7142,'S30_PATHDIG',0x1128,'IDV_PATH2',2348,179,2425,230,2,'M_PLANTBIN','IDD_YFLWRSPT', 0x2128, 'IDS_SANDDIRTGRS', 0x2142, '10', 0xa, '', 0x0 );
 insert into machines values (0x1151,'S11_LOGBINB',0x1133,NULL,2833,168,3126,265,2,'M_OBJECTBIN','IDD_LOG', 0x1170, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1222,'S12_TCANDLE1',0x1211,'IDV_TM1PAN',620,5,690,80,2,'M_OBJECTMAP','IDD_LOG', 0x1170, 'IDD_MATCH', 0x1171, 'SOUND_FIRE', 0x4, '', 0x0 );
 insert into machines values (0x1223,'S12_TCANDLE2',0x1211,'IDV_TM1PAN',950,5,1020,80,2,'M_OBJECTMAP','IDD_LOG', 0x1170, 'IDD_MATCH', 0x1171, 'SOUND_FIRE', 0x4, '', 0x0 );
@@ -511,6 +513,8 @@ insert into machines values (0x120a,'0x120a',0x1223,'IDV_TMCUT',400,100,430,187,
 insert into machines values (0x120b,'0x120b',0x1223,'IDV_TMCUT',435,100,465,187,2,'M_OBJECTBIN','0x2211', 0x2211, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x120c,'0x120c',0x1223,'IDV_TMCUT',500,100,530,187,2,'M_OBJECTBIN','0x2212', 0x2212, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x120d,'0x120d',0x1223,'IDV_TMCUT',570,100,600,187,2,'M_OBJECTBIN','0x2213', 0x2213, '', 0x0, '', 0x0, '', 0x0 );
+insert into machines values (0x1270,'S31_MOONDIG',0x125f,'IDV_MOON3',2599,174,2675,225,2,'M_PLANTBIN','IDD_YFLWRSPT', 0x2128, 'IDS_SANDDIRTMOON', 0x2141, '10', 0xa, '', 0x0 );
+insert into machines values (0x1271,'S31_MOONDIG2',0x1260,'IDV_MOON4',1198,227,1275,275,2,'M_PLANTBIN','IDD_YFLWRSPT', 0x2128, 'IDS_SANDDIRTGRS', 0x2142, '10', 0xa, '', 0x0 );
 insert into machines values (0x1234,'S12_o1BERRYTREE',0x1504,'IDV_TMPLPTH4',322,187,479,272,2,'M_BIN','IDD_REDBERRY', 0x2126, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1235,'S12_o2BERRYTREE',0x1504,'IDV_TMPLPTH4',2570,160,2728,212,2,'M_BIN','IDD_BLUEBERRY', 0x2125, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1236,'S12_o3BERRYTREE',0x1505,'IDV_TMPLPTH5',724,207,825,228,2,'M_BIN','IDD_LOG', 0x1170, '', 0x0, '', 0x0, '', 0x0 );
@@ -594,6 +598,7 @@ insert into machines values (0x2403,'S24_EYESPELL1',0x2403,'IDV_EYEC1P',0,64,59,
 insert into machines values (0x2405,'S24_EYESPELL3',0x2403,'IDV_EYEC1P',542,79,603,120,0,'M24_EYESPELL','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x2406,'S24_BIGEYE',0x2403,'IDV_EYEC1P',310,71,368,112,0,'M24_BIGEYE','IDS_EYESPELL', 0x77a5, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x2407,'S24_EYETEXT',0x2403,'IDV_EYEC1P',48,155,553,193,2,'M24_EYETEXT','IDS_EYENGLSH', 0x2402, '', 0x0, '', 0x0, '', 0x0 );
+insert into machines values (0x2509,'S25_SANDDIG',0x2503,'IDV_WR3',274,202,375,300,2,'M_PLANTBIN','IDD_YFLWRSPT', 0x2128, 'IDS_SANDDIRT', 0x213e, '10', 0xa, '', 0x0 );
 insert into machines values (0x2500,'S25_RUMBLE',0x2504,'IDV_W4LOCK',374,96,574,275,2,'M25_RUMBLE','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x2501,'S25_ROLL',0x2504,'IDV_W4LOCK',346,59,516,180,2,'M25_ROLL','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x2502,'S25_SCATTER',0x2504,'IDV_W4LOCK',25,55,326,180,2,'M25_SCATTER','', 0x0, '', 0x0, '', 0x0, '', 0x0 );

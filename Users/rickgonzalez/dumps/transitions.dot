@@ -511,6 +511,13 @@ subgraph cluster_0x0030 {
 }
  subgraph "cluster_M10_DRYPIT" {
  label="M10_DRYPIT";
+"M10_DRYPIT_0" -> "M10_DRYPIT_1"[color=green, fontcolor=green, label="ASSIGN(WSPRITE,9)"];
+"M10_DRYPIT_1" -> "M10_DRYPIT_2"[color=green, fontcolor=green, label="MUL(WSPRITE,BPARM)"];
+"M10_DRYPIT_2" -> "M10_DRYPIT_3"[color=green, fontcolor=green, label="ASSIGN(WPARM,MAX_DRYPIT)"];
+"M10_DRYPIT_3" -> "M10_DRYPIT_4"[color=green, fontcolor=green, label="DIV(WSPRITE,WPARM)"];
+"M10_DRYPIT_4" -> "M10_DRYPIT_5"[color=green, fontcolor=green, label="ASSIGN(WPARM,IDS_PIT00)"];
+"M10_DRYPIT_5" -> "M10_DRYPIT_6"[color=green, fontcolor=green, label="ADD(WSPRITE,WPARM)"];
+"M10_DRYPIT_6" -> "M10_DRYPIT_10"[color=green, fontcolor=green, label="SHOW(WSPRITE,)"];
 "M10_DRYPIT_10" -> "M10_DRYPIT_21"[color=red, fontcolor=red, label="DRAG(0,IDD_SCOOPE)"];
 "M10_DRYPIT_10" -> "M10_DRYPIT_31"[color=red, fontcolor=red, label="DRAG(0,IDD_SCOOPF)"];
 "M10_DRYPIT_21" -> "M10_DRYPIT_22"[color=green, fontcolor=green, label="GTEi(BPARM,1)"];
@@ -519,28 +526,44 @@ subgraph cluster_0x0030 {
 "M10_DRYPIT_23" -> "M10_DRYPIT_24"[color=green, fontcolor=green, label="SUBI(BPARM,1)"];
 "M10_DRYPIT_24" -> "M10_DRYPIT_25"[color=green, fontcolor=green, label="HANDOFF(0,IDD_SCOOPF)"];
 "M10_DRYPIT_25" -> "M10_DRYPIT_26"[color=green, fontcolor=green, label="EQUALi(BPARM,MAX_DRYPIT-1)"];
-"M10_DRYPIT_25" -> "M10_DRYPIT_0"[color=green, fontcolor=green, label="Z_EPSILON(0,0)"];
-"M10_DRYPIT_26" -> "M10_DRYPIT_27"[color=green, fontcolor=green, label="Z_EPSILON(5,5)"];
+"M10_DRYPIT_25" -> "M10_DRYPIT_0"[color=green, fontcolor=green, label="Z_EPSILON(,)"];
+"M10_DRYPIT_26" -> "M10_DRYPIT_27"[color=green, fontcolor=green, label="Z_EPSILON(,)"];
 "M10_DRYPIT_27" -> "M10_DRYPIT_0"[color=green, fontcolor=green, label="SIGNALi(0,S10_FLOWER)"];
 "M10_DRYPIT_31" -> "M10_DRYPIT_32"[color=green, fontcolor=green, label="LTEi(BPARM,MAX_DRYPIT-1)"];
-"M10_DRYPIT_31" -> "M10_DRYPIT_10"[color=green, fontcolor=green, label="Z_EPSILON(0,0)"];
-"M10_DRYPIT_32" -> "M10_DRYPIT_33"[color=green, fontcolor=green, label="PLAYWAVE(0,SOUND_SPIT)"];
+"M10_DRYPIT_31" -> "M10_DRYPIT_10"[color=green, fontcolor=green, label="Z_EPSILON(,)"];
+"M10_DRYPIT_32" -> "M10_DRYPIT_33"[color=green, fontcolor=green, label="PLAYWAVE(,SOUND_SPIT)"];
 "M10_DRYPIT_33" -> "M10_DRYPIT_34"[color=green, fontcolor=green, label="ADDI(BPARM,1)"];
-"M10_DRYPIT_34" -> "M10_DRYPIT_35"[color=green, fontcolor=green, label="HANDOFF(0,IDD_SCOOPE)"];
+"M10_DRYPIT_34" -> "M10_DRYPIT_35"[color=green, fontcolor=green, label="HANDOFF(,IDD_SCOOPE)"];
 "M10_DRYPIT_35" -> "M10_DRYPIT_36"[color=green, fontcolor=green, label="EQUALi(BPARM,MAX_DRYPIT)"];
-"M10_DRYPIT_35" -> "M10_DRYPIT_0"[color=green, fontcolor=green, label="Z_EPSILON(0,0)"];
-"M10_DRYPIT_36" -> "M10_DRYPIT_37"[color=green, fontcolor=green, label="Z_EPSILON(5,5)"];
+"M10_DRYPIT_35" -> "M10_DRYPIT_0"[color=green, fontcolor=green, label="Z_EPSILON(,)"];
+"M10_DRYPIT_36" -> "M10_DRYPIT_37"[color=green, fontcolor=green, label="Z_EPSILON(,)"];
 "M10_DRYPIT_37" -> "M10_DRYPIT_0"[color=green, fontcolor=green, label="SIGNALi(0,S10_FLOWER)"];
 }
  subgraph "cluster_M10_FLOWER" {
  label="M10_FLOWER";
 "M10_FLOWER_0" -> "M10_FLOWER_1"[color=green, fontcolor=green, label="SHOW(0,IDS_FLOWER0)"];
-"M10_FLOWER_1" -> "M10_FLOWER_2"[color=red, fontcolor=red, label="WAIT(0,0)"];
+"M10_FLOWER_1" -> "M10_FLOWER_2"[color=red, fontcolor=red, label="WAIT(,)"];
 "M10_FLOWER_2" -> "M10_FLOWER_3"[color=green, fontcolor=green, label="PLAYWAVE(0,SOUND_BUZZFUZZ)"];
+"M10_FLOWER_3" -> "M10_FLOWER_4"[color=green, fontcolor=green, label="ASSIGN(WSPRITE,IDS_FLOWER0)"];
+"M10_FLOWER_4" -> "M10_FLOWER_5"[color=green, fontcolor=green, label="ASSIGN(WPARM,10)"];
+"M10_FLOWER_5" -> "M10_FLOWER_20"[color=green, fontcolor=green, label="LTEi(WPARM,0)"];
+"M10_FLOWER_5" -> "M10_FLOWER_15"[color=green, fontcolor=green, label="Z_EPSILON(,)"];
+"M10_FLOWER_15" -> "M10_FLOWER_16"[color=green, fontcolor=green, label="SHOW(WSPRITE,0)"];
+"M10_FLOWER_16" -> "M10_FLOWER_17"[color=green, fontcolor=green, label="EMTIME(0,1000)"];
+"M10_FLOWER_17" -> "M10_FLOWER_18"[color=green, fontcolor=green, label="ADDI(WSPRITE,1)"];
+"M10_FLOWER_18" -> "M10_FLOWER_5"[color=green, fontcolor=green, label="SUBI(WPARM,1)"];
 "M10_FLOWER_20" -> "M10_FLOWER_30"[color=green, fontcolor=green, label="SHOW(0,IDS_FLOWER9)"];
 "M10_FLOWER_30" -> "M10_FLOWER_31"[color=red, fontcolor=red, label="WAIT(0,0)"];
 "M10_FLOWER_31" -> "M10_FLOWER_32"[color=green, fontcolor=green, label="PLAYWAVE(0,SOUND_FUZZBUZZ)"];
-"M10_FLOWER_40" -> "M10_FLOWER_0"[color=green, fontcolor=green, label="SHOW(0,IDS_FLOWER0)"];
+"M10_FLOWER_32" -> "M10_FLOWER_33"[color=green, fontcolor=green, label="ASSIGN(WSPRITE,IDS_FLOWER9)"];
+"M10_FLOWER_33" -> "M10_FLOWER_34"[color=green, fontcolor=green, label="ASSIGN(WPARM,10)"];
+"M10_FLOWER_34" -> "M10_FLOWER_50"[color=green, fontcolor=green, label="LTEi(WPARM,0)"];
+"M10_FLOWER_34" -> "M10_FLOWER_44"[color=green, fontcolor=green, label="Z_EPSILON(,)"];
+"M10_FLOWER_44" -> "M10_FLOWER_45"[color=green, fontcolor=green, label="SHOW(WSPRITE,)"];
+"M10_FLOWER_45" -> "M10_FLOWER_46"[color=green, fontcolor=green, label="EMTIME(0,1000)"];
+"M10_FLOWER_46" -> "M10_FLOWER_47"[color=green, fontcolor=green, label="SUBI(WSPRITE,1)"];
+"M10_FLOWER_47" -> "M10_FLOWER_34"[color=green, fontcolor=green, label="SUBI(WPARM,1)"];
+"M10_FLOWER_50" -> "M10_FLOWER_0"[color=green, fontcolor=green, label="SHOW(0,IDS_FLOWER0)"];
 }
  subgraph "cluster_M11_ASCENT" {
  label="M11_ASCENT";
