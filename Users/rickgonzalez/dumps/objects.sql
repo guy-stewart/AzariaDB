@@ -11,6 +11,7 @@ create table objects
 );
 
 insert into objects values ('IDD_ALARM',30614,'IDC_SPELL',8, 'Spelx06', 'Spelx06', 'Spelx06');
+insert into objects values ('IDD_AMULET',8520,'IDC_NULL',0, 'AMULET1', 'AMULET1', 'AMULET1');
 insert into objects values ('IDD_BAIT0',4400,'IDC_BAIT',2, 'grubanm', 'grubanm', 'grubanm');
 insert into objects values ('IDD_BAIT1',4401,'IDC_BAIT',2, 'buginv', 'buginv', 'buginv');
 insert into objects values ('IDD_BAIT2',4402,'IDC_BAIT',2, 'wormwigl', 'wormwigl', 'wormwigl');
@@ -123,7 +124,9 @@ insert into objects values ('IDD_CITY_KEY1+3*0x10+0x0e',574,'IDC_KEY',5, 'cityke
 insert into objects values ('IDD_CITY_KEY1+3*0x10+0x0f',575,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
 insert into objects values ('IDD_CROWBAR',9488,'IDC_NULL',0, 'Crowbar', 'Crowbar', 'Crowbar');
 insert into objects values ('IDD_DEATH',30621,'IDC_SPELL',8, 'skull', 'skull', 'skull');
+insert into objects values ('IDD_EMERALD',8522,'IDC_NULL',0, 'EMERALD', 'EMERALD', 'EMERALD');
 insert into objects values ('IDD_ENCHANT',30609,'IDC_SPELL',8, 'enchant', 'enchant', 'enchant');
+insert into objects values ('IDD_ENCSTONE',8526,'IDC_NULL',0, 'encstone', 'encstone', 'encstone');
 insert into objects values ('IDD_EXPLOSION',30617,'IDC_SPELL',8, 'Spelx09', 'Spelx09', 'Spelx09');
 insert into objects values ('IDD_EYEFUSE',9216,'IDC_NULL',0, 'eyefuse', 'eyefuse', 'eyefuse');
 insert into objects values ('IDD_EYESPELL',30629,'IDC_SPELL',8, 'eyespell', 'eyespell', 'eyespell');
@@ -162,6 +165,7 @@ insert into objects values ('IDD_LOG',4464,'',0, 'smalllog', 'smalllog', 'smalll
 insert into objects values ('IDD_MATCH',4465,'',0, 'torch', 'torch', 'torch');
 insert into objects values ('IDD_MINDREAD',30625,'IDC_SPELL',8, 'mind', 'mind', 'mind');
 insert into objects values ('IDD_NYBREATH',30627,'IDC_SPELL',8, 'Spelx09', 'Spelx09', 'Spelx09');
+insert into objects values ('IDD_NYPLANT',8525,'IDC_NULL',0, 'nyplant', 'nyplant', 'nyplant');
 insert into objects values ('IDD_NYSMASK',4473,'',0, 'NYSMASK', 'NYSMASK', 'NYSMASK');
 insert into objects values ('IDD_NYSVIAL',80,'IDC_NULL',0, 'nysvial', 'nysvial', 'nysvial');
 insert into objects values ('IDD_OMUSHSPT',8482,'',0, 'omushspt', 'omushspt', 'omushspt');
@@ -199,6 +203,7 @@ insert into objects values ('IDD_ROCK',5892,'',0, 'ROCK', 'ROCK', 'ROCK');
 insert into objects values ('IDD_ROOTBLUE',8504,'IDC_NULL',0, 'ROOTBLUE', 'ROOTBLUE', 'ROOTBLUE');
 insert into objects values ('IDD_ROOTORANGE',8506,'IDC_NULL',0, 'ROOTORANGE', 'ROOTORANGE', 'ROOTORANGE');
 insert into objects values ('IDD_ROOTWHITE',8505,'IDC_NULL',0, 'ROOTWHITE', 'ROOTWHITE', 'ROOTWHITE');
+insert into objects values ('IDD_RUBY',8523,'IDC_NULL',0, 'RUBY', 'RUBY', 'RUBY');
 insert into objects values ('IDD_SCOOPE',81,'IDC_NULL',0, 'scoopE', 'scoopE', 'scoopE');
 insert into objects values ('IDD_SCOOPF',82,'IDC_NULL',0, 'scoopF', 'scoopF', 'scoopF');
 insert into objects values ('IDD_SCR001',8705,'IDC_SCROLL',12, 'SCR001', 'SCR001', 'SCR001');

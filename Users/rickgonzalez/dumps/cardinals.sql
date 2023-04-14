@@ -87,9 +87,9 @@ insert into cardinals values ('IDV_bCV1aPAN','IDV_bCV1bPAN',NULL,NULL,NULL,NULL,
 insert into cardinals values ('IDV_bCV1bPAN',NULL,NULL,NULL,NULL,'IDV_bCV1aPAN',NULL,NULL,NULL);
 insert into cardinals values ('IDV_cCV1aPAN','IDV_cCV1bPAN',NULL,NULL,NULL,NULL,'IDV_QUARSB',NULL,NULL);
 insert into cardinals values ('IDV_cCV1bPAN',NULL,NULL,NULL,NULL,'IDV_cCV1aPAN',NULL,NULL,NULL);
-insert into cardinals values ('IDV_dCV1aPAN',NULL,NULL,NULL,'IDV_dMINEPAN',NULL,NULL,NULL,'IDV_QUARSB');
+insert into cardinals values ('IDV_dCV1aPAN',NULL,NULL,NULL,'IDV_dMINEPAN',NULL,NULL,NULL,'IDV_dCV1bPAN');
 insert into cardinals values ('IDV_dCV1bPAN',NULL,NULL,NULL,'IDV_dCV1aPAN',NULL,NULL,NULL,NULL);
-insert into cardinals values ('IDV_eCV1aPAN',NULL,NULL,NULL,'IDV_eMINEPAN',NULL,NULL,NULL,'IDV_QUARSB');
+insert into cardinals values ('IDV_eCV1aPAN',NULL,NULL,NULL,'IDV_eMINEPAN',NULL,NULL,NULL,'IDV_eCV1bPAN');
 insert into cardinals values ('IDV_eCV1bPAN',NULL,NULL,NULL,'IDV_eCV1aPAN',NULL,NULL,NULL,NULL);
 insert into cardinals values ('IDV_N2A',NULL,NULL,'IDV_N2B',NULL,NULL,NULL,'IDV_GRNDCNT1',NULL);
 insert into cardinals values ('IDV_N2B',NULL,NULL,'IDV_N2C',NULL,'IDV_LEVERCU',NULL,'IDV_N2A',NULL);
