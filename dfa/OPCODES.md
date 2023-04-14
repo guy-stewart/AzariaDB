@@ -2,9 +2,18 @@
 # Kamioza DFA Virtual Machine Opcode Manual
 
 ## Sections
+|Blocking|Gameplay|Logic|DFA|
+|--------|--------|-----|---|
+|[Input](#input)|[Graphics](#graphics)|[Epsilon](#epsilon)|[Signal](#signal)
+|[Sleep](#sleep)|[Loadview](#loadview)|[Arithmetic](#arithmetic)|
+||[Audio](#audio)|[Compare](#compare)|
+||[Spells](#spell-casting)|[Move](#move)|
+||[Relocate](#relocate)|
 
-* [Sleep](#sleep)
-* [Audio](#audio)
+
+* [Mapping](#mapping)
+* [Accept](#accept)
+* [Todo](#todo)
 
 ## Opcodes
 
@@ -75,7 +84,7 @@ if the object cannot be mapped then the transition occurs w/o mapping the object
 |ANIMATE|LOOP|
 |VIDEO||Show a video clip. Remove the image after the last frame.|
 
-# Arithmetic operations:
+# Arithmetic
 
 |opcode |parameters     |description|
 |-------|---------------|-----------|
