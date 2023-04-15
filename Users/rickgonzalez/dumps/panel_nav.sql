@@ -104,6 +104,7 @@ insert into panel_nav values ('IDV_SIGNPAN',NULL,'IDV_VIL5');
 insert into panel_nav values ('IDV_TRAYR',NULL,'IDV_VIL6');
 insert into panel_nav values ('IDV_TRAYL',NULL,'IDV_VIL6');
 insert into panel_nav values ('IDV_VILDOOR',NULL,'IDV_VIL4');
+insert into panel_nav values ('IDV_MEMSTONE',NULL,'IDV_LAKEB2');
 insert into panel_nav values ('IDV_aMINEPAN',NULL,'IDV_QUARSB');
 insert into panel_nav values ('IDV_bMINEPAN',NULL,'IDV_QUARSB');
 insert into panel_nav values ('IDV_cMINEPAN',NULL,'IDV_QUARSB');

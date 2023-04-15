@@ -227,7 +227,7 @@ insert into objects values ('IDD_SCR018',8728,'IDC_SCROLL',12, 'SCR018', 'SCR018
 insert into objects values ('IDD_SCR019',8729,'IDC_SCROLL',12, 'SCR019', 'SCR019', 'SCR019');
 insert into objects values ('IDD_SCR020',8736,'IDC_SCROLL',12, 'SCR020', 'SCR020', 'SCR020');
 insert into objects values ('IDD_SHOVEL',4469,'',0, 'shovelb', 'shovelb', 'shovelb');
-insert into objects values ('IDD_SPEAKER',200,'IDC_NULL',0, 'SPEAKER', 'SPEAKER', 'SPEAKER');
+insert into objects values ('IDD_SPEAKER',200,'IDC_TOKEN',9, 'SPEAKER', 'SPEAKER', 'SPEAKER');
 insert into objects values ('IDD_SPELL01',30583,'IDC_SPELL',8, 'Spell01', 'Spell01', 'Spell01');
 insert into objects values ('IDD_SPELL02',30584,'IDC_SPELL',8, 'Spell02', 'Spell02', 'Spell02');
 insert into objects values ('IDD_SPELL03',30585,'IDC_SPELL',8, 'Spell03', 'Spell03', 'Spell03');
