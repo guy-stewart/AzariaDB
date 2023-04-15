@@ -2,13 +2,13 @@
 # Kamioza DFA Virtual Machine Opcode Manual
 
 ## Sections
-|Blocking|Gameplay|Logic|DFA|
-|--------|--------|-----|---|
-|[Input](#input)|[Graphics](#graphics)|[Epsilon](#epsilon)|[Signal](#signal)
-|[Sleep](#sleep)|[Loadview](#loadview)|[Arithmetic](#arithmetic)|
-||[Audio](#audio)|[Compare](#compare)|
-||[Spells](#spell-casting)|[Move](#move)|
-||[Relocate](#relocate)|
+|   Blocking     |   Gameplay              |   Logic                 |   DFA         |
+|----------------|-------------------------|----------------------   |---------------|
+|[Input](#input) |[Graphics](#graphics)    |[Arithmetic](#arithmetic)|[Signal](#signal)
+|[Sleep](#sleep) |[Loadview](#loadview)    |[Compare](#compare)      |
+|                |[Audio](#audio)          |[Move](#move)            |
+|                |[Spells](#spell-casting) |[Epsilon](#epsilon)      |
+|                |[Relocate](#relocate)    |
 
 
 * [Mapping](#mapping)
