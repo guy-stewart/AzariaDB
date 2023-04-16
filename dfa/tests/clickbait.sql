@@ -2,7 +2,6 @@
 delete from games;
 
 delete from machines where name = 'S3002_PATH1';
-delete from machines where name = 'S3002_PATH2';
 
 insert into machines values (0x3002,'S3002_PATH1',4391,'IDV_PATH1',300,120,450,280,0,'M_CLICKBAIT','IDS_BAIT0', 0, '3', 0x0, '', 0x0, 'SOUND_LEVER', 0x0 );
 
