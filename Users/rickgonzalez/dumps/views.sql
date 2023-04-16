@@ -223,6 +223,7 @@ insert into views values (0x1508,'IDV_TMPLPTH8',1,2,1,6,'surround.vct','tmplpth8
 insert into views values (0x1509,'IDV_TMPLPTH9',1,2,1,6,'surround.vct','tmplpth9');
 insert into views values (0x150e,'IDV_LAKEB1',1,1,1,6,'surround.vct','LAKEB1');
 insert into views values (0x150f,'IDV_LAKEB2',1,1,1,6,'surround.vct','LAKEB2');
+insert into views values (0x1511,'IDV_MEMSTONE',1,3,1,1,'smlpanel.vct','memstone');
 insert into views values (0x1601,'IDV_GRNDCNT1',1,0,1,6,'surround.vct','GRNDCNT1');
 insert into views values (0x1701,'IDV_QUARSA',1,0,1,6,'surround.vct','QUARSA');
 insert into views values (0x1702,'IDV_QUARSB',1,0,1,6,'surround.vct','QUARSB');
