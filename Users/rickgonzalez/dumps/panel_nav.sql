@@ -80,6 +80,7 @@ insert into panel_nav values ('IDV_SCN10PIT',NULL,'IDV_SCN10PT1');
 insert into panel_nav values ('IDV_FALTAR',NULL,'IDV_FA1PAN');
 insert into panel_nav values ('IDV_GRBDRT1','IDV_GRBDRT2','IDV_FH1PTH1');
 insert into panel_nav values ('IDV_GRBDRT2',NULL,'IDV_GRBDRT1');
+insert into panel_nav values ('IDV_SHORE',NULL,'IDV_FH1PAN');
 insert into panel_nav values ('IDV_VESTPAN1',NULL,'IDV_TM1PAN');
 insert into panel_nav values ('IDV_VESTPAN2',NULL,'IDV_TM1PAN');
 insert into panel_nav values ('IDV_TMCU1',NULL,'IDV_TM2PAN');

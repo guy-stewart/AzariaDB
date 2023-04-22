@@ -162,6 +162,7 @@ insert into objects values ('IDD_HOLDING',30612,'IDC_SPELL',8, 'holding', 'holdi
 insert into objects values ('IDD_INVISIBLE',30622,'IDC_SPELL',8, 'Spelx04', 'Spelx04', 'Spelx04');
 insert into objects values ('IDD_LOCK',30618,'IDC_SPELL',8, 'Spelx10', 'Spelx10', 'Spelx10');
 insert into objects values ('IDD_LOG',4464,'',0, 'smalllog', 'smalllog', 'smalllog');
+insert into objects values ('IDD_MAPBTN',8572,'IDC_NULL',0, 'mapbtn', 'mapbtn', 'mapbtn');
 insert into objects values ('IDD_MATCH',4465,'',0, 'torch', 'torch', 'torch');
 insert into objects values ('IDD_MINDREAD',30625,'IDC_SPELL',8, 'mind', 'mind', 'mind');
 insert into objects values ('IDD_NYBREATH',30627,'IDC_SPELL',8, 'Spelx09', 'Spelx09', 'Spelx09');
