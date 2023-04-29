@@ -2,20 +2,42 @@
 # Kamioza DFA Virtual Machine Opcode Manual
 
 ## Sections
-|   Blocking     |   Gameplay              |   Logic                 |   DFA         |
-|----------------|-------------------------|----------------------   |---------------|
-|[Input](#input) |[Graphics](#graphics)    |[Arithmetic](#arithmetic)|[Signal](#signal)
-|[Sleep](#sleep) |[Loadview](#loadview)    |[Compare](#compare)      |
-|                |[Audio](#audio)          |[Move](#move)            |
-|                |[Spells](#spell-casting) |[Epsilon](#epsilon)      |
-|                |[Relocate](#relocate)    |
 
 
-* [Mapping](#mapping)
-* [Accept](#accept)
-* [Todo](#todo)
 
-## Opcodes
+### Blocking
+- [Input](#input)  (DROP, CLICK, GRAB, WAIT, ...)
+- [Sleep](#sleep)  
+- [Signal](#signal)  
+- [Accept](#accept)  
+- REF_MACHINE  - reference another machine's registers.
+- HANDOFF
+- SYNCPOINT
+
+### Math and Logic
+- [Arithmetic](#arithmetic)  (ADD,SUB,MUL,DIV)  
+- [Compare](#compare)  (GT, LT, EQ, EPSILON, ...)  
+  -  [Epsilon](#epsilon)
+- [Move](#move)  (MOV a value to register)
+- RAND
+- MAPi  
+- MAP
+
+### Gameplay
+- [Graphics](#graphics)   
+[Loadview](#loadview)   
+[Audio](#audio)         
+[Spells](#spell-casting)  
+[Relocate](#relocate)   
+* SENDKEYI
+* SENDKEY
+* SENDMSGI
+* SENDMSG
+
+### Other
+[Mapping](#mapping)  
+[Todo](#todo)  
+
 
 # Input
 ## System events:
@@ -48,10 +70,10 @@ STOPMIDI
 
 # Sleep
 
-|opcode |parameters     |description|
-|-------|---------------|-----------|
-|ESTIME|imm|Sleep time in seconds|
-|EMTIME|imm|Sleep time in milliseconds|
+|opcode |parameters     |description               |
+|-------|---------------|--------------------------|
+|ESTIME |imm            |Sleep time in seconds     |
+|EMTIME |imm            |Sleep time in milliseconds|
 
 Notes:
 *   the time remaining is stored in the machine::dEtime.
@@ -118,25 +140,25 @@ Notes:
 
 ## Compare Immediate(Register , Value):
 
-|opcode |parameters     |description|
-|-------|---------------|-----------|
-|GTi    |register, value|Greater Than or Equal to|
-|GTEi   |register, value|Greater Than or Equal to|
-|LTi    |register, value|Greater Than or Equal to|
-|LTEi   |register, value|Less Than or Equal to|
-|EQUALi |register, value|EQUAL to|
-|NEQUALi|register, value|Not EQUAL to|
+|opcode |parameters     |description      |
+|-------|---------------|-----------------|
+|GTi    |r1, value      |true if r1 >  r2 |
+|GTEi   |r1, value      |true if r1 >= r2 |
+|LTi    |r1, value      |true if r1 <  r2 |
+|LTEi   |r1, value      |true if r1 <= r2 |
+|EQUALi |r1, value      |true if r1 == r2 |
+|NEQUALi|r1, value      |true if r1 != r2 |
 
 ## Compare registers - (Register , Register):
 
-|opcode |parameters     |description|
-|-------|---------------|-----------|
-|GT|register, register|Greater Than or Equal to.|
-|GTE||GTE register, register - Greater Than or Equal to.|
-|LT||LTE register, register - Less Than or Equal to|
-|LTE||LTE register, register - Less Than or Equal to|
-|EQUAL||EQUAL register, register - EQUAL to|
-|NEQUAL||NEQUAL register, register - Not EQUAL to|
+|opcode |parameters |description      |
+|-------|-----------|-----------------|
+|GT     |r1, r2     |true if r1 >  r2 |
+|GTE    |r1, r2     |true if r1 >= r2 |
+|LT     |r1, r2     |true if r1 <  r2 |
+|LTE    |r1, r2     |true if r1 <= r2 |
+|EQUAL  |r1, r2     |true if r1 == r2 |
+|NEQUAL |r1, r2     |true if r1 != r2 |
 
    IS_A,
    NOT_A,
@@ -149,10 +171,10 @@ Notes:
 
 # Spell casting
 
-|opcode |parameters     |description|
-|-------|---------------|-----------|
-|SPELL  |(bParm, wParm)|
-|SPELL_ME||dropped a spell on me|
+|opcode  |parameters     |description|
+|--------|---------------|-----------|
+|SPELL    |(bParm, wParm)|
+|SPELL_ME|              |dropped a spell on me|
 |SPELL_YOU||Dropped a spell on you|
 
 # Signal
@@ -167,17 +189,4 @@ Notes:
 |-------|---------------|-----------|
 |C_ACCEPT|class|Accept objects of a specific class.|
 |O_ACCEPT|idd_object|Accept specific object.|
-
-# TODO
-* REF_MACHINE  - reference another machine's registers.
-* HANDOFF
-* SYNCPOINT
-* RAND
-* SENDKEYI
-* SENDKEY
-* SENDMSGI
-* SENDMSG
-* MAPi
-* MAP
-
 

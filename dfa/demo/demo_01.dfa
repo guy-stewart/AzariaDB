@@ -1,0 +1,12 @@
+
+view IDV_CAFE_01 (z=1, theme=NATURE, style=PANORAMA, image='cafe_01.png') {
+    navigate (from:IDV_CONTINENT rect(222,12,275,63));
+    machine S60_CAFE_BELL (
+
+    );
+}
+
+DFA M_DOORBELL(sprite, ring_animation, ring_sound) {
+    START :- 
+
+}
