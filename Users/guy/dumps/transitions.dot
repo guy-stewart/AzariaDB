@@ -630,9 +630,24 @@ subgraph cluster_0x0030 {
  label="M12_SPRING";
 "M12_SPRING_0" -> "M12_SPRING_1"[color=red, fontcolor=red, label="DROP(0,IDD_SPRINGS)"];
 "M12_SPRING_1" -> "M12_SPRING_2"[color=green, fontcolor=green, label="ASHOW(WOBJECT,)"];
+"M12_SPRING_1" -> "M12_SPRING_2"[color=green, fontcolor=green, label="ASHOW(WOBJECT,)"];
+"M12_SPRING_1" -> "M12_SPRING_2"[color=green, fontcolor=green, label="ASHOW(WOBJECT,)"];
+"M12_SPRING_1" -> "M12_SPRING_2"[color=green, fontcolor=green, label="ASHOW(WOBJECT,)"];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label="GRAB(0,0)"];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label="GRAB(0,0)"];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label="GRAB(0,0)"];
 "M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label="GRAB(0,0)"];
 "M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label="WAIT(0,0)"];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label="WAIT(0,0)"];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label="WAIT(0,0)"];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label="WAIT(0,0)"];
 "M12_SPRING_3" -> "M12_SPRING_4"[color=green, fontcolor=green, label="CLEAR(WOBJECT,)"];
+"M12_SPRING_3" -> "M12_SPRING_4"[color=green, fontcolor=green, label="CLEAR(WOBJECT,)"];
+"M12_SPRING_3" -> "M12_SPRING_4"[color=green, fontcolor=green, label="CLEAR(WOBJECT,)"];
+"M12_SPRING_3" -> "M12_SPRING_4"[color=green, fontcolor=green, label="CLEAR(WOBJECT,)"];
+"M12_SPRING_4" -> "M12_SPRING_0"[color=green, fontcolor=green, label="SHOW(0,0)"];
+"M12_SPRING_4" -> "M12_SPRING_0"[color=green, fontcolor=green, label="SHOW(0,0)"];
+"M12_SPRING_4" -> "M12_SPRING_0"[color=green, fontcolor=green, label="SHOW(0,0)"];
 "M12_SPRING_4" -> "M12_SPRING_0"[color=green, fontcolor=green, label="SHOW(0,0)"];
 }
  subgraph "cluster_M12_WATER" {
@@ -802,7 +817,9 @@ subgraph cluster_0x0030 {
 "M17_LOCKSOCKET_0" -> "M17_LOCKSOCKET_60"[color=red, fontcolor=red, label="DROP(0,IDD_BOMB1)"];
 "M17_LOCKSOCKET_0" -> "M17_LOCKSOCKET_60"[color=red, fontcolor=red, label="DROP(0,IDD_BOMB2)"];
 "M17_LOCKSOCKET_40" -> "M17_LOCKSOCKET_42"[color=green, fontcolor=green, label="SIGNAL(WIP1,SIG_CLOSE)"];
-"M17_LOCKSOCKET_42" -> "M17_LOCKSOCKET_50"[color=green, fontcolor=green, label="ASHOW(WOBJECT,)"];
+"M17_LOCKSOCKET_42" -> "M17_LOCKSOCKET_43"[color=green, fontcolor=green, label="SIGNAL(WIP3,SIG_SHOW)"];
+"M17_LOCKSOCKET_43" -> "M17_LOCKSOCKET_44"[color=green, fontcolor=green, label="SIGNAL(WIP4,SIG_SHOW)"];
+"M17_LOCKSOCKET_44" -> "M17_LOCKSOCKET_50"[color=green, fontcolor=green, label="ASHOW(WOBJECT,)"];
 "M17_LOCKSOCKET_50" -> "M17_LOCKSOCKET_55"[color=red, fontcolor=red, label="CLICK(0,0)"];
 "M17_LOCKSOCKET_50" -> "M17_LOCKSOCKET_51"[color=red, fontcolor=red, label="DRAG(0,IDD_CITKEY)"];
 "M17_LOCKSOCKET_50" -> "M17_LOCKSOCKET_60"[color=red, fontcolor=red, label="DROP(0,IDD_BOMB1)"];
@@ -811,9 +828,13 @@ subgraph cluster_0x0030 {
 "M17_LOCKSOCKET_55" -> "M17_LOCKSOCKET_50"[color=green, fontcolor=green, label="SIGNAL(WIP1,SIG_CLOSE)"];
 "M17_LOCKSOCKET_60" -> "M17_LOCKSOCKET_61"[color=green, fontcolor=green, label="SIGNAL(WIP1,SIG_OPEN)"];
 "M17_LOCKSOCKET_61" -> "M17_LOCKSOCKET_62"[color=green, fontcolor=green, label="SIGNAL(WIP2,SIG_BURN)"];
-"M17_LOCKSOCKET_62" -> "M17_LOCKSOCKET_0"[color=green, fontcolor=green, label="SHOW(0,0)"];
+"M17_LOCKSOCKET_62" -> "M17_LOCKSOCKET_63"[color=green, fontcolor=green, label="SIGNAL(WIP3,SIG_HIDE)"];
+"M17_LOCKSOCKET_63" -> "M17_LOCKSOCKET_64"[color=green, fontcolor=green, label="SIGNAL(WIP4,SIG_HIDE)"];
+"M17_LOCKSOCKET_64" -> "M17_LOCKSOCKET_0"[color=green, fontcolor=green, label="SHOW(0,0)"];
 "M17_LOCKSOCKET_70" -> "M17_LOCKSOCKET_72"[color=green, fontcolor=green, label="SIGNAL(WIP1,SIG_CLOSE)"];
-"M17_LOCKSOCKET_72" -> "M17_LOCKSOCKET_80"[color=green, fontcolor=green, label="ASHOW(WOBJECT,)"];
+"M17_LOCKSOCKET_72" -> "M17_LOCKSOCKET_73"[color=green, fontcolor=green, label="SIGNAL(WIP3,SIG_SHOW)"];
+"M17_LOCKSOCKET_73" -> "M17_LOCKSOCKET_74"[color=green, fontcolor=green, label="SIGNAL(WIP4,SIG_SHOW)"];
+"M17_LOCKSOCKET_74" -> "M17_LOCKSOCKET_80"[color=green, fontcolor=green, label="ASHOW(WOBJECT,)"];
 "M17_LOCKSOCKET_80" -> "M17_LOCKSOCKET_85"[color=red, fontcolor=red, label="CLICK(0,0)"];
 "M17_LOCKSOCKET_80" -> "M17_LOCKSOCKET_81"[color=red, fontcolor=red, label="DRAG(0,IDD_VILKEY)"];
 "M17_LOCKSOCKET_80" -> "M17_LOCKSOCKET_60"[color=red, fontcolor=red, label="DROP(0,IDD_BOMB1)"];
@@ -866,8 +887,10 @@ subgraph cluster_0x0030 {
 "M24_BIGEYE_0" -> "M24_BIGEYE_1"[color=green, fontcolor=green, label="MOV(WSPRITE,WIP1)"];
 "M24_BIGEYE_1" -> "M24_BIGEYE_2"[color=green, fontcolor=green, label="ASHOW(WSPRITE,V_LOOP)"];
 "M24_BIGEYE_2" -> "M24_BIGEYE_5"[color=green, fontcolor=green, label="ANIMATE(0,V_LOOP)"];
-"M24_BIGEYE_5" -> "M24_BIGEYE_0"[color=red, fontcolor=red, label="CLICK(,)"];
-"M24_BIGEYE_5" -> "M24_BIGEYE_10"[color=red, fontcolor=red, label="WAIT(0,0)"];
+"M24_BIGEYE_5" -> "M24_BIGEYE_6"[color=green, fontcolor=green, label="SIGNAL(WIP2,SIG_SHOW)"];
+"M24_BIGEYE_6" -> "M24_BIGEYE_7"[color=green, fontcolor=green, label="SIGNAL(WIP3,SIG_SHOW)"];
+"M24_BIGEYE_7" -> "M24_BIGEYE_0"[color=red, fontcolor=red, label="CLICK(,)"];
+"M24_BIGEYE_7" -> "M24_BIGEYE_10"[color=red, fontcolor=red, label="WAIT(0,0)"];
 "M24_BIGEYE_10" -> "M24_BIGEYE_50"[color=green, fontcolor=green, label="IFSTATEi(0,S24_EYEPLATE1)"];
 "M24_BIGEYE_10" -> "M24_BIGEYE_50"[color=green, fontcolor=green, label="IFSTATEi(0,S24_EYEPLATE2)"];
 "M24_BIGEYE_10" -> "M24_BIGEYE_50"[color=green, fontcolor=green, label="IFSTATEi(0,S24_EYEPLATE3)"];
@@ -877,7 +900,9 @@ subgraph cluster_0x0030 {
 "M24_BIGEYE_20" -> "M24_BIGEYE_30"[color=green, fontcolor=green, label="ASHOW(0,IDS_BIGEYE1)"];
 "M24_BIGEYE_30" -> "M24_BIGEYE_30"[color=red, fontcolor=red, label="GRAB(0,IDD_EYEWAND)"];
 "M24_BIGEYE_30" -> "M24_BIGEYE_50"[color=red, fontcolor=red, label="WAIT(0,SIG_BOMB)"];
-"M24_BIGEYE_50" -> "M24_BIGEYE_0"[color=green, fontcolor=green, label="SHOW(0,0)"];
+"M24_BIGEYE_50" -> "M24_BIGEYE_51"[color=green, fontcolor=green, label="SHOW(0,0)"];
+"M24_BIGEYE_51" -> "M24_BIGEYE_52"[color=green, fontcolor=green, label="SIGNAL(WIP2,SIG_HIDE)"];
+"M24_BIGEYE_52" -> "M24_BIGEYE_0"[color=green, fontcolor=green, label="SIGNAL(WIP3,SIG_HIDE)"];
 }
  subgraph "cluster_M24_EYEPLATE" {
  label="M24_EYEPLATE";
@@ -902,12 +927,16 @@ subgraph cluster_0x0030 {
 "M24_EYESPELL_1" -> "M24_EYESPELL_2"[color=green, fontcolor=green, label="SIGNALi(0,S24_BIGEYE)"];
 "M24_EYESPELL_2" -> "M24_EYESPELL_3"[color=green, fontcolor=green, label="C_ACCEPT(0,IDC_BOMB)"];
 "M24_EYESPELL_3" -> "M24_EYESPELL_4"[color=green, fontcolor=green, label="ASHOW(0,IDS_EYESPELL)"];
-"M24_EYESPELL_4" -> "M24_EYESPELL_50"[color=red, fontcolor=red, label="DROP(0,0)"];
+"M24_EYESPELL_4" -> "M24_EYESPELL_5"[color=green, fontcolor=green, label="SIGNAL(WIP1,SIG_SHOW)"];
+"M24_EYESPELL_5" -> "M24_EYESPELL_6"[color=green, fontcolor=green, label="SIGNAL(WIP2,SIG_SHOW)"];
+"M24_EYESPELL_6" -> "M24_EYESPELL_50"[color=red, fontcolor=red, label="DROP(0,0)"];
 "M24_EYESPELL_50" -> "M24_EYESPELL_51"[color=green, fontcolor=green, label="VIDEO(0,IDS_EXPLODE1)"];
 "M24_EYESPELL_51" -> "M24_EYESPELL_52"[color=green, fontcolor=green, label="PLAYWAVE(0,SOUND_EXPLODE)"];
 "M24_EYESPELL_52" -> "M24_EYESPELL_53"[color=green, fontcolor=green, label="SHOW(0,0)"];
-"M24_EYESPELL_53" -> "M24_EYESPELL_54"[color=green, fontcolor=green, label="O_ACCEPT(0,IDD_EYESPELL)"];
-"M24_EYESPELL_54" -> "M24_EYESPELL_0"[color=green, fontcolor=green, label="SIGNALi(SIG_BOMB,S24_BIGEYE)"];
+"M24_EYESPELL_53" -> "M24_EYESPELL_54"[color=green, fontcolor=green, label="SIGNAL(WIP1,SIG_HIDE)"];
+"M24_EYESPELL_54" -> "M24_EYESPELL_55"[color=green, fontcolor=green, label="SIGNAL(WIP2,SIG_HIDE)"];
+"M24_EYESPELL_55" -> "M24_EYESPELL_56"[color=green, fontcolor=green, label="O_ACCEPT(0,IDD_EYESPELL)"];
+"M24_EYESPELL_56" -> "M24_EYESPELL_0"[color=green, fontcolor=green, label="SIGNALi(SIG_BOMB,S24_BIGEYE)"];
 }
  subgraph "cluster_M24_EYETEXT" {
  label="M24_EYETEXT";
@@ -1004,7 +1033,8 @@ subgraph cluster_0x0030 {
 "M_ANIPORTAL_0" -> "M_ANIPORTAL_1"[color=green, fontcolor=green, label="MOV(WSPRITE,WIP1)"];
 "M_ANIPORTAL_1" -> "M_ANIPORTAL_2"[color=green, fontcolor=green, label="ASHOW(WSPRITE,V_LOOP)"];
 "M_ANIPORTAL_2" -> "M_ANIPORTAL_3"[color=red, fontcolor=red, label="CLICK(0,0)"];
-"M_ANIPORTAL_3" -> "M_ANIPORTAL_1"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_GRNDCNT1)"];
+"M_ANIPORTAL_3" -> "M_ANIPORTAL_4"[color=green, fontcolor=green, label="SIGNALi(SIG_OPEN,S01_NATURE)"];
+"M_ANIPORTAL_4" -> "M_ANIPORTAL_1"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_GRNDCNT1)"];
 }
  subgraph "cluster_M_AURA" {
  label="M_AURA";
@@ -1198,6 +1228,34 @@ subgraph cluster_0x0030 {
 "M_FISHSTATION_36" -> "M_FISHSTATION_0"[color=red, fontcolor=red, label="GRAB(0,0)"];
 "M_FISHSTATION_50" -> "M_FISHSTATION_2"[color=green, fontcolor=green, label="HANDOFF(0,IDD_BUCKF)"];
 }
+ subgraph "cluster_M_GOPABIN" {
+ label="M_GOPABIN";
+"M_GOPABIN_0" -> "M_GOPABIN_1"[color=green, fontcolor=green, label="MOV(BFRAME,WIP3)"];
+"M_GOPABIN_1" -> "M_GOPABIN_2"[color=green, fontcolor=green, label="SHOW(WIP1,)"];
+"M_GOPABIN_2" -> "M_GOPABIN_20"[color=red, fontcolor=red, label="GRAB(,)"];
+"M_GOPABIN_2" -> "M_GOPABIN_3"[color=red, fontcolor=red, label="WAIT(0,SIG_RIPEN)"];
+"M_GOPABIN_3" -> "M_GOPABIN_4"[color=green, fontcolor=green, label="ADDI(BFRAME,1)"];
+"M_GOPABIN_4" -> "M_GOPABIN_5"[color=green, fontcolor=green, label="EQUALi(BFRAME,0)"];
+"M_GOPABIN_4" -> "M_GOPABIN_6"[color=green, fontcolor=green, label="EQUALi(BFRAME,1)"];
+"M_GOPABIN_4" -> "M_GOPABIN_7"[color=green, fontcolor=green, label="EQUALi(BFRAME,2)"];
+"M_GOPABIN_4" -> "M_GOPABIN_8"[color=green, fontcolor=green, label="EQUALi(BFRAME,3)"];
+"M_GOPABIN_4" -> "M_GOPABIN_9"[color=green, fontcolor=green, label="GTE(BFRAME,WIP2)"];
+"M_GOPABIN_5" -> "M_GOPABIN_2"[color=green, fontcolor=green, label="ASSIGN(WOBJECT,IDD_GOPAR)"];
+"M_GOPABIN_6" -> "M_GOPABIN_2"[color=green, fontcolor=green, label="ASSIGN(WOBJECT,IDD_GOPAG)"];
+"M_GOPABIN_7" -> "M_GOPABIN_2"[color=green, fontcolor=green, label="ASSIGN(WOBJECT,IDD_GOPAB)"];
+"M_GOPABIN_8" -> "M_GOPABIN_2"[color=green, fontcolor=green, label="ASSIGN(WOBJECT,)"];
+"M_GOPABIN_9" -> "M_GOPABIN_0"[color=green, fontcolor=green, label="ASSIGN(WOBJECT,IDD_GOPAR)"];
+"M_GOPABIN_20" -> "M_GOPABIN_30"[color=green, fontcolor=green, label="EQUALi(BFRAME,0)"];
+"M_GOPABIN_20" -> "M_GOPABIN_40"[color=green, fontcolor=green, label="EQUALi(BFRAME,1)"];
+"M_GOPABIN_20" -> "M_GOPABIN_50"[color=green, fontcolor=green, label="EQUALi(BFRAME,2)"];
+"M_GOPABIN_20" -> "M_GOPABIN_1"[color=green, fontcolor=green, label="Z_EPSILON(,)"];
+"M_GOPABIN_30" -> "M_GOPABIN_31"[color=green, fontcolor=green, label="ASSIGN(WOBJECT,IDD_GOPAR)"];
+"M_GOPABIN_31" -> "M_GOPABIN_1"[color=green, fontcolor=green, label="SHOW(0,0)"];
+"M_GOPABIN_40" -> "M_GOPABIN_41"[color=green, fontcolor=green, label="ASSIGN(WOBJECT,IDD_GOPAG)"];
+"M_GOPABIN_41" -> "M_GOPABIN_1"[color=green, fontcolor=green, label="SHOW(0,0)"];
+"M_GOPABIN_50" -> "M_GOPABIN_51"[color=green, fontcolor=green, label="ASSIGN(WOBJECT,IDD_GOPAB)"];
+"M_GOPABIN_51" -> "M_GOPABIN_1"[color=green, fontcolor=green, label="SHOW(0,0)"];
+}
  subgraph "cluster_M_HALO" {
  label="M_HALO";
 "M_HALO_0" -> "M_HALO_1"[color=green, fontcolor=green, label="ASHOW(0,IDS_HALO01)"];
@@ -1344,6 +1402,18 @@ subgraph cluster_0x0030 {
 "M_MAPBUTTON_2" -> "M_MAPBUTTON_3"[color=green, fontcolor=green, label="PLAYWAVE(0,SOUND_POPUP)"];
 "M_MAPBUTTON_3" -> "M_MAPBUTTON_1"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_CONTINENT)"];
 }
+ subgraph "cluster_M_NATURE" {
+ label="M_NATURE";
+"M_NATURE_0" -> "M_NATURE_1"[color=red, fontcolor=red, label="WAIT(0,SIG_OPEN)"];
+"M_NATURE_1" -> "M_NATURE_2"[color=green, fontcolor=green, label="ESTIME(,4)"];
+"M_NATURE_2" -> "M_NATURE_3"[color=green, fontcolor=green, label="SIGNALi(SIG_OPEN,S03_BIRDSFWD)"];
+"M_NATURE_3" -> "M_NATURE_4"[color=green, fontcolor=green, label="ESTIME(10,10)"];
+"M_NATURE_4" -> "M_NATURE_5"[color=green, fontcolor=green, label="SIGNALi(SIG_OPEN,S03_BIRDSBKWD)"];
+"M_NATURE_5" -> "M_NATURE_6"[color=green, fontcolor=green, label="SIGNALi(SIG_OPEN,S12_BUTTERFLY)"];
+"M_NATURE_6" -> "M_NATURE_7"[color=green, fontcolor=green, label="SIGNALi(SIG_RIPEN,S16_GOPABUSH)"];
+"M_NATURE_7" -> "M_NATURE_8"[color=green, fontcolor=green, label="SIGNALi(SIG_RIPEN,S10_GOPABUSH)"];
+"M_NATURE_8" -> "M_NATURE_1"[color=green, fontcolor=green, label="ESTIME(,20)"];
+}
  subgraph "cluster_M_OBJECTBIN" {
  label="M_OBJECTBIN";
 "M_OBJECTBIN_0" -> "M_OBJECTBIN_0"[color=red, fontcolor=red, label="GRAB(WIP1,)"];
@@ -1358,6 +1428,8 @@ subgraph cluster_0x0030 {
  label="M_ORIESPEAKER";
 "M_ORIESPEAKER_0" -> "M_ORIESPEAKER_1"[color=green, fontcolor=green, label="O_ACCEPT(0,IDD_SPEAKER)"];
 "M_ORIESPEAKER_1" -> "M_ORIESPEAKER_2"[color=red, fontcolor=red, label="DROP(0,0)"];
+"M_ORIESPEAKER_2" -> "M_ORIESPEAKER_3"[color=green, fontcolor=green, label="ASSIGN(WOBJECT,IDD_SPEAKER)"];
+"M_ORIESPEAKER_2" -> "M_ORIESPEAKER_3"[color=green, fontcolor=green, label="ASSIGN(WOBJECT,IDD_SPEAKER)"];
 "M_ORIESPEAKER_2" -> "M_ORIESPEAKER_3"[color=green, fontcolor=green, label="ASSIGN(WOBJECT,IDD_SPEAKER)"];
 "M_ORIESPEAKER_3" -> "M_ORIESPEAKER_4"[color=green, fontcolor=green, label="SHOW(WOBJECT,)"];
 "M_ORIESPEAKER_4" -> "M_ORIESPEAKER_5"[color=green, fontcolor=green, label="PLAYWAVE(WIP3,)"];
@@ -1470,6 +1542,14 @@ subgraph cluster_0x0030 {
 "M_STATESCALE_10" -> "M_STATESCALE_11"[color=red, fontcolor=red, label="WAIT(0,SIG_HIDE)"];
 "M_STATESCALE_11" -> "M_STATESCALE_0"[color=green, fontcolor=green, label="SHOW(0,0)"];
 }
+ subgraph "cluster_M_STATESCALEV" {
+ label="M_STATESCALEV";
+"M_STATESCALEV_0" -> "M_STATESCALEV_1"[color=red, fontcolor=red, label="WAIT(0,SIG_SHOW)"];
+"M_STATESCALEV_1" -> "M_STATESCALEV_5"[color=green, fontcolor=green, label="MOV(WSPRITE,WIP1)"];
+"M_STATESCALEV_5" -> "M_STATESCALEV_10"[color=green, fontcolor=green, label="ASHOW(WSPRITE,0)"];
+"M_STATESCALEV_10" -> "M_STATESCALEV_11"[color=red, fontcolor=red, label="WAIT(0,SIG_HIDE)"];
+"M_STATESCALEV_11" -> "M_STATESCALEV_0"[color=green, fontcolor=green, label="ASHOW(0,0)"];
+}
  subgraph "cluster_M_TALK" {
  label="M_TALK";
 "M_TALK_0" -> "M_TALK_2"[color=green, fontcolor=green, label="MOV(WSPRITE,WIP4)"];
@@ -1503,6 +1583,18 @@ subgraph cluster_0x0030 {
 "M_TEXT_UP_3" -> "M_TEXT_UP_4"[color=green, fontcolor=green, label="EMTIME(0,250)"];
 "M_TEXT_UP_4" -> "M_TEXT_UP_0"[color=green, fontcolor=green, label="SENDMSGI(9,IDV_S_TELETYPE)"];
 }
+ subgraph "cluster_M_TIMEDVPLAY" {
+ label="M_TIMEDVPLAY";
+"M_TIMEDVPLAY_0" -> "M_TIMEDVPLAY_1"[color=red, fontcolor=red, label="WAIT(0,SIG_OPEN)"];
+"M_TIMEDVPLAY_1" -> "M_TIMEDVPLAY_2"[color=green, fontcolor=green, label="SHOW(0,IDS_BFLY)"];
+"M_TIMEDVPLAY_2" -> "M_TIMEDVPLAY_0"[color=green, fontcolor=green, label="ANIMATE(0,0)"];
+}
+ subgraph "cluster_M_TIMEDVPLAY2" {
+ label="M_TIMEDVPLAY2";
+"M_TIMEDVPLAY2_0" -> "M_TIMEDVPLAY2_1"[color=red, fontcolor=red, label="DRAGFOCUS(0,0)"];
+"M_TIMEDVPLAY2_1" -> "M_TIMEDVPLAY2_2"[color=green, fontcolor=green, label="SHOW(0,IDS_BIRDS)"];
+"M_TIMEDVPLAY2_2" -> "M_TIMEDVPLAY2_0"[color=green, fontcolor=green, label="VIDEO(0,0)"];
+}
  subgraph "cluster_M_VIAL" {
  label="M_VIAL";
 "M_VIAL_0" -> "M_VIAL_1"[color=green, fontcolor=green, label="SHOW(0,0)"];
@@ -1521,4 +1613,16 @@ subgraph cluster_0x0030 {
 "M_VIAL_7" -> "M_VIAL_1"[color=green, fontcolor=green, label="HANDOFF(0,IDD_SCOOPE)"];
 "M_VIAL_8" -> "M_VIAL_1"[color=green, fontcolor=green, label="ADDI(LWEALTH,1)"];
 "M_VIAL_8" -> "M_VIAL_1"[color=green, fontcolor=green, label="GTEi(LWEALTH,MAX_VIAL_STORAGE)"];
+}
+ subgraph "cluster_M_VPLAY2" {
+ label="M_VPLAY2";
+"M_VPLAY2_0" -> "M_VPLAY2_1"[color=red, fontcolor=red, label="WAIT(0,SIG_OPEN)"];
+"M_VPLAY2_1" -> "M_VPLAY2_2"[color=green, fontcolor=green, label="SHOW(0,IDS_BIRDSFWD)"];
+"M_VPLAY2_2" -> "M_VPLAY2_0"[color=green, fontcolor=green, label="ANIMATE(0,0)"];
+}
+ subgraph "cluster_M_VPLAY3" {
+ label="M_VPLAY3";
+"M_VPLAY3_0" -> "M_VPLAY3_1"[color=red, fontcolor=red, label="WAIT(0,SIG_OPEN)"];
+"M_VPLAY3_1" -> "M_VPLAY3_2"[color=green, fontcolor=green, label="SHOW(0,IDS_BIRDSBKWD)"];
+"M_VPLAY3_2" -> "M_VPLAY3_0"[color=green, fontcolor=green, label="ANIMATE(0,0)"];
 }}

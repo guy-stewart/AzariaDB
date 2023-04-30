@@ -1,5 +1,6 @@
 
 .DS_Store
+prod/.DS_Store
 
 # Prerequisites
 *.d

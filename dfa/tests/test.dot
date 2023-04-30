@@ -1,0 +1,36 @@
+digraph AbstractSyntaxTree {
+    node [shape=record];
+	ast_node[label="{<A>STMTS&#92;n | {<L> L | <R> R}}"];
+	ast_nodeL[label="{<A>CALL&#92;n | {<L> L | <R> R}}"];
+	ast_nodeLL[label="{<A>ID&#92;nANIMATE | {<L> L | <R> R}}"];
+	ast_nodeL:<L> -> ast_nodeLL:<A>;
+	ast_nodeLR[label="{<A>PARMS&#92;n | {<L> L | <R> R}}"];
+	ast_nodeLRL[label="{<A>ID&#92;nV_LOOP | {<L> L | <R> R}}"];
+	ast_nodeLR:<L> -> ast_nodeLRL:<A>;
+	ast_nodeL:<R> -> ast_nodeLR:<A>;
+	ast_node:<L> -> ast_nodeL:<A>;
+	ast_nodeR[label="{<A>STMTS&#92;n | {<L> L | <R> R}}"];
+	ast_nodeRL[label="{<A>CALL&#92;n | {<L> L | <R> R}}"];
+	ast_nodeRLL[label="{<A>ID&#92;nPLAYWAVE | {<L> L | <R> R}}"];
+	ast_nodeRL:<L> -> ast_nodeRLL:<A>;
+	ast_nodeRLR[label="{<A>PARMS&#92;n | {<L> L | <R> R}}"];
+	ast_nodeRLRL[label="{<A>ID&#92;nSOUND_CLICK | {<L> L | <R> R}}"];
+	ast_nodeRLR:<L> -> ast_nodeRLRL:<A>;
+	ast_nodeRL:<R> -> ast_nodeRLR:<A>;
+	ast_nodeR:<L> -> ast_nodeRL:<A>;
+	ast_nodeRR[label="{<A>STMTS&#92;n | {<L> L | <R> R}}"];
+	ast_nodeRRL[label="{<A>CALL&#92;n | {<L> L | <R> R}}"];
+	ast_nodeRRLL[label="{<A>ID&#92;nMOV | {<L> L | <R> R}}"];
+	ast_nodeRRL:<L> -> ast_nodeRRLL:<A>;
+	ast_nodeRRLR[label="{<A>PARMS&#92;n | {<L> L | <R> R}}"];
+	ast_nodeRRLRL[label="{<A>ID&#92;nWOBJECT | {<L> L | <R> R}}"];
+	ast_nodeRRLR:<L> -> ast_nodeRRLRL:<A>;
+	ast_nodeRRLRR[label="{<A>PARMS&#92;n | {<L> L | <R> R}}"];
+	ast_nodeRRLRRL[label="{<A>ID&#92;nWPARM | {<L> L | <R> R}}"];
+	ast_nodeRRLRR:<L> -> ast_nodeRRLRRL:<A>;
+	ast_nodeRRLR:<R> -> ast_nodeRRLRR:<A>;
+	ast_nodeRRL:<R> -> ast_nodeRRLR:<A>;
+	ast_nodeRR:<L> -> ast_nodeRRL:<A>;
+	ast_nodeR:<R> -> ast_nodeRR:<A>;
+	ast_node:<R> -> ast_nodeR:<A>;
+}
