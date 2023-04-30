@@ -156,6 +156,9 @@ insert into objects values ('IDD_FREQUENCY',28674,'IDC_SPELL',8, 'Beemer', 'Beem
 insert into objects values ('IDD_GLEAFSPT',8481,'',0, 'gleafspt', 'gleafspt', 'gleafspt');
 insert into objects values ('IDD_GOBTRFLY',24594,'IDC_TOKEN',9, 'GoBtrfly', 'GoBtrfly', 'GoBtrfly');
 insert into objects values ('IDD_GODRAGON',24595,'IDC_TOKEN',9, 'GoDragon', 'GoDragon', 'GoDragon');
+insert into objects values ('IDD_GOPAB',16002,'IDC_NULL',0, 'GOPAB', 'GOPAB', 'GOPAB');
+insert into objects values ('IDD_GOPAG',16003,'IDC_NULL',0, 'GOPAG', 'GOPAG', 'GOPAG');
+insert into objects values ('IDD_GOPAR',16004,'IDC_NULL',0, 'GOPAR', 'GOPAR', 'GOPAR');
 insert into objects values ('IDD_H2OMASK',4472,'',0, 'H2OMASK', 'H2OMASK', 'H2OMASK');
 insert into objects values ('IDD_HALUCINATE',30626,'IDC_SPELL',8, 'redeye', 'redeye', 'redeye');
 insert into objects values ('IDD_HOLDING',30612,'IDC_SPELL',8, 'holding', 'holding', 'holding');
