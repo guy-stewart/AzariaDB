@@ -15,88 +15,50 @@ delete from transitions where name = 'M10_FLOWER';
 insert into machines values (0x1000,'S10_DRYPIT',0x1002,'IDV_SCN10PIT',30,205,379,300,0,'M10_DRYPIT','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 insert into machines values (0x1001,'S10_FLOWER',0x1002,'IDV_SCN10PIT',90,0,273,127,0,'M10_FLOWER','', 0x0, '', 0x0, '', 0x0, '', 0x0 );
 
-/*
-#define COMPUTE_SPRITE(M_XX, S, END, VAL, MAX_VAL, SPRITE_COUNT, BASE_SPRITE)    \
-    {TNAME(M_XX),    S,   S+1,    OPCODE(ASSIGN),        PARAM(WSPRITE),    PARAM(SPRITE_COUNT)},        \
-    {TNAME(M_XX),    S+1, S+2,    OPCODE(MUL),        PARAM(WSPRITE),    PARAM(VAL)},                \
-    {TNAME(M_XX),    S+2, S+3,    OPCODE(ASSIGN),        PARAM(WPARM),        PARAM(MAX_VAL)},            \
-    {TNAME(M_XX),    S+3, S+4,    OPCODE(DIV),        PARAM(WSPRITE),    PARAM(WPARM)},                \
-    {TNAME(M_XX),    S+4, S+5,    OPCODE(ASSIGN),        PARAM(WPARM),        PARAM(BASE_SPRITE)},        \
-    {TNAME(M_XX),    S+5, S+6,    OPCODE(ADD),        PARAM(WSPRITE),    PARAM(WPARM)},                \
-    {TNAME(M_XX),    S+6, END,    OPCODE(SHOW),        PARAM(WSPRITE),    PARAM(0)}
+insert into transitions values 
+('M10_DRYPIT','0','10','Z_EPSILON','','','
+    ASSIGN(BFRAME,9);
+    MUL(BFRAME,BPARM);
+    ASSIGN(WPARM,MAX_DRYPIT);
+    DIV(BFRAME,WPARM);
+    ASSIGN(WSPRITE,IDS_PITFUL);
+    SHOW(WSPRITE);'),
+('M10_DRYPIT','10','21','DRAG','0','IDD_SCOOPE', ''),
+('M10_DRYPIT','10','31','DRAG','0','IDD_SCOOPF', ''),
 
--- COMPUTE_SPRITE(M10_DRYPIT, 0, 10, BPARM, MAX_DRYPIT, 9, IDS_PIT00)
-*/
+-- Process a full scoop drag:
+('M10_DRYPIT','21','25','GTEi','BPARM','1','
+    PLAYWAVE(SOUND_SLURP);
+    SUBI(BPARM,1);
+    HANDOFF(0,IDD_SCOOPF);'),
+('M10_DRYPIT','21','10','Z_EPSILON','0','', ''),
+('M10_DRYPIT','25','0','EQUALi','BPARM','MAX_DRYPIT-1', 'SIGNALi(0,S10_FLOWER);'),
+('M10_DRYPIT','25','0','Z_EPSILON','','', ''),
 
-insert into transitions values ('M10_DRYPIT',0,1,'ASSIGN','BFRAME','9');
-insert into transitions values ('M10_DRYPIT',1,2,'MUL','BFRAME','BPARM');
-insert into transitions values ('M10_DRYPIT',2,3,'ASSIGN','WPARM','MAX_DRYPIT');
-insert into transitions values ('M10_DRYPIT',3,4,'DIV','BFRAME','WPARM');
-insert into transitions values ('M10_DRYPIT',4,5,'ASSIGN','WSPRITE','IDS_PITFUL');
-insert into transitions values ('M10_DRYPIT',5,10,'SHOW','WSPRITE','');
-insert into transitions values ('M10_DRYPIT',10,21,'DRAG','0','IDD_SCOOPE');
-insert into transitions values ('M10_DRYPIT',10,31,'DRAG','0','IDD_SCOOPF');
-insert into transitions values ('M10_DRYPIT',21,22,'GTEi','BPARM','1');
-insert into transitions values ('M10_DRYPIT',21,10,'Z_EPSILON','0','');
-insert into transitions values ('M10_DRYPIT',22,23,'PLAYWAVE','0','SOUND_SLURP');
-insert into transitions values ('M10_DRYPIT',23,24,'SUBI','BPARM','1');
-insert into transitions values ('M10_DRYPIT',24,25,'HANDOFF','0','IDD_SCOOPF');
-insert into transitions values ('M10_DRYPIT',25,27,'EQUALi','BPARM','MAX_DRYPIT-1');
-insert into transitions values ('M10_DRYPIT',25,0,'Z_EPSILON','','');
-insert into transitions values ('M10_DRYPIT',27,0,'SIGNALi','0','S10_FLOWER');
-insert into transitions values ('M10_DRYPIT',31,32,'LTEi','BPARM','MAX_DRYPIT-1');
-insert into transitions values ('M10_DRYPIT',31,10,'Z_EPSILON','','');
-insert into transitions values ('M10_DRYPIT',32,33,'PLAYWAVE','','SOUND_SPIT');
-insert into transitions values ('M10_DRYPIT',33,34,'ADDI','BPARM','1');
-insert into transitions values ('M10_DRYPIT',34,35,'HANDOFF','','IDD_SCOOPE');
-insert into transitions values ('M10_DRYPIT',35,36,'EQUALi','BPARM','MAX_DRYPIT');
-insert into transitions values ('M10_DRYPIT',35,0,'Z_EPSILON','','');
-insert into transitions values ('M10_DRYPIT',36,37,'Z_EPSILON','','');
-insert into transitions values ('M10_DRYPIT',37,0,'SIGNALi','0','S10_FLOWER');
+-- process an empty scoop drag:
+('M10_DRYPIT','31','35','LTEi','BPARM','MAX_DRYPIT-1', '
+    PLAYWAVE(SOUND_SPIT);
+    ADDI(BPARM,1);
+    HANDOFF(0,IDD_SCOOPE);'),
+('M10_DRYPIT','31','10','Z_EPSILON','','', ''),
 
-/*
-insert into transitions values ('M10_DRYPIT',0,1,'ASSIGN','WSPRITE','9');
-insert into transitions values ('M10_DRYPIT',1,2,'MUL','WSPRITE','BPARM');
-insert into transitions values ('M10_DRYPIT',2,3,'ASSIGN','WPARM','MAX_DRYPIT');
-insert into transitions values ('M10_DRYPIT',3,4,'DIV','WSPRITE','WPARM');
-insert into transitions values ('M10_DRYPIT',4,5,'ASSIGN','WPARM','IDS_PIT00');
-insert into transitions values ('M10_DRYPIT',5,6,'ADD','WSPRITE','WPARM');
-insert into transitions values ('M10_DRYPIT',6,10,'SHOW','WSPRITE','');
-insert into transitions values ('M10_DRYPIT',10,21,'DRAG','0','IDD_SCOOPE');
-insert into transitions values ('M10_DRYPIT',10,31,'DRAG','0','IDD_SCOOPF');
-insert into transitions values ('M10_DRYPIT',21,22,'GTEi','BPARM','1');
-insert into transitions values ('M10_DRYPIT',21,10,'Z_EPSILON','0','');
-insert into transitions values ('M10_DRYPIT',22,23,'PLAYWAVE','0','SOUND_SLURP');
-insert into transitions values ('M10_DRYPIT',23,24,'SUBI','BPARM','1');
-insert into transitions values ('M10_DRYPIT',24,25,'HANDOFF','0','IDD_SCOOPF');
-insert into transitions values ('M10_DRYPIT',25,26,'EQUALi','BPARM','MAX_DRYPIT-1');
-insert into transitions values ('M10_DRYPIT',25,0,'Z_EPSILON','','');
-insert into transitions values ('M10_DRYPIT',26,27,'Z_EPSILON','','');
-insert into transitions values ('M10_DRYPIT',27,0,'SIGNALi','0','S10_FLOWER');
-insert into transitions values ('M10_DRYPIT',31,32,'LTEi','BPARM','MAX_DRYPIT-1');
-insert into transitions values ('M10_DRYPIT',31,10,'Z_EPSILON','','');
-insert into transitions values ('M10_DRYPIT',32,33,'PLAYWAVE','','SOUND_SPIT');
-insert into transitions values ('M10_DRYPIT',33,34,'ADDI','BPARM','1');
-insert into transitions values ('M10_DRYPIT',34,35,'HANDOFF','','IDD_SCOOPE');
-insert into transitions values ('M10_DRYPIT',35,36,'EQUALi','BPARM','MAX_DRYPIT');
-insert into transitions values ('M10_DRYPIT',35,0,'Z_EPSILON','','');
-insert into transitions values ('M10_DRYPIT',36,37,'Z_EPSILON','','');
-insert into transitions values ('M10_DRYPIT',37,0,'SIGNALi','0','S10_FLOWER');
-*/
+('M10_DRYPIT','35','0','EQUALi','BPARM','MAX_DRYPIT','SIGNALi(0,S10_FLOWER);'),
+('M10_DRYPIT','35','0','Z_EPSILON','','', '');
 
 -- BLOSSOM --
-insert into transitions values ('M10_FLOWER',0,1,'SHOW','0','IDS_FLOWER0');
--- wait on OPEN signal from drypit:
-insert into transitions values ('M10_FLOWER',1,2,'WAIT','','');
-insert into transitions values ('M10_FLOWER',2,3,'PLAYWAVE','0','SOUND_BUZZFUZZ');
-insert into transitions values ('M10_FLOWER',3,4,'SHOW','','IDS_FLOPN1');
-insert into transitions values ('M10_FLOWER',4,30,'ANIMATE','','');
--- WAIT on close signal from drypit:
-insert into transitions values ('M10_FLOWER',30,31,'WAIT','0','0');
-insert into transitions values ('M10_FLOWER',31,32,'PLAYWAVE','0','SOUND_FUZZBUZZ');
--- play sprite sequence in reverse
-insert into transitions values ('M10_FLOWER',32,33,'SHOW','','IDS_FLOPN1');
-insert into transitions values ('M10_FLOWER',33,1,'ANIMATE','','V_REVERSE');
+insert into transitions values 
+('M10_FLOWER','0','1','SHOW','0','IDS_FLOPN1',''),
+-- Wait on open signal from drypit:
+('M10_FLOWER','1','30','WAIT','','', '
+    PLAYWAVE(SOUND_BUZZFUZZ);
+    SHOW(0,IDS_FLOPN1);
+    ANIMATE();'),
+-- Wait on close signal from drypit:
+('M10_FLOWER','30','0','WAIT','','', '
+    PLAYWAVE(SOUND_BUZZFUZZ);
+    SHOW(0,IDS_FLOPN1);
+    ANIMATE(0,V_REVERSE);'),
+('M10_FLOWER','30','30','GRAB','','IDD_NYBREATH','');
 
 -- clean up some broken entries ...
 delete from spr_names where name = 'IDS_FLOWER0';

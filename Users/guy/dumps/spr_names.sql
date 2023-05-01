@@ -321,6 +321,7 @@ insert into spr_names values ('IDS_LINKHAND','linkhand',0x11);
 insert into spr_names values ('IDS_LOCK','Spelx10',0x779a);
 insert into spr_names values ('IDS_LOCKWKEY','lockwkey',0x201);
 insert into spr_names values ('IDS_LOG','smalllog',0x1170);
+insert into spr_names values ('IDS_LUNCHCRUMBS','LUNCHCRUMBS',0x3e8a);
 insert into spr_names values ('IDS_M0HAPPY','f0hap',0x160);
 insert into spr_names values ('IDS_M0HURT','f0hur',0x161);
 insert into spr_names values ('IDS_M0KISS','f0kis',0x162);

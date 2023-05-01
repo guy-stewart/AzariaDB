@@ -161,6 +161,7 @@ insert into views values (0x1104,'IDV_FH1PAN',1,1,1,6,'surround.vct','fh1pan');
 insert into views values (0x1105,'IDV_GRBDRT1',1,1,1,1,'smlpanel.vct','grbdrt1');
 insert into views values (0x1106,'IDV_GRBDRT2',1,1,1,1,'smlpanel.vct','grbdrt2');
 insert into views values (0x1108,'IDV_SHORE',1,1,1,1,'smlpanel.vct','SHORE');
+insert into views values (0x1109,'IDV_LUNCHCU',1,1,1,1,'smlpanel.vct','LUNCHCU');
 insert into views values (0x1127,'IDV_PATH1',1,1,1,6,'surround.vct','PATH1');
 insert into views values (0x1128,'IDV_PATH2',1,1,1,6,'surround.vct','PATH2');
 insert into views values (0x1211,'IDV_TM1PAN',1,0,1,6,'surround.vct','TM1pan');

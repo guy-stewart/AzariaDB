@@ -10,308 +10,310 @@ create table objects
     [actor]     text
 );
 
-insert into objects values ('IDD_ALARM',30614,'IDC_SPELL',8, 'Spelx06', 'Spelx06', 'Spelx06');
-insert into objects values ('IDD_AMULET',8520,'IDC_NULL',0, 'AMULET1', 'AMULET1', 'AMULET1');
-insert into objects values ('IDD_BAIT0',4400,'IDC_BAIT',2, 'grubanm', 'grubanm', 'grubanm');
-insert into objects values ('IDD_BAIT1',4401,'IDC_BAIT',2, 'buginv', 'buginv', 'buginv');
-insert into objects values ('IDD_BAIT2',4402,'IDC_BAIT',2, 'wormwigl', 'wormwigl', 'wormwigl');
-insert into objects values ('IDD_BAIT3',4403,'IDC_BAIT',2, 'flop', 'flop', 'flop');
-insert into objects values ('IDD_BAIT4',4404,'IDC_BAIT',2, 'luur1', 'luur1', 'luur1');
-insert into objects values ('IDD_BAIT5',4405,'IDC_BAIT',2, 'luur2', 'luur2', 'luur2');
-insert into objects values ('IDD_BAIT6',4406,'IDC_BAIT',2, 'luur3', 'luur3', 'luur3');
-insert into objects values ('IDD_BAIT7',4407,'IDC_BAIT',2, 'luur4', 'luur4', 'luur4');
-insert into objects values ('IDD_BAIT8',4408,'IDC_BAIT',2, 'grubanm', 'grubanm', 'grubanm');
-insert into objects values ('IDD_BAIT9',4409,'IDC_BAIT',2, 'grubanm', 'grubanm', 'grubanm');
-insert into objects values ('IDD_BANISHMENT',30624,'IDC_SPELL',8, 'skull', 'skull', 'skull');
-insert into objects values ('IDD_BBISHOP',24589,'IDC_TOKEN',9, 'Gbishop', 'Gbishop', 'Gbishop');
-insert into objects values ('IDD_BKING',24584,'IDC_TOKEN',9, 'Gking', 'Gking', 'Gking');
-insert into objects values ('IDD_BKINGME',24590,'IDC_TOKEN',9, 'Bkingme', 'Bkingme', 'Bkingme');
-insert into objects values ('IDD_BKNIGHT',24588,'IDC_TOKEN',9, 'Gknight', 'Gknight', 'Gknight');
-insert into objects values ('IDD_BLINDNESS',30611,'IDC_SPELL',8, 'blind', 'blind', 'blind');
-insert into objects values ('IDD_BLUEBERRY',8485,'',0, 'bluberry', 'bluberry', 'bluberry');
-insert into objects values ('IDD_BOMB1',4470,'IDC_BOMB',10, 'BOMB1', 'BOMB1', 'BOMB1');
-insert into objects values ('IDD_BOMB2',4471,'IDC_BOMB',10, 'BOMB2', 'BOMB2', 'BOMB2');
-insert into objects values ('IDD_BPAWN',24586,'IDC_TOKEN',9, 'Gpawn', 'Gpawn', 'Gpawn');
-insert into objects values ('IDD_BQUEEN',24585,'IDC_TOKEN',9, 'Gqueen', 'Gqueen', 'Gqueen');
-insert into objects values ('IDD_BROOK',24587,'IDC_TOKEN',9, 'Grook', 'Grook', 'Grook');
-insert into objects values ('IDD_BUCKE',4467,'',0, 'BUCKE', 'BUCKE', 'BUCKE');
-insert into objects values ('IDD_BUCKF',4468,'',0, 'BUCKF', 'BUCKF', 'BUCKF');
-insert into objects values ('IDD_CHEMV01',1280,'IDC_CHEM',6, 'chemv01', 'chemv01', 'chemv01');
-insert into objects values ('IDD_CHEMV02',1281,'IDC_CHEM',6, 'chemv02', 'chemv02', 'chemv02');
-insert into objects values ('IDD_CHEMV03',1282,'IDC_CHEM',6, 'chemv03', 'chemv03', 'chemv03');
-insert into objects values ('IDD_CHEMV04',1283,'IDC_CHEM',6, 'chemv04', 'chemv04', 'chemv04');
-insert into objects values ('IDD_CHEMV05',1284,'IDC_CHEM',6, 'chemv05', 'chemv05', 'chemv05');
-insert into objects values ('IDD_CHEMV06',1285,'IDC_CHEM',6, 'chemv06', 'chemv06', 'chemv06');
-insert into objects values ('IDD_CHEMV07',1286,'IDC_CHEM',6, 'chemv07', 'chemv07', 'chemv07');
-insert into objects values ('IDD_CHEMV08',1287,'IDC_CHEM',6, 'chemv08', 'chemv08', 'chemv08');
-insert into objects values ('IDD_CHEMV09',1288,'IDC_CHEM',6, 'chemv09', 'chemv09', 'chemv09');
-insert into objects values ('IDD_CHEMV10',1289,'IDC_CHEM',6, 'chemv10', 'chemv10', 'chemv10');
-insert into objects values ('IDD_CHEMV11',1290,'IDC_CHEM',6, 'chemv11', 'chemv11', 'chemv11');
-insert into objects values ('IDD_CHEMV12',1291,'IDC_CHEM',6, 'chemv12', 'chemv12', 'chemv12');
-insert into objects values ('IDD_CHEMV13',1292,'IDC_CHEM',6, 'chemv13', 'chemv13', 'chemv13');
-insert into objects values ('IDD_CHEMV14',1293,'IDC_CHEM',6, 'chemv14', 'chemv14', 'chemv14');
-insert into objects values ('IDD_CHEMV15',1294,'IDC_CHEM',6, 'chemv15', 'chemv15', 'chemv15');
-insert into objects values ('IDD_CHEMV16',1295,'IDC_CHEM',6, 'chemv16', 'chemv16', 'chemv16');
-insert into objects values ('IDD_CHEMV17',1296,'IDC_CHEM',6, 'chemv17', 'chemv17', 'chemv17');
-insert into objects values ('IDD_CHEMV18',1297,'IDC_CHEM',6, 'chemv18', 'chemv18', 'chemv18');
-insert into objects values ('IDD_CHEMV19',1298,'IDC_CHEM',6, 'chemv19', 'chemv19', 'chemv19');
-insert into objects values ('IDD_CHEMV20',1299,'IDC_CHEM',6, 'chemv20', 'chemv20', 'chemv20');
-insert into objects values ('IDD_CITKEY',5889,'',0, 'CITKEY', 'CITKEY', 'CITKEY');
-insert into objects values ('IDD_CITLOCK',5888,'IDC_LOCK',11, 'CITLOCK', 'CITLOCK', 'CITLOCK');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x00',512,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x01',513,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x02',514,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x03',515,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x04',516,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x05',517,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x06',518,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x07',519,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x08',520,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x09',521,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x0a',522,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x0b',523,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x0c',524,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x0d',525,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x0e',526,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+0*0x10+0x0f',527,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x00',528,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x01',529,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x02',530,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x03',531,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x04',532,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x05',533,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x06',534,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x07',535,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x08',536,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x09',537,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x0a',538,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x0b',539,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x0c',540,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x0d',541,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x0e',542,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+1*0x10+0x0f',543,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x00',544,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x01',545,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x02',546,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x03',547,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x04',548,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x05',549,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x06',550,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x07',551,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x08',552,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x09',553,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x0a',554,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x0b',555,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x0c',556,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x0d',557,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x0e',558,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+2*0x10+0x0f',559,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x00',560,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x01',561,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x02',562,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x03',563,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x04',564,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x05',565,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x06',566,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x07',567,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x08',568,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x09',569,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x0a',570,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x0b',571,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x0c',572,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x0d',573,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x0e',574,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CITY_KEY1+3*0x10+0x0f',575,'IDC_KEY',5, 'citykey1', 'citykey1', 'citykey1');
-insert into objects values ('IDD_CROWBAR',9488,'IDC_NULL',0, 'Crowbar', 'Crowbar', 'Crowbar');
-insert into objects values ('IDD_DEATH',30621,'IDC_SPELL',8, 'skull', 'skull', 'skull');
-insert into objects values ('IDD_EMERALD',8522,'IDC_NULL',0, 'EMERALD', 'EMERALD', 'EMERALD');
-insert into objects values ('IDD_ENCHANT',30609,'IDC_SPELL',8, 'enchant', 'enchant', 'enchant');
-insert into objects values ('IDD_ENCSTONE',8526,'IDC_NULL',0, 'encstone', 'encstone', 'encstone');
-insert into objects values ('IDD_EXPLOSION',30617,'IDC_SPELL',8, 'Spelx09', 'Spelx09', 'Spelx09');
-insert into objects values ('IDD_EYEFUSE',9216,'IDC_NULL',0, 'eyefuse', 'eyefuse', 'eyefuse');
-insert into objects values ('IDD_EYESPELL',30629,'IDC_SPELL',8, 'eyespell', 'eyespell', 'eyespell');
-insert into objects values ('IDD_EYEWAND',9219,'IDC_NULL',0, 'eyewand', 'eyewand', 'eyewand');
-insert into objects values ('IDD_FERNLEAF',8480,'',0, 'fernleaf', 'fernleaf', 'fernleaf');
-insert into objects values ('IDD_FISH1',4416,'IDC_FISH',3, 'fish1a', 'fish1a', 'fish1a');
-insert into objects values ('IDD_FISH10',4425,'IDC_FISH',3, 'fish10a', 'fish10a', 'fish10a');
-insert into objects values ('IDD_FISH2',4417,'IDC_FISH',3, 'fish2a', 'fish2a', 'fish2a');
-insert into objects values ('IDD_FISH3',4418,'IDC_FISH',3, 'fish3a', 'fish3a', 'fish3a');
-insert into objects values ('IDD_FISH4',4419,'IDC_FISH',3, 'fish4a', 'fish4a', 'fish4a');
-insert into objects values ('IDD_FISH5',4420,'IDC_FISH',3, 'fish5a', 'fish5a', 'fish5a');
-insert into objects values ('IDD_FISH6',4421,'IDC_FISH',3, 'fish6a', 'fish6a', 'fish6a');
-insert into objects values ('IDD_FISH7',4422,'IDC_FISH',3, 'fish7a', 'fish7a', 'fish7a');
-insert into objects values ('IDD_FISH8',4423,'IDC_FISH',3, 'fish8a', 'fish8a', 'fish8a');
-insert into objects values ('IDD_FISH9',4424,'IDC_FISH',3, 'fish9a', 'fish9a', 'fish9a');
-insert into objects values ('IDD_FISHASH1',4448,'IDC_FISHASH',4, 'fpouch1', 'fpouch1', 'fpouch1');
-insert into objects values ('IDD_FISHASH10',4457,'IDC_FISHASH',4, 'fpouch10', 'fpouch10', 'fpouch10');
-insert into objects values ('IDD_FISHASH2',4449,'IDC_FISHASH',4, 'fpouch2', 'fpouch2', 'fpouch2');
-insert into objects values ('IDD_FISHASH3',4450,'IDC_FISHASH',4, 'fpouch3', 'fpouch3', 'fpouch3');
-insert into objects values ('IDD_FISHASH4',4451,'IDC_FISHASH',4, 'fpouch4', 'fpouch4', 'fpouch4');
-insert into objects values ('IDD_FISHASH5',4452,'IDC_FISHASH',4, 'fpouch5', 'fpouch5', 'fpouch5');
-insert into objects values ('IDD_FISHASH6',4453,'IDC_FISHASH',4, 'fpouch6', 'fpouch6', 'fpouch6');
-insert into objects values ('IDD_FISHASH7',4454,'IDC_FISHASH',4, 'fpouch7', 'fpouch7', 'fpouch7');
-insert into objects values ('IDD_FISHASH8',4455,'IDC_FISHASH',4, 'fpouch8', 'fpouch8', 'fpouch8');
-insert into objects values ('IDD_FISHASH9',4456,'IDC_FISHASH',4, 'fpouch9', 'fpouch9', 'fpouch9');
-insert into objects values ('IDD_FREQUENCY',28674,'IDC_SPELL',8, 'Beemer', 'Beemer', 'Beemer');
-insert into objects values ('IDD_GLEAFSPT',8481,'',0, 'gleafspt', 'gleafspt', 'gleafspt');
-insert into objects values ('IDD_GOBTRFLY',24594,'IDC_TOKEN',9, 'GoBtrfly', 'GoBtrfly', 'GoBtrfly');
-insert into objects values ('IDD_GODRAGON',24595,'IDC_TOKEN',9, 'GoDragon', 'GoDragon', 'GoDragon');
-insert into objects values ('IDD_GOPAB',16002,'IDC_NULL',0, 'GOPAB', 'GOPAB', 'GOPAB');
-insert into objects values ('IDD_GOPAG',16003,'IDC_NULL',0, 'GOPAG', 'GOPAG', 'GOPAG');
-insert into objects values ('IDD_GOPAR',16004,'IDC_NULL',0, 'GOPAR', 'GOPAR', 'GOPAR');
-insert into objects values ('IDD_H2OMASK',4472,'',0, 'H2OMASK', 'H2OMASK', 'H2OMASK');
-insert into objects values ('IDD_HALUCINATE',30626,'IDC_SPELL',8, 'redeye', 'redeye', 'redeye');
-insert into objects values ('IDD_HOLDING',30612,'IDC_SPELL',8, 'holding', 'holding', 'holding');
-insert into objects values ('IDD_INVISIBLE',30622,'IDC_SPELL',8, 'Spelx04', 'Spelx04', 'Spelx04');
-insert into objects values ('IDD_LOCK',30618,'IDC_SPELL',8, 'Spelx10', 'Spelx10', 'Spelx10');
-insert into objects values ('IDD_LOG',4464,'',0, 'smalllog', 'smalllog', 'smalllog');
-insert into objects values ('IDD_MAPBTN',8572,'IDC_NULL',0, 'mapbtn', 'mapbtn', 'mapbtn');
-insert into objects values ('IDD_MATCH',4465,'',0, 'torch', 'torch', 'torch');
-insert into objects values ('IDD_MINDREAD',30625,'IDC_SPELL',8, 'mind', 'mind', 'mind');
-insert into objects values ('IDD_NYBREATH',30627,'IDC_SPELL',8, 'Spelx09', 'Spelx09', 'Spelx09');
-insert into objects values ('IDD_NYPLANT',8525,'IDC_NULL',0, 'nyplant', 'nyplant', 'nyplant');
-insert into objects values ('IDD_NYSMASK',4473,'',0, 'NYSMASK', 'NYSMASK', 'NYSMASK');
-insert into objects values ('IDD_NYSVIAL',80,'IDC_NULL',0, 'nysvial', 'nysvial', 'nysvial');
-insert into objects values ('IDD_OMUSHSPT',8482,'',0, 'omushspt', 'omushspt', 'omushspt');
-insert into objects values ('IDD_PFLWRSPT',8483,'',0, 'pflwrspt', 'pflwrspt', 'pflwrspt');
-insert into objects values ('IDD_PICK',4463,'IDC_NULL',0, 'PICK', 'PICK', 'PICK');
-insert into objects values ('IDD_PLEAFSPT',8484,'',0, 'pleafspt', 'pleafspt', 'pleafspt');
-insert into objects values ('IDD_POLE1',4353,'IDC_POLE',1, 'pole1cur', 'pole1cur', 'pole1lcu');
-insert into objects values ('IDD_POLE1B0',4368,'IDC_POLE',1, 'pole1cur', 'pole1cur', 'pole1lcb');
-insert into objects values ('IDD_POLE1B1',4369,'IDC_POLE',1, 'pole1cur', 'pole1cur', 'pole1lcb');
-insert into objects values ('IDD_POLE1B2',4370,'IDC_POLE',1, 'pole1cur', 'pole1cur', 'pole1lcb');
-insert into objects values ('IDD_POLE1B3',4371,'IDC_POLE',1, 'pole1cur', 'pole1cur', 'pole1lcb');
-insert into objects values ('IDD_POLE1B4',4372,'IDC_POLE',1, 'pole1cur', 'pole1cur', 'pole1lcb');
-insert into objects values ('IDD_POLE1B5',4373,'IDC_POLE',1, 'pole1cur', 'pole1cur', 'pole1lcb');
-insert into objects values ('IDD_POLE1B6',4374,'IDC_POLE',1, 'pole1cur', 'pole1cur', 'pole1lcb');
-insert into objects values ('IDD_POLE1B7',4375,'IDC_POLE',1, 'pole1cur', 'pole1cur', 'pole1lcb');
-insert into objects values ('IDD_POLE1B8',4376,'IDC_POLE',1, 'pole1cur', 'pole1cur', 'pole1lcb');
-insert into objects values ('IDD_POLE1B9',4377,'IDC_POLE',1, 'pole1cur', 'pole1cur', 'pole1lcb');
-insert into objects values ('IDD_POLE2',4354,'IDC_POLE',1, 'pole2cur', 'pole2cur', 'pole1lcu');
-insert into objects values ('IDD_POLE2B0',4384,'IDC_POLE',1, 'pole2cur', 'pole2cur', 'pole1lcb');
-insert into objects values ('IDD_POLE2B1',4385,'IDC_POLE',1, 'pole2cur', 'pole2cur', 'pole1lcb');
-insert into objects values ('IDD_POLE2B2',4386,'IDC_POLE',1, 'pole2cur', 'pole2cur', 'pole1lcb');
-insert into objects values ('IDD_POLE2B3',4387,'IDC_POLE',1, 'pole2cur', 'pole2cur', 'pole1lcb');
-insert into objects values ('IDD_POLE2B4',4388,'IDC_POLE',1, 'pole2cur', 'pole2cur', 'pole1lcb');
-insert into objects values ('IDD_POLE2B5',4389,'IDC_POLE',1, 'pole2cur', 'pole2cur', 'pole1lcb');
-insert into objects values ('IDD_POLE2B6',4390,'IDC_POLE',1, 'pole2cur', 'pole2cur', 'pole1lcb');
-insert into objects values ('IDD_POLE2B7',4391,'IDC_POLE',1, 'pole2cur', 'pole2cur', 'pole1lcb');
-insert into objects values ('IDD_POLE2B8',4392,'IDC_POLE',1, 'pole2cur', 'pole2cur', 'pole1lcb');
-insert into objects values ('IDD_POLE2B9',4393,'IDC_POLE',1, 'pole2cur', 'pole2cur', 'pole1lcb');
-insert into objects values ('IDD_PROTECT',30620,'IDC_SPELL',8, 'Spelx02', 'Spelx02', 'Spelx02');
-insert into objects values ('IDD_RECORDER',30615,'IDC_SPELL',8, 'Spelx07', 'Spelx07', 'Spelx07');
-insert into objects values ('IDD_REDBERRY',8486,'',0, 'redberry', 'redberry', 'redberry');
-insert into objects values ('IDD_REVERSIA',24592,'IDC_TOKEN',9, 'ReversiA', 'ReversiA', 'ReversiA');
-insert into objects values ('IDD_REVERSIB',24593,'IDC_TOKEN',9, 'ReversiB', 'ReversiB', 'ReversiB');
-insert into objects values ('IDD_ROCK',5892,'',0, 'ROCK', 'ROCK', 'ROCK');
-insert into objects values ('IDD_ROOTBLUE',8504,'IDC_NULL',0, 'ROOTBLUE', 'ROOTBLUE', 'ROOTBLUE');
-insert into objects values ('IDD_ROOTORANGE',8506,'IDC_NULL',0, 'ROOTORANGE', 'ROOTORANGE', 'ROOTORANGE');
-insert into objects values ('IDD_ROOTWHITE',8505,'IDC_NULL',0, 'ROOTWHITE', 'ROOTWHITE', 'ROOTWHITE');
-insert into objects values ('IDD_RUBY',8523,'IDC_NULL',0, 'RUBY', 'RUBY', 'RUBY');
-insert into objects values ('IDD_SCOOPE',81,'IDC_NULL',0, 'scoopE', 'scoopE', 'scoopE');
-insert into objects values ('IDD_SCOOPF',82,'IDC_NULL',0, 'scoopF', 'scoopF', 'scoopF');
-insert into objects values ('IDD_SCR001',8705,'IDC_SCROLL',12, 'SCR001', 'SCR001', 'SCR001');
-insert into objects values ('IDD_SCR002',8706,'IDC_SCROLL',12, 'SCR002', 'SCR002', 'SCR002');
-insert into objects values ('IDD_SCR003',8707,'IDC_SCROLL',12, 'SCR003', 'SCR003', 'SCR003');
-insert into objects values ('IDD_SCR004',8708,'IDC_SCROLL',12, 'SCR004', 'SCR004', 'SCR004');
-insert into objects values ('IDD_SCR005',8709,'IDC_SCROLL',12, 'SCR005', 'SCR005', 'SCR005');
-insert into objects values ('IDD_SCR006',8710,'IDC_SCROLL',12, 'SCR006', 'SCR006', 'SCR006');
-insert into objects values ('IDD_SCR007',8711,'IDC_SCROLL',12, 'SCR007', 'SCR007', 'SCR007');
-insert into objects values ('IDD_SCR008',8712,'IDC_SCROLL',12, 'SCR008', 'SCR008', 'SCR008');
-insert into objects values ('IDD_SCR009',8713,'IDC_SCROLL',12, 'SCR009', 'SCR009', 'SCR009');
-insert into objects values ('IDD_SCR010',8720,'IDC_SCROLL',12, 'SCR010', 'SCR010', 'SCR010');
-insert into objects values ('IDD_SCR011',8721,'IDC_SCROLL',12, 'SCR011', 'SCR011', 'SCR011');
-insert into objects values ('IDD_SCR012',8722,'IDC_SCROLL',12, 'SCR012', 'SCR012', 'SCR012');
-insert into objects values ('IDD_SCR013',8723,'IDC_SCROLL',12, 'SCR013', 'SCR013', 'SCR013');
-insert into objects values ('IDD_SCR014',8724,'IDC_SCROLL',12, 'SCR014', 'SCR014', 'SCR014');
-insert into objects values ('IDD_SCR015',8725,'IDC_SCROLL',12, 'SCR015', 'SCR015', 'SCR015');
-insert into objects values ('IDD_SCR016',8726,'IDC_SCROLL',12, 'SCR016', 'SCR016', 'SCR016');
-insert into objects values ('IDD_SCR017',8727,'IDC_SCROLL',12, 'SCR017', 'SCR017', 'SCR017');
-insert into objects values ('IDD_SCR018',8728,'IDC_SCROLL',12, 'SCR018', 'SCR018', 'SCR018');
-insert into objects values ('IDD_SCR019',8729,'IDC_SCROLL',12, 'SCR019', 'SCR019', 'SCR019');
-insert into objects values ('IDD_SCR020',8736,'IDC_SCROLL',12, 'SCR020', 'SCR020', 'SCR020');
-insert into objects values ('IDD_SHOVEL',4469,'',0, 'shovelb', 'shovelb', 'shovelb');
-insert into objects values ('IDD_SPEAKER',200,'IDC_TOKEN',9, 'SPEAKER', 'SPEAKER', 'SPEAKER');
-insert into objects values ('IDD_SPELL01',30583,'IDC_SPELL',8, 'Spell01', 'Spell01', 'Spell01');
-insert into objects values ('IDD_SPELL02',30584,'IDC_SPELL',8, 'Spell02', 'Spell02', 'Spell02');
-insert into objects values ('IDD_SPELL03',30585,'IDC_SPELL',8, 'Spell03', 'Spell03', 'Spell03');
-insert into objects values ('IDD_SPELL04',30586,'IDC_SPELL',8, 'Spell04', 'Spell04', 'Spell04');
-insert into objects values ('IDD_SPELL05',30587,'IDC_SPELL',8, 'Spell05', 'Spell05', 'Spell05');
-insert into objects values ('IDD_SPELL06',30588,'IDC_SPELL',8, 'Spell06', 'Spell06', 'Spell06');
-insert into objects values ('IDD_SPELL07',30589,'IDC_SPELL',8, 'Spell07', 'Spell07', 'Spell07');
-insert into objects values ('IDD_SPELL08',30590,'IDC_SPELL',8, 'Spell08', 'Spell08', 'Spell08');
-insert into objects values ('IDD_SPELL09',30591,'IDC_SPELL',8, 'Spell09', 'Spell09', 'Spell09');
-insert into objects values ('IDD_SPELL10',30592,'IDC_SPELL',8, 'Spell10', 'Spell10', 'Spell10');
-insert into objects values ('IDD_SPELx01',30599,'IDC_SPELL',8, 'Spelx01', 'Spelx01', 'Spelx01');
-insert into objects values ('IDD_SPELx02',30600,'IDC_SPELL',8, 'Spelx02', 'Spelx02', 'Spelx02');
-insert into objects values ('IDD_SPELx03',30601,'IDC_SPELL',8, 'Spelx03', 'Spelx03', 'Spelx03');
-insert into objects values ('IDD_SPELx04',30602,'IDC_SPELL',8, 'Spelx04', 'Spelx04', 'Spelx04');
-insert into objects values ('IDD_SPELx05',30603,'IDC_SPELL',8, 'Spelx05', 'Spelx05', 'Spelx05');
-insert into objects values ('IDD_SPELx06',30604,'IDC_SPELL',8, 'Spelx06', 'Spelx06', 'Spelx06');
-insert into objects values ('IDD_SPELx07',30605,'IDC_SPELL',8, 'Spelx07', 'Spelx07', 'Spelx07');
-insert into objects values ('IDD_SPELx08',30606,'IDC_SPELL',8, 'Spelx08', 'Spelx08', 'Spelx08');
-insert into objects values ('IDD_SPELx09',30607,'IDC_SPELL',8, 'Spelx09', 'Spelx09', 'Spelx09');
-insert into objects values ('IDD_SPELx10',30608,'IDC_SPELL',8, 'Spelx10', 'Spelx10', 'Spelx10');
-insert into objects values ('IDD_SPINNER',28673,'IDC_SPELL',8, 'h2oSp01', 'h2oSp01', 'h2oSp01');
-insert into objects values ('IDD_SPINSPELL',28672,'IDC_SPELL',8, 'spinspel', 'spinspel', 'spinspel');
-insert into objects values ('IDD_SPIRIT0',30576,'IDC_SPELL',8, 'Spirit1', 'Spirit1', 'Spirit1');
-insert into objects values ('IDD_SPIRIT1',30577,'IDC_SPELL',8, 'Spirit1', 'Spirit1', 'Spirit1');
-insert into objects values ('IDD_SPIRIT2',30578,'IDC_SPELL',8, 'Spirit1', 'Spirit1', 'Spirit1');
-insert into objects values ('IDD_SPIRIT3',30579,'IDC_SPELL',8, 'Spirit1', 'Spirit1', 'Spirit1');
-insert into objects values ('IDD_SPRINGS',30580,'IDC_SPELL',8, 'SpRings', 'SpRings', 'SpRings');
-insert into objects values ('IDD_STALKER',30610,'IDC_SPELL',8, 'stalk', 'stalk', 'stalk');
-insert into objects values ('IDD_STRENGTH',30623,'IDC_SPELL',8, 'Spelx05', 'Spelx05', 'Spelx05');
-insert into objects values ('IDD_TELEKINESIS',30616,'IDC_SPELL',8, 'tele', 'tele', 'tele');
-insert into objects values ('IDD_TEMPLATE01+0*5+0',1537,'IDC_TEMPLATE',7, 't01', 't01', 't01');
-insert into objects values ('IDD_TEMPLATE01+0*5+1',1538,'IDC_TEMPLATE',7, 't02', 't02', 't02');
-insert into objects values ('IDD_TEMPLATE01+0*5+2',1539,'IDC_TEMPLATE',7, 't03', 't03', 't03');
-insert into objects values ('IDD_TEMPLATE01+0*5+3',1540,'IDC_TEMPLATE',7, 't04', 't04', 't04');
-insert into objects values ('IDD_TEMPLATE01+0*5+4',1541,'IDC_TEMPLATE',7, 't05', 't05', 't05');
-insert into objects values ('IDD_TEMPLATE01+1*5+0',1542,'IDC_TEMPLATE',7, 't06', 't06', 't06');
-insert into objects values ('IDD_TEMPLATE01+1*5+1',1543,'IDC_TEMPLATE',7, 't07', 't07', 't07');
-insert into objects values ('IDD_TEMPLATE01+1*5+2',1544,'IDC_TEMPLATE',7, 't08', 't08', 't08');
-insert into objects values ('IDD_TEMPLATE01+1*5+3',1545,'IDC_TEMPLATE',7, 't09', 't09', 't09');
-insert into objects values ('IDD_TEMPLATE01+1*5+4',1546,'IDC_TEMPLATE',7, 't10', 't10', 't10');
-insert into objects values ('IDD_TEMPLATE01+2*5+0',1547,'IDC_TEMPLATE',7, 't11', 't11', 't11');
-insert into objects values ('IDD_TEMPLATE01+2*5+1',1548,'IDC_TEMPLATE',7, 't12', 't12', 't12');
-insert into objects values ('IDD_TEMPLATE01+2*5+2',1549,'IDC_TEMPLATE',7, 't13', 't13', 't13');
-insert into objects values ('IDD_TEMPLATE01+2*5+3',1550,'IDC_TEMPLATE',7, 't14', 't14', 't14');
-insert into objects values ('IDD_TEMPLATE01+2*5+4',1551,'IDC_TEMPLATE',7, 't15', 't15', 't15');
-insert into objects values ('IDD_TEMPLATE01+3*5+0',1552,'IDC_TEMPLATE',7, 't16', 't16', 't16');
-insert into objects values ('IDD_TEMPLATE01+3*5+1',1553,'IDC_TEMPLATE',7, 't17', 't17', 't17');
-insert into objects values ('IDD_TEMPLATE01+3*5+2',1554,'IDC_TEMPLATE',7, 't18', 't18', 't18');
-insert into objects values ('IDD_TEMPLATE01+3*5+3',1555,'IDC_TEMPLATE',7, 't19', 't19', 't19');
-insert into objects values ('IDD_TEMPLATE01+3*5+4',1556,'IDC_TEMPLATE',7, 't20', 't20', 't20');
-insert into objects values ('IDD_TEMPLATE01+4*5+0',1557,'IDC_TEMPLATE',7, 't21', 't21', 't21');
-insert into objects values ('IDD_TEMPLATE01+4*5+1',1558,'IDC_TEMPLATE',7, 't22', 't22', 't22');
-insert into objects values ('IDD_TEMPLATE01+4*5+2',1559,'IDC_TEMPLATE',7, 't23', 't23', 't23');
-insert into objects values ('IDD_TEMPLATE01+4*5+3',1560,'IDC_TEMPLATE',7, 't24', 't24', 't24');
-insert into objects values ('IDD_TEMPLATE01+4*5+4',1561,'IDC_TEMPLATE',7, 't25', 't25', 't25');
-insert into objects values ('IDD_TEMPLATE01+5*5+0',1562,'IDC_TEMPLATE',7, 't26', 't26', 't26');
-insert into objects values ('IDD_TEMPLATE01+5*5+1',1563,'IDC_TEMPLATE',7, 't27', 't27', 't27');
-insert into objects values ('IDD_TEMPLATE01+5*5+2',1564,'IDC_TEMPLATE',7, 't28', 't28', 't28');
-insert into objects values ('IDD_TEMPLATE01+5*5+3',1565,'IDC_TEMPLATE',7, 't29', 't29', 't29');
-insert into objects values ('IDD_TEMPLATE01+5*5+4',1566,'IDC_TEMPLATE',7, 't30', 't30', 't30');
-insert into objects values ('IDD_TEMPLATE01+6*5+0',1567,'IDC_TEMPLATE',7, 't31', 't31', 't31');
-insert into objects values ('IDD_TEMPLATE01+6*5+1',1568,'IDC_TEMPLATE',7, 't32', 't32', 't32');
-insert into objects values ('IDD_TEMPLATE01+6*5+2',1569,'IDC_TEMPLATE',7, 't33', 't33', 't33');
-insert into objects values ('IDD_TEMPLATE01+6*5+3',1570,'IDC_TEMPLATE',7, 't34', 't34', 't34');
-insert into objects values ('IDD_TEMPLATE01+6*5+4',1571,'IDC_TEMPLATE',7, 't35', 't35', 't35');
-insert into objects values ('IDD_TRANSFER',30613,'IDC_SPELL',8, 'transfer', 'transfer', 'transfer');
-insert into objects values ('IDD_UNLOCK',30619,'IDC_SPELL',8, 'Spelx01', 'Spelx01', 'Spelx01');
-insert into objects values ('IDD_VESTCAN',4609,'',0, 'VESTCAN', 'VESTCAN', 'VESTCAN');
-insert into objects values ('IDD_VESTH2O',4610,'',0, 'VESTH2O', 'VESTH2O', 'VESTH2O');
-insert into objects values ('IDD_VILKEY',5891,'',0, 'VILKEY', 'VILKEY', 'VILKEY');
-insert into objects values ('IDD_VILLOCK',5890,'IDC_LOCK',11, 'VILLOCK', 'VILLOCK', 'VILLOCK');
-insert into objects values ('IDD_WATER',4466,'',0, 'water', 'water', 'water');
-insert into objects values ('IDD_WBISHOP',24581,'IDC_TOKEN',9, 'Sbishop', 'Sbishop', 'Sbishop');
-insert into objects values ('IDD_WETBREATH',30628,'IDC_SPELL',8, 'Spelx10', 'Spelx10', 'Spelx10');
-insert into objects values ('IDD_WFLWRSPT',8487,'',0, 'wflwrspt', 'wflwrspt', 'wflwrspt');
-insert into objects values ('IDD_WKING',24576,'IDC_TOKEN',9, 'Sking', 'Sking', 'Sking');
-insert into objects values ('IDD_WKINGME',24582,'IDC_TOKEN',9, 'Pkingme', 'Pkingme', 'Pkingme');
-insert into objects values ('IDD_WKNIGHT',24580,'IDC_TOKEN',9, 'Sknight', 'Sknight', 'Sknight');
-insert into objects values ('IDD_WPAWN',24578,'IDC_TOKEN',9, 'fnttnb18', 'fnttnb18', 'fnttnb18');
-insert into objects values ('IDD_WQUEEN',24577,'IDC_TOKEN',9, 'Squeen', 'Squeen', 'Squeen');
-insert into objects values ('IDD_WROOK',24579,'IDC_TOKEN',9, 'Srook', 'Srook', 'Srook');
-insert into objects values ('IDD_YFLWRSPT',8488,'',0, 'yflwrspt', 'yflwrspt', 'yflwrspt');
-insert into objects values ('IDD_YMUSHSPT',8489,'',0, 'ymushspt', 'ymushspt', 'ymushspt');
+insert into objects values
+('IDD_ALARM',0x7796,'IDC_SPELL',8,'Spelx06','Spelx06','Spelx06'),
+('IDD_AMULET',0x2148,'IDC_NULL',0,'AMULET1','AMULET1','AMULET1'),
+('IDD_BAIT0',0x1130,'IDC_BAIT',2,'grubanm','grubanm','grubanm'),
+('IDD_BAIT1',0x1131,'IDC_BAIT',2,'buginv','buginv','buginv'),
+('IDD_BAIT2',0x1132,'IDC_BAIT',2,'wormwigl','wormwigl','wormwigl'),
+('IDD_BAIT3',0x1133,'IDC_BAIT',2,'flop','flop','flop'),
+('IDD_BAIT4',0x1134,'IDC_BAIT',2,'luur1','luur1','luur1'),
+('IDD_BAIT5',0x1135,'IDC_BAIT',2,'luur2','luur2','luur2'),
+('IDD_BAIT6',0x1136,'IDC_BAIT',2,'luur3','luur3','luur3'),
+('IDD_BAIT7',0x1137,'IDC_BAIT',2,'luur4','luur4','luur4'),
+('IDD_BAIT8',0x1138,'IDC_BAIT',2,'grubanm','grubanm','grubanm'),
+('IDD_BAIT9',0x1139,'IDC_BAIT',2,'grubanm','grubanm','grubanm'),
+('IDD_BANISHMENT',0x77a0,'IDC_SPELL',8,'skull','skull','skull'),
+('IDD_BBISHOP',0x600d,'IDC_TOKEN',9,'Gbishop','Gbishop','Gbishop'),
+('IDD_BKING',0x6008,'IDC_TOKEN',9,'Gking','Gking','Gking'),
+('IDD_BKINGME',0x600e,'IDC_TOKEN',9,'Bkingme','Bkingme','Bkingme'),
+('IDD_BKNIGHT',0x600c,'IDC_TOKEN',9,'Gknight','Gknight','Gknight'),
+('IDD_BLINDNESS',0x7793,'IDC_SPELL',8,'blind','blind','blind'),
+('IDD_BLUEBERRY',0x2125,'',0,'bluberry','bluberry','bluberry'),
+('IDD_BOMB1',0x1176,'IDC_BOMB',10,'BOMB1','BOMB1','BOMB1'),
+('IDD_BOMB2',0x1177,'IDC_BOMB',10,'BOMB2','BOMB2','BOMB2'),
+('IDD_BPAWN',0x600a,'IDC_TOKEN',9,'Gpawn','Gpawn','Gpawn'),
+('IDD_BQUEEN',0x6009,'IDC_TOKEN',9,'Gqueen','Gqueen','Gqueen'),
+('IDD_BROOK',0x600b,'IDC_TOKEN',9,'Grook','Grook','Grook'),
+('IDD_BUCKE',0x1173,'',0,'BUCKE','BUCKE','BUCKE'),
+('IDD_BUCKF',0x1174,'',0,'BUCKF','BUCKF','BUCKF'),
+('IDD_CHEMV01',0x500,'IDC_CHEM',6,'chemv01','chemv01','chemv01'),
+('IDD_CHEMV02',0x501,'IDC_CHEM',6,'chemv02','chemv02','chemv02'),
+('IDD_CHEMV03',0x502,'IDC_CHEM',6,'chemv03','chemv03','chemv03'),
+('IDD_CHEMV04',0x503,'IDC_CHEM',6,'chemv04','chemv04','chemv04'),
+('IDD_CHEMV05',0x504,'IDC_CHEM',6,'chemv05','chemv05','chemv05'),
+('IDD_CHEMV06',0x505,'IDC_CHEM',6,'chemv06','chemv06','chemv06'),
+('IDD_CHEMV07',0x506,'IDC_CHEM',6,'chemv07','chemv07','chemv07'),
+('IDD_CHEMV08',0x507,'IDC_CHEM',6,'chemv08','chemv08','chemv08'),
+('IDD_CHEMV09',0x508,'IDC_CHEM',6,'chemv09','chemv09','chemv09'),
+('IDD_CHEMV10',0x509,'IDC_CHEM',6,'chemv10','chemv10','chemv10'),
+('IDD_CHEMV11',0x50a,'IDC_CHEM',6,'chemv11','chemv11','chemv11'),
+('IDD_CHEMV12',0x50b,'IDC_CHEM',6,'chemv12','chemv12','chemv12'),
+('IDD_CHEMV13',0x50c,'IDC_CHEM',6,'chemv13','chemv13','chemv13'),
+('IDD_CHEMV14',0x50d,'IDC_CHEM',6,'chemv14','chemv14','chemv14'),
+('IDD_CHEMV15',0x50e,'IDC_CHEM',6,'chemv15','chemv15','chemv15'),
+('IDD_CHEMV16',0x50f,'IDC_CHEM',6,'chemv16','chemv16','chemv16'),
+('IDD_CHEMV17',0x510,'IDC_CHEM',6,'chemv17','chemv17','chemv17'),
+('IDD_CHEMV18',0x511,'IDC_CHEM',6,'chemv18','chemv18','chemv18'),
+('IDD_CHEMV19',0x512,'IDC_CHEM',6,'chemv19','chemv19','chemv19'),
+('IDD_CHEMV20',0x513,'IDC_CHEM',6,'chemv20','chemv20','chemv20'),
+('IDD_CITKEY',0x1701,'',0,'CITKEY','CITKEY','CITKEY'),
+('IDD_CITLOCK',0x1700,'IDC_LOCK',11,'CITLOCK','CITLOCK','CITLOCK'),
+('IDD_CITY_KEY1+0*0x10+0x00',0x200,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x01',0x201,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x02',0x202,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x03',0x203,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x04',0x204,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x05',0x205,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x06',0x206,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x07',0x207,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x08',0x208,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x09',0x209,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x0a',0x20a,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x0b',0x20b,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x0c',0x20c,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x0d',0x20d,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x0e',0x20e,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+0*0x10+0x0f',0x20f,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x00',0x210,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x01',0x211,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x02',0x212,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x03',0x213,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x04',0x214,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x05',0x215,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x06',0x216,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x07',0x217,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x08',0x218,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x09',0x219,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x0a',0x21a,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x0b',0x21b,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x0c',0x21c,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x0d',0x21d,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x0e',0x21e,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+1*0x10+0x0f',0x21f,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x00',0x220,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x01',0x221,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x02',0x222,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x03',0x223,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x04',0x224,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x05',0x225,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x06',0x226,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x07',0x227,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x08',0x228,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x09',0x229,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x0a',0x22a,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x0b',0x22b,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x0c',0x22c,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x0d',0x22d,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x0e',0x22e,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+2*0x10+0x0f',0x22f,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x00',0x230,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x01',0x231,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x02',0x232,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x03',0x233,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x04',0x234,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x05',0x235,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x06',0x236,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x07',0x237,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x08',0x238,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x09',0x239,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x0a',0x23a,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x0b',0x23b,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x0c',0x23c,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x0d',0x23d,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x0e',0x23e,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY1+3*0x10+0x0f',0x23f,'IDC_KEY',5,'citykey1','citykey1','citykey1'),
+('IDD_CROWBAR',0x2510,'IDC_NULL',0,'Crowbar','Crowbar','Crowbar'),
+('IDD_DEATH',0x779d,'IDC_SPELL',8,'skull','skull','skull'),
+('IDD_EMERALD',0x214a,'IDC_NULL',0,'EMERALD','EMERALD','EMERALD'),
+('IDD_ENCHANT',0x7791,'IDC_SPELL',8,'enchant','enchant','enchant'),
+('IDD_ENCSTONE',0x214e,'IDC_NULL',0,'encstone','encstone','encstone'),
+('IDD_EXPLOSION',0x7799,'IDC_SPELL',8,'Spelx09','Spelx09','Spelx09'),
+('IDD_EYEFUSE',0x2400,'IDC_NULL',0,'eyefuse','eyefuse','eyefuse'),
+('IDD_EYESPELL',0x77a5,'IDC_SPELL',8,'eyespell','eyespell','eyespell'),
+('IDD_EYEWAND',0x2403,'IDC_NULL',0,'eyewand','eyewand','eyewand'),
+('IDD_FERNLEAF',0x2120,'',0,'fernleaf','fernleaf','fernleaf'),
+('IDD_FISH1',0x1140,'IDC_FISH',3,'fish1a','fish1a','fish1a'),
+('IDD_FISH10',0x1149,'IDC_FISH',3,'fish10a','fish10a','fish10a'),
+('IDD_FISH2',0x1141,'IDC_FISH',3,'fish2a','fish2a','fish2a'),
+('IDD_FISH3',0x1142,'IDC_FISH',3,'fish3a','fish3a','fish3a'),
+('IDD_FISH4',0x1143,'IDC_FISH',3,'fish4a','fish4a','fish4a'),
+('IDD_FISH5',0x1144,'IDC_FISH',3,'fish5a','fish5a','fish5a'),
+('IDD_FISH6',0x1145,'IDC_FISH',3,'fish6a','fish6a','fish6a'),
+('IDD_FISH7',0x1146,'IDC_FISH',3,'fish7a','fish7a','fish7a'),
+('IDD_FISH8',0x1147,'IDC_FISH',3,'fish8a','fish8a','fish8a'),
+('IDD_FISH9',0x1148,'IDC_FISH',3,'fish9a','fish9a','fish9a'),
+('IDD_FISHASH1',0x1160,'IDC_FISHASH',4,'fpouch1','fpouch1','fpouch1'),
+('IDD_FISHASH10',0x1169,'IDC_FISHASH',4,'fpouch10','fpouch10','fpouch10'),
+('IDD_FISHASH2',0x1161,'IDC_FISHASH',4,'fpouch2','fpouch2','fpouch2'),
+('IDD_FISHASH3',0x1162,'IDC_FISHASH',4,'fpouch3','fpouch3','fpouch3'),
+('IDD_FISHASH4',0x1163,'IDC_FISHASH',4,'fpouch4','fpouch4','fpouch4'),
+('IDD_FISHASH5',0x1164,'IDC_FISHASH',4,'fpouch5','fpouch5','fpouch5'),
+('IDD_FISHASH6',0x1165,'IDC_FISHASH',4,'fpouch6','fpouch6','fpouch6'),
+('IDD_FISHASH7',0x1166,'IDC_FISHASH',4,'fpouch7','fpouch7','fpouch7'),
+('IDD_FISHASH8',0x1167,'IDC_FISHASH',4,'fpouch8','fpouch8','fpouch8'),
+('IDD_FISHASH9',0x1168,'IDC_FISHASH',4,'fpouch9','fpouch9','fpouch9'),
+('IDD_FREQUENCY',0x7002,'IDC_SPELL',8,'Beemer','Beemer','Beemer'),
+('IDD_GLEAFSPT',0x2121,'',0,'gleafspt','gleafspt','gleafspt'),
+('IDD_GOBTRFLY',0x6012,'IDC_TOKEN',9,'GoBtrfly','GoBtrfly','GoBtrfly'),
+('IDD_GODRAGON',0x6013,'IDC_TOKEN',9,'GoDragon','GoDragon','GoDragon'),
+('IDD_GOPAB',0x3e82,'IDC_NULL',0,'GOPAB','GOPAB','GOPAB'),
+('IDD_GOPAG',0x3e83,'IDC_NULL',0,'GOPAG','GOPAG','GOPAG'),
+('IDD_GOPAR',0x3e84,'IDC_NULL',0,'GOPAR','GOPAR','GOPAR'),
+('IDD_H2OMASK',0x1178,'',0,'H2OMASK','H2OMASK','H2OMASK'),
+('IDD_HALUCINATE',0x77a2,'IDC_SPELL',8,'redeye','redeye','redeye'),
+('IDD_HOLDING',0x7794,'IDC_SPELL',8,'holding','holding','holding'),
+('IDD_INVISIBLE',0x779e,'IDC_SPELL',8,'Spelx04','Spelx04','Spelx04'),
+('IDD_LOCK',0x779a,'IDC_SPELL',8,'Spelx10','Spelx10','Spelx10'),
+('IDD_LOG',0x1170,'',0,'smalllog','smalllog','smalllog'),
+('IDD_LUNCHCRUMBS',0x3e8a,'IDC_NULL',0,'LUNCHCRUMBS','LUNCHCRUMBS','LUNCHCRUMBS'),
+('IDD_MAPBTN',0x217c,'IDC_NULL',0,'mapbtn','mapbtn','mapbtn'),
+('IDD_MATCH',0x1171,'',0,'torch','torch','torch'),
+('IDD_MINDREAD',0x77a1,'IDC_SPELL',8,'mind','mind','mind'),
+('IDD_NYBREATH',0x77a3,'IDC_SPELL',8,'Spelx09','Spelx09','Spelx09'),
+('IDD_NYPLANT',0x214d,'IDC_NULL',0,'nyplant','nyplant','nyplant'),
+('IDD_NYSMASK',0x1179,'',0,'NYSMASK','NYSMASK','NYSMASK'),
+('IDD_NYSVIAL',0x50,'IDC_NULL',0,'nysvial','nysvial','nysvial'),
+('IDD_OMUSHSPT',0x2122,'',0,'omushspt','omushspt','omushspt'),
+('IDD_PFLWRSPT',0x2123,'',0,'pflwrspt','pflwrspt','pflwrspt'),
+('IDD_PICK',0x116f,'IDC_NULL',0,'PICK','PICK','PICK'),
+('IDD_PLEAFSPT',0x2124,'',0,'pleafspt','pleafspt','pleafspt'),
+('IDD_POLE1',0x1101,'IDC_POLE',1,'pole1cur','pole1cur','pole1lcu'),
+('IDD_POLE1B0',0x1110,'IDC_POLE',1,'pole1cur','pole1cur','pole1lcb'),
+('IDD_POLE1B1',0x1111,'IDC_POLE',1,'pole1cur','pole1cur','pole1lcb'),
+('IDD_POLE1B2',0x1112,'IDC_POLE',1,'pole1cur','pole1cur','pole1lcb'),
+('IDD_POLE1B3',0x1113,'IDC_POLE',1,'pole1cur','pole1cur','pole1lcb'),
+('IDD_POLE1B4',0x1114,'IDC_POLE',1,'pole1cur','pole1cur','pole1lcb'),
+('IDD_POLE1B5',0x1115,'IDC_POLE',1,'pole1cur','pole1cur','pole1lcb'),
+('IDD_POLE1B6',0x1116,'IDC_POLE',1,'pole1cur','pole1cur','pole1lcb'),
+('IDD_POLE1B7',0x1117,'IDC_POLE',1,'pole1cur','pole1cur','pole1lcb'),
+('IDD_POLE1B8',0x1118,'IDC_POLE',1,'pole1cur','pole1cur','pole1lcb'),
+('IDD_POLE1B9',0x1119,'IDC_POLE',1,'pole1cur','pole1cur','pole1lcb'),
+('IDD_POLE2',0x1102,'IDC_POLE',1,'pole2cur','pole2cur','pole1lcu'),
+('IDD_POLE2B0',0x1120,'IDC_POLE',1,'pole2cur','pole2cur','pole1lcb'),
+('IDD_POLE2B1',0x1121,'IDC_POLE',1,'pole2cur','pole2cur','pole1lcb'),
+('IDD_POLE2B2',0x1122,'IDC_POLE',1,'pole2cur','pole2cur','pole1lcb'),
+('IDD_POLE2B3',0x1123,'IDC_POLE',1,'pole2cur','pole2cur','pole1lcb'),
+('IDD_POLE2B4',0x1124,'IDC_POLE',1,'pole2cur','pole2cur','pole1lcb'),
+('IDD_POLE2B5',0x1125,'IDC_POLE',1,'pole2cur','pole2cur','pole1lcb'),
+('IDD_POLE2B6',0x1126,'IDC_POLE',1,'pole2cur','pole2cur','pole1lcb'),
+('IDD_POLE2B7',0x1127,'IDC_POLE',1,'pole2cur','pole2cur','pole1lcb'),
+('IDD_POLE2B8',0x1128,'IDC_POLE',1,'pole2cur','pole2cur','pole1lcb'),
+('IDD_POLE2B9',0x1129,'IDC_POLE',1,'pole2cur','pole2cur','pole1lcb'),
+('IDD_PROTECT',0x779c,'IDC_SPELL',8,'Spelx02','Spelx02','Spelx02'),
+('IDD_RECORDER',0x7797,'IDC_SPELL',8,'Spelx07','Spelx07','Spelx07'),
+('IDD_REDBERRY',0x2126,'',0,'redberry','redberry','redberry'),
+('IDD_REVERSIA',0x6010,'IDC_TOKEN',9,'ReversiA','ReversiA','ReversiA'),
+('IDD_REVERSIB',0x6011,'IDC_TOKEN',9,'ReversiB','ReversiB','ReversiB'),
+('IDD_ROCK',0x1704,'',0,'ROCK','ROCK','ROCK'),
+('IDD_ROOTBLUE',0x2138,'IDC_NULL',0,'ROOTBLUE','ROOTBLUE','ROOTBLUE'),
+('IDD_ROOTORANGE',0x213a,'IDC_NULL',0,'ROOTORANGE','ROOTORANGE','ROOTORANGE'),
+('IDD_ROOTWHITE',0x2139,'IDC_NULL',0,'ROOTWHITE','ROOTWHITE','ROOTWHITE'),
+('IDD_RUBY',0x214b,'IDC_NULL',0,'RUBY','RUBY','RUBY'),
+('IDD_SCOOPE',0x51,'IDC_NULL',0,'scoopE','scoopE','scoopE'),
+('IDD_SCOOPF',0x52,'IDC_NULL',0,'scoopF','scoopF','scoopF'),
+('IDD_SCR001',0x2201,'IDC_SCROLL',12,'SCR001','SCR001','SCR001'),
+('IDD_SCR002',0x2202,'IDC_SCROLL',12,'SCR002','SCR002','SCR002'),
+('IDD_SCR003',0x2203,'IDC_SCROLL',12,'SCR003','SCR003','SCR003'),
+('IDD_SCR004',0x2204,'IDC_SCROLL',12,'SCR004','SCR004','SCR004'),
+('IDD_SCR005',0x2205,'IDC_SCROLL',12,'SCR005','SCR005','SCR005'),
+('IDD_SCR006',0x2206,'IDC_SCROLL',12,'SCR006','SCR006','SCR006'),
+('IDD_SCR007',0x2207,'IDC_SCROLL',12,'SCR007','SCR007','SCR007'),
+('IDD_SCR008',0x2208,'IDC_SCROLL',12,'SCR008','SCR008','SCR008'),
+('IDD_SCR009',0x2209,'IDC_SCROLL',12,'SCR009','SCR009','SCR009'),
+('IDD_SCR010',0x2210,'IDC_SCROLL',12,'SCR010','SCR010','SCR010'),
+('IDD_SCR011',0x2211,'IDC_SCROLL',12,'SCR011','SCR011','SCR011'),
+('IDD_SCR012',0x2212,'IDC_SCROLL',12,'SCR012','SCR012','SCR012'),
+('IDD_SCR013',0x2213,'IDC_SCROLL',12,'SCR013','SCR013','SCR013'),
+('IDD_SCR014',0x2214,'IDC_SCROLL',12,'SCR014','SCR014','SCR014'),
+('IDD_SCR015',0x2215,'IDC_SCROLL',12,'SCR015','SCR015','SCR015'),
+('IDD_SCR016',0x2216,'IDC_SCROLL',12,'SCR016','SCR016','SCR016'),
+('IDD_SCR017',0x2217,'IDC_SCROLL',12,'SCR017','SCR017','SCR017'),
+('IDD_SCR018',0x2218,'IDC_SCROLL',12,'SCR018','SCR018','SCR018'),
+('IDD_SCR019',0x2219,'IDC_SCROLL',12,'SCR019','SCR019','SCR019'),
+('IDD_SCR020',0x2220,'IDC_SCROLL',12,'SCR020','SCR020','SCR020'),
+('IDD_SHOVEL',0x1175,'',0,'shovelb','shovelb','shovelb'),
+('IDD_SPEAKER',0xc8,'IDC_TOKEN',9,'SPEAKER','SPEAKER','SPEAKER'),
+('IDD_SPELL01',0x7777,'IDC_SPELL',8,'Spell01','Spell01','Spell01'),
+('IDD_SPELL02',0x7778,'IDC_SPELL',8,'Spell02','Spell02','Spell02'),
+('IDD_SPELL03',0x7779,'IDC_SPELL',8,'Spell03','Spell03','Spell03'),
+('IDD_SPELL04',0x777a,'IDC_SPELL',8,'Spell04','Spell04','Spell04'),
+('IDD_SPELL05',0x777b,'IDC_SPELL',8,'Spell05','Spell05','Spell05'),
+('IDD_SPELL06',0x777c,'IDC_SPELL',8,'Spell06','Spell06','Spell06'),
+('IDD_SPELL07',0x777d,'IDC_SPELL',8,'Spell07','Spell07','Spell07'),
+('IDD_SPELL08',0x777e,'IDC_SPELL',8,'Spell08','Spell08','Spell08'),
+('IDD_SPELL09',0x777f,'IDC_SPELL',8,'Spell09','Spell09','Spell09'),
+('IDD_SPELL10',0x7780,'IDC_SPELL',8,'Spell10','Spell10','Spell10'),
+('IDD_SPELx01',0x7787,'IDC_SPELL',8,'Spelx01','Spelx01','Spelx01'),
+('IDD_SPELx02',0x7788,'IDC_SPELL',8,'Spelx02','Spelx02','Spelx02'),
+('IDD_SPELx03',0x7789,'IDC_SPELL',8,'Spelx03','Spelx03','Spelx03'),
+('IDD_SPELx04',0x778a,'IDC_SPELL',8,'Spelx04','Spelx04','Spelx04'),
+('IDD_SPELx05',0x778b,'IDC_SPELL',8,'Spelx05','Spelx05','Spelx05'),
+('IDD_SPELx06',0x778c,'IDC_SPELL',8,'Spelx06','Spelx06','Spelx06'),
+('IDD_SPELx07',0x778d,'IDC_SPELL',8,'Spelx07','Spelx07','Spelx07'),
+('IDD_SPELx08',0x778e,'IDC_SPELL',8,'Spelx08','Spelx08','Spelx08'),
+('IDD_SPELx09',0x778f,'IDC_SPELL',8,'Spelx09','Spelx09','Spelx09'),
+('IDD_SPELx10',0x7790,'IDC_SPELL',8,'Spelx10','Spelx10','Spelx10'),
+('IDD_SPINNER',0x7001,'IDC_SPELL',8,'h2oSp01','h2oSp01','h2oSp01'),
+('IDD_SPINSPELL',0x7000,'IDC_SPELL',8,'spinspel','spinspel','spinspel'),
+('IDD_SPIRIT0',0x7770,'IDC_SPELL',8,'Spirit1','Spirit1','Spirit1'),
+('IDD_SPIRIT1',0x7771,'IDC_SPELL',8,'Spirit1','Spirit1','Spirit1'),
+('IDD_SPIRIT2',0x7772,'IDC_SPELL',8,'Spirit1','Spirit1','Spirit1'),
+('IDD_SPIRIT3',0x7773,'IDC_SPELL',8,'Spirit1','Spirit1','Spirit1'),
+('IDD_SPRINGS',0x7774,'IDC_SPELL',8,'SpRings','SpRings','SpRings'),
+('IDD_STALKER',0x7792,'IDC_SPELL',8,'stalk','stalk','stalk'),
+('IDD_STRENGTH',0x779f,'IDC_SPELL',8,'Spelx05','Spelx05','Spelx05'),
+('IDD_TELEKINESIS',0x7798,'IDC_SPELL',8,'tele','tele','tele'),
+('IDD_TEMPLATE01+0*5+0',0x601,'IDC_TEMPLATE',7,'t01','t01','t01'),
+('IDD_TEMPLATE01+0*5+1',0x602,'IDC_TEMPLATE',7,'t02','t02','t02'),
+('IDD_TEMPLATE01+0*5+2',0x603,'IDC_TEMPLATE',7,'t03','t03','t03'),
+('IDD_TEMPLATE01+0*5+3',0x604,'IDC_TEMPLATE',7,'t04','t04','t04'),
+('IDD_TEMPLATE01+0*5+4',0x605,'IDC_TEMPLATE',7,'t05','t05','t05'),
+('IDD_TEMPLATE01+1*5+0',0x606,'IDC_TEMPLATE',7,'t06','t06','t06'),
+('IDD_TEMPLATE01+1*5+1',0x607,'IDC_TEMPLATE',7,'t07','t07','t07'),
+('IDD_TEMPLATE01+1*5+2',0x608,'IDC_TEMPLATE',7,'t08','t08','t08'),
+('IDD_TEMPLATE01+1*5+3',0x609,'IDC_TEMPLATE',7,'t09','t09','t09'),
+('IDD_TEMPLATE01+1*5+4',0x60a,'IDC_TEMPLATE',7,'t10','t10','t10'),
+('IDD_TEMPLATE01+2*5+0',0x60b,'IDC_TEMPLATE',7,'t11','t11','t11'),
+('IDD_TEMPLATE01+2*5+1',0x60c,'IDC_TEMPLATE',7,'t12','t12','t12'),
+('IDD_TEMPLATE01+2*5+2',0x60d,'IDC_TEMPLATE',7,'t13','t13','t13'),
+('IDD_TEMPLATE01+2*5+3',0x60e,'IDC_TEMPLATE',7,'t14','t14','t14'),
+('IDD_TEMPLATE01+2*5+4',0x60f,'IDC_TEMPLATE',7,'t15','t15','t15'),
+('IDD_TEMPLATE01+3*5+0',0x610,'IDC_TEMPLATE',7,'t16','t16','t16'),
+('IDD_TEMPLATE01+3*5+1',0x611,'IDC_TEMPLATE',7,'t17','t17','t17'),
+('IDD_TEMPLATE01+3*5+2',0x612,'IDC_TEMPLATE',7,'t18','t18','t18'),
+('IDD_TEMPLATE01+3*5+3',0x613,'IDC_TEMPLATE',7,'t19','t19','t19'),
+('IDD_TEMPLATE01+3*5+4',0x614,'IDC_TEMPLATE',7,'t20','t20','t20'),
+('IDD_TEMPLATE01+4*5+0',0x615,'IDC_TEMPLATE',7,'t21','t21','t21'),
+('IDD_TEMPLATE01+4*5+1',0x616,'IDC_TEMPLATE',7,'t22','t22','t22'),
+('IDD_TEMPLATE01+4*5+2',0x617,'IDC_TEMPLATE',7,'t23','t23','t23'),
+('IDD_TEMPLATE01+4*5+3',0x618,'IDC_TEMPLATE',7,'t24','t24','t24'),
+('IDD_TEMPLATE01+4*5+4',0x619,'IDC_TEMPLATE',7,'t25','t25','t25'),
+('IDD_TEMPLATE01+5*5+0',0x61a,'IDC_TEMPLATE',7,'t26','t26','t26'),
+('IDD_TEMPLATE01+5*5+1',0x61b,'IDC_TEMPLATE',7,'t27','t27','t27'),
+('IDD_TEMPLATE01+5*5+2',0x61c,'IDC_TEMPLATE',7,'t28','t28','t28'),
+('IDD_TEMPLATE01+5*5+3',0x61d,'IDC_TEMPLATE',7,'t29','t29','t29'),
+('IDD_TEMPLATE01+5*5+4',0x61e,'IDC_TEMPLATE',7,'t30','t30','t30'),
+('IDD_TEMPLATE01+6*5+0',0x61f,'IDC_TEMPLATE',7,'t31','t31','t31'),
+('IDD_TEMPLATE01+6*5+1',0x620,'IDC_TEMPLATE',7,'t32','t32','t32'),
+('IDD_TEMPLATE01+6*5+2',0x621,'IDC_TEMPLATE',7,'t33','t33','t33'),
+('IDD_TEMPLATE01+6*5+3',0x622,'IDC_TEMPLATE',7,'t34','t34','t34'),
+('IDD_TEMPLATE01+6*5+4',0x623,'IDC_TEMPLATE',7,'t35','t35','t35'),
+('IDD_TRANSFER',0x7795,'IDC_SPELL',8,'transfer','transfer','transfer'),
+('IDD_UNLOCK',0x779b,'IDC_SPELL',8,'Spelx01','Spelx01','Spelx01'),
+('IDD_VESTCAN',0x1201,'',0,'VESTCAN','VESTCAN','VESTCAN'),
+('IDD_VESTH2O',0x1202,'',0,'VESTH2O','VESTH2O','VESTH2O'),
+('IDD_VILKEY',0x1703,'',0,'VILKEY','VILKEY','VILKEY'),
+('IDD_VILLOCK',0x1702,'IDC_LOCK',11,'VILLOCK','VILLOCK','VILLOCK'),
+('IDD_WATER',0x1172,'',0,'water','water','water'),
+('IDD_WBISHOP',0x6005,'IDC_TOKEN',9,'Sbishop','Sbishop','Sbishop'),
+('IDD_WETBREATH',0x77a4,'IDC_SPELL',8,'Spelx10','Spelx10','Spelx10'),
+('IDD_WFLWRSPT',0x2127,'',0,'wflwrspt','wflwrspt','wflwrspt'),
+('IDD_WKING',0x6000,'IDC_TOKEN',9,'Sking','Sking','Sking'),
+('IDD_WKINGME',0x6006,'IDC_TOKEN',9,'Pkingme','Pkingme','Pkingme'),
+('IDD_WKNIGHT',0x6004,'IDC_TOKEN',9,'Sknight','Sknight','Sknight'),
+('IDD_WPAWN',0x6002,'IDC_TOKEN',9,'fnttnb18','fnttnb18','fnttnb18'),
+('IDD_WQUEEN',0x6001,'IDC_TOKEN',9,'Squeen','Squeen','Squeen'),
+('IDD_WROOK',0x6003,'IDC_TOKEN',9,'Srook','Srook','Srook'),
+('IDD_YFLWRSPT',0x2128,'',0,'yflwrspt','yflwrspt','yflwrspt'),
+('IDD_YMUSHSPT',0x2129,'',0,'ymushspt','ymushspt','ymushspt');
