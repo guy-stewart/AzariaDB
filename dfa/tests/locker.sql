@@ -7,7 +7,7 @@ insert into transitions ([name], [state], [new_state], [opcode], [param_1], [par
     ASHOW(WOBJECT);
     MOV(WTEMP1,WOBJECT);
     SIGNAL(WIP_S02_EBIN);'),
-('M02_BIN',0,8,'WAIT','0','SIG_CLOSE',''),
+('M02_BIN',0,8,'WAIT','0','SIG_CLOSE',''), -- not used since lock will not send SIG_CLOSE to an empty bin.
 -- Open / Occupied
 ('M02_BIN',4,0,'GRAB','0','0','
     SHOW();
