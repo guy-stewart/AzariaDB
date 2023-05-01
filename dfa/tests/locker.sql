@@ -1,28 +1,22 @@
 
 delete from transitions where [name] like 'M02\_%' ESCAPE '\';
-/*
-delete from transitions where [name] = 'M02_DN1';
-delete from transitions where [name] = 'M02_DN10';
-delete from transitions where [name] = 'M02_LOCK';
-delete from transitions where [name] = 'M02_NUM1';
-delete from transitions where [name] = 'M02_NUM10';
-delete from transitions where [name] = 'M02_UP1';
-delete from transitions where [name] = 'M02_UP10';
-delete from transitions where [name] = 'M02_VIAL';
-*/
 
 insert into transitions ([name], [state], [new_state], [opcode], [param_1], [param_2], [code]) values 
-('M02_BIN',0,1,'DROP','0','0',''),
+-- Open / Empty
+('M02_BIN',0,4,'DROP','0','0','
+    ASHOW(WOBJECT);
+    MOV(WTEMP1,WOBJECT);
+    SIGNAL(WIP_S02_EBIN);'),
 ('M02_BIN',0,8,'WAIT','0','SIG_CLOSE',''),
-('M02_BIN',1,2,'ASHOW','WOBJECT','0',''),
-('M02_BIN',2,3,'MOV','WTEMP1','WOBJECT',''),
-('M02_BIN',3,4,'SIGNAL','WIP_S02_EBIN','',''),
-('M02_BIN',4,5,'GRAB','0','0',''),
+-- Open / Occupied
+('M02_BIN',4,0,'GRAB','0','0','
+    SHOW();
+    ASSIGN(WTEMP1,0);
+    SIGNAL(WIP_S02_EBIN);'),
 ('M02_BIN',4,9,'WAIT','0','SIG_CLOSE',''),
-('M02_BIN',5,6,'SHOW','0','0',''),
-('M02_BIN',6,7,'ASSIGN','WTEMP1','0',''),
-('M02_BIN',7,0,'SIGNAL','WIP_S02_EBIN','',''),
+-- Closed / Empty
 ('M02_BIN',8,0,'WAIT','0','SIG_OPEN',''),
+-- Closed / Occupied
 ('M02_BIN',9,4,'WAIT','0','SIG_OPEN',''),
 
 ('M02_DN1',0,1,'CLICK','0','0','PLAYWAVE(SOUND_CLICK);'),
