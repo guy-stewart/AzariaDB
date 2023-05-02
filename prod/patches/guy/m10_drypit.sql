@@ -25,14 +25,17 @@ insert into transitions values
     SHOW(WSPRITE);'),
 ('M10_DRYPIT','10','21','DRAG','0','IDD_SCOOPE', ''),
 ('M10_DRYPIT','10','31','DRAG','0','IDD_SCOOPF', ''),
+('M10_DRYPIT','10','0','WAIT','','SIG_CLOSE', '
+    MOV(BPARM,0);
+    PLAYWAVE(SOUND_BURBLE);'),
 
--- Process a full scoop drag:
+-- Process an empty scoop drag:
 ('M10_DRYPIT','21','25','GTEi','BPARM','1','
     PLAYWAVE(SOUND_SLURP);
     SUBI(BPARM,1);
     HANDOFF(0,IDD_SCOOPF);'),
 ('M10_DRYPIT','21','10','Z_EPSILON','0','', ''),
-('M10_DRYPIT','25','0','EQUALi','BPARM','MAX_DRYPIT-1', 'SIGNALi(0,S10_FLOWER);'),
+('M10_DRYPIT','25','0','EQUALi','BPARM','MAX_DRYPIT-1', 'SIGNALi(SIG_CLOSE,S10_FLOWER);'),
 ('M10_DRYPIT','25','0','Z_EPSILON','','', ''),
 
 -- process an empty scoop drag:
@@ -42,23 +45,27 @@ insert into transitions values
     HANDOFF(0,IDD_SCOOPE);'),
 ('M10_DRYPIT','31','10','Z_EPSILON','','', ''),
 
-('M10_DRYPIT','35','0','EQUALi','BPARM','MAX_DRYPIT','SIGNALi(0,S10_FLOWER);'),
+('M10_DRYPIT','35','0','EQUALi','BPARM','MAX_DRYPIT','SIGNALi(SIG_OPEN,S10_FLOWER);'),
 ('M10_DRYPIT','35','0','Z_EPSILON','','', '');
 
 -- BLOSSOM --
 insert into transitions values 
 ('M10_FLOWER','0','1','SHOW','0','IDS_FLOPN1',''),
 -- Wait on open signal from drypit:
-('M10_FLOWER','1','30','WAIT','','', '
+('M10_FLOWER','1','30','WAIT','','SIG_OPEN', '
     PLAYWAVE(SOUND_BUZZFUZZ);
     SHOW(0,IDS_FLOPN1);
     ANIMATE();'),
 -- Wait on close signal from drypit:
-('M10_FLOWER','30','0','WAIT','','', '
+('M10_FLOWER','30','1','GRAB','','IDD_SEED','
     PLAYWAVE(SOUND_BUZZFUZZ);
     SHOW(0,IDS_FLOPN1);
-    ANIMATE(0,V_REVERSE);'),
-('M10_FLOWER','30','30','GRAB','','IDD_NYBREATH','');
+    ANIMATE(0,V_REVERSE);
+    SIGNALi(SIG_CLOSE,S10_DRYPIT);'),
+('M10_FLOWER','30','1','WAIT','','SIG_CLOSE', '
+    PLAYWAVE(SOUND_BUZZFUZZ);
+    SHOW(0,IDS_FLOPN1);
+    ANIMATE(0,V_REVERSE);');
 
 -- clean up some broken entries ...
 delete from spr_names where name = 'IDS_FLOWER0';

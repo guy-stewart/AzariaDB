@@ -2,7 +2,6 @@
 delete from games;
 
 delete from transitions where [name] like 'M04_%';
-
 insert into transitions ([name], [state], [new_state], [opcode], [param_1], [param_2], [code]) values ('0x0030','0','1','WAIT','0','0', ''),
 
 -- 2 scoops for a key.

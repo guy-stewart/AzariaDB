@@ -3,6 +3,7 @@ digraph {
 subgraph cluster_0x0030 {
  label="0x0030";
 "0x0030_0" -> "0x0030_1"[color=red, fontcolor=red, label="WAIT(0,0)"];
+"0x0030_0" -> "0x0030_1"[color=red, fontcolor=red, label="WAIT(0,0)"];
 "0x0030_1" -> "0x0030_0"[color=green, fontcolor=green, label="LTEi(0x72,0)"];
 "0x0030_1" -> "0x0030_2"[color=green, fontcolor=green, label="SUBI(0x72,1)"];
 "0x0030_2" -> "0x0030_3"[color=green, fontcolor=green, label="PLAYWAVE(0,SOUND_HURT)"];
@@ -192,63 +193,28 @@ subgraph cluster_0x0030 {
 }
  subgraph "cluster_M04_BIN" {
  label="M04_BIN";
-"M04_BIN_0" -> "M04_BIN_1"[color=red, fontcolor=red, label="WAIT(0,0)"];
-"M04_BIN_1" -> "M04_BIN_2"[color=green, fontcolor=green, label="ASSIGN(WOBJECT,IDD_CITY_KEY1)"];
-"M04_BIN_2" -> "M04_BIN_3"[color=green, fontcolor=green, label="SHOW(0,IDS_KEY_IN_BIN)"];
-"M04_BIN_3" -> "M04_BIN_4"[color=red, fontcolor=red, label="GRAB(0,0)"];
-"M04_BIN_4" -> "M04_BIN_0"[color=green, fontcolor=green, label="SHOW(0,0)"];
+"M04_BIN_0" -> "M04_BIN_1"[color=red, fontcolor=red, label="WAIT(,)"];
+"M04_BIN_1" -> "M04_BIN_0"[color=red, fontcolor=red, label="GRAB(,)"];
 }
  subgraph "cluster_M04_KEYCLAMP" {
  label="M04_KEYCLAMP";
 "M04_KEYCLAMP_0" -> "M04_KEYCLAMP_1"[color=green, fontcolor=green, label="C_ACCEPT(0,IDC_KEY)"];
 "M04_KEYCLAMP_1" -> "M04_KEYCLAMP_2"[color=red, fontcolor=red, label="DROP(0,0)"];
-"M04_KEYCLAMP_2" -> "M04_KEYCLAMP_3"[color=green, fontcolor=green, label="SUBI(WOBJECT,IDD_CITY_KEY1)"];
-"M04_KEYCLAMP_3" -> "M04_KEYCLAMP_4"[color=green, fontcolor=green, label="REF_MACHINE(WIP3,)"];
-"M04_KEYCLAMP_4" -> "M04_KEYCLAMP_5"[color=green, fontcolor=green, label="MOV(R_BFRAME,WOBJECT)"];
-"M04_KEYCLAMP_5" -> "M04_KEYCLAMP_6"[color=green, fontcolor=green, label="MODI(R_BFRAME,4)"];
-"M04_KEYCLAMP_6" -> "M04_KEYCLAMP_7"[color=green, fontcolor=green, label="DIVI(WOBJECT,4)"];
-"M04_KEYCLAMP_7" -> "M04_KEYCLAMP_8"[color=green, fontcolor=green, label="REF_MACHINE(WIP2,)"];
-"M04_KEYCLAMP_8" -> "M04_KEYCLAMP_9"[color=green, fontcolor=green, label="MOV(R_BFRAME,WOBJECT)"];
-"M04_KEYCLAMP_9" -> "M04_KEYCLAMP_10"[color=green, fontcolor=green, label="MODI(R_BFRAME,4)"];
-"M04_KEYCLAMP_10" -> "M04_KEYCLAMP_11"[color=green, fontcolor=green, label="DIVI(WOBJECT,4)"];
-"M04_KEYCLAMP_11" -> "M04_KEYCLAMP_12"[color=green, fontcolor=green, label="REF_MACHINE(WIP1,)"];
-"M04_KEYCLAMP_12" -> "M04_KEYCLAMP_13"[color=green, fontcolor=green, label="MOV(R_BFRAME,WOBJECT)"];
-"M04_KEYCLAMP_13" -> "M04_KEYCLAMP_14"[color=green, fontcolor=green, label="SHOW(0,IDS_KEY_CFGWKEY)"];
-"M04_KEYCLAMP_14" -> "M04_KEYCLAMP_15"[color=green, fontcolor=green, label="CLEAR(WOBJECT,)"];
-"M04_KEYCLAMP_15" -> "M04_KEYCLAMP_16"[color=red, fontcolor=red, label="GRAB(0,0)"];
-"M04_KEYCLAMP_16" -> "M04_KEYCLAMP_17"[color=green, fontcolor=green, label="REF_MACHINE(WIP1,)"];
-"M04_KEYCLAMP_17" -> "M04_KEYCLAMP_18"[color=green, fontcolor=green, label="MOV(WOBJECT,R_BFRAME)"];
-"M04_KEYCLAMP_18" -> "M04_KEYCLAMP_19"[color=green, fontcolor=green, label="CLEAR(R_BFRAME,)"];
-"M04_KEYCLAMP_19" -> "M04_KEYCLAMP_20"[color=green, fontcolor=green, label="MULI(WOBJECT,4)"];
-"M04_KEYCLAMP_20" -> "M04_KEYCLAMP_21"[color=green, fontcolor=green, label="REF_MACHINE(WIP2,)"];
-"M04_KEYCLAMP_21" -> "M04_KEYCLAMP_22"[color=green, fontcolor=green, label="ADD(WOBJECT,R_BFRAME)"];
-"M04_KEYCLAMP_22" -> "M04_KEYCLAMP_23"[color=green, fontcolor=green, label="CLEAR(R_BFRAME,)"];
-"M04_KEYCLAMP_23" -> "M04_KEYCLAMP_24"[color=green, fontcolor=green, label="MULI(WOBJECT,4)"];
-"M04_KEYCLAMP_24" -> "M04_KEYCLAMP_25"[color=green, fontcolor=green, label="REF_MACHINE(WIP3,)"];
-"M04_KEYCLAMP_25" -> "M04_KEYCLAMP_26"[color=green, fontcolor=green, label="ADD(WOBJECT,R_BFRAME)"];
-"M04_KEYCLAMP_26" -> "M04_KEYCLAMP_27"[color=green, fontcolor=green, label="CLEAR(R_BFRAME,)"];
-"M04_KEYCLAMP_27" -> "M04_KEYCLAMP_28"[color=green, fontcolor=green, label="ADDI(WOBJECT,IDD_CITY_KEY1)"];
-"M04_KEYCLAMP_28" -> "M04_KEYCLAMP_29"[color=green, fontcolor=green, label="HANDOFF(WOBJECT,)"];
-"M04_KEYCLAMP_29" -> "M04_KEYCLAMP_0"[color=green, fontcolor=green, label="SHOW(0,0)"];
+"M04_KEYCLAMP_2" -> "M04_KEYCLAMP_1"[color=red, fontcolor=red, label="GRAB(,0)"];
 }
  subgraph "cluster_M04_SLIDER" {
  label="M04_SLIDER";
 "M04_SLIDER_0" -> "M04_SLIDER_1"[color=green, fontcolor=green, label="MOV(WSPRITE,WIP1)"];
 "M04_SLIDER_1" -> "M04_SLIDER_5"[color=green, fontcolor=green, label="SHOW(WSPRITE,)"];
-"M04_SLIDER_5" -> "M04_SLIDER_10"[color=red, fontcolor=red, label="CLICK(0,0)"];
-"M04_SLIDER_5" -> "M04_SLIDER_30"[color=red, fontcolor=red, label="WAIT(0,0)"];
+"M04_SLIDER_5" -> "M04_SLIDER_10"[color=red, fontcolor=red, label="CLICK(,)"];
 "M04_SLIDER_10" -> "M04_SLIDER_20"[color=green, fontcolor=green, label="ADDI(BFRAME,1)"];
-"M04_SLIDER_20" -> "M04_SLIDER_30"[color=green, fontcolor=green, label="ASSIGN(BFRAME,0)"];
-"M04_SLIDER_20" -> "M04_SLIDER_30"[color=green, fontcolor=green, label="LTEi(BFRAME,3)"];
-"M04_SLIDER_30" -> "M04_SLIDER_5"[color=green, fontcolor=green, label="SHOW(WSPRITE,)"];
+"M04_SLIDER_20" -> "M04_SLIDER_1"[color=green, fontcolor=green, label="LTEi(BFRAME,3)"];
+"M04_SLIDER_20" -> "M04_SLIDER_1"[color=green, fontcolor=green, label="Z_EPSILON(,)"];
 }
  subgraph "cluster_M04_VIAL" {
  label="M04_VIAL";
 "M04_VIAL_0" -> "M04_VIAL_1"[color=red, fontcolor=red, label="DRAG(0,IDD_SCOOPF)"];
-"M04_VIAL_1" -> "M04_VIAL_2"[color=green, fontcolor=green, label="HANDOFF(0,IDD_SCOOPE)"];
-"M04_VIAL_2" -> "M04_VIAL_3"[color=red, fontcolor=red, label="DRAG(0,IDD_SCOOPF)"];
-"M04_VIAL_3" -> "M04_VIAL_4"[color=green, fontcolor=green, label="HANDOFF(0,IDD_SCOOPE)"];
-"M04_VIAL_4" -> "M04_VIAL_0"[color=green, fontcolor=green, label="SIGNALi(0,S04_BIN)"];
+"M04_VIAL_1" -> "M04_VIAL_0"[color=red, fontcolor=red, label="DRAG(0,IDD_SCOOPF)"];
 }
  subgraph "cluster_M05_BUBBLE" {
  label="M05_BUBBLE";
@@ -488,7 +454,7 @@ subgraph cluster_0x0030 {
  label="M10_FLOWER";
 "M10_FLOWER_0" -> "M10_FLOWER_1"[color=green, fontcolor=green, label="SHOW(0,IDS_FLOPN1)"];
 "M10_FLOWER_1" -> "M10_FLOWER_30"[color=red, fontcolor=red, label="WAIT(,)"];
-"M10_FLOWER_30" -> "M10_FLOWER_30"[color=red, fontcolor=red, label="GRAB(,IDD_NYBREATH)"];
+"M10_FLOWER_30" -> "M10_FLOWER_30"[color=red, fontcolor=red, label="GRAB(,IDD_SEED)"];
 "M10_FLOWER_30" -> "M10_FLOWER_0"[color=red, fontcolor=red, label="WAIT(,)"];
 }
  subgraph "cluster_M11_ASCENT" {
@@ -1348,6 +1314,102 @@ subgraph cluster_0x0030 {
 "M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
 "M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
 "M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_0" -> "M_LUNCHPORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
+"M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
 "M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
 "M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
 "M_LUNCHPORTAL_1" -> "M_LUNCHPORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_LUNCHCU)"];
@@ -1458,8 +1520,10 @@ subgraph cluster_0x0030 {
 }
  subgraph "cluster_M_PORTAL" {
  label="M_PORTAL";
-"M_PORTAL_0" -> "M_PORTAL_1"[color=red, fontcolor=red, label="CLICK(0,0)"];
-"M_PORTAL_1" -> "M_PORTAL_0"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_SHORE)"];
+"M_PORTAL_0" -> "M_PORTAL_1"[color=green, fontcolor=green, label="MOV(WSPRITE,WIP1)"];
+"M_PORTAL_1" -> "M_PORTAL_2"[color=green, fontcolor=green, label="ASHOW(WSPRITE,V_LOOP)"];
+"M_PORTAL_2" -> "M_PORTAL_3"[color=red, fontcolor=red, label="CLICK(0,0)"];
+"M_PORTAL_3" -> "M_PORTAL_1"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_SHORE)"];
 }
  subgraph "cluster_M_RECYCLE" {
  label="M_RECYCLE";
@@ -1549,6 +1613,20 @@ subgraph cluster_0x0030 {
 "M_TIMEDVPLAY2_0" -> "M_TIMEDVPLAY2_1"[color=red, fontcolor=red, label="DRAGFOCUS(0,0)"];
 "M_TIMEDVPLAY2_1" -> "M_TIMEDVPLAY2_2"[color=green, fontcolor=green, label="SHOW(0,IDS_BIRDS)"];
 "M_TIMEDVPLAY2_2" -> "M_TIMEDVPLAY2_0"[color=green, fontcolor=green, label="VIDEO(0,0)"];
+}
+ subgraph "cluster_M_TINYFISH" {
+ label="M_TINYFISH";
+"M_TINYFISH_0" -> "M_TINYFISH_2"[color=green, fontcolor=green, label="C_ACCEPT(0,ISA_BAIT)"];
+"M_TINYFISH_2" -> "M_TINYFISH_3"[color=red, fontcolor=red, label="DROP(0,0)"];
+"M_TINYFISH_3" -> "M_TINYFISH_4"[color=green, fontcolor=green, label="MOV(WSPRITE,WIP1)"];
+"M_TINYFISH_4" -> "M_TINYFISH_5"[color=green, fontcolor=green, label="ESTIME(,1)"];
+"M_TINYFISH_5" -> "M_TINYFISH_6"[color=green, fontcolor=green, label="ASHOW(WSPRITE,V_LOOP)"];
+"M_TINYFISH_6" -> "M_TINYFISH_7"[color=green, fontcolor=green, label="ESTIME(,4)"];
+"M_TINYFISH_6" -> "M_TINYFISH_7"[color=red, fontcolor=red, label="GRAB(WIP2,)"];
+"M_TINYFISH_7" -> "M_TINYFISH_8"[color=green, fontcolor=green, label="CLEAR(WOBJECT,)"];
+"M_TINYFISH_8" -> "M_TINYFISH_9"[color=green, fontcolor=green, label="CLEAR(WPARM,)"];
+"M_TINYFISH_9" -> "M_TINYFISH_10"[color=green, fontcolor=green, label="CLEAR(WSPRITE,)"];
+"M_TINYFISH_10" -> "M_TINYFISH_2"[color=green, fontcolor=green, label="ASHOW(,)"];
 }
  subgraph "cluster_M_VIAL" {
  label="M_VIAL";
