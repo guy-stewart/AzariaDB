@@ -441,6 +441,7 @@ subgraph cluster_0x0030 {
 "M10_DRYPIT_0" -> "M10_DRYPIT_10"[color=green, fontcolor=green, label="Z_EPSILON(,)"];
 "M10_DRYPIT_10" -> "M10_DRYPIT_21"[color=red, fontcolor=red, label="DRAG(0,IDD_SCOOPE)"];
 "M10_DRYPIT_10" -> "M10_DRYPIT_31"[color=red, fontcolor=red, label="DRAG(0,IDD_SCOOPF)"];
+"M10_DRYPIT_10" -> "M10_DRYPIT_0"[color=red, fontcolor=red, label="WAIT(,SIG_CLOSE)"];
 "M10_DRYPIT_21" -> "M10_DRYPIT_25"[color=green, fontcolor=green, label="GTEi(BPARM,1)"];
 "M10_DRYPIT_21" -> "M10_DRYPIT_10"[color=green, fontcolor=green, label="Z_EPSILON(0,)"];
 "M10_DRYPIT_25" -> "M10_DRYPIT_0"[color=green, fontcolor=green, label="EQUALi(BPARM,MAX_DRYPIT-1)"];
@@ -453,9 +454,9 @@ subgraph cluster_0x0030 {
  subgraph "cluster_M10_FLOWER" {
  label="M10_FLOWER";
 "M10_FLOWER_0" -> "M10_FLOWER_1"[color=green, fontcolor=green, label="SHOW(0,IDS_FLOPN1)"];
-"M10_FLOWER_1" -> "M10_FLOWER_30"[color=red, fontcolor=red, label="WAIT(,)"];
-"M10_FLOWER_30" -> "M10_FLOWER_30"[color=red, fontcolor=red, label="GRAB(,IDD_SEED)"];
-"M10_FLOWER_30" -> "M10_FLOWER_0"[color=red, fontcolor=red, label="WAIT(,)"];
+"M10_FLOWER_1" -> "M10_FLOWER_30"[color=red, fontcolor=red, label="WAIT(,SIG_OPEN)"];
+"M10_FLOWER_30" -> "M10_FLOWER_1"[color=red, fontcolor=red, label="GRAB(,IDD_SEED)"];
+"M10_FLOWER_30" -> "M10_FLOWER_1"[color=red, fontcolor=red, label="WAIT(,SIG_CLOSE)"];
 }
  subgraph "cluster_M11_ASCENT" {
  label="M11_ASCENT";
@@ -1070,6 +1071,15 @@ subgraph cluster_0x0030 {
 "M_CHESS_146" -> "M_CHESS_1"[color=green, fontcolor=green, label="CLEAR(WTEMP1,)"];
 "M_CHESS_150" -> "M_CHESS_101"[color=green, fontcolor=green, label="SIGNALi(SIG_NULL,S00_CLEAR)"];
 }
+ subgraph "cluster_M_CLAM" {
+ label="M_CLAM";
+"M_CLAM_0" -> "M_CLAM_1"[color=green, fontcolor=green, label="MOV(BFRAME,0)"];
+"M_CLAM_1" -> "M_CLAM_2"[color=green, fontcolor=green, label="SHOW(WIP1,)"];
+"M_CLAM_2" -> "M_CLAM_3"[color=red, fontcolor=red, label="DRAG(0,IDD_TICKLELEAF)"];
+"M_CLAM_3" -> "M_CLAM_4"[color=green, fontcolor=green, label="ESTIME(,3)"];
+"M_CLAM_4" -> "M_CLAM_5"[color=green, fontcolor=green, label="ADDI(BFRAME,1)"];
+"M_CLAM_5" -> "M_CLAM_0"[color=red, fontcolor=red, label="GRAB(,IDD_EMERALD)"];
+}
  subgraph "cluster_M_CLEAR" {
  label="M_CLEAR";
 "M_CLEAR_0" -> "M_CLEAR_5"[color=green, fontcolor=green, label="SHOW(WIP1,)"];
@@ -1426,6 +1436,45 @@ subgraph cluster_0x0030 {
 "M_MAPBUTTON_1" -> "M_MAPBUTTON_2"[color=red, fontcolor=red, label="CLICK(0,0)"];
 "M_MAPBUTTON_2" -> "M_MAPBUTTON_3"[color=green, fontcolor=green, label="PLAYWAVE(0,SOUND_POPUP)"];
 "M_MAPBUTTON_3" -> "M_MAPBUTTON_1"[color=green, fontcolor=green, label="LOADVIEW(0,IDV_CONTINENT)"];
+}
+ subgraph "cluster_M_MEMOBJ" {
+ label="M_MEMOBJ";
+"M_MEMOBJ_0" -> "M_MEMOBJ_1"[color=green, fontcolor=green, label="O_ACCEPT(WIP1,)"];
+"M_MEMOBJ_1" -> "M_MEMOBJ_2"[color=red, fontcolor=red, label="DROP(0,)"];
+"M_MEMOBJ_2" -> "M_MEMOBJ_3"[color=green, fontcolor=green, label="MOV(WSPRITE,WIP3)"];
+"M_MEMOBJ_3" -> "M_MEMOBJ_4"[color=green, fontcolor=green, label="SHOW(WSPRITE,)"];
+"M_MEMOBJ_4" -> "M_MEMOBJ_5"[color=green, fontcolor=green, label="ASSIGN(BPARM,WIP1)"];
+"M_MEMOBJ_5" -> "M_MEMOBJ_11"[color=green, fontcolor=green, label="IFSTATE(18,WIP4)"];
+"M_MEMOBJ_5" -> "M_MEMOBJ_18"[color=green, fontcolor=green, label="Z_EPSILON(,)"];
+"M_MEMOBJ_11" -> "M_MEMOBJ_12"[color=green, fontcolor=green, label="SIGNALi(SIG_SHOW,S27_MEMSTONE1)"];
+"M_MEMOBJ_12" -> "M_MEMOBJ_13"[color=green, fontcolor=green, label="SIGNALi(SIG_SHOW,S27_MEMSTONE2)"];
+"M_MEMOBJ_13" -> "M_MEMOBJ_14"[color=green, fontcolor=green, label="SIGNALi(SIG_SHOW,S27_MEMSTONE3)"];
+"M_MEMOBJ_14" -> "M_MEMOBJ_15"[color=green, fontcolor=green, label="SIGNALi(SIG_SHOW,S27_MEMSTONE4)"];
+"M_MEMOBJ_15" -> "M_MEMOBJ_16"[color=green, fontcolor=green, label="SIGNALi(SIG_SHOW,S27_MEMSTONE5)"];
+"M_MEMOBJ_16" -> "M_MEMOBJ_17"[color=green, fontcolor=green, label="SIGNALi(SIG_SHOW,S27_MEMSTONE6)"];
+"M_MEMOBJ_17" -> "M_MEMOBJ_18"[color=green, fontcolor=green, label="SIGNALi(SIG_SHOW,S27_MEMSTONE7)"];
+"M_MEMOBJ_18" -> "M_MEMOBJ_20"[color=red, fontcolor=red, label="GRAB(WIP1,)"];
+"M_MEMOBJ_20" -> "M_MEMOBJ_21"[color=green, fontcolor=green, label="CLEAR(WOBJECT,)"];
+"M_MEMOBJ_21" -> "M_MEMOBJ_22"[color=green, fontcolor=green, label="CLEAR(WPARM,)"];
+"M_MEMOBJ_22" -> "M_MEMOBJ_23"[color=green, fontcolor=green, label="CLEAR(WSPRITE,)"];
+"M_MEMOBJ_23" -> "M_MEMOBJ_30"[color=green, fontcolor=green, label="SHOW(,)"];
+"M_MEMOBJ_30" -> "M_MEMOBJ_31"[color=green, fontcolor=green, label="SIGNALi(SIG_HIDE,S27_MEMSTONE1)"];
+"M_MEMOBJ_31" -> "M_MEMOBJ_32"[color=green, fontcolor=green, label="SIGNALi(SIG_HIDE,S27_MEMSTONE2)"];
+"M_MEMOBJ_32" -> "M_MEMOBJ_33"[color=green, fontcolor=green, label="SIGNALi(SIG_HIDE,S27_MEMSTONE3)"];
+"M_MEMOBJ_33" -> "M_MEMOBJ_34"[color=green, fontcolor=green, label="SIGNALi(SIG_HIDE,S27_MEMSTONE4)"];
+"M_MEMOBJ_34" -> "M_MEMOBJ_35"[color=green, fontcolor=green, label="SIGNALi(SIG_HIDE,S27_MEMSTONE5)"];
+"M_MEMOBJ_35" -> "M_MEMOBJ_36"[color=green, fontcolor=green, label="SIGNALi(SIG_HIDE,S27_MEMSTONE6)"];
+"M_MEMOBJ_36" -> "M_MEMOBJ_0"[color=green, fontcolor=green, label="SIGNALi(SIG_HIDE,S27_MEMSTONE7)"];
+}
+ subgraph "cluster_M_MEMORY" {
+ label="M_MEMORY";
+"M_MEMORY_0" -> "M_MEMORY_1"[color=red, fontcolor=red, label="WAIT(,SIG_SHOW)"];
+"M_MEMORY_1" -> "M_MEMORY_2"[color=green, fontcolor=green, label="RAND(8,0)"];
+"M_MEMORY_2" -> "M_MEMORY_3"[color=green, fontcolor=green, label="MOV(BFRAME,WRAND)"];
+"M_MEMORY_3" -> "M_MEMORY_4"[color=green, fontcolor=green, label="SHOW(WIP1,)"];
+"M_MEMORY_4" -> "M_MEMORY_5"[color=red, fontcolor=red, label="WAIT(,SIG_HIDE)"];
+"M_MEMORY_5" -> "M_MEMORY_6"[color=green, fontcolor=green, label="CLEAR(WSPRITE,)"];
+"M_MEMORY_6" -> "M_MEMORY_0"[color=green, fontcolor=green, label="SHOW(,)"];
 }
  subgraph "cluster_M_NATURE" {
  label="M_NATURE";

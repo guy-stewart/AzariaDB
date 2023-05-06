@@ -395,27 +395,34 @@ insert into transitions ([name], [state], [new_state], [opcode], [param_1], [par
     SHOW(WSPRITE);'),
 ('M10_DRYPIT','10','21','DRAG','0','IDD_SCOOPE', ''),
 ('M10_DRYPIT','10','31','DRAG','0','IDD_SCOOPF', ''),
+('M10_DRYPIT','10','0','WAIT','','SIG_CLOSE', '
+    MOV(BPARM,0);
+    PLAYWAVE(SOUND_BURBLE);'),
 ('M10_DRYPIT','21','25','GTEi','BPARM','1', '
     PLAYWAVE(SOUND_SLURP);
     SUBI(BPARM,1);
     HANDOFF(0,IDD_SCOOPF);'),
 ('M10_DRYPIT','21','10','Z_EPSILON','0','', ''),
-('M10_DRYPIT','25','0','EQUALi','BPARM','MAX_DRYPIT-1', 'SIGNALi(0,S10_FLOWER);'),
+('M10_DRYPIT','25','0','EQUALi','BPARM','MAX_DRYPIT-1', 'SIGNALi(SIG_CLOSE,S10_FLOWER);'),
 ('M10_DRYPIT','25','0','Z_EPSILON','','', ''),
 ('M10_DRYPIT','31','35','LTEi','BPARM','MAX_DRYPIT-1', '
     PLAYWAVE(SOUND_SPIT);
     ADDI(BPARM,1);
     HANDOFF(0,IDD_SCOOPE);'),
 ('M10_DRYPIT','31','10','Z_EPSILON','','', ''),
-('M10_DRYPIT','35','0','EQUALi','BPARM','MAX_DRYPIT', 'SIGNALi(0,S10_FLOWER);'),
+('M10_DRYPIT','35','0','EQUALi','BPARM','MAX_DRYPIT', 'SIGNALi(SIG_OPEN,S10_FLOWER);'),
 ('M10_DRYPIT','35','0','Z_EPSILON','','', ''),
 ('M10_FLOWER','0','1','SHOW','0','IDS_FLOPN1', ''),
-('M10_FLOWER','1','30','WAIT','','', '
+('M10_FLOWER','1','30','WAIT','','SIG_OPEN', '
     PLAYWAVE(SOUND_BUZZFUZZ);
     SHOW(0,IDS_FLOPN1);
     ANIMATE();'),
-('M10_FLOWER','30','30','GRAB','','IDD_SEED', ''),
-('M10_FLOWER','30','0','WAIT','','', '
+('M10_FLOWER','30','1','GRAB','','IDD_SEED', '
+    PLAYWAVE(SOUND_BUZZFUZZ);
+    SHOW(0,IDS_FLOPN1);
+    ANIMATE(0,V_REVERSE);
+    SIGNALi(SIG_CLOSE,S10_DRYPIT);'),
+('M10_FLOWER','30','1','WAIT','','SIG_CLOSE', '
     PLAYWAVE(SOUND_BUZZFUZZ);
     SHOW(0,IDS_FLOPN1);
     ANIMATE(0,V_REVERSE);'),
@@ -921,6 +928,12 @@ insert into transitions ([name], [state], [new_state], [opcode], [param_1], [par
 ('M_CHESS','145','146','SIGNALi','SIG_SET','S00_SQUARE56+4', ''),
 ('M_CHESS','146','1','CLEAR','WTEMP1','', ''),
 ('M_CHESS','150','101','SIGNALi','SIG_NULL','S00_CLEAR', ''),
+('M_CLAM','0','1','MOV','BFRAME','0', ''),
+('M_CLAM','1','2','SHOW','WIP1','', ''),
+('M_CLAM','2','3','DRAG','0','IDD_TICKLELEAF', ''),
+('M_CLAM','3','4','ESTIME','','3', ''),
+('M_CLAM','4','5','ADDI','BFRAME','1', ''),
+('M_CLAM','5','0','GRAB','','IDD_EMERALD', ''),
 ('M_CLEAR','0','5','SHOW','WIP1','', ''),
 ('M_CLEAR','5','9','CLICK','0','0', ''),
 ('M_CLEAR','5','9','WAIT','0','0', ''),
@@ -1227,6 +1240,39 @@ insert into transitions ([name], [state], [new_state], [opcode], [param_1], [par
 ('M_MAPBUTTON','1','2','CLICK','0','0', ''),
 ('M_MAPBUTTON','2','3','PLAYWAVE','0','SOUND_POPUP', ''),
 ('M_MAPBUTTON','3','1','LOADVIEW','0','IDV_CONTINENT', ''),
+('M_MEMOBJ','0','1','O_ACCEPT','WIP1','', ''),
+('M_MEMOBJ','1','2','DROP','0','', ''),
+('M_MEMOBJ','2','3','MOV','WSPRITE','WIP3', ''),
+('M_MEMOBJ','3','4','SHOW','WSPRITE','', ''),
+('M_MEMOBJ','4','5','ASSIGN','BPARM','WIP1', ''),
+('M_MEMOBJ','5','11','IFSTATE','18','WIP4', ''),
+('M_MEMOBJ','5','18','Z_EPSILON','','', ''),
+('M_MEMOBJ','11','12','SIGNALi','SIG_SHOW','S27_MEMSTONE1', ''),
+('M_MEMOBJ','12','13','SIGNALi','SIG_SHOW','S27_MEMSTONE2', ''),
+('M_MEMOBJ','13','14','SIGNALi','SIG_SHOW','S27_MEMSTONE3', ''),
+('M_MEMOBJ','14','15','SIGNALi','SIG_SHOW','S27_MEMSTONE4', ''),
+('M_MEMOBJ','15','16','SIGNALi','SIG_SHOW','S27_MEMSTONE5', ''),
+('M_MEMOBJ','16','17','SIGNALi','SIG_SHOW','S27_MEMSTONE6', ''),
+('M_MEMOBJ','17','18','SIGNALi','SIG_SHOW','S27_MEMSTONE7', ''),
+('M_MEMOBJ','18','20','GRAB','WIP1','', ''),
+('M_MEMOBJ','20','21','CLEAR','WOBJECT','', ''),
+('M_MEMOBJ','21','22','CLEAR','WPARM','', ''),
+('M_MEMOBJ','22','23','CLEAR','WSPRITE','', ''),
+('M_MEMOBJ','23','30','SHOW','','', ''),
+('M_MEMOBJ','30','31','SIGNALi','SIG_HIDE','S27_MEMSTONE1', ''),
+('M_MEMOBJ','31','32','SIGNALi','SIG_HIDE','S27_MEMSTONE2', ''),
+('M_MEMOBJ','32','33','SIGNALi','SIG_HIDE','S27_MEMSTONE3', ''),
+('M_MEMOBJ','33','34','SIGNALi','SIG_HIDE','S27_MEMSTONE4', ''),
+('M_MEMOBJ','34','35','SIGNALi','SIG_HIDE','S27_MEMSTONE5', ''),
+('M_MEMOBJ','35','36','SIGNALi','SIG_HIDE','S27_MEMSTONE6', ''),
+('M_MEMOBJ','36','0','SIGNALi','SIG_HIDE','S27_MEMSTONE7', ''),
+('M_MEMORY','0','1','WAIT','','SIG_SHOW', ''),
+('M_MEMORY','1','2','RAND','8','0', ''),
+('M_MEMORY','2','3','MOV','BFRAME','WRAND', ''),
+('M_MEMORY','3','4','SHOW','WIP1','', ''),
+('M_MEMORY','4','5','WAIT','','SIG_HIDE', ''),
+('M_MEMORY','5','6','CLEAR','WSPRITE','', ''),
+('M_MEMORY','6','0','SHOW','','', ''),
 ('M_NATURE','0','1','WAIT','0','SIG_OPEN', ''),
 ('M_NATURE','1','2','ESTIME','','4', ''),
 ('M_NATURE','2','3','SIGNALi','SIG_OPEN','S03_BIRDSFWD', ''),

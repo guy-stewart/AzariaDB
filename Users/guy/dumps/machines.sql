@@ -11,13 +11,9 @@ create table machines (
     [local_visible] int,
     [dfa_name]      text,
     [wip1_name]     text,
-    [wip1_value]    int,
     [wip2_name]     text,
-    [wip2_value]    int,
     [wip3_name]     text,
-    [wip3_value]    int,
-    [wip4_name]     text,
-    [wip4_value]    int
+    [wip4_name]     text
 );
 
 insert into machines ([id],[name],[view_id],[view_name],[left],[top],[right],[bottom],[local_visible],[dfa_name], [wip1_name],[wip2_name],[wip3_name],[wip4_name]) values
@@ -531,6 +527,17 @@ insert into machines ([id],[name],[view_id],[view_name],[left],[top],[right],[bo
 (0x1238,'S12_BUTTERFLY',0x1504,'IDV_TMPLPTH4',3190,0,3200,300,2,'M_TIMEDVPLAY','IDS_BFLY','','',''),
 (0x1236,'S12_o3BERRYTREE',0x1505,'IDV_TMPLPTH5',724,207,825,228,2,'M_BIN','IDD_LOG','','',''),
 (0x1237,'S12_ROOTBIN',0x1505,'IDV_TMPLPTH5',1944,207,1994,257,2,'M_PLANTBIN','IDD_ROOTWHITE','IDS_ROOTPLANT','60',''),
+(0x2648,'S27_HUNGRYCLAM',0x150e,'IDV_LAKEB1',1722,162,1780,200,0,'M_CLAM','IDS_CLAM','','',''),
+(0x2649,'S27_TICKLEPLANT',0x150f,'IDV_LAKEB2',448,164,584,271,2,'M_PLANTBIN','IDD_TICKLELEAF','IDS_TICKLEPLANT','60',''),
+(0x2652,'S27_MEMSTONE1',0x1511,'IDV_MEMSTONE',0,0,10,10,0,'M_MEMORY','IDS_MOON1','8','',''),
+(0x2653,'S27_MEMSTONE2',0x1511,'IDV_MEMSTONE',0,0,10,20,0,'M_MEMORY','IDS_MOON2','8','',''),
+(0x2654,'S27_MEMSTONE3',0x1511,'IDV_MEMSTONE',0,0,10,30,0,'M_MEMORY','IDS_MOON3','8','',''),
+(0x2655,'S27_MEMSTONE4',0x1511,'IDV_MEMSTONE',0,0,10,40,0,'M_MEMORY','IDS_MOON4','8','',''),
+(0x2656,'S27_MEMSTONE5',0x1511,'IDV_MEMSTONE',0,0,10,50,0,'M_MEMORY','IDS_MOON5','8','',''),
+(0x2657,'S27_MEMSTONE6',0x1511,'IDV_MEMSTONE',0,0,10,60,0,'M_MEMORY','IDS_MOON6','8','',''),
+(0x2658,'S27_MEMSTONE7',0x1511,'IDV_MEMSTONE',0,0,10,70,0,'M_MEMORY','IDS_MOON7','8','',''),
+(0x2659,'S27_MEMFUSE',0x1511,'IDV_MEMSTONE',355,109,390,172,0,'M_MEMOBJ','IDD_MEMFUSE','IDD_MEMSPELL','IDS_MEMFUSEO','S27_MEMSPELL'),
+(0x265a,'S27_MEMSPELL',0x1511,'IDV_MEMSTONE',8,111,281,163,0,'M_MEMOBJ','IDD_MEMSPELL','IDD_MEMFUSE','IDS_MEMSPELLO','S27_MEMFUSE'),
 (0xd7,'S03_BIRDSFWD',0x1601,'IDV_GRNDCNT1',360,2,420,300,2,'M_VPLAY2','IDS_BIRDSFWD','','',''),
 (0xd8,'S03_BIRDSBKWD',0x1601,'IDV_GRNDCNT1',1920,2,2100,300,2,'M_VPLAY3','IDS_BIRDSBKWD','','',''),
 (0xd9,'S01_NATURE',0x1601,'IDV_GRNDCNT1',417,45,500,80,2,'M_NATURE','','','',''),

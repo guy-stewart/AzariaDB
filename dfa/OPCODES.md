@@ -19,7 +19,7 @@
 - [Compare](#compare)  (GT, LT, EQ, EPSILON, ...)  
   -  [Epsilon](#epsilon)
 - [Move](#move)  (MOV a value to register)
-- RAND
+- [Rand](#rand)  (Generate a random number into the WRAND register)
 - MAPi  
 - MAP
 
@@ -130,6 +130,15 @@ if the object cannot be mapped then the transition occurs w/o mapping the object
 
 Notes:
 * ASSIGN(R1, 0) will clear a register so unused value is not transmitted with table updates.
+
+# Rand
+
+|opcode |parameters     |description  |
+|-------|---------------|-------------|
+|RAND   |r1,r2          | see notes   |
+
+Notes:
+* set WRAND to a value between r2 and r2+r1
 
 # Compare
    IFSTATE - IFSATE state, machine_id  
