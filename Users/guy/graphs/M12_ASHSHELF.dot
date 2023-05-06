@@ -1,0 +1,45 @@
+digraph {
+ node [shape=record];
+"M12_ASHSHELF_0" -> "M12_ASHSHELF_10"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+C_ACCEPT(0,IDC_FISHASH)<br/>
+</font>>];
+"M12_ASHSHELF_10" -> "M12_ASHSHELF_11"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DROP(0,0)<br/>
+</font>>];
+"M12_ASHSHELF_11" -> "M12_ASHSHELF_12"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WOBJECT,)<br/>
+</font>>];
+"M12_ASHSHELF_12" -> "M12_ASHSHELF_13"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNAL(WIP1,)<br/>
+</font>>];
+"M12_ASHSHELF_13" -> "M12_ASHSHELF_119"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M12_ASHSHELF_13" -> "M12_ASHSHELF_14"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,0)<br/>
+</font>>];
+"M12_ASHSHELF_14" -> "M12_ASHSHELF_15"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(WOBJECT,IDD_SPELL01-IDD_FISHASH1)<br/>
+</font>>];
+"M12_ASHSHELF_15" -> "M12_ASHSHELF_115"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(WOBJECT,IDD_SPELx01-IDD_SPELL01)<br/>
+</font>>];
+"M12_ASHSHELF_15" -> "M12_ASHSHELF_115"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+NOTSTATE(M12_SPRING_PRESENT,WIP3)<br/>
+</font>>];
+"M12_ASHSHELF_115" -> "M12_ASHSHELF_116"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASHOW(WOBJECT,)<br/>
+</font>>];
+"M12_ASHSHELF_116" -> "M12_ASHSHELF_117"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNAL(WIP2,)<br/>
+</font>>];
+"M12_ASHSHELF_117" -> "M12_ASHSHELF_118"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNAL(WIP3,)<br/>
+</font>>];
+"M12_ASHSHELF_118" -> "M12_ASHSHELF_119"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M12_ASHSHELF_119" -> "M12_ASHSHELF_10"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,0)<br/>
+</font>>];
+}

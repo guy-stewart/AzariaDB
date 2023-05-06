@@ -1,0 +1,24 @@
+digraph {
+ node [shape=record];
+"M_MEMORY_0" -> "M_MEMORY_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(,SIG_SHOW)<br/>
+</font>>];
+"M_MEMORY_1" -> "M_MEMORY_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+RAND(8,0)<br/>
+</font>>];
+"M_MEMORY_2" -> "M_MEMORY_3"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(BFRAME,WRAND)<br/>
+</font>>];
+"M_MEMORY_3" -> "M_MEMORY_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WIP1,)<br/>
+</font>>];
+"M_MEMORY_4" -> "M_MEMORY_5"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(,SIG_HIDE)<br/>
+</font>>];
+"M_MEMORY_5" -> "M_MEMORY_6"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+CLEAR(WSPRITE,)<br/>
+</font>>];
+"M_MEMORY_6" -> "M_MEMORY_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(,)<br/>
+</font>>];
+}

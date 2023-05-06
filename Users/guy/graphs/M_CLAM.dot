@@ -1,0 +1,21 @@
+digraph {
+ node [shape=record];
+"M_CLAM_0" -> "M_CLAM_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(BFRAME,0)<br/>
+</font>>];
+"M_CLAM_1" -> "M_CLAM_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WIP1,)<br/>
+</font>>];
+"M_CLAM_2" -> "M_CLAM_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DRAG(0,IDD_TICKLELEAF)<br/>
+</font>>];
+"M_CLAM_3" -> "M_CLAM_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ESTIME(,3)<br/>
+</font>>];
+"M_CLAM_4" -> "M_CLAM_5"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(BFRAME,1)<br/>
+</font>>];
+"M_CLAM_5" -> "M_CLAM_0"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(,IDD_EMERALD)<br/>
+</font>>];
+}

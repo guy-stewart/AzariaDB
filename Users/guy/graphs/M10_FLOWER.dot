@@ -1,0 +1,28 @@
+digraph {
+ node [shape=record];
+"M10_FLOWER_0" -> "M10_FLOWER_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,IDS_FLOPN1)<br/>
+</font>>];
+"M10_FLOWER_1" -> "M10_FLOWER_30"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(,SIG_OPEN)<br/>
+<font point-size="8"><br align="left"/>
+    PLAYWAVE(SOUND_BUZZFUZZ);<br align="left"/>
+    SHOW(0,IDS_FLOPN1);<br align="left"/>
+    ANIMATE();<br align="left"/>
+</font></font>>];
+"M10_FLOWER_30" -> "M10_FLOWER_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(,IDD_SEED)<br/>
+<font point-size="8"><br align="left"/>
+    PLAYWAVE(SOUND_BUZZFUZZ);<br align="left"/>
+    SHOW(0,IDS_FLOPN1);<br align="left"/>
+    ANIMATE(0,V_REVERSE);<br align="left"/>
+    SIGNALi(SIG_CLOSE,S10_DRYPIT);<br align="left"/>
+</font></font>>];
+"M10_FLOWER_30" -> "M10_FLOWER_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(,SIG_CLOSE)<br/>
+<font point-size="8"><br align="left"/>
+    PLAYWAVE(SOUND_BUZZFUZZ);<br align="left"/>
+    SHOW(0,IDS_FLOPN1);<br align="left"/>
+    ANIMATE(0,V_REVERSE);<br align="left"/>
+</font></font>>];
+}

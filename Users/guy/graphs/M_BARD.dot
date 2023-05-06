@@ -1,0 +1,15 @@
+digraph {
+ node [shape=record];
+"M_BARD_0" -> "M_BARD_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASSIGN(DETIME,1000)<br/>
+</font>>];
+"M_BARD_1" -> "M_BARD_3"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SYNCPOINT(DETIME,SYNC_FOULWIND)<br/>
+</font>>];
+"M_BARD_3" -> "M_BARD_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ESTIME(0,500)<br/>
+</font>>];
+"M_BARD_4" -> "M_BARD_3"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALi(0,S17_aFOULWIND)<br/>
+</font>>];
+}

@@ -1,0 +1,12 @@
+digraph {
+ node [shape=record];
+"M_OBJECTMAP_0" -> "M_OBJECTMAP_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DRAG(WIP1,)<br/>
+</font>>];
+"M_OBJECTMAP_1" -> "M_OBJECTMAP_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+HANDOFF(WIP2,)<br/>
+</font>>];
+"M_OBJECTMAP_2" -> "M_OBJECTMAP_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+PLAYWAVE(WIP3,)<br/>
+</font>>];
+}

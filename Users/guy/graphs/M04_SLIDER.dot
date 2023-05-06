@@ -1,0 +1,22 @@
+digraph {
+ node [shape=record];
+"M04_SLIDER_0" -> "M04_SLIDER_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WSPRITE,WIP1)<br/>
+</font>>];
+"M04_SLIDER_1" -> "M04_SLIDER_5"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WSPRITE,)<br/>
+</font>>];
+"M04_SLIDER_5" -> "M04_SLIDER_10"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+CLICK(,)<br/>
+</font>>];
+"M04_SLIDER_10" -> "M04_SLIDER_20"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(BFRAME,1)<br/>
+</font>>];
+"M04_SLIDER_20" -> "M04_SLIDER_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+LTEi(BFRAME,3)<br/>
+</font>>];
+"M04_SLIDER_20" -> "M04_SLIDER_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+Z_EPSILON(,)<br/>
+<font point-size="8">ASSIGN(BFRAME,0);<br align="left"/>
+</font></font>>];
+}

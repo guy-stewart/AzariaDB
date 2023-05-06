@@ -1,0 +1,12 @@
+digraph {
+ node [shape=record];
+"0x0035_0" -> "0x0035_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,0)<br/>
+</font>>];
+"0x0035_1" -> "0x0035_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(0x73,1)<br/>
+</font>>];
+"0x0035_1" -> "0x0035_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+GTEi(0x73,23)<br/>
+</font>>];
+}

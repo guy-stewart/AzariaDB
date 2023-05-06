@@ -1,0 +1,9 @@
+digraph {
+ node [shape=record];
+"M_O_IDSPELL_0" -> "M_O_IDSPELL_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DROP(0,0)<br/>
+</font>>];
+"M_O_IDSPELL_1" -> "M_O_IDSPELL_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SPELL_YOU(WOBJECT,)<br/>
+</font>>];
+}

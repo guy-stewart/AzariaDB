@@ -1,0 +1,21 @@
+digraph {
+ node [shape=record];
+"M_POLESTAND_0" -> "M_POLESTAND_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASSIGN(WOBJECT,IDD_POLE1)<br/>
+</font>>];
+"M_POLESTAND_1" -> "M_POLESTAND_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WOBJECT,)<br/>
+</font>>];
+"M_POLESTAND_2" -> "M_POLESTAND_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M_POLESTAND_3" -> "M_POLESTAND_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,0)<br/>
+</font>>];
+"M_POLESTAND_4" -> "M_POLESTAND_5"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+C_ACCEPT(0,IDC_POLE)<br/>
+</font>>];
+"M_POLESTAND_5" -> "M_POLESTAND_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DROP(0,0)<br/>
+</font>>];
+}

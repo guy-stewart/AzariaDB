@@ -1,0 +1,66 @@
+digraph {
+ node [shape=record];
+"M12_SPRING_0" -> "M12_SPRING_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DROP(0,IDD_SPRINGS)<br/>
+</font>>];
+"M12_SPRING_1" -> "M12_SPRING_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASHOW(WOBJECT,)<br/>
+</font>>];
+"M12_SPRING_1" -> "M12_SPRING_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASHOW(WOBJECT,)<br/>
+</font>>];
+"M12_SPRING_1" -> "M12_SPRING_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASHOW(WOBJECT,)<br/>
+</font>>];
+"M12_SPRING_1" -> "M12_SPRING_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASHOW(WOBJECT,)<br/>
+</font>>];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,0)<br/>
+</font>>];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,0)<br/>
+</font>>];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,0)<br/>
+</font>>];
+"M12_SPRING_2" -> "M12_SPRING_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,0)<br/>
+</font>>];
+"M12_SPRING_3" -> "M12_SPRING_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+CLEAR(WOBJECT,)<br/>
+</font>>];
+"M12_SPRING_3" -> "M12_SPRING_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+CLEAR(WOBJECT,)<br/>
+</font>>];
+"M12_SPRING_3" -> "M12_SPRING_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+CLEAR(WOBJECT,)<br/>
+</font>>];
+"M12_SPRING_3" -> "M12_SPRING_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+CLEAR(WOBJECT,)<br/>
+</font>>];
+"M12_SPRING_4" -> "M12_SPRING_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,0)<br/>
+</font>>];
+"M12_SPRING_4" -> "M12_SPRING_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,0)<br/>
+</font>>];
+"M12_SPRING_4" -> "M12_SPRING_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,0)<br/>
+</font>>];
+"M12_SPRING_4" -> "M12_SPRING_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,0)<br/>
+</font>>];
+}

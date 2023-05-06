@@ -1,0 +1,93 @@
+digraph {
+ node [shape=record];
+"M_FISHSTATION_0" -> "M_FISHSTATION_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+C_ACCEPT(0,IDC_POLE)<br/>
+</font>>];
+"M_FISHSTATION_1" -> "M_FISHSTATION_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,0)<br/>
+</font>>];
+"M_FISHSTATION_2" -> "M_FISHSTATION_50"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DRAG(0,IDD_BUCKE)<br/>
+</font>>];
+"M_FISHSTATION_2" -> "M_FISHSTATION_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DROP(0,0)<br/>
+</font>>];
+"M_FISHSTATION_2" -> "M_FISHSTATION_0"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M_FISHSTATION_3" -> "M_FISHSTATION_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+IS_A(WOBJECT,ISA_BAITEDPOLE)<br/>
+</font>>];
+"M_FISHSTATION_3" -> "M_FISHSTATION_30"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+Z_EPSILON(0,0)<br/>
+</font>>];
+"M_FISHSTATION_4" -> "M_FISHSTATION_5"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,IDS_POLE1LCL)<br/>
+</font>>];
+"M_FISHSTATION_5" -> "M_FISHSTATION_6"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+RAND(ADD_CATCH_TIME,MIN_CATCH_TIME)<br/>
+</font>>];
+"M_FISHSTATION_6" -> "M_FISHSTATION_0"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M_FISHSTATION_6" -> "M_FISHSTATION_7"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SYNCPOINT(WRAND,SYNC_FISH1)<br/>
+</font>>];
+"M_FISHSTATION_7" -> "M_FISHSTATION_8"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+PLAYWAVE(0,SOUND_HURT)<br/>
+</font>>];
+"M_FISHSTATION_8" -> "M_FISHSTATION_9"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WPARM,WOBJECT)<br/>
+</font>>];
+"M_FISHSTATION_9" -> "M_FISHSTATION_11"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+RAND(IDD_FISH10-IDD_FISH1,IDD_FISH1)<br/>
+</font>>];
+"M_FISHSTATION_11" -> "M_FISHSTATION_12"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WOBJECT,WRAND)<br/>
+</font>>];
+"M_FISHSTATION_12" -> "M_FISHSTATION_13"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,IDS_POLE1LCT)<br/>
+</font>>];
+"M_FISHSTATION_13" -> "M_FISHSTATION_14"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M_FISHSTATION_14" -> "M_FISHSTATION_15"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WOBJECT,WPARM)<br/>
+</font>>];
+"M_FISHSTATION_15" -> "M_FISHSTATION_16"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+XIM(WOBJECT,WPARM)<br/>
+</font>>];
+"M_FISHSTATION_16" -> "M_FISHSTATION_17"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WOBJECT,)<br/>
+</font>>];
+"M_FISHSTATION_17" -> "M_FISHSTATION_0"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M_FISHSTATION_30" -> "M_FISHSTATION_31"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,IDS_POLE1LCU)<br/>
+</font>>];
+"M_FISHSTATION_31" -> "M_FISHSTATION_32"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WPARM,WOBJECT)<br/>
+</font>>];
+"M_FISHSTATION_32" -> "M_FISHSTATION_33"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+C_ACCEPT(0,ISA_BAIT)<br/>
+</font>>];
+"M_FISHSTATION_33" -> "M_FISHSTATION_34"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DROP(0,0)<br/>
+</font>>];
+"M_FISHSTATION_33" -> "M_FISHSTATION_0"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M_FISHSTATION_34" -> "M_FISHSTATION_35"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MIX(WPARM,WOBJECT)<br/>
+</font>>];
+"M_FISHSTATION_35" -> "M_FISHSTATION_36"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,IDS_POLE1B)<br/>
+</font>>];
+"M_FISHSTATION_36" -> "M_FISHSTATION_0"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M_FISHSTATION_50" -> "M_FISHSTATION_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+HANDOFF(0,IDD_BUCKF)<br/>
+</font>>];
+}

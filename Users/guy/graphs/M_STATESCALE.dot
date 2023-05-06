@@ -1,0 +1,18 @@
+digraph {
+ node [shape=record];
+"M_STATESCALE_0" -> "M_STATESCALE_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,SIG_SHOW)<br/>
+</font>>];
+"M_STATESCALE_1" -> "M_STATESCALE_5"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WSPRITE,WIP1)<br/>
+</font>>];
+"M_STATESCALE_5" -> "M_STATESCALE_10"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WSPRITE,0)<br/>
+</font>>];
+"M_STATESCALE_10" -> "M_STATESCALE_11"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,SIG_HIDE)<br/>
+</font>>];
+"M_STATESCALE_11" -> "M_STATESCALE_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,0)<br/>
+</font>>];
+}

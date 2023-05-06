@@ -1,0 +1,24 @@
+digraph {
+ node [shape=record];
+"0x0032_0" -> "0x0032_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,0)<br/>
+</font>>];
+"0x0032_1" -> "0x0032_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+LTEi(0x71,0)<br/>
+</font>>];
+"0x0032_1" -> "0x0032_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SUBI(0x71,1)<br/>
+</font>>];
+"0x0032_2" -> "0x0032_3"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+PLAYWAVE(0,SOUND_HURT)<br/>
+</font>>];
+"0x0032_3" -> "0x0032_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+GTEi(0x71,1)<br/>
+</font>>];
+"0x0032_3" -> "0x0032_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+PLAYWAVE(0,SOUND_THUNDER)<br/>
+</font>>];
+"0x0032_4" -> "0x0032_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALi(SIG_SUB,SID_AURA)<br/>
+</font>>];
+}

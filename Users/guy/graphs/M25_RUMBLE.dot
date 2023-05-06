@@ -1,0 +1,57 @@
+digraph {
+ node [shape=record];
+"M25_RUMBLE_0" -> "M25_RUMBLE_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASSIGN(BFRAME,1)<br/>
+</font>>];
+"M25_RUMBLE_1" -> "M25_RUMBLE_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASSIGN(WSPRITE,IDS_RUMBLE)<br/>
+</font>>];
+"M25_RUMBLE_2" -> "M25_RUMBLE_3"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WSPRITE,)<br/>
+</font>>];
+"M25_RUMBLE_3" -> "M25_RUMBLE_20"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DRAGFOCUS(0,FALSE)<br/>
+</font>>];
+"M25_RUMBLE_3" -> "M25_RUMBLE_40"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DRAGFOCUS(0,TRUE)<br/>
+</font>>];
+"M25_RUMBLE_3" -> "M25_RUMBLE_30"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DROP(0,IDD_TELEKINESIS)<br/>
+</font>>];
+"M25_RUMBLE_3" -> "M25_RUMBLE_10"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,SIG_INIT)<br/>
+</font>>];
+"M25_RUMBLE_10" -> "M25_RUMBLE_3"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+CLEAR(BPARM,)<br/>
+</font>>];
+"M25_RUMBLE_20" -> "M25_RUMBLE_3"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SUBI(BPARM,1)<br/>
+</font>>];
+"M25_RUMBLE_30" -> "M25_RUMBLE_50"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(BPARM,1)<br/>
+</font>>];
+"M25_RUMBLE_40" -> "M25_RUMBLE_50"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(BPARM,1)<br/>
+</font>>];
+"M25_RUMBLE_50" -> "M25_RUMBLE_60"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+GTi(BPARM,1)<br/>
+</font>>];
+"M25_RUMBLE_50" -> "M25_RUMBLE_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+VIDEO(0,IDS_RUMBLE)<br/>
+</font>>];
+"M25_RUMBLE_60" -> "M25_RUMBLE_61"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASSIGN(WSPRITE,0)<br/>
+</font>>];
+"M25_RUMBLE_61" -> "M25_RUMBLE_62"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WSPRITE,)<br/>
+</font>>];
+"M25_RUMBLE_62" -> "M25_RUMBLE_70"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALi(SIG_OPEN,S25_ROLL)<br/>
+</font>>];
+"M25_RUMBLE_70" -> "M25_RUMBLE_71"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+CLICK(0,0)<br/>
+</font>>];
+"M25_RUMBLE_71" -> "M25_RUMBLE_70"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+LOADVIEW(0,IDV_WALL2EN)<br/>
+</font>>];
+}

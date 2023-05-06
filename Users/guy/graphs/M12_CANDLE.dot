@@ -1,0 +1,27 @@
+digraph {
+ node [shape=record];
+"M12_CANDLE_0" -> "M12_CANDLE_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DRAG(0,IDD_MATCH)<br/>
+</font>>];
+"M12_CANDLE_0" -> "M12_CANDLE_6"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,0)<br/>
+</font>>];
+"M12_CANDLE_1" -> "M12_CANDLE_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,IDD_VESTCAN)<br/>
+</font>>];
+"M12_CANDLE_2" -> "M12_CANDLE_5"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+NOTSTATE(M12_WATER_FULL,WIP1)<br/>
+</font>>];
+"M12_CANDLE_2" -> "M12_CANDLE_5"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+NOTSTATE(M12_SHELF_FULL,WIP2)<br/>
+</font>>];
+"M12_CANDLE_2" -> "M12_CANDLE_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNAL(WIP2,)<br/>
+</font>>];
+"M12_CANDLE_5" -> "M12_CANDLE_6"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,0)<br/>
+</font>>];
+"M12_CANDLE_6" -> "M12_CANDLE_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,0)<br/>
+</font>>];
+}

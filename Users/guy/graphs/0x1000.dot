@@ -1,0 +1,24 @@
+digraph {
+ node [shape=record];
+"0x1000_0" -> "0x1000_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASSIGN(WSPRITE,9)<br/>
+</font>>];
+"0x1000_1" -> "0x1000_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MUL(WSPRITE,0x01)<br/>
+</font>>];
+"0x1000_2" -> "0x1000_3"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASSIGN(WPARM,20)<br/>
+</font>>];
+"0x1000_3" -> "0x1000_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+DIV(WSPRITE,WPARM)<br/>
+</font>>];
+"0x1000_4" -> "0x1000_5"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASSIGN(WPARM,0x0280)<br/>
+</font>>];
+"0x1000_5" -> "0x1000_6"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADD(WSPRITE,WPARM)<br/>
+</font>>];
+"0x1000_6" -> "0x1000_10"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WSPRITE,0)<br/>
+</font>>];
+}

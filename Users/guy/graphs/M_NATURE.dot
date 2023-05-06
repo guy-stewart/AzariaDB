@@ -1,0 +1,30 @@
+digraph {
+ node [shape=record];
+"M_NATURE_0" -> "M_NATURE_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,SIG_OPEN)<br/>
+</font>>];
+"M_NATURE_1" -> "M_NATURE_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ESTIME(,4)<br/>
+</font>>];
+"M_NATURE_2" -> "M_NATURE_3"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALi(SIG_OPEN,S03_BIRDSFWD)<br/>
+</font>>];
+"M_NATURE_3" -> "M_NATURE_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ESTIME(10,10)<br/>
+</font>>];
+"M_NATURE_4" -> "M_NATURE_5"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALi(SIG_OPEN,S03_BIRDSBKWD)<br/>
+</font>>];
+"M_NATURE_5" -> "M_NATURE_6"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALi(SIG_OPEN,S12_BUTTERFLY)<br/>
+</font>>];
+"M_NATURE_6" -> "M_NATURE_7"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALi(SIG_RIPEN,S16_GOPABUSH)<br/>
+</font>>];
+"M_NATURE_7" -> "M_NATURE_8"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALi(SIG_RIPEN,S10_GOPABUSH)<br/>
+</font>>];
+"M_NATURE_8" -> "M_NATURE_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ESTIME(,20)<br/>
+</font>>];
+}

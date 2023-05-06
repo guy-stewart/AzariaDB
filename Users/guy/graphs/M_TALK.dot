@@ -1,0 +1,45 @@
+digraph {
+ node [shape=record];
+"M_TALK_0" -> "M_TALK_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WSPRITE,WIP4)<br/>
+</font>>];
+"M_TALK_2" -> "M_TALK_10"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WSPRITE,0)<br/>
+</font>>];
+"M_TALK_10" -> "M_TALK_11"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+CLICK(0,0)<br/>
+</font>>];
+"M_TALK_10" -> "M_TALK_20"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,0)<br/>
+</font>>];
+"M_TALK_11" -> "M_TALK_12"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WPARM,WTHIS)<br/>
+</font>>];
+"M_TALK_12" -> "M_TALK_13"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SUBI(WPARM,SMP_TALK1)<br/>
+</font>>];
+"M_TALK_13" -> "M_TALK_14"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SENDKEY(WPARM,IDV_S_TELETYPE)<br/>
+</font>>];
+"M_TALK_14" -> "M_TALK_15"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASSIGN(WPARM,0)<br/>
+</font>>];
+"M_TALK_15" -> "M_TALK_16"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+PLAYWAVE(0,SOUND_CLICK)<br/>
+</font>>];
+"M_TALK_16" -> "M_TALK_17"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,IDS_REDDOT)<br/>
+</font>>];
+"M_TALK_17" -> "M_TALK_18"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNAL(WIP1,)<br/>
+</font>>];
+"M_TALK_18" -> "M_TALK_19"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNAL(WIP2,)<br/>
+</font>>];
+"M_TALK_19" -> "M_TALK_10"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNAL(WIP3,)<br/>
+</font>>];
+"M_TALK_20" -> "M_TALK_10"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,0)<br/>
+</font>>];
+}

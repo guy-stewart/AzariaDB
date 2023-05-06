@@ -1,0 +1,21 @@
+digraph {
+ node [shape=record];
+"M_STATEDOOR_0" -> "M_STATEDOOR_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WSPRITE,WIP2)<br/>
+</font>>];
+"M_STATEDOOR_1" -> "M_STATEDOOR_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WSPRITE,0)<br/>
+</font>>];
+"M_STATEDOOR_2" -> "M_STATEDOOR_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,SIG_OPEN)<br/>
+</font>>];
+"M_STATEDOOR_3" -> "M_STATEDOOR_5"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WSPRITE,WIP1)<br/>
+</font>>];
+"M_STATEDOOR_5" -> "M_STATEDOOR_10"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WSPRITE,0)<br/>
+</font>>];
+"M_STATEDOOR_10" -> "M_STATEDOOR_0"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,SIG_CLOSE)<br/>
+</font>>];
+}

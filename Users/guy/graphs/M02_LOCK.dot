@@ -1,0 +1,39 @@
+digraph {
+ node [shape=record];
+"M02_LOCK_0" -> "M02_LOCK_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+C_ACCEPT(,IDC_KEY)<br/>
+</font>>];
+"M02_LOCK_1" -> "M02_LOCK_2"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DROP(,)<br/>
+</font>>];
+"M02_LOCK_2" -> "M02_LOCK_9"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+Z_EPSILON(,)<br/>
+<font point-size="8"><br align="left"/>
+    PLAYWAVE(SOUND_LEVER);<br align="left"/>
+    MOV(WTEMP1,WTHIS);<br align="left"/>
+    ADDI(WTEMP1,1);<br align="left"/>
+    SIGNAL(WTEMP1,SIG_OPEN);<br align="left"/>
+    O_ACCEPT(WOBJECT);<br align="left"/>
+    SHOW(0,IDS_LOCKWKEY);<br align="left"/>
+</font></font>>];
+"M02_LOCK_9" -> "M02_LOCK_10"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(,)<br/>
+<font point-size="8"><br align="left"/>
+    CLEAR(WOBJECT);<br align="left"/>
+    SHOW();<br align="left"/>
+    MOV(WTEMP1,WTHIS);<br align="left"/>
+    ADDI(WTEMP1,1);<br align="left"/>
+</font></font>>];
+"M02_LOCK_10" -> "M02_LOCK_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+IFSTATE(M02_OPENEMPTY,WTEMP1)<br/>
+</font>>];
+"M02_LOCK_10" -> "M02_LOCK_15"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+Z_EPSILON(,)<br/>
+<font point-size="8"><br align="left"/>
+    PLAYWAVE(SOUND_LEVER);<br align="left"/>
+    SIGNAL(WTEMP1,SIG_CLOSE);<br align="left"/>
+</font></font>>];
+"M02_LOCK_15" -> "M02_LOCK_2"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DROP(WPARM,)<br/>
+</font>>];
+}

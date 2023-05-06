@@ -1,0 +1,36 @@
+digraph {
+ node [shape=record];
+"M_TINYFISH_0" -> "M_TINYFISH_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+C_ACCEPT(0,ISA_BAIT)<br/>
+</font>>];
+"M_TINYFISH_2" -> "M_TINYFISH_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DROP(0,0)<br/>
+</font>>];
+"M_TINYFISH_3" -> "M_TINYFISH_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WSPRITE,WIP1)<br/>
+</font>>];
+"M_TINYFISH_4" -> "M_TINYFISH_5"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ESTIME(,1)<br/>
+</font>>];
+"M_TINYFISH_5" -> "M_TINYFISH_6"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASHOW(WSPRITE,V_LOOP)<br/>
+</font>>];
+"M_TINYFISH_6" -> "M_TINYFISH_7"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ESTIME(,4)<br/>
+</font>>];
+"M_TINYFISH_6" -> "M_TINYFISH_7"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(WIP2,)<br/>
+</font>>];
+"M_TINYFISH_7" -> "M_TINYFISH_8"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+CLEAR(WOBJECT,)<br/>
+</font>>];
+"M_TINYFISH_8" -> "M_TINYFISH_9"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+CLEAR(WPARM,)<br/>
+</font>>];
+"M_TINYFISH_9" -> "M_TINYFISH_10"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+CLEAR(WSPRITE,)<br/>
+</font>>];
+"M_TINYFISH_10" -> "M_TINYFISH_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASHOW(,)<br/>
+</font>>];
+}

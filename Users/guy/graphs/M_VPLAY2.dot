@@ -1,0 +1,12 @@
+digraph {
+ node [shape=record];
+"M_VPLAY2_0" -> "M_VPLAY2_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,SIG_OPEN)<br/>
+</font>>];
+"M_VPLAY2_1" -> "M_VPLAY2_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,IDS_BIRDSFWD)<br/>
+</font>>];
+"M_VPLAY2_2" -> "M_VPLAY2_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ANIMATE(0,0)<br/>
+</font>>];
+}

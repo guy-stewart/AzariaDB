@@ -1,0 +1,36 @@
+digraph {
+ node [shape=record];
+"M08_TEMPHOLD_0" -> "M08_TEMPHOLD_10"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+C_ACCEPT(0,IDC_TEMPLATE)<br/>
+</font>>];
+"M08_TEMPHOLD_10" -> "M08_TEMPHOLD_11"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DROP(0,0)<br/>
+</font>>];
+"M08_TEMPHOLD_11" -> "M08_TEMPHOLD_12"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,IDS_TMORPH)<br/>
+</font>>];
+"M08_TEMPHOLD_12" -> "M08_TEMPHOLD_13"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ANIMATE(0,V_LOOP|V_REWIND)<br/>
+</font>>];
+"M08_TEMPHOLD_13" -> "M08_TEMPHOLD_14"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WPARM,WOBJECT)<br/>
+</font>>];
+"M08_TEMPHOLD_14" -> "M08_TEMPHOLD_15"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SUBI(WPARM,IDD_TEMPLATE01)<br/>
+</font>>];
+"M08_TEMPHOLD_15" -> "M08_TEMPHOLD_16"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNAL(WIP1,)<br/>
+</font>>];
+"M08_TEMPHOLD_16" -> "M08_TEMPHOLD_17"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+GRAB(0,0)<br/>
+</font>>];
+"M08_TEMPHOLD_17" -> "M08_TEMPHOLD_18"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+CLEAR(WOBJECT,)<br/>
+</font>>];
+"M08_TEMPHOLD_18" -> "M08_TEMPHOLD_19"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+CLEAR(WPARM,)<br/>
+</font>>];
+"M08_TEMPHOLD_19" -> "M08_TEMPHOLD_10"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,0)<br/>
+</font>>];
+}

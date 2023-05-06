@@ -1,0 +1,12 @@
+digraph {
+ node [shape=record];
+"M_TIMEDVPLAY2_0" -> "M_TIMEDVPLAY2_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DRAGFOCUS(0,0)<br/>
+</font>>];
+"M_TIMEDVPLAY2_1" -> "M_TIMEDVPLAY2_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,IDS_BIRDS)<br/>
+</font>>];
+"M_TIMEDVPLAY2_2" -> "M_TIMEDVPLAY2_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+VIDEO(0,0)<br/>
+</font>>];
+}

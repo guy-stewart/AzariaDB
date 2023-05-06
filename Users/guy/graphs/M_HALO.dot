@@ -1,0 +1,6 @@
+digraph {
+ node [shape=record];
+"M_HALO_0" -> "M_HALO_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASHOW(0,IDS_HALO01)<br/>
+</font>>];
+}

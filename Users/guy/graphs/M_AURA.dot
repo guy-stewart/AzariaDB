@@ -1,0 +1,39 @@
+digraph {
+ node [shape=record];
+"M_AURA_0" -> "M_AURA_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+Z_EPSILON(0,0)<br/>
+</font>>];
+"M_AURA_1" -> "M_AURA_2"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,SIG_ADD)<br/>
+</font>>];
+"M_AURA_1" -> "M_AURA_3"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,SIG_SUB)<br/>
+</font>>];
+"M_AURA_1" -> "M_AURA_2"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,0)<br/>
+</font>>];
+"M_AURA_2" -> "M_AURA_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASSIGN(WPARM,)<br/>
+</font>>];
+"M_AURA_3" -> "M_AURA_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASSIGN(WPARM,V_REVERSE)<br/>
+</font>>];
+"M_AURA_4" -> "M_AURA_5"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WSPRITE,LENERGY)<br/>
+</font>>];
+"M_AURA_5" -> "M_AURA_6"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MODI(WSPRITE,MAX_AURAS)<br/>
+</font>>];
+"M_AURA_6" -> "M_AURA_7"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(WSPRITE,IDS_AURA1)<br/>
+</font>>];
+"M_AURA_7" -> "M_AURA_8"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WSPRITE,)<br/>
+</font>>];
+"M_AURA_8" -> "M_AURA_9"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ANIMATE(WPARM,)<br/>
+</font>>];
+"M_AURA_9" -> "M_AURA_1"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALi(0,SID_ID)<br/>
+</font>>];
+}

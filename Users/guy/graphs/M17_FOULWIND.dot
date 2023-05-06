@@ -1,0 +1,18 @@
+digraph {
+ node [shape=record];
+"M17_FOULWIND_0" -> "M17_FOULWIND_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,0)<br/>
+</font>>];
+"M17_FOULWIND_1" -> "M17_FOULWIND_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+PLAYWAVE(0,SOUND_BURBLE)<br/>
+</font>>];
+"M17_FOULWIND_2" -> "M17_FOULWIND_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ESTIME(0,5)<br/>
+</font>>];
+"M17_FOULWIND_4" -> "M17_FOULWIND_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+NEQUALi(LVIEW,WIP1)<br/>
+</font>>];
+"M17_FOULWIND_4" -> "M17_FOULWIND_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALi(0,SID_DEC_ENERGY)<br/>
+</font>>];
+}

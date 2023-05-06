@@ -1,0 +1,36 @@
+digraph {
+ node [shape=record];
+"M22_SHIELD_0" -> "M22_SHIELD_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,SIG_OPEN)<br/>
+</font>>];
+"M22_SHIELD_0" -> "M22_SHIELD_6"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,SIG_CLOSE)<br/>
+</font>>];
+"M22_SHIELD_1" -> "M22_SHIELD_2"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(BFRAME,WTEMP1)<br/>
+</font>>];
+"M22_SHIELD_2" -> "M22_SHIELD_3"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MAP(BFRAME,WIP1)<br/>
+</font>>];
+"M22_SHIELD_3" -> "M22_SHIELD_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+EQUALi(BFRAME,0)<br/>
+</font>>];
+"M22_SHIELD_3" -> "M22_SHIELD_4"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WSPRITE,WIP2)<br/>
+</font>>];
+"M22_SHIELD_4" -> "M22_SHIELD_5"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SUBI(BFRAME,1)<br/>
+</font>>];
+"M22_SHIELD_5" -> "M22_SHIELD_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WSPRITE,)<br/>
+</font>>];
+"M22_SHIELD_6" -> "M22_SHIELD_7"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+CLEAR(BFRAME,)<br/>
+</font>>];
+"M22_SHIELD_7" -> "M22_SHIELD_8"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+CLEAR(WSPRITE,)<br/>
+</font>>];
+"M22_SHIELD_8" -> "M22_SHIELD_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,0)<br/>
+</font>>];
+}

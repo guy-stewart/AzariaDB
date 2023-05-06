@@ -1,0 +1,144 @@
+digraph {
+ node [shape=record];
+"M12_xCANDLE_0" -> "M12_xCANDLE_20"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+CLICK(0,0)<br/>
+</font>>];
+"M12_xCANDLE_0" -> "M12_xCANDLE_20"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DRAG(0,IDD_MATCH)<br/>
+</font>>];
+"M12_xCANDLE_0" -> "M12_xCANDLE_200"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+DRAG(0,IDD_SCOOPF)<br/>
+</font>>];
+"M12_xCANDLE_0" -> "M12_xCANDLE_10"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,SIG_CLEAR)<br/>
+</font>>];
+"M12_xCANDLE_10" -> "M12_xCANDLE_11"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+NEQUALi(BPARM,0)<br/>
+</font>>];
+"M12_xCANDLE_10" -> "M12_xCANDLE_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,0)<br/>
+</font>>];
+"M12_xCANDLE_11" -> "M12_xCANDLE_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(0,IDS_CANNY1)<br/>
+</font>>];
+"M12_xCANDLE_20" -> "M12_xCANDLE_21"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WSPRITE,WIP1)<br/>
+</font>>];
+"M12_xCANDLE_21" -> "M12_xCANDLE_22"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SHOW(WSPRITE,)<br/>
+</font>>];
+"M12_xCANDLE_22" -> "M12_xCANDLE_23"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WPARM,WTHIS)<br/>
+</font>>];
+"M12_xCANDLE_23" -> "M12_xCANDLE_24"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(WPARM,1)<br/>
+</font>>];
+"M12_xCANDLE_24" -> "M12_xCANDLE_25"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+REF_MACHINE(WPARM,)<br/>
+</font>>];
+"M12_xCANDLE_25" -> "M12_xCANDLE_26"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WTEMP1,R_WOBJECT)<br/>
+</font>>];
+"M12_xCANDLE_26" -> "M12_xCANDLE_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+EQUALi(WTEMP1,0)<br/>
+</font>>];
+"M12_xCANDLE_26" -> "M12_xCANDLE_30"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SUBI(WTEMP1,IDD_SCR001)<br/>
+</font>>];
+"M12_xCANDLE_30" -> "M12_xCANDLE_31"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WPARM,WTHIS)<br/>
+</font>>];
+"M12_xCANDLE_31" -> "M12_xCANDLE_32"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(WPARM,2)<br/>
+</font>>];
+"M12_xCANDLE_32" -> "M12_xCANDLE_40"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WTEMP2,0)<br/>
+</font>>];
+"M12_xCANDLE_40" -> "M12_xCANDLE_50"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+REF_MACHINE(WPARM,)<br/>
+</font>>];
+"M12_xCANDLE_50" -> "M12_xCANDLE_51"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WOBJECT,WTEMP1)<br/>
+</font>>];
+"M12_xCANDLE_51" -> "M12_xCANDLE_52"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MAP(WOBJECT,R_WIP1)<br/>
+</font>>];
+"M12_xCANDLE_52" -> "M12_xCANDLE_60"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+EQUALi(WOBJECT,0)<br/>
+</font>>];
+"M12_xCANDLE_52" -> "M12_xCANDLE_53"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SUBI(WOBJECT,1)<br/>
+</font>>];
+"M12_xCANDLE_53" -> "M12_xCANDLE_54"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MAP(WOBJECT,R_WIP2)<br/>
+</font>>];
+"M12_xCANDLE_54" -> "M12_xCANDLE_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+NEQUAL(WOBJECT,R_WOBJECT)<br/>
+</font>>];
+"M12_xCANDLE_54" -> "M12_xCANDLE_60"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+Z_EPSILON(,)<br/>
+</font>>];
+"M12_xCANDLE_60" -> "M12_xCANDLE_61"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(WTEMP2,1)<br/>
+</font>>];
+"M12_xCANDLE_61" -> "M12_xCANDLE_70"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(WPARM,1)<br/>
+</font>>];
+"M12_xCANDLE_70" -> "M12_xCANDLE_40"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+LTi(WTEMP2,6)<br/>
+</font>>];
+"M12_xCANDLE_70" -> "M12_xCANDLE_131"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WPARM,WTHIS)<br/>
+</font>>];
+"M12_xCANDLE_131" -> "M12_xCANDLE_132"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(WPARM,2)<br/>
+</font>>];
+"M12_xCANDLE_132" -> "M12_xCANDLE_140"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WTEMP2,0)<br/>
+</font>>];
+"M12_xCANDLE_140" -> "M12_xCANDLE_141"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+REF_MACHINE(WPARM,)<br/>
+</font>>];
+"M12_xCANDLE_141" -> "M12_xCANDLE_160"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNAL(WPARM,SIG_CLEAR)<br/>
+</font>>];
+"M12_xCANDLE_160" -> "M12_xCANDLE_161"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(WTEMP2,1)<br/>
+</font>>];
+"M12_xCANDLE_161" -> "M12_xCANDLE_170"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(WPARM,1)<br/>
+</font>>];
+"M12_xCANDLE_170" -> "M12_xCANDLE_140"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+LTi(WTEMP2,6)<br/>
+</font>>];
+"M12_xCANDLE_170" -> "M12_xCANDLE_180"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+Z_EPSILON(,)<br/>
+</font>>];
+"M12_xCANDLE_180" -> "M12_xCANDLE_181"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WTEMP1,WTEMP1)<br/>
+</font>>];
+"M12_xCANDLE_181" -> "M12_xCANDLE_182"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MAPi(WTEMP1,SCROLL_SPELL)<br/>
+</font>>];
+"M12_xCANDLE_182" -> "M12_xCANDLE_183"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(WTEMP1,IDS_ENCHANT)<br/>
+</font>>];
+"M12_xCANDLE_183" -> "M12_xCANDLE_184"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+MOV(WPARM,WTHIS)<br/>
+</font>>];
+"M12_xCANDLE_184" -> "M12_xCANDLE_185"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(WPARM,3)<br/>
+</font>>];
+"M12_xCANDLE_185" -> "M12_xCANDLE_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNAL(WPARM,SIG_SET)<br/>
+</font>>];
+"M12_xCANDLE_200" -> "M12_xCANDLE_201"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ADDI(BPARM,1)<br/>
+</font>>];
+"M12_xCANDLE_201" -> "M12_xCANDLE_202"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+PLAYWAVE(0,SOUND_SLURP)<br/>
+</font>>];
+"M12_xCANDLE_202" -> "M12_xCANDLE_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+HANDOFF(0,IDD_SCOOPE)<br/>
+</font>>];
+}

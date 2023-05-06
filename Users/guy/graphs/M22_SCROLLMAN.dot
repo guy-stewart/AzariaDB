@@ -1,0 +1,45 @@
+digraph {
+ node [shape=record];
+"M22_SCROLLMAN_0" -> "M22_SCROLLMAN_5"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,SIG_VIEWINIT)<br/>
+</font>>];
+"M22_SCROLLMAN_0" -> "M22_SCROLLMAN_10"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
+WAIT(0,0)<br/>
+</font>>];
+"M22_SCROLLMAN_5" -> "M22_SCROLLMAN_6"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SUBI(WTEMP1,IDD_SCR001)<br/>
+</font>>];
+"M22_SCROLLMAN_6" -> "M22_SCROLLMAN_50"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASSIGN(BPARM,SIG_OPEN)<br/>
+</font>>];
+"M22_SCROLLMAN_10" -> "M22_SCROLLMAN_50"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+ASSIGN(BPARM,SIG_CLOSE)<br/>
+</font>>];
+"M22_SCROLLMAN_50" -> "M22_SCROLLMAN_51"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALri(BPARM,S22_SHIELD)<br/>
+</font>>];
+"M22_SCROLLMAN_51" -> "M22_SCROLLMAN_52"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALri(BPARM,S22_WORD)<br/>
+</font>>];
+"M22_SCROLLMAN_52" -> "M22_SCROLLMAN_53"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALri(BPARM,S22_PLANT1)<br/>
+</font>>];
+"M22_SCROLLMAN_53" -> "M22_SCROLLMAN_54"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALri(BPARM,S22_PLANT2)<br/>
+</font>>];
+"M22_SCROLLMAN_54" -> "M22_SCROLLMAN_55"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALri(BPARM,S22_PLANT3)<br/>
+</font>>];
+"M22_SCROLLMAN_55" -> "M22_SCROLLMAN_56"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALri(BPARM,S22_FISH1)<br/>
+</font>>];
+"M22_SCROLLMAN_56" -> "M22_SCROLLMAN_57"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALri(BPARM,S22_FISH2)<br/>
+</font>>];
+"M22_SCROLLMAN_57" -> "M22_SCROLLMAN_58"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALri(BPARM,S22_FISH3)<br/>
+</font>>];
+"M22_SCROLLMAN_58" -> "M22_SCROLLMAN_0"[color=green, fontcolor=green, label=< <font face="Courier New" point-size="10">
+SIGNALri(BPARM,S22_NYSTROM)<br/>
+</font>>];
+}
