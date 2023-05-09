@@ -1,9 +1,0 @@
-digraph {
- node [shape=record];
-"M_O_PED_0" -> "M_O_PED_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
-GRAB(0,0)<br/>
-</font>>];
-"M_O_PED_0" -> "M_O_PED_1"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
-WAIT(0,0)<br/>
-</font>>];
-}

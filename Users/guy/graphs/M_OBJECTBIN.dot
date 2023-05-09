@@ -1,6 +1,0 @@
-digraph {
- node [shape=record];
-"M_OBJECTBIN_0" -> "M_OBJECTBIN_0"[color=red, fontcolor=red, label=< <font face="Courier New" point-size="10">
-GRAB(WIP1,)<br/>
-</font>>];
-}
