@@ -292,17 +292,15 @@ main :- card_objects(idd_card04,SPELL),
     REF_MACHINE(WIP4);
 '),
 ('M08_BIN','104','0','LT','R_BPARM','WTEMP1',''),
-('M08_BIN','104','200','Z_EPSILON','','','
+-- create the object:
+('M08_BIN','104','105','Z_EPSILON','','','
     SIGNAL(WIP2, SIG_CLEAR);
     SIGNAL(WIP3, SIG_CLEAR);
     SIGNAL(WIP4, SIG_CLEAR);
-'),
--- create the object:
-('M08_BIN','200','201','Z_EPSILON','','','
     MOV(WOBJECT,WPARM);
     MAPi(WOBJECT,CARD_OBJECTS);
     ASHOW(WOBJECT);'),
-('M08_BIN','201','0','GRAB','0','0', 'SHOW();'),
+('M08_BIN','105','0','GRAB','','', 'SHOW();'),
 
 -- CARDHOLD(WIP1=S08_HOPPERxx):
 ('M08_CARDHOLD','0','10','C_ACCEPT','0','IDC_CARD',''),
