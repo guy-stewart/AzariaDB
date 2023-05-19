@@ -1,5 +1,4 @@
 
-/*
 
 uses CHEMCOST; // CHEMCOST is a MAP where CHEMCOST(n) gives the cost of each chemical.
 
@@ -8,14 +7,12 @@ dfa M05_UP(receiver) {
             playwave(sound_click);
             signal(receiver, SIG_INC1);
         } -> 0;
-    }
 };
 dfa M05_DN(receiver) {
     0: click() {
             playwave(sound_click);
             signal(receiver, SIG_DEC1);
         } -> 0;
-    }
 };
 dfa ICON(vial, num1, num10) {
     int selection; // currently selected chemical.

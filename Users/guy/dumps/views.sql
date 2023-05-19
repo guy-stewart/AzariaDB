@@ -287,6 +287,9 @@ insert into views values (0x2512,'IDV_HIDDENR2',1,0,1,6,'surround.vct','HIDDENR2
 insert into views values (0x2612,'IDV_BANISH',1,1,1,6,'surround.vct','BANISH');
 insert into views values (0x2649,'IDV_KAMIOZA',1,0,1,6,'surround.vct','KAMIOZA');
 insert into views values (0x264a,'IDV_MEFPAN',1,1,1,1,'wdepanel.vct','PARCHPAN');
+insert into views values (0x264b,'IDV_S24_RATHE_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN');
+insert into views values (0x264c,'IDV_S10_THAOR_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN');
+insert into views values (0x264d,'IDV_S16_PERST_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN');
 insert into views values (0x2711,'IDV_CANDWALL',1,3,1,1,'smlpanel.vct','candwall');
 insert into views values (0x2712,'IDV_CARDMACH',1,3,1,1,'smlpanel.vct','cardmach');
 insert into views values (0x2713,'IDV_CDOOR',1,3,1,1,'smlpanel.vct','cdoor');

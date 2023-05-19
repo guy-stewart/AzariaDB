@@ -5,6 +5,9 @@ prod/.DS_Store
 # Prerequisites
 *.d
 
+# graphviz intermediate files
+*.dot
+
 # Compiled Object files
 *.slo
 *.lo
