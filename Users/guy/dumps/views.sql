@@ -272,6 +272,7 @@ insert into views values (0x2201,'IDV_PARCHPAN',1,0,1,1,'wdepanel.vct','PARCHPAN
 insert into views values (0x2401,'IDV_EYEA',1,0,1,6,'surround.vct','eyea');
 insert into views values (0x2402,'IDV_EYEB',1,0,1,6,'surround.vct','eyeb');
 insert into views values (0x2403,'IDV_EYEC1P',1,0,1,1,'wdepanel.vct','eyec1p');
+insert into views values (0x2500,'IDV_WR4',1,1,1,6,'surround.vct','WR4');
 insert into views values (0x2501,'IDV_WR1',1,1,1,6,'surround.vct','WR1');
 insert into views values (0x2502,'IDV_WR2',1,1,1,6,'surround.vct','WR2');
 insert into views values (0x2503,'IDV_WR3',1,1,1,6,'surround.vct','WR3');
@@ -290,6 +291,7 @@ insert into views values (0x264a,'IDV_MEFPAN',1,1,1,1,'wdepanel.vct','PARCHPAN')
 insert into views values (0x264b,'IDV_S24_RATHE_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN');
 insert into views values (0x264c,'IDV_S10_THAOR_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN');
 insert into views values (0x264d,'IDV_S16_PERST_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN');
+insert into views values (0x264e,'IDV_S09_AMBLE_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN');
 insert into views values (0x2711,'IDV_CANDWALL',1,3,1,1,'smlpanel.vct','candwall');
 insert into views values (0x2712,'IDV_CARDMACH',1,3,1,1,'smlpanel.vct','cardmach');
 insert into views values (0x2713,'IDV_CDOOR',1,3,1,1,'smlpanel.vct','cdoor');

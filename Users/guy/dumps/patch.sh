@@ -226,6 +226,8 @@ git checkout 4750ac0 eyea.png
 ./onepng -mirror eyea.png
 git checkout 4750ac0 eyeb.png
 ./onepng -mirror eyeb.png
+git checkout 4750ac0 WR4.png
+./onepng -mirror WR4.png
 git checkout 4750ac0 WR1.png
 ./onepng -mirror WR1.png
 git checkout 4750ac0 WR2.png
