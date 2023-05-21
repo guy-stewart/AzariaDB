@@ -14,14 +14,16 @@
 - HANDOFF
 - SYNCPOINT
 
+### Conditionals
+- [Branching](#branching) 
+  -  [Epsilon](#epsilon)
+- [Compare](#compare)  (GT, LT, EQ, EPSILON, ...)  
+
 ### Math and Logic
 - [Arithmetic](#arithmetic)  (ADD,SUB,MUL,DIV)  
-- [Compare](#compare)  (GT, LT, EQ, EPSILON, ...)  
-  -  [Epsilon](#epsilon)
 - [Move](#move)  (MOV a value to register)
 - [Rand](#rand)  (Generate a random number into the WRAND register)
-- MAPi  
-- MAP
+
 
 ### Gameplay
 - [Graphics](#graphics)   
@@ -36,6 +38,9 @@
 
 ### Other
 [Mapping](#mapping)  
+- MAPi  
+- MAP
+
 [Todo](#todo)  
 
 
@@ -59,9 +64,6 @@ Notes:
 * SWAP :DROP can take SWAP as a parameter
 * GRAB object_def retrieved from wObject OR from transition wParm if specified.
 
-# Epsilon
-   Z_EPSILON        = 0,    // Just do it.
-
 # Audio
 PLAYWAVE - sound id is stored in transition::wAmbient  
 STOPWAVE  
@@ -80,14 +82,37 @@ Notes:
 
 # Mapping
 
-|opcode |parameters     |description|
-|-------|---------------|-----------|
-|MAP_OBJ||MAP_OBJ map_operation_id|
+|opcode  | parameters     |description|
+|--------|----------------|-----------|
+|MAP     | r1=key,r2=op   |           |
+|MAPi    | r1=key, op imm |           |
+|MAP_OBJ |map op| depricated |
 |MIX|wObject = MAP_OBJ(r1, r2) r1 = operator, r2 = operand.|
 |XIM||
 
-wObject = map_operation(wObject)  
-if the object cannot be mapped then the transition occurs w/o mapping the object.  
+Mappings are modeled after prolog style facts:
+```
+CARD_OBJECTS(IDD_CARD00,IDD_SPELL01).
+CARD_OBJECTS(IDD_CARD01,IDD_SPELL02).
+CARD_OBJECTS(IDD_CARD02,IDD_SPELL03).
+CARD_OBJECTS(IDD_CARD03,IDD_SPELL04).
+```  
+These are stored in sqlite3 map table:  
+```
+insert into map ([op],[key],[value]) values   
+('CARD_OBJECTS','IDD_CARD00','IDD_SPELL01'),
+('CARD_OBJECTS','IDD_CARD01','IDD_SPELL02'),
+('CARD_OBJECTS','IDD_CARD02','IDD_SPELL03'),
+('CARD_OBJECTS','IDD_CARD03','IDD_SPELL04'),
+```
+To perform a lookup using opcodes:
+```
+    ASSIGN(WOBJECT, IDD_CARD02);
+    MAP(WOBJECT,CARD_OBJECTS);  
+```
+After MAP_OBJ WOBJECT will contain IDD_SPELL02. if the object cannot be mapped then the transition occurs w/o mapping the object.  
+
+Note that MAP_OBJ is a special case of MAP where WOBJECT contains the item to be mapped, and receives the mapped item (object).
 
 # Relocate
 
@@ -139,6 +164,26 @@ Notes:
 
 Notes:
 * set WRAND to a value between r2 and r2+r1
+
+
+# Branching
+Conditionals are used to select between 2 possible transitions from a given state. The first transition is taken if the conditinal evaluate to true, the second transition is taken when the condition evalueate to false (i.e. the 'else' clause). The opcode 'Z_EPSILON' is used for the else branch. In the following example we branch from state 102 to state 0 if WTEMP1 and R_OBJECT are not equal (meaning that the supplied chem does not match the chem required by the inserted card). If the registers match, then the Z_EPSILON transition is taken:
+```
+-- chem1 does not match inserted card
+('M08_BIN','102','0','NEQUAL','WTEMP1','R_WOBJECT', ''),
+-- chem1 matches, now check for chem2:
+('M08_BIN','102','103','Z_EPSILON','','','
+    MOV(WTEMP1,WPARM);
+    MAPi(WTEMP1,CARD_CHEM2);
+    REF_MACHINE(WIP3);
+'),
+```
+
+
+
+# Epsilon
+   Z_EPSILON        = 0,    // Just do it.
+
 
 # Compare
    IFSTATE - IFSATE state, machine_id  
