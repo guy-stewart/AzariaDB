@@ -1067,9 +1067,12 @@ insert into transitions ([automaton], [state], [new_state], [opcode], [param_1],
         SIGNALi(SIG_SHOW,S12_ING3);
         SIGNALi(SIG_SHOW,S12_ING4);
         SIGNALi(SIG_SHOW,S12_NYST);
+       
        ',''),
 ('M_EYEINFO','100','130','IS_A','WOBJECT','ISA_ENCHANTEDSTONE','MOV(WPARM,WOBJECT);
-        MOV(WVIEWID,LVIEW);',''),
+        MOV(WVIEWID,LVIEW);
+        
+        ',''),
 ('M_EYEINFO','100','0','Z_EPSILON','0','0','',''),
 ('M_EYEINFO','120','0','LOADVIEW','0','IDV_SPELLPAN','',''),
 ('M_EYEINFO','130','0','LOADVIEW','0','IDV_ENCHANTPAN','',''),
@@ -1504,8 +1507,15 @@ insert into transitions ([automaton], [state], [new_state], [opcode], [param_1],
 ('M_PORTAL','1','2','ASHOW','WSPRITE','V_LOOP','',''),
 ('M_PORTAL','2','3','CLICK','0','0','',''),
 ('M_PORTAL','3','1','LOADVIEW','0','IDV_SHORE','',''),
-('M_REC_COMPLETE','0','100','WAIT','0','SIG_COMPLETE','ASSIGN(WSPRITE,WIP1);SHOW(WSPRITE);',''),
-('M_REC_COMPLETE','100','0','WAIT','0','SIG_RESET','CLEAR(WSPRITE);SHOW();',''),
+('M_RECORD_COMPLETE','0','100','WAIT','0','SIG_COMPLETE','ASSIGN(WSPRITE,WIP1);SHOW(WIP1);',''),
+('M_RECORD_COMPLETE','100','101','WAIT','0','SIG_RESET','',''),
+('M_RECORD_COMPLETE','101','0','Z_EPSILON','','','CLEAR(WSPRITE);SHOW();',''),
+('M_RECORD_COUNTER','0','0','WAIT','0','SIG_COUNT','ADDi(WPARM,1);',''),
+('M_RECYCLE','0','1','DROP','0','0','',''),
+('M_RECYCLE','1','0','VIDEO','0','IDS_SMBURST','',''),
+('M_REC_COMPLETE','0','100','WAIT','0','SIG_COMPLETE','ASSIGN(WSPRITE,WIP1);SHOW(WIP1);',''),
+('M_REC_COMPLETE','100','101','WAIT','0','SIG_RESET','',''),
+('M_REC_COMPLETE','101','0','Z_EPSILON','','','CLEAR(WSPRITE);SHOW();',''),
 ('M_REC_COUNTER','0','0','WAIT','0','SIG_COUNT','ADDi(WPARM,1);',''),
 ('M_SQUARE','0','1','C_ACCEPT','0','IDC_TOKEN','',''),
 ('M_SQUARE','1','5','Z_EPSILON','','','
