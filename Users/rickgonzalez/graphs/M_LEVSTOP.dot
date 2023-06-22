@@ -1,0 +1,17 @@
+digraph {
+ node [shape=oval];
+"0" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>O_ACCEPT(0,IDD_ROCK)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "30"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"30" -> "40"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WOBJECT,)<br align="left"/></b></font></td></tr>
+</table>>];
+"40" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_CLICK)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "60"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP2,)<br align="left"/></b></font></td></tr>
+</table>>];
+"60" -> "70"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"70" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+}

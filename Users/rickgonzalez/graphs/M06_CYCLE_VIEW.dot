@@ -1,0 +1,29 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WPARM,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>MOV(WOBJECT,WPARM)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MAPi(WOBJECT,S06_MAN_OBJECTS);ASHOW(WOBJECT); SIGNAL(WIP1,SIG_DEC1);SIGNAL(WIP2,SIG_DEC1);SIGNAL(WIP3,SIG_DEC1);<br align="left"/></font></td></tr></table>>];
+"10" -> "2"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GTEi(WPARM,24)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ASSIGN(WPARM,24);<br align="left"/></font></td></tr></table>>];
+"10" -> "11"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>MOV(WOBJECT,WPARM)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MAPi(WOBJECT,S06_MAN_OBJECTS);ASHOW(WOBJECT);SIGNAL(WIP1,SIG_INC1);SIGNAL(WIP2,SIG_INC1);SIGNAL(WIP3,SIG_INC1);<br align="left"/></font></td></tr></table>>];
+"11" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "10"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_INC1)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue"> ADDI(WPARM,1);<br align="left"/></font></td></tr></table>>];
+"2" -> "20"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_DEC1)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue"> SUBI(WPARM,1);<br align="left"/></font></td></tr></table>>];
+"2" -> "30"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_SHOW)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">REF_MACHINE(WIP4);<br align="left"/></font></td></tr></table>>];
+"20" -> "2"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>LTi(WPARM,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ASSIGN(WPARM,0);<br align="left"/></font></td></tr></table>>];
+"20" -> "21"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>MOV(WOBJECT,WPARM)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MAPi(WOBJECT,S06_MAN_OBJECTS);ASHOW(WOBJECT); SIGNAL(WIP1,SIG_DEC1);SIGNAL(WIP2,SIG_DEC1);SIGNAL(WIP3,SIG_DEC1);<br align="left"/></font></td></tr></table>>];
+"21" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"30" -> "31"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WPARM,R_WPARM)<br align="left"/></b></font></td></tr>
+</table>>];
+"31" -> "2"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>MOV(WOBJECT,R_WPARM)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MAPi(WOBJECT,S06_MAN_OBJECTS);ASHOW(WOBJECT);<br align="left"/></font></td></tr></table>>];
+}

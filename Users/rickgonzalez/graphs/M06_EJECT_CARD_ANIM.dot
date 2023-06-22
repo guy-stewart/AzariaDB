@@ -1,0 +1,13 @@
+digraph {
+ node [shape=oval];
+"0" -> "5"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_EJECT)<br align="left"/></b></font></td></tr>
+</table>>];
+"11" -> "20"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>MOV(WOBJECT,R_WPARM)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MAPi(WOBJECT,S06_CARD_INDEX);<br align="left"/></font></td></tr></table>>];
+"20" -> "0"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GRAB(WOBJECT,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">CLEAR(WSPRITE); SHOW(0);<br align="left"/></font></td></tr></table>>];
+"5" -> "7"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,IDS_CARDANI)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ANIMATE(0);PLAYWAVE(SOUND_CARDEJECT);<br align="left"/></font></td></tr></table>>];
+"7" -> "11"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>MOV(WOBJECT,IDD_CARD01)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">REF_MACHINE(WIP1);<br align="left"/></font></td></tr></table>>];
+}

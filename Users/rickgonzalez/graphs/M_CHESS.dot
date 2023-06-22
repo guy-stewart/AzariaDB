@@ -1,0 +1,99 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WIP1,)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "150"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLICK(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"101" -> "102"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WTEMP1,IDD_WPAWN)<br align="left"/></b></font></td></tr>
+</table>>];
+"102" -> "103"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+8)<br align="left"/></b></font></td></tr>
+</table>>];
+"103" -> "104"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+9)<br align="left"/></b></font></td></tr>
+</table>>];
+"104" -> "105"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+10)<br align="left"/></b></font></td></tr>
+</table>>];
+"105" -> "106"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+11)<br align="left"/></b></font></td></tr>
+</table>>];
+"106" -> "107"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+12)<br align="left"/></b></font></td></tr>
+</table>>];
+"107" -> "108"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+13)<br align="left"/></b></font></td></tr>
+</table>>];
+"108" -> "109"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+14)<br align="left"/></b></font></td></tr>
+</table>>];
+"109" -> "110"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+15)<br align="left"/></b></font></td></tr>
+</table>>];
+"110" -> "111"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WTEMP1,IDD_WROOK)<br align="left"/></b></font></td></tr>
+</table>>];
+"111" -> "112"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+0)<br align="left"/></b></font></td></tr>
+</table>>];
+"112" -> "113"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+7)<br align="left"/></b></font></td></tr>
+</table>>];
+"113" -> "114"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WTEMP1,IDD_WKNIGHT)<br align="left"/></b></font></td></tr>
+</table>>];
+"114" -> "115"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+1)<br align="left"/></b></font></td></tr>
+</table>>];
+"115" -> "116"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+6)<br align="left"/></b></font></td></tr>
+</table>>];
+"116" -> "117"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WTEMP1,IDD_WBISHOP)<br align="left"/></b></font></td></tr>
+</table>>];
+"117" -> "118"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+2)<br align="left"/></b></font></td></tr>
+</table>>];
+"118" -> "119"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+5)<br align="left"/></b></font></td></tr>
+</table>>];
+"119" -> "120"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WTEMP1,IDD_WQUEEN)<br align="left"/></b></font></td></tr>
+</table>>];
+"120" -> "121"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+3)<br align="left"/></b></font></td></tr>
+</table>>];
+"121" -> "122"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WTEMP1,IDD_WKING)<br align="left"/></b></font></td></tr>
+</table>>];
+"122" -> "124"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE00+4)<br align="left"/></b></font></td></tr>
+</table>>];
+"124" -> "125"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WTEMP1,IDD_BPAWN)<br align="left"/></b></font></td></tr>
+</table>>];
+"125" -> "126"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE48)<br align="left"/></b></font></td></tr>
+</table>>];
+"126" -> "127"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE48+1)<br align="left"/></b></font></td></tr>
+</table>>];
+"127" -> "128"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE48+2)<br align="left"/></b></font></td></tr>
+</table>>];
+"128" -> "129"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE48+3)<br align="left"/></b></font></td></tr>
+</table>>];
+"129" -> "130"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE48+4)<br align="left"/></b></font></td></tr>
+</table>>];
+"130" -> "131"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE48+5)<br align="left"/></b></font></td></tr>
+</table>>];
+"131" -> "132"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE48+6)<br align="left"/></b></font></td></tr>
+</table>>];
+"132" -> "133"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE48+7)<br align="left"/></b></font></td></tr>
+</table>>];
+"133" -> "134"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WTEMP1,IDD_BROOK)<br align="left"/></b></font></td></tr>
+</table>>];
+"134" -> "135"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE56+0)<br align="left"/></b></font></td></tr>
+</table>>];
+"135" -> "136"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE56+7)<br align="left"/></b></font></td></tr>
+</table>>];
+"136" -> "137"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WTEMP1,IDD_BKNIGHT)<br align="left"/></b></font></td></tr>
+</table>>];
+"137" -> "138"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE56+1)<br align="left"/></b></font></td></tr>
+</table>>];
+"138" -> "139"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE56+6)<br align="left"/></b></font></td></tr>
+</table>>];
+"139" -> "140"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WTEMP1,IDD_BBISHOP)<br align="left"/></b></font></td></tr>
+</table>>];
+"140" -> "141"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE56+2)<br align="left"/></b></font></td></tr>
+</table>>];
+"141" -> "142"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE56+5)<br align="left"/></b></font></td></tr>
+</table>>];
+"142" -> "143"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WTEMP1,IDD_BQUEEN)<br align="left"/></b></font></td></tr>
+</table>>];
+"143" -> "144"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE56+3)<br align="left"/></b></font></td></tr>
+</table>>];
+"144" -> "145"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WTEMP1,IDD_BKING)<br align="left"/></b></font></td></tr>
+</table>>];
+"145" -> "146"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SET,S00_SQUARE56+4)<br align="left"/></b></font></td></tr>
+</table>>];
+"146" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WTEMP1,)<br align="left"/></b></font></td></tr>
+</table>>];
+"150" -> "101"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_NULL,S00_CLEAR)<br align="left"/></b></font></td></tr>
+</table>>];
+}

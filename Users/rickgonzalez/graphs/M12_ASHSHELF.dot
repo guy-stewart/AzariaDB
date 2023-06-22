@@ -1,0 +1,31 @@
+digraph {
+ node [shape=oval];
+"0" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>C_ACCEPT(0,IDC_FISHASH)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "11"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"11" -> "12"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WOBJECT,)<br align="left"/></b></font></td></tr>
+</table>>];
+"115" -> "116"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASHOW(WOBJECT,)<br align="left"/></b></font></td></tr>
+</table>>];
+"116" -> "117"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP2,)<br align="left"/></b></font></td></tr>
+</table>>];
+"117" -> "118"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP3,)<br align="left"/></b></font></td></tr>
+</table>>];
+"118" -> "119"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"119" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"12" -> "13"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP1,)<br align="left"/></b></font></td></tr>
+</table>>];
+"13" -> "119"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"13" -> "14"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"14" -> "15"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(WOBJECT,IDD_SPELL01-IDD_FISHASH1)<br align="left"/></b></font></td></tr>
+</table>>];
+"15" -> "115"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(WOBJECT,IDD_SPELx01-IDD_SPELL01)<br align="left"/></b></font></td></tr>
+</table>>];
+"15" -> "115"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>NOTSTATE(M12_SPRING_PRESENT,WIP3)<br align="left"/></b></font></td></tr>
+</table>>];
+}

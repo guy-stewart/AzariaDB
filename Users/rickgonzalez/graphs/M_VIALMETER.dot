@@ -1,0 +1,19 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_SHOW)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">REF_MACHINE(WIP1);MOV(BPARM,R_BPARM);MOV(WPARM,R_WPARM)<br align="left"/></font></td></tr></table>>];
+"1" -> "10"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(R_WPARM,20)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MULI(BPARM,2);MOV(BFRAME,BPARM);SHOW(WIP2);<br align="left"/></font></td></tr></table>>];
+"1" -> "20"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(R_WPARM,40)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ASSIGN(WSPRITE,WIP2);MOV(BFRAME,BPARM);SHOW(WIP2);<br align="left"/></font></td></tr></table>>];
+"1" -> "30"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(R_WPARM,80)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">DIVI(BPARM,2);MOV(BFRAME,BPARM);SHOW(WIP2);<br align="left"/></font></td></tr></table>>];
+"1" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"30" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+}

@@ -1,0 +1,13 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_SHOW)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "5"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WSPRITE,WIP1)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "11"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_HIDE)<br align="left"/></b></font></td></tr>
+</table>>];
+"11" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WSPRITE,0)<br align="left"/></b></font></td></tr>
+</table>>];
+}

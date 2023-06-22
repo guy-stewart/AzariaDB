@@ -1,0 +1,61 @@
+digraph {
+ node [shape=oval];
+"0" -> "40"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_CITLOCK)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "70"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_VILLOCK)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "60"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_BOMB1)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "60"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_BOMB2)<br align="left"/></b></font></td></tr>
+</table>>];
+"40" -> "42"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP1,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+</table>>];
+"42" -> "43"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP3,SIG_SHOW)<br align="left"/></b></font></td></tr>
+</table>>];
+"43" -> "44"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP4,SIG_SHOW)<br align="left"/></b></font></td></tr>
+</table>>];
+"44" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASHOW(WOBJECT,)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "55"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLICK(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "51"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_CITKEY)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "60"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_BOMB1)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "60"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_BOMB2)<br align="left"/></b></font></td></tr>
+</table>>];
+"51" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP1,SIG_ENTER_1)<br align="left"/></b></font></td></tr>
+</table>>];
+"55" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP1,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+</table>>];
+"60" -> "61"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP1,SIG_OPEN)<br align="left"/></b></font></td></tr>
+</table>>];
+"61" -> "62"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP2,SIG_BURN)<br align="left"/></b></font></td></tr>
+</table>>];
+"62" -> "63"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP3,SIG_HIDE)<br align="left"/></b></font></td></tr>
+</table>>];
+"63" -> "64"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP4,SIG_HIDE)<br align="left"/></b></font></td></tr>
+</table>>];
+"64" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"70" -> "72"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP1,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+</table>>];
+"72" -> "73"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP3,SIG_SHOW)<br align="left"/></b></font></td></tr>
+</table>>];
+"73" -> "74"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP4,SIG_SHOW)<br align="left"/></b></font></td></tr>
+</table>>];
+"74" -> "80"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASHOW(WOBJECT,)<br align="left"/></b></font></td></tr>
+</table>>];
+"80" -> "85"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLICK(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"80" -> "81"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_VILKEY)<br align="left"/></b></font></td></tr>
+</table>>];
+"80" -> "60"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_BOMB1)<br align="left"/></b></font></td></tr>
+</table>>];
+"80" -> "60"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_BOMB2)<br align="left"/></b></font></td></tr>
+</table>>];
+"81" -> "80"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP1,SIG_ENTER_1)<br align="left"/></b></font></td></tr>
+</table>>];
+"85" -> "80"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP1,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+</table>>];
+}

@@ -1,0 +1,9 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>C_ACCEPT(0,IDC_KEY)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    SUBI(WOBJECT,IDD_CITY_KEY1);<br align="left"/>    REF_MACHINE(WIP3);<br align="left"/>    MOV(R_BFRAME,WOBJECT);<br align="left"/>    MODI(R_BFRAME,4);<br align="left"/>    DIVI(WOBJECT,4);<br align="left"/>    REF_MACHINE(WIP2);<br align="left"/>    MOV(R_BFRAME,WOBJECT);<br align="left"/>    MODI(R_BFRAME,4);<br align="left"/>    DIVI(WOBJECT,4);<br align="left"/>    REF_MACHINE(WIP1);<br align="left"/>    MOV(R_BFRAME,WOBJECT);<br align="left"/>    SHOW(0,IDS_KEY_CFGWKEY);<br align="left"/>    CLEAR(WOBJECT);<br align="left"/></font></td></tr></table>>];
+"2" -> "1"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GRAB(,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    REF_MACHINE(WIP1);<br align="left"/>    MOV(WOBJECT,R_BFRAME);<br align="left"/>    CLEAR(R_BFRAME);<br align="left"/>    MULI(WOBJECT,4);<br align="left"/>    REF_MACHINE(WIP2);<br align="left"/>    ADD(WOBJECT,R_BFRAME);<br align="left"/>    CLEAR(R_BFRAME);<br align="left"/>    MULI(WOBJECT,4);<br align="left"/>    REF_MACHINE(WIP3);<br align="left"/>    ADD(WOBJECT,R_BFRAME);<br align="left"/>    CLEAR(R_BFRAME);<br align="left"/>    ADDI(WOBJECT,IDD_CITY_KEY1);<br align="left"/>    HANDOFF(WOBJECT);<br align="left"/>    SHOW();<br align="left"/></font></td></tr></table>>];
+}

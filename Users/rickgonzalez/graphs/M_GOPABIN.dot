@@ -1,0 +1,53 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(BFRAME,WIP3)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WIP1,)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "20"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "3"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_RIPEN)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "30"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(BFRAME,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "40"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(BFRAME,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(BFRAME,2)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(BFRAME,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"30" -> "31"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WOBJECT,IDD_GOPAR)<br align="left"/></b></font></td></tr>
+</table>>];
+"31" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "5"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(BFRAME,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "6"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(BFRAME,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "7"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(BFRAME,2)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "8"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(BFRAME,3)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "9"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GTE(BFRAME,WIP2)<br align="left"/></b></font></td></tr>
+</table>>];
+"40" -> "41"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WOBJECT,IDD_GOPAG)<br align="left"/></b></font></td></tr>
+</table>>];
+"41" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WOBJECT,IDD_GOPAR)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "51"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WOBJECT,IDD_GOPAB)<br align="left"/></b></font></td></tr>
+</table>>];
+"51" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"6" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WOBJECT,IDD_GOPAG)<br align="left"/></b></font></td></tr>
+</table>>];
+"7" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WOBJECT,IDD_GOPAB)<br align="left"/></b></font></td></tr>
+</table>>];
+"8" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WOBJECT,)<br align="left"/></b></font></td></tr>
+</table>>];
+"9" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WOBJECT,IDD_GOPAR)<br align="left"/></b></font></td></tr>
+</table>>];
+}

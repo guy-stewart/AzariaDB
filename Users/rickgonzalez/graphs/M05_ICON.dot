@@ -1,0 +1,17 @@
+digraph {
+ node [shape=oval];
+"0" -> "2"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_INC1)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ADDI(BFRAME,1);<br align="left"/></font></td></tr></table>>];
+"0" -> "7"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_DEC1)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">SUBI(BFRAME,1);<br align="left"/></font></td></tr></table>>];
+"2" -> "20"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GTEi(BFRAME,WIP4)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ASSIGN(BFRAME,0);<br align="left"/></font></td></tr></table>>];
+"2" -> "20"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    SHOW(0,IDS_CHEMS);<br align="left"/>    SIGNAL(WIP1,);<br align="left"/>    SIGNAL(WIP2,);<br align="left"/>    SIGNAL(WIP3,);<br align="left"/></font></td></tr></table>>];
+"7" -> "20"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>LTi(BFRAME,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    ASSIGN(BFRAME,WIP4);<br align="left"/>    SUBI  (BFRAME,1);<br align="left"/></font></td></tr></table>>];
+"7" -> "20"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+}

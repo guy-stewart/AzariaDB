@@ -1,0 +1,27 @@
+digraph {
+ node [shape=oval];
+"0" -> "10"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    ASSIGN(BFRAME,9);<br align="left"/>    MUL(BFRAME,BPARM);<br align="left"/>    ASSIGN(WPARM,MAX_DRYPIT);<br align="left"/>    DIV(BFRAME,WPARM);<br align="left"/>    ASSIGN(WSPRITE,IDS_PITFUL);<br align="left"/>    SHOW(WSPRITE);<br align="left"/></font></td></tr></table>>];
+"10" -> "21"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_SCOOPE)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "31"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_SCOOPF)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "0"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    MOV(BPARM,0);<br align="left"/>    PLAYWAVE(SOUND_BURBLE);<br align="left"/></font></td></tr></table>>];
+"21" -> "25"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GTEi(BPARM,1)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    PLAYWAVE(SOUND_SLURP);<br align="left"/>    SUBI(BPARM,1);<br align="left"/>    HANDOFF(0,IDD_SCOOPF);<br align="left"/></font></td></tr></table>>];
+"21" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(0,)<br align="left"/></b></font></td></tr>
+</table>>];
+"25" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(BPARM,MAX_DRYPIT-1)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">SIGNALi(SIG_CLOSE,S10_FLOWER);<br align="left"/></font></td></tr></table>>];
+"25" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"31" -> "35"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>LTEi(BPARM,MAX_DRYPIT-1)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    PLAYWAVE(SOUND_SPIT);<br align="left"/>    ADDI(BPARM,1);<br align="left"/>    HANDOFF(0,IDD_SCOOPE);<br align="left"/></font></td></tr></table>>];
+"31" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"35" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(BPARM,MAX_DRYPIT)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">SIGNALi(SIG_OPEN,S10_FLOWER);<br align="left"/></font></td></tr></table>>];
+"35" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+}

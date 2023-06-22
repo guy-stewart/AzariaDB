@@ -1,0 +1,9 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLICK(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "1"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>VIDEO(0,IDS_BEAMER)<br align="left"/></b></font></td></tr>
+</table>>];
+}

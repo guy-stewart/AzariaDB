@@ -1,0 +1,31 @@
+digraph {
+ node [shape=oval];
+"0" -> "0"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_SHOW)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">        SIGNAL(WIP1,SIG_SHOW);<br align="left"/>        SIGNAL(WIP2,SIG_SHOW);   <br align="left"/>        SIGNAL(WIP3,SIG_SHOW);<br align="left"/>        SIGNAL(WIP4,SIG_SHOW);<br align="left"/></font></td></tr></table>>];
+"0" -> "0"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_HIDE)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">        SIGNAL(WIP1,SIG_HIDE);<br align="left"/>        SIGNAL(WIP2,SIG_HIDE);   <br align="left"/>        SIGNAL(WIP3,SIG_HIDE);<br align="left"/>        SIGNAL(WIP4,SIG_HIDE);<br align="left"/></font></td></tr></table>>];
+"0" -> "0"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">        SIGNAL(WIP1,SIG_CLOSE);<br align="left"/>        SIGNAL(WIP2,SIG_CLOSE);   <br align="left"/>        SIGNAL(WIP3,SIG_CLOSE);<br align="left"/>        SIGNAL(WIP4,SIG_CLOSE);<br align="left"/>        ASSIGN(BPARM,0);<br align="left"/>        ASSIGN(WPARM,0);<br align="left"/></font></td></tr></table>>];
+"0" -> "9"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_CHECK)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "11"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>REF_MACHINE(WIP1,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ADD(BPARM,R_WPARM);<br align="left"/></font></td></tr></table>>];
+"11" -> "12"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>REF_MACHINE(WIP2,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ADD(BPARM,R_WPARM);<br align="left"/></font></td></tr></table>>];
+"12" -> "13"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>REF_MACHINE(WIP3,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ADD(BPARM,R_WPARM);<br align="left"/></font></td></tr></table>>];
+"13" -> "19"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>REF_MACHINE(WIP4,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ADD(BPARM,R_WPARM);<br align="left"/></font></td></tr></table>>];
+"19" -> "20"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WPARM,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "21"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>REF_MACHINE(WIP1,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ADD(WPARM,R_BPARM);<br align="left"/></font></td></tr></table>>];
+"21" -> "22"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>REF_MACHINE(WIP2,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ADD(WPARM,R_BPARM);<br align="left"/></font></td></tr></table>>];
+"22" -> "23"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>REF_MACHINE(WIP3,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ADD(WPARM,R_BPARM);<br align="left"/></font></td></tr></table>>];
+"23" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>REF_MACHINE(WIP4,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ADD(WPARM,R_BPARM);<br align="left"/></font></td></tr></table>>];
+"9" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,0)<br align="left"/></b></font></td></tr>
+</table>>];
+}

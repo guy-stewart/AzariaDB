@@ -1,0 +1,29 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>C_ACCEPT(0,IDC_FISH)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "10"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "20"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WOBJECT,)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ANIMATE(0,V_LOOP)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "60"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ESTIME(0,FISH_BURN_TIME)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "80"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"60" -> "61"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MAP_OBJ(0,OP_BURN)<br align="left"/></b></font></td></tr>
+</table>>];
+"60" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>NOTSTATE(ON_FIRE,WIP1)<br align="left"/></b></font></td></tr>
+</table>>];
+"61" -> "62"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,IDS_FISHASH)<br align="left"/></b></font></td></tr>
+</table>>];
+"62" -> "63"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_FIRE)<br align="left"/></b></font></td></tr>
+</table>>];
+"63" -> "70"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP2,)<br align="left"/></b></font></td></tr>
+</table>>];
+"70" -> "80"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"80" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+}

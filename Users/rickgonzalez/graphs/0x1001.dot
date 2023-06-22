@@ -1,0 +1,31 @@
+digraph {
+ node [shape=oval];
+"3" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WSPRITE,0x0270)<br align="left"/></b></font></td></tr>
+</table>>];
+"32" -> "33"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WSPRITE,0x0279)<br align="left"/></b></font></td></tr>
+</table>>];
+"33" -> "34"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WPARM,10)<br align="left"/></b></font></td></tr>
+</table>>];
+"34" -> "40"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LTEi(WPARM,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"34" -> "35"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WSPRITE,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"35" -> "36"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EMTIME(0,1000/1)<br align="left"/></b></font></td></tr>
+</table>>];
+"36" -> "37"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SUBI(WSPRITE,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"37" -> "34"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SUBI(WPARM,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "5"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WPARM,10)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "20"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LTEi(WPARM,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "6"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WSPRITE,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"6" -> "7"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EMTIME(0,1000/1)<br align="left"/></b></font></td></tr>
+</table>>];
+"7" -> "8"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(WSPRITE,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"8" -> "5"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SUBI(WPARM,1)<br align="left"/></b></font></td></tr>
+</table>>];
+}

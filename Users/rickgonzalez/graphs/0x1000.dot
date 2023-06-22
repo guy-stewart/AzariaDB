@@ -1,0 +1,17 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WSPRITE,9)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MUL(WSPRITE,0x01)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "3"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WPARM,20)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DIV(WSPRITE,WPARM)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "5"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WPARM,0x0280)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "6"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADD(WSPRITE,WPARM)<br align="left"/></b></font></td></tr>
+</table>>];
+"6" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WSPRITE,0)<br align="left"/></b></font></td></tr>
+</table>>];
+}

@@ -1,0 +1,31 @@
+digraph {
+ node [shape=oval];
+"0" -> "5"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_VIEWINIT)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "10"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "6"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SUBI(WTEMP1,IDD_SCR001)<br align="left"/></b></font></td></tr>
+</table>>];
+"6" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,SIG_OPEN)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "51"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALri(BPARM,S22_SHIELD)<br align="left"/></b></font></td></tr>
+</table>>];
+"51" -> "52"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALri(BPARM,S22_WORD)<br align="left"/></b></font></td></tr>
+</table>>];
+"52" -> "53"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALri(BPARM,S22_PLANT1)<br align="left"/></b></font></td></tr>
+</table>>];
+"53" -> "54"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALri(BPARM,S22_PLANT2)<br align="left"/></b></font></td></tr>
+</table>>];
+"54" -> "55"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALri(BPARM,S22_PLANT3)<br align="left"/></b></font></td></tr>
+</table>>];
+"55" -> "56"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALri(BPARM,S22_FISH1)<br align="left"/></b></font></td></tr>
+</table>>];
+"56" -> "57"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALri(BPARM,S22_FISH2)<br align="left"/></b></font></td></tr>
+</table>>];
+"57" -> "58"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALri(BPARM,S22_FISH3)<br align="left"/></b></font></td></tr>
+</table>>];
+"58" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALri(BPARM,S22_NYSTROM)<br align="left"/></b></font></td></tr>
+</table>>];
+}

@@ -1,0 +1,13 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>REF_MACHINE(WIP1,)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "3"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(BFRAME,R_BPARM)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DIVI(BFRAME,10)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,IDS_CITYNUM)<br align="left"/></b></font></td></tr>
+</table>>];
+}

@@ -1,0 +1,45 @@
+digraph {
+ node [shape=oval];
+"0" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(BFRAME,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "73"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLICK(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "60"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_PICK)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "60"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_SHOVEL)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "50"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "3"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WSPRITE,IDS_SCATTER)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WSPRITE,)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>C_ACCEPT(0,IDC_BOMB)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "51"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>VIDEO(0,IDS_EXPLODE1)<br align="left"/></b></font></td></tr>
+</table>>];
+"51" -> "52"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_EXPLODE)<br align="left"/></b></font></td></tr>
+</table>>];
+"52" -> "70"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(BPARM,20)<br align="left"/></b></font></td></tr>
+</table>>];
+"60" -> "61"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_POP)<br align="left"/></b></font></td></tr>
+</table>>];
+"61" -> "70"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(BPARM,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"70" -> "71"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GTEi(BPARM,20)<br align="left"/></b></font></td></tr>
+</table>>];
+"70" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"71" -> "72"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(BFRAME,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"72" -> "73"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"73" -> "74"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GTEi(BFRAME,10)<br align="left"/></b></font></td></tr>
+</table>>];
+"73" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"74" -> "80"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_OPEN,S25_SCAT_ALT)<br align="left"/></b></font></td></tr>
+</table>>];
+"80" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LOADVIEW(0,IDV_WALL1EN)<br align="left"/></b></font></td></tr>
+</table>>];
+}

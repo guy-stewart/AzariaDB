@@ -1,0 +1,55 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>O_ACCEPT(WIP1,)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,)<br align="left"/></b></font></td></tr>
+</table>>];
+"11" -> "12"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SHOW,S27_MEMSTONE1)<br align="left"/></b></font></td></tr>
+</table>>];
+"12" -> "13"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SHOW,S27_MEMSTONE2)<br align="left"/></b></font></td></tr>
+</table>>];
+"13" -> "14"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SHOW,S27_MEMSTONE3)<br align="left"/></b></font></td></tr>
+</table>>];
+"14" -> "15"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SHOW,S27_MEMSTONE4)<br align="left"/></b></font></td></tr>
+</table>>];
+"15" -> "16"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SHOW,S27_MEMSTONE5)<br align="left"/></b></font></td></tr>
+</table>>];
+"16" -> "17"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SHOW,S27_MEMSTONE6)<br align="left"/></b></font></td></tr>
+</table>>];
+"17" -> "18"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SHOW,S27_MEMSTONE7)<br align="left"/></b></font></td></tr>
+</table>>];
+"18" -> "20"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(WIP1,)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "3"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WSPRITE,WIP3)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "21"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WOBJECT,)<br align="left"/></b></font></td></tr>
+</table>>];
+"21" -> "22"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WPARM,)<br align="left"/></b></font></td></tr>
+</table>>];
+"22" -> "23"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WSPRITE,)<br align="left"/></b></font></td></tr>
+</table>>];
+"23" -> "30"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WSPRITE,)<br align="left"/></b></font></td></tr>
+</table>>];
+"30" -> "31"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_HIDE,S27_MEMSTONE1)<br align="left"/></b></font></td></tr>
+</table>>];
+"31" -> "32"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_HIDE,S27_MEMSTONE2)<br align="left"/></b></font></td></tr>
+</table>>];
+"32" -> "33"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_HIDE,S27_MEMSTONE3)<br align="left"/></b></font></td></tr>
+</table>>];
+"33" -> "34"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_HIDE,S27_MEMSTONE4)<br align="left"/></b></font></td></tr>
+</table>>];
+"34" -> "35"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_HIDE,S27_MEMSTONE5)<br align="left"/></b></font></td></tr>
+</table>>];
+"35" -> "36"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_HIDE,S27_MEMSTONE6)<br align="left"/></b></font></td></tr>
+</table>>];
+"36" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_HIDE,S27_MEMSTONE7)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "5"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,WIP1)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "11"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IFSTATE(18,WIP4)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "18"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+}

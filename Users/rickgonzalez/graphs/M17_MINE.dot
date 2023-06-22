@@ -1,0 +1,15 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_SCOOPE)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "3"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_SCOOPF)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_SLURP)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>HANDOFF(0,IDD_SCOOPF)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_SPIT)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>HANDOFF(0,IDD_SCOOPE)<br align="left"/></b></font></td></tr>
+</table>>];
+}

@@ -1,0 +1,39 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BFRAME,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WSPRITE,IDS_RUMBLE)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "3"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(BPARM,)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "3"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WSPRITE,)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "3"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SUBI(BPARM,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "20"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAGFOCUS(0,FALSE)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "40"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAGFOCUS(0,TRUE)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "30"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_TELEKINESIS)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "10"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_INIT)<br align="left"/></b></font></td></tr>
+</table>>];
+"30" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(BPARM,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"40" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(BPARM,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "60"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GTi(BPARM,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>VIDEO(0,IDS_RUMBLE)<br align="left"/></b></font></td></tr>
+</table>>];
+"60" -> "61"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WSPRITE,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"61" -> "62"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WSPRITE,)<br align="left"/></b></font></td></tr>
+</table>>];
+"62" -> "70"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_OPEN,S25_ROLL)<br align="left"/></b></font></td></tr>
+</table>>];
+"70" -> "71"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLICK(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"71" -> "70"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LOADVIEW(0,IDV_WALL2EN)<br align="left"/></b></font></td></tr>
+</table>>];
+}

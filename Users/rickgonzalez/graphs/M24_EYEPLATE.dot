@@ -1,0 +1,31 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_EYEFUSE)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(0,S24_BIGEYE)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "3"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>C_ACCEPT(0,IDC_BOMB)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASHOW(0,IDS_EYEPLATE)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "5"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP1,SIG_SHOW)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "6"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP2,SIG_SHOW)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "51"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>VIDEO(0,IDS_EXPLODE1)<br align="left"/></b></font></td></tr>
+</table>>];
+"51" -> "52"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_EXPLODE)<br align="left"/></b></font></td></tr>
+</table>>];
+"52" -> "53"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"53" -> "54"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP1,SIG_HIDE)<br align="left"/></b></font></td></tr>
+</table>>];
+"54" -> "55"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP2,SIG_HIDE)<br align="left"/></b></font></td></tr>
+</table>>];
+"55" -> "56"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>O_ACCEPT(0,IDD_EYEFUSE)<br align="left"/></b></font></td></tr>
+</table>>];
+"56" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_BOMB,S24_BIGEYE)<br align="left"/></b></font></td></tr>
+</table>>];
+"6" -> "50"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+}

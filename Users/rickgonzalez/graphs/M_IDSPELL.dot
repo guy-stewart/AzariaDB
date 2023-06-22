@@ -1,0 +1,87 @@
+digraph {
+ node [shape=oval];
+"0" -> "100"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SPELL_ME(WOBJECT,SIG_OBJECT)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "12"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(WVIEWID,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "11"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LOADVIEW(WVIEWID,)<br align="left"/></b></font></td></tr>
+</table>>];
+"100" -> "101"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WVIEWID,)<br align="left"/></b></font></td></tr>
+</table>>];
+"100" -> "101"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WVIEWID,)<br align="left"/></b></font></td></tr>
+</table>>];
+"100" -> "101"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WVIEWID,)<br align="left"/></b></font></td></tr>
+</table>>];
+"100" -> "101"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WVIEWID,)<br align="left"/></b></font></td></tr>
+</table>>];
+"101" -> "102"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IS_A(WOBJECT,IDC_BOMB)<br align="left"/></b></font></td></tr>
+</table>>];
+"101" -> "120"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IS_A(WOBJECT,IDC_SCROLL)<br align="left"/></b></font></td></tr>
+</table>>];
+"101" -> "120"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IS_A(WOBJECT,IDC_SCROLL)<br align="left"/></b></font></td></tr>
+</table>>];
+"101" -> "120"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IS_A(WOBJECT,IDC_SCROLL)<br align="left"/></b></font></td></tr>
+</table>>];
+"101" -> "120"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IS_A(WOBJECT,IDC_SCROLL)<br align="left"/></b></font></td></tr>
+</table>>];
+"101" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"101" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"101" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"101" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"102" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SPELL_ME(0,SIG_BOMB)<br align="left"/></b></font></td></tr>
+</table>>];
+"11" -> "12"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WVIEWID,)<br align="left"/></b></font></td></tr>
+</table>>];
+"12" -> "13"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"120" -> "121"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WTEMP1,WOBJECT)<br align="left"/></b></font></td></tr>
+</table>>];
+"120" -> "121"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WTEMP1,WOBJECT)<br align="left"/></b></font></td></tr>
+</table>>];
+"120" -> "121"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WTEMP1,WOBJECT)<br align="left"/></b></font></td></tr>
+</table>>];
+"120" -> "121"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WTEMP1,WOBJECT)<br align="left"/></b></font></td></tr>
+</table>>];
+"121" -> "122"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WVIEWID,LVIEW)<br align="left"/></b></font></td></tr>
+</table>>];
+"121" -> "122"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WVIEWID,LVIEW)<br align="left"/></b></font></td></tr>
+</table>>];
+"121" -> "122"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WVIEWID,LVIEW)<br align="left"/></b></font></td></tr>
+</table>>];
+"121" -> "122"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WVIEWID,LVIEW)<br align="left"/></b></font></td></tr>
+</table>>];
+"122" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LOADVIEW(0,IDV_PARCHPAN)<br align="left"/></b></font></td></tr>
+</table>>];
+"122" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LOADVIEW(0,IDV_SPELLPAN)<br align="left"/></b></font></td></tr>
+</table>>];
+"122" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LOADVIEW(0,IDV_SPELLPAN)<br align="left"/></b></font></td></tr>
+</table>>];
+"122" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LOADVIEW(0,IDV_SPELLPAN)<br align="left"/></b></font></td></tr>
+</table>>];
+"13" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SPELL_ME(WOBJECT,SIG_CLEAR)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "3"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_POPUP)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "21"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WOBJECT,)<br align="left"/></b></font></td></tr>
+</table>>];
+"21" -> "22"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"22" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>VIDEO(0,IDS_SMBURST)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASHOW(WOBJECT,)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "100"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "10"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "20"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_BURST)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "2"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+}

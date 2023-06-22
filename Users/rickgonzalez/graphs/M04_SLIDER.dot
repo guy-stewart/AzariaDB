@@ -1,0 +1,15 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WSPRITE,WIP1)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "5"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WSPRITE,)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "20"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(BFRAME,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LTEi(BFRAME,3)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "1"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ASSIGN(BFRAME,0);<br align="left"/></font></td></tr></table>>];
+"5" -> "10"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLICK(,)<br align="left"/></b></font></td></tr>
+</table>>];
+}

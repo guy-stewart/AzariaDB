@@ -1,0 +1,9 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>CLICK(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">PLAYWAVE(SOUND_CLICK);<br align="left"/></font></td></tr></table>>];
+"1" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IFSTATE(M02_LOCKED,WIP_S02_LOCK)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">SIGNAL(WIP_S02_VIAL, SIG_DEC1);<br align="left"/></font></td></tr></table>>];
+}
