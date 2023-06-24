@@ -1,20 +1,18 @@
 
 
-uses CHEMCOST; // CHEMCOST is a MAP where CHEMCOST(n) gives the cost of each chemical.
-
-dfa M05_UP(receiver) {
+fsa M05_UP(receiver) {
     0: click() {
             playwave(sound_click);
             signal(receiver, SIG_INC1);
         } -> 0;
 };
-dfa M05_DN(receiver) {
+fsa M05_DN(receiver) {
     0: click() {
             playwave(sound_click);
             signal(receiver, SIG_DEC1);
         } -> 0;
 };
-dfa ICON(vial, num1, num10) {
+fsa ICON(vial, num1, num10) {
     int selection; // currently selected chemical.
     int cost;      // cost of the currenlty selected chemical;
     0:  wait(SIG_INC1) {
@@ -39,13 +37,13 @@ dfa ICON(vial, num1, num10) {
             signal(num10);
         }  -> 0;
 };
-dfa NUM1(vial) {
+fsa NUM1(vial) {
     0: wait() {
             frame(vial.balance % 10);
             show(IDS_CITYNUM);
         } -> 0; 
 }
-dfa NUM10(vial) {
+fsa NUM10(vial) {
     0: wait() {
             frame(vial.balance / 10);
             show(IDS_CITYNUM);
@@ -72,7 +70,7 @@ dfa CHEM(vial) {
         VIDEO(0,IDS_CHEMFILL);
         REF_MACHINE(vial);
         MOV(WOBJECT,vial.BFRAME);
-        ADDI(WOBJECT,IDD_CHEMV01);'),
+        ADDI(WOBJECT,IDD_CHEMV01);'
     } -> 20;
     20: grab() {
         CLEAR(WOBJECT);
@@ -94,7 +92,9 @@ rig s05_citychem():view(IDV_chempan,global=true) :-
 delete from machines where [name] like 'S05_%';
 
 insert into machines ([id],[name],[view_id],[view_name],[left],[top],[right],[bottom],[local_visible],[dfa_name], [wip1_name],[wip2_name],[wip3_name],[wip4_name]) values
-(0x501,'S05_UP',0x501,'IDV_chempan',7,126,28,153,0,'M05_UP','S05_ICON','','',''),
+
+
+machine(0x501,s05_up,idv_chempan',7,126,28,153,0,m05_up,[s05_icon]),
 (0x502,'S05_DN',0x501,'IDV_chempan',7,161,28,191,0,'M05_DOWN','S05_ICON','','',''),
 (0x503,'S05_ICON',0x501,'IDV_chempan',75,125,125,175,0,'M05_ICON','S05_VIAL','S05_NUM1','S05_NUM10','CHEM_COUNT'),
 (0x504,'S05_NUM1',0x501,'IDV_chempan',234,96,258,120,0,'M05_NUM1','S05_VIAL','','',''),

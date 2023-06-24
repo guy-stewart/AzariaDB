@@ -269,6 +269,8 @@ insert into views values (0x2115,'IDV_NAT1o',1,1,1,6,'surround.vct','nat1o');
 insert into views values (0x2116,'IDV_NAT1p',1,1,1,6,'surround.vct','nat1p');
 insert into views values (0x2117,'IDV_RUBBLECU',1,3,1,1,'smlpanel.vct','RUBBLECU');
 insert into views values (0x2201,'IDV_PARCHPAN',1,0,1,1,'wdepanel.vct','PARCHPAN');
+insert into views values (0x2202,'IDV_SPELLPAN',1,0,1,1,'wdepanel.vct','PARCHPAN');
+insert into views values (0x2203,'IDV_ENCHANTPAN',1,0,1,1,'wdepanel.vct','PARCHPAN');
 insert into views values (0x2401,'IDV_EYEA',1,0,1,6,'surround.vct','eyea');
 insert into views values (0x2402,'IDV_EYEB',1,0,1,6,'surround.vct','eyeb');
 insert into views values (0x2403,'IDV_EYEC1P',1,0,1,1,'wdepanel.vct','eyec1p');

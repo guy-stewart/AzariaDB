@@ -7,9 +7,9 @@
 drop table if exists map_obj;
 create table map_obj
 (
-    [op]       text,
-    [key]  text,
-    [value]  text,
+    [op]    text,
+    [key]   text,
+    [value] text,
     PRIMARY KEY ([op],[key]) ON CONFLICT REPLACE);
 
 insert into map_obj ([op],[key],[value]) values 

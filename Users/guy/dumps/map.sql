@@ -5,9 +5,9 @@
 drop table if exists map;
 create table map
 (
-    [op]       text,
-    [key]  text,
-    [value]  text,
+    [op]    text,
+    [key]   text,
+    [value] text,
     PRIMARY KEY ([op],[key]) ON CONFLICT REPLACE);
 
 insert into map ([op],[key],[value]) values 

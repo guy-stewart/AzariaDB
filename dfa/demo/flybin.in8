@@ -1,0 +1,20 @@
+% single line comment
+/* multi
+line
+comment
+*/
+
+
+
+
+
+parent(ab,b).
+parent(ab,a).
+parent(abc,ab).
+parent(abc,c).
+
+grandparent(Child,Grandparent) :-
+  parent(Child, Parent), parent(Parent, Grandparent).
+
+:- initialization(main).
+main :- grandparent(abc,B), write(B).
