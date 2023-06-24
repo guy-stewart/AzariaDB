@@ -1,0 +1,5 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASHOW(0,IDS_HALO01)<br align="left"/></b></font></td></tr>
+</table>>];
+}

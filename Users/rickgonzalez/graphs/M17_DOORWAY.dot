@@ -1,0 +1,25 @@
+digraph {
+ node [shape=oval];
+"0" -> "50"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLICK(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "1"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP2,SIG_ON)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "3"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_OPEN)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "70"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_ENTER_1)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP2,SIG_OFF)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LOADVIEW(WIP1,)<br align="left"/></b></font></td></tr>
+</table>>];
+"70" -> "71"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP2,SIG_OFF)<br align="left"/></b></font></td></tr>
+</table>>];
+"71" -> "72"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLICK(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"71" -> "1"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+</table>>];
+"72" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LOADVIEW(WIP1,)<br align="left"/></b></font></td></tr>
+</table>>];
+}

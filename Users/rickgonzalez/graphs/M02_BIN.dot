@@ -1,0 +1,15 @@
+digraph {
+ node [shape=oval];
+"0" -> "4"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>DROP(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    ASHOW(WOBJECT);<br align="left"/>    MOV(WTEMP1,WOBJECT);<br align="left"/></font></td></tr></table>>];
+"0" -> "8"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "0"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GRAB(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">   SHOW();<br align="left"/>    ASSIGN(WTEMP1,0);<br align="left"/></font></td></tr></table>>];
+"4" -> "9"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+</table>>];
+"8" -> "0"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_OPEN)<br align="left"/></b></font></td></tr>
+</table>>];
+"9" -> "4"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_OPEN)<br align="left"/></b></font></td></tr>
+</table>>];
+}

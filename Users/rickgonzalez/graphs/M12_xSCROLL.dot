@@ -1,0 +1,29 @@
+digraph {
+ node [shape=oval];
+"0" -> "5"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>cangrab(0,IDC_SCROLL)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "11"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>MOV(WPARM,WOBJECT)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MAPi(WPARM,S12_SCROLL);<br align="left"/></font></td></tr></table>>];
+"11" -> "12"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>MOV(WTEMP1,WPARM)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MAPi(WTEMP1,S12_ING_LOC);<br align="left"/></font></td></tr></table>>];
+"12" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>NEQUAL(WTEMP1,WIP1)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">PLAYWAVE(SOUND_HURT);<br align="left"/></font></td></tr></table>>];
+"12" -> "13"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"13" -> "5"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>SHOW(,IDS_SCRHUNG)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">SIGNAL(WIP2,SIG_SHOW);<br align="left"/></font></td></tr></table>>];
+"21" -> "22"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP2,SIG_CHECK)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">REF_MACHINE(WIP2);<br align="left"/></font></td></tr></table>>];
+"22" -> "30"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUAL(R_WPARM,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"22" -> "23"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"23" -> "5"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"30" -> "5"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">SIGNAL(WIP2,SIG_HIDE);SIGNAL(WIP3,SIG_HIDE); SIGNAL(WIP4,SIG_HIDE);<br align="left"/></font></td></tr></table>>];
+"5" -> "10"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "21"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,)<br align="left"/></b></font></td></tr>
+</table>>];
+}

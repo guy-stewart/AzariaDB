@@ -1,0 +1,27 @@
+digraph {
+ node [shape=oval];
+"0" -> "100"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLICK(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "100"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"100" -> "101"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>REF_MACHINE(WIP1,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    MOV (WPARM,R_WOBJECT);<br align="left"/></font></td></tr></table>>];
+"101" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(WPARM,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"101" -> "102"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    MOV(WTEMP1,WPARM);<br align="left"/>    MAPi(WTEMP1,CARD_CHEM1);<br align="left"/>    REF_MACHINE(WIP2);<br align="left"/></font></td></tr></table>>];
+"102" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>NEQUAL(WTEMP1,R_WOBJECT)<br align="left"/></b></font></td></tr>
+</table>>];
+"102" -> "103"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    MOV(WTEMP1,WPARM);<br align="left"/>    MAPi(WTEMP1,CARD_CHEM2);<br align="left"/>    REF_MACHINE(WIP3);<br align="left"/></font></td></tr></table>>];
+"103" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>NEQUAL(WTEMP1,R_WOBJECT)<br align="left"/></b></font></td></tr>
+</table>>];
+"103" -> "104"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    MOV(WTEMP1,WPARM);<br align="left"/>    MAPi(WTEMP1,CARD_COST);<br align="left"/>    REF_MACHINE(WIP4);<br align="left"/></font></td></tr></table>>];
+"104" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LT(R_BPARM,WTEMP1)<br align="left"/></b></font></td></tr>
+</table>>];
+"104" -> "105"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    SIGNAL(WIP2, SIG_CLEAR);<br align="left"/>    SIGNAL(WIP3, SIG_CLEAR);<br align="left"/>    SIGNAL(WIP4, SIG_CLEAR);<br align="left"/>    MOV(WOBJECT,WPARM);<br align="left"/>    MAPi(WOBJECT,CARD_OBJECTS);<br align="left"/>    ASHOW(WOBJECT);<br align="left"/></font></td></tr></table>>];
+"105" -> "0"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GRAB(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">SHOW();<br align="left"/></font></td></tr></table>>];
+}

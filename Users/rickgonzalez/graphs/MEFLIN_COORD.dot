@@ -1,0 +1,15 @@
+digraph {
+ node [shape=oval];
+"0" -> "5"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_Q1_GIVEN)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "15"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_Q2_GIVEN)<br align="left"/></b></font></td></tr>
+</table>>];
+"15" -> "20"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_Q2_SOLVED)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "25"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_Q3_GIVEN)<br align="left"/></b></font></td></tr>
+</table>>];
+"25" -> "30"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_Q3_SOLVED)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "10"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_Q1_SOLVED)<br align="left"/></b></font></td></tr>
+</table>>];
+}

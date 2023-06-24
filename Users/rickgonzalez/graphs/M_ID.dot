@@ -1,0 +1,87 @@
+digraph {
+ node [shape=oval];
+"0" -> "20"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_HAPPY)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "21"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_HURT)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "22"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_KISS)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "23"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_MAD)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "24"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_SAD)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "25"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_SURPRISED)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "26"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_STRESS)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "27"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_WAVE)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "50"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_BOMB)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "100"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_CLEAR)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "2"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "11"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WSPRITE,WPARM)<br align="left"/></b></font></td></tr>
+</table>>];
+"100" -> "101"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"101" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP4,SIG_CLEAR)<br align="left"/></b></font></td></tr>
+</table>>];
+"11" -> "12"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADD(WSPRITE,BPARM)<br align="left"/></b></font></td></tr>
+</table>>];
+"12" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WSPRITE,)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "3"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WPARM,PTR(WIP1))<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "70"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,IDp_xxHAPPY)<br align="left"/></b></font></td></tr>
+</table>>];
+"21" -> "70"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,IDp_xxHURT)<br align="left"/></b></font></td></tr>
+</table>>];
+"22" -> "80"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,IDp_xxKISS)<br align="left"/></b></font></td></tr>
+</table>>];
+"23" -> "70"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,IDp_xxMAD)<br align="left"/></b></font></td></tr>
+</table>>];
+"24" -> "70"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,IDp_xxSAD)<br align="left"/></b></font></td></tr>
+</table>>];
+"25" -> "70"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,IDp_xxSURPRISED)<br align="left"/></b></font></td></tr>
+</table>>];
+"26" -> "80"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,IDp_xxSTRESS)<br align="left"/></b></font></td></tr>
+</table>>];
+"27" -> "70"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,IDp_xxWAVE)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DIVI(WPARM,MAX_WISDOM/MAX_LEVEL)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "5"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MULI(WPARM,EMOTIONS_PER_LEVEL)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "7"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(WPARM,IDp_MALE)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "6"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(PTR(WIP2),1)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "51"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>VIDEO(0,IDS_EXPLODE1)<br align="left"/></b></font></td></tr>
+</table>>];
+"51" -> "21"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_EXPLODE)<br align="left"/></b></font></td></tr>
+</table>>];
+"6" -> "7"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(WPARM,IDp_FEMALE)<br align="left"/></b></font></td></tr>
+</table>>];
+"7" -> "8"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BPARM,IDp_xxHAPPY)<br align="left"/></b></font></td></tr>
+</table>>];
+"70" -> "71"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WSPRITE,WPARM)<br align="left"/></b></font></td></tr>
+</table>>];
+"71" -> "72"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADD(WSPRITE,BPARM)<br align="left"/></b></font></td></tr>
+</table>>];
+"72" -> "73"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WSPRITE,)<br align="left"/></b></font></td></tr>
+</table>>];
+"73" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ANIMATE(0,V_REWIND)<br align="left"/></b></font></td></tr>
+</table>>];
+"8" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(BFRAME,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"80" -> "81"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WSPRITE,WPARM)<br align="left"/></b></font></td></tr>
+</table>>];
+"81" -> "82"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADD(WSPRITE,BPARM)<br align="left"/></b></font></td></tr>
+</table>>];
+"82" -> "83"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WSPRITE,)<br align="left"/></b></font></td></tr>
+</table>>];
+"83" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ANIMATE(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+}

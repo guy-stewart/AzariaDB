@@ -1,0 +1,27 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_PLAY)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WSPRITE,WIP1)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "11"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+</table>>];
+"11" -> "14"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(BFRAME,)<br align="left"/></b></font></td></tr>
+</table>>];
+"14" -> "15"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,)<br align="left"/></b></font></td></tr>
+</table>>];
+"15" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "3"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASHOW(WSPRITE,)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(WIP3,)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "7"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ESTIME(WIP2,)<br align="left"/></b></font></td></tr>
+</table>>];
+"7" -> "8"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(BFRAME,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"8" -> "9"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WIP4,)<br align="left"/></b></font></td></tr>
+</table>>];
+"9" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ANIMATE(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+}

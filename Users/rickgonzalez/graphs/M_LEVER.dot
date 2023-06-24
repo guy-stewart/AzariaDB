@@ -1,0 +1,37 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(BFRAME,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WIP1,)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "9"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IFSTATEi(60,S21_LEVSTOP)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "11"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"11" -> "12"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SUBI(BFRAME,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"12" -> "13"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_CLOSE,S21_MAPOPEN)<br align="left"/></b></font></td></tr>
+</table>>];
+"13" -> "14"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_HIDE,S21_ALT_MAPBOX)<br align="left"/></b></font></td></tr>
+</table>>];
+"14" -> "15"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_HIDE,S21_ALT_LEVER)<br align="left"/></b></font></td></tr>
+</table>>];
+"15" -> "16"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_LEVER)<br align="left"/></b></font></td></tr>
+</table>>];
+"16" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WIP1,)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "3"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLICK(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_LEVER)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "6"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(BFRAME,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"6" -> "7"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_OPEN,S21_MAPOPEN)<br align="left"/></b></font></td></tr>
+</table>>];
+"7" -> "8"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SHOW,S21_ALT_MAPBOX)<br align="left"/></b></font></td></tr>
+</table>>];
+"8" -> "9"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(SIG_SHOW,S21_ALT_LEVER)<br align="left"/></b></font></td></tr>
+</table>>];
+"9" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ESTIME(,3)<br align="left"/></b></font></td></tr>
+</table>>];
+}

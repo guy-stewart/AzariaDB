@@ -1,0 +1,39 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_LOG)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_CLUNK)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "20"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,IDS_FISHWOOD)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "21"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_MATCH)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "0"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"21" -> "22"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,IDS_BURNWOOD)<br align="left"/></b></font></td></tr>
+</table>>];
+"22" -> "30"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ANIMATE(0,V_LOOP|V_REWIND)<br align="left"/></b></font></td></tr>
+</table>>];
+"30" -> "31"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ADDI(WPARM,BURN_TIME)<br align="left"/></b></font></td></tr>
+</table>>];
+"31" -> "32"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(DETIME,)<br align="left"/></b></font></td></tr>
+</table>>];
+"32" -> "40"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_FIRE)<br align="left"/></b></font></td></tr>
+</table>>];
+"40" -> "50"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_WATER)<br align="left"/></b></font></td></tr>
+</table>>];
+"40" -> "30"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_LOG)<br align="left"/></b></font></td></tr>
+</table>>];
+"40" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ESTIME(WPARM,)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "51"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WOBJECT,)<br align="left"/></b></font></td></tr>
+</table>>];
+"51" -> "52"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WSPRITE,)<br align="left"/></b></font></td></tr>
+</table>>];
+"52" -> "53"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WPARM,)<br align="left"/></b></font></td></tr>
+</table>>];
+"53" -> "54"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"54" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>STOPWAVE(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+}

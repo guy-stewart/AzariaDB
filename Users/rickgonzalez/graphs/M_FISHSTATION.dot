@@ -1,0 +1,23 @@
+digraph {
+ node [shape=oval];
+"0" -> "2"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>C_ACCEPT(0,IDC_POLE)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">SHOW();<br align="left"/></font></td></tr></table>>];
+"2" -> "2"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_BUCKE)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">HANDOFF(0,IDD_BUCKF);<br align="left"/></font></td></tr></table>>];
+"2" -> "3"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "6"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>IS_A(WOBJECT,ISA_BAITEDPOLE)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    SHOW(0,IDS_POLE1LCL);<br align="left"/>    RAND(ADD_CATCH_TIME,MIN_CATCH_TIME);<br align="left"/></font></td></tr></table>>];
+"3" -> "4"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(0,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">   SHOW(0,IDS_POLE1LCU);<br align="left"/>    MOV(WPARM,WOBJECT);<br align="left"/>    C_ACCEPT(0,ISA_BAIT);<br align="left"/></font></td></tr></table>>];
+"4" -> "3"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">   MIX(WPARM,WOBJECT);<br align="left"/>    SHOW(0,IDS_POLE1B);<br align="left"/></font></td></tr></table>>];
+"4" -> "0"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"6" -> "0"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"6" -> "7"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>SYNCPOINT(WRAND,SYNC_FISH1)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">   PLAYWAVE(0,SOUND_HURT);<br align="left"/>    MOV(WPARM,WOBJECT);<br align="left"/>    RAND(9,IDD_FISH1); <br align="left"/>    MOV(WOBJECT,WRAND);<br align="left"/>    SHOW(0,IDS_POLE1LCT);<br align="left"/></font></td></tr></table>>];
+"7" -> "3"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    MOV(WOBJECT,WPARM);<br align="left"/>    XIM(WOBJECT,WPARM);<br align="left"/>    SHOW(WOBJECT);<br align="left"/></font></td></tr></table>>];
+}

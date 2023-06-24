@@ -1,0 +1,11 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,IDS_FLOPN1)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "30"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_OPEN)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    PLAYWAVE(SOUND_BUZZFUZZ);<br align="left"/>    SHOW(0,IDS_FLOPN1);<br align="left"/>    ANIMATE();<br align="left"/></font></td></tr></table>>];
+"30" -> "1"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GRAB(,IDD_SEED)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    PLAYWAVE(SOUND_BUZZFUZZ);<br align="left"/>    SHOW(0,IDS_FLOPN1);<br align="left"/>    ANIMATE(0,V_REVERSE);<br align="left"/>    SIGNALi(SIG_CLOSE,S10_DRYPIT);<br align="left"/></font></td></tr></table>>];
+"30" -> "1"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    PLAYWAVE(SOUND_BUZZFUZZ);<br align="left"/>    SHOW(0,IDS_FLOPN1);<br align="left"/>    ANIMATE(0,V_REVERSE);<br align="left"/></font></td></tr></table>>];
+}

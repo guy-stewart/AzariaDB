@@ -1,0 +1,7 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    ASSIGN(WOBJECT,IDD_CITY_KEY1);<br align="left"/>    SHOW(0,IDS_KEY_IN_BIN);<br align="left"/></font></td></tr></table>>];
+"1" -> "0"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GRAB(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">SHOW(0,0);<br align="left"/></font></td></tr></table>>];
+}

@@ -1,0 +1,37 @@
+digraph {
+ node [shape=oval];
+"0" -> "0"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>CLICK(0,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">SIGNAL(WIP1,SIG_HIDE);<br align="left"/></font></td></tr></table>>];
+"0" -> "10"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_MATCH)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "100"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_SCOOPF)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "50"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_EMPTY)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "15"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>REF_MACHINE(WIP4,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MOV(BFRAME,R_WPARM);MAPi(BFRAME,S12_ING_NY);<br align="left"/></font></td></tr></table>>];
+"100" -> "101"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>REF_MACHINE(WIP4,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MOV(BFRAME,R_WPARM);MAPi(BFRAME,S12_ING_NY);<br align="left"/></font></td></tr></table>>];
+"101" -> "102"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>LT(BPARM,BFRAME)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ADDI(BPARM,1);PLAYWAVE(SOUND_SLURP);SIGNAL(WIP2,SIG_SHOW);<br align="left"/></font></td></tr></table>>];
+"101" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"102" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>HANDOFF(0,IDD_SCOOPE)<br align="left"/></b></font></td></tr>
+</table>>];
+"15" -> "20"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUAL(BPARM,BFRAME)<br align="left"/></b></font></td></tr>
+</table>>];
+"15" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "21"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP3,SIG_CHECK)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">REF_MACHINE(WIP3);<br align="left"/></font></td></tr></table>>];
+"21" -> "22"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GTi(R_WPARM,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"21" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"22" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>EQUAL(R_WPARM,R_BPARM)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">SIGNAL(WIP1,SIG_SHOW);ASSIGN(BPARM,0);<br align="left"/></font></td></tr></table>>];
+"22" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ASSIGN(BPARM,0);SIGNAL(WIP2,SIG_HIDE);<br align="left"/></font></td></tr></table>>];
+}

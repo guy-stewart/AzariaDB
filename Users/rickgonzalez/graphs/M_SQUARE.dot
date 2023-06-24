@@ -1,0 +1,27 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>C_ACCEPT(0,IDC_TOKEN)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "5"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">CLEAR(WOBJECT);<br align="left"/>CLEAR(WPARM);<br align="left"/>SHOW();<br align="left"/></font></td></tr></table>>];
+"10" -> "40"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WOBJECT,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ANIMATE(V_LOOP);<br align="left"/>PLAYWAVE(SOUND_CLICK);<br align="left"/>MOV(WPARM,WOBJECT);<br align="left"/></font></td></tr></table>>];
+"110" -> "10"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>DROP(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">HANDOFF(WPARM);<br align="left"/>CLEAR(WPARM);<br align="left"/></font></td></tr></table>>];
+"110" -> "1"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(WPARM,)<br align="left"/></b></font></td></tr>
+</table>>];
+"110" -> "1"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_CLEAR)<br align="left"/></b></font></td></tr>
+</table>>];
+"40" -> "47"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>NEQUALi(WPARM,IDD_REVERSIA)<br align="left"/></b></font></td></tr>
+</table>>];
+"40" -> "110"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ASSIGN(WPARM, IDD_REVERSIB);<br align="left"/></font></td></tr></table>>];
+"47" -> "110"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>NEQUALi(WPARM,IDD_REVERSIB)<br align="left"/></b></font></td></tr>
+</table>>];
+"47" -> "110"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ASSIGN(WPARM, IDD_REVERSIA);<br align="left"/></font></td></tr></table>>];
+"5" -> "10"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "10"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_SET)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MOV(WOBJECT,WTEMP1);<br align="left"/></font></td></tr></table>>];
+}

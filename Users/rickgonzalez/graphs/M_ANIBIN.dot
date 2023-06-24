@@ -1,0 +1,9 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WSPRITE,WIP1)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASHOW(WSPRITE,V_LOOP)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "2"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(WIP2,)<br align="left"/></b></font></td></tr>
+</table>>];
+}

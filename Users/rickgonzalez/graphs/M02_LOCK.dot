@@ -1,0 +1,17 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>C_ACCEPT(,IDC_KEY)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IFSTATE(M02_OPENEMPTY,WTEMP1)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "15"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    PLAYWAVE(SOUND_LEVER);<br align="left"/>    SIGNAL(WTEMP1,SIG_CLOSE);<br align="left"/></font></td></tr></table>>];
+"15" -> "2"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(WPARM,)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "9"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    PLAYWAVE(SOUND_LEVER);<br align="left"/>    MOV(WTEMP1,WTHIS);<br align="left"/>    ADDI(WTEMP1,1);<br align="left"/>    SIGNAL(WTEMP1,SIG_OPEN);<br align="left"/>    O_ACCEPT(WOBJECT);<br align="left"/>    SHOW(0,IDS_LOCKWKEY);<br align="left"/></font></td></tr></table>>];
+"9" -> "10"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GRAB(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    CLEAR(WOBJECT);<br align="left"/>    SHOW();<br align="left"/>    MOV(WTEMP1,WTHIS);<br align="left"/>    ADDI(WTEMP1,1);<br align="left"/></font></td></tr></table>>];
+}

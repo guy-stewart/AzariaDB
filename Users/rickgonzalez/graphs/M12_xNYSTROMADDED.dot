@@ -1,0 +1,7 @@
+digraph {
+ node [shape=oval];
+"0" -> "0"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_SHOW)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MOV(WSPRITE,WIP1);SHOW(WIP1);<br align="left"/></font></td></tr></table>>];
+"0" -> "0"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_HIDE)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">CLEAR(WSPRITE);SHOW(0);<br align="left"/></font></td></tr></table>>];
+}

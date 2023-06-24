@@ -1,0 +1,51 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "10"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>LTEi(WPARM,20)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ASSIGN(LWEALTH,19);ASSIGN(WPARM,MAX_VIAL_STORAGE);MOV(BPARM,LWEALTH);SIGNALi(SIG_SHOW,S1_VIALMETER);<br align="left"/></font></td></tr></table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "12"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_SCOOPE)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "16"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DRAG(0,IDD_SCOOPF)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "10"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_SCOOPE)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "19"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_SCOOPF)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "30"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_VIAL1)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "40"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,IDD_VIAL2)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "10"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,IDD_SCOOPE)<br align="left"/></b></font></td></tr>
+</table>>];
+"12" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(LWEALTH,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"12" -> "13"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>SUBI(LWEALTH,1)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MOV(BPARM,LWEALTH);SIGNALi(SIG_SHOW,S1_VIALMETER);<br align="left"/></font></td></tr></table>>];
+"13" -> "14"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_SLURP)<br align="left"/></b></font></td></tr>
+</table>>];
+"14" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>HANDOFF(0,IDD_SCOOPF)<br align="left"/></b></font></td></tr>
+</table>>];
+"16" -> "17"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>ADDI(LWEALTH,1)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MOV(BPARM,LWEALTH);SIGNALi(SIG_SHOW,S1_VIALMETER);<br align="left"/></font></td></tr></table>>];
+"16" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GTEi(LWEALTH,WPARM)<br align="left"/></b></font></td></tr>
+</table>>];
+"17" -> "18"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_SPIT)<br align="left"/></b></font></td></tr>
+</table>>];
+"18" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>HANDOFF(0,IDD_SCOOPE)<br align="left"/></b></font></td></tr>
+</table>>];
+"19" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GTEi(LWEALTH,WPARM)<br align="left"/></b></font></td></tr>
+</table>>];
+"19" -> "20"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "10"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>MOV(BPARM,LWEALTH)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">SIGNALi(SIG_SHOW,S1_VIALMETER);<br align="left"/></font></td></tr></table>>];
+"20" -> "10"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>ADDi(LWEALTH,1)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MOV(BPARM,LWEALTH);SIGNALi(SIG_SHOW,S1_VIALMETER);<br align="left"/></font></td></tr></table>>];
+"30" -> "10"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>MOV(WPARM,MAX_VIAL_STORAGE)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ADDi(WPARM,20);SIGNALi(SIG_SHOW,S1_VIALMETER);<br align="left"/></font></td></tr></table>>];
+"40" -> "10"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>MOV(WPARM,MAX_VIAL_STORAGE)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ADDi(WPARM,60);SIGNALi(SIG_SHOW,S1_VIALMETER);<br align="left"/></font></td></tr></table>>];
+}

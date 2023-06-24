@@ -1,0 +1,21 @@
+digraph {
+ node [shape=oval];
+"0" -> "5"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WIP1,)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "20"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WPARM,S00_SQUARE63)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "30"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WPARM,SIG_CLEAR)<br align="left"/></b></font></td></tr>
+</table>>];
+"30" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SUBI(WPARM,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "9"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLICK(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "9"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(WOBJECT,)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "20"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GTEi(WPARM,S00_SQUARE00)<br align="left"/></b></font></td></tr>
+</table>>];
+"9" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WIP1,)<br align="left"/></b></font></td></tr>
+</table>>];
+}

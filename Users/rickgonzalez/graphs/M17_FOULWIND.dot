@@ -1,0 +1,13 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>PLAYWAVE(0,SOUND_BURBLE)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ESTIME(0,5)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>NEQUALi(LVIEW,WIP1)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(0,SID_DEC_ENERGY)<br align="left"/></b></font></td></tr>
+</table>>];
+}

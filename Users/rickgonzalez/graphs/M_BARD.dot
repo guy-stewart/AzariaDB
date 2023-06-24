@@ -1,0 +1,11 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(DETIME,1000)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "3"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SYNCPOINT(DETIME,SYNC_FOULWIND)<br align="left"/></b></font></td></tr>
+</table>>];
+"3" -> "4"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ESTIME(0,500)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "3"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNALi(0,S17_aFOULWIND)<br align="left"/></b></font></td></tr>
+</table>>];
+}

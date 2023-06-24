@@ -1,0 +1,15 @@
+digraph {
+ node [shape=oval];
+"0" -> "100"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">PLAYWAVE(SOUND_POPUP);ASHOW(WOBJECT);CLEAR(WVIEWID);<br align="left"/></font></td></tr></table>>];
+"0" -> "10"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>LOADVIEW(WVIEWID,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">CLEAR(WVIEWID);SHOW(0);<br align="left"/></font></td></tr></table>>];
+"100" -> "120"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>IS_A(WOBJECT,IDC_SCROLL)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MOV(WPARM,WOBJECT);<br align="left"/>        MAPi(WPARM,S12_SCROLL);<br align="left"/>        MOV(WVIEWID,LVIEW);<br align="left"/>        SIGNALi(SIG_SHOW,S12_SHIELD);<br align="left"/>        SIGNALi(SIG_SHOW,S12_WORD);<br align="left"/>        SIGNALi(SIG_SHOW,S12_ING1);<br align="left"/>        SIGNALi(SIG_SHOW,S12_ING2);<br align="left"/>        SIGNALi(SIG_SHOW,S12_ING3);<br align="left"/>        SIGNALi(SIG_SHOW,S12_ING4);<br align="left"/>        SIGNALi(SIG_SHOW,S12_NYST);<br align="left"/>       <br align="left"/></font></td></tr></table>>];
+"100" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"120" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>LOADVIEW(0,IDV_SPELLPAN)<br align="left"/></b></font></td></tr>
+</table>>];
+}

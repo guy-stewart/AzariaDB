@@ -1,0 +1,41 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>MOV(WSPRITE,WIP1)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "2"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASHOW(WSPRITE,V_LOOP)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IFSTATEi(0,S24_EYEPLATE1)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IFSTATEi(0,S24_EYEPLATE2)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IFSTATEi(0,S24_EYEPLATE3)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IFSTATEi(0,S24_EYESPELL1)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "50"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>IFSTATEi(0,S24_EYESPELL3)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "20"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"2" -> "5"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ANIMATE(0,V_LOOP)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "30"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>ASHOW(0,IDS_BIGEYE1)<br align="left"/></b></font></td></tr>
+</table>>];
+"30" -> "30"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,IDD_EYEWAND)<br align="left"/></b></font></td></tr>
+</table>>];
+"30" -> "50"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,SIG_BOMB)<br align="left"/></b></font></td></tr>
+</table>>];
+"5" -> "6"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP2,SIG_SHOW)<br align="left"/></b></font></td></tr>
+</table>>];
+"50" -> "51"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"51" -> "52"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP2,SIG_HIDE)<br align="left"/></b></font></td></tr>
+</table>>];
+"52" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP3,SIG_HIDE)<br align="left"/></b></font></td></tr>
+</table>>];
+"6" -> "7"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP3,SIG_SHOW)<br align="left"/></b></font></td></tr>
+</table>>];
+"7" -> "0"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>CLICK(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"7" -> "10"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+}

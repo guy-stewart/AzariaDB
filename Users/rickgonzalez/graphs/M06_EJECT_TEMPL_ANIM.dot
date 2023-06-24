@@ -1,0 +1,19 @@
+digraph {
+ node [shape=oval];
+"0" -> "1"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>C_ACCEPT(,IDC_TEMPLATE)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "30"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"1" -> "5"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_EJECT)<br align="left"/></b></font></td></tr>
+</table>>];
+"20" -> "0"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">CLEAR(WOBJECT); CLEAR(WSPRITE); SHOW(0);<br align="left"/></font></td></tr></table>>];
+"30" -> "31"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,IDS_TEMPEJEC)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ANIMATE(0,V_REVERSE);PLAYWAVE(SOUND_CARDEJECT);<br align="left"/></font></td></tr></table>>];
+"31" -> "32"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>MOV(WPARM,WOBJECT)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">MAPi(WPARM,S06_TEMP_INDEX);<br align="left"/></font></td></tr></table>>];
+"32" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>SIGNAL(WIP4,SIG_SHOW)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">SIGNAL(WIP1,SIG_SHOW);SIGNAL(WIP2,SIG_SHOW);SIGNAL(WIP3,SIG_SHOW);<br align="left"/></font></td></tr></table>>];
+"5" -> "20"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,IDS_TEMPEJEC)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ANIMATE(0);PLAYWAVE(SOUND_CARDEJECT);<br align="left"/></font></td></tr></table>>];
+}

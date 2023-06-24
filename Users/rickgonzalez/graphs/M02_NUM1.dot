@@ -1,0 +1,5 @@
+digraph {
+ node [shape=oval];
+"0" -> "0"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    REF_MACHINE(WIP_S02_VIAL);<br align="left"/>    MOV(BFRAME,R_WPARM);<br align="left"/>    SUB(BFRAME,R_BPARM);<br align="left"/>    MODI(BFRAME,10);<br align="left"/>    SHOW(0,IDS_CITYNUM);<br align="left"/></font></td></tr></table>>];
+}

@@ -1,0 +1,11 @@
+digraph {
+ node [shape=oval];
+"0" -> "10"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>C_ACCEPT(0,IDC_CARD)<br align="left"/></b></font></td></tr>
+</table>>];
+"10" -> "20"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    SHOW(0,IDS_CARDANI);<br align="left"/>    ANIMATE(0,V_REVERSE);<br align="left"/>    PLAYWAVE(0,SOUND_CARDEJECT);<br align="left"/>    MOV(WPARM,WOBJECT);<br align="left"/>    SUBI(WPARM,IDD_TEMPLATE01);<br align="left"/>    SIGNAL(WIP1);<br align="left"/>    SIGNAL(WIP2, SIG_SET);<br align="left"/>    SIGNAL(WIP3, SIG_SET);<br align="left"/>    <br align="left"/></font></td></tr></table>>];
+"20" -> "30"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>CLICK(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    SHOW(0,IDS_CARDANI);<br align="left"/>    ANIMATE();<br align="left"/>    PLAYWAVE(0,SOUND_CARDEJECT);<br align="left"/></font></td></tr></table>>];
+"30" -> "10"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">    CLEAR(WOBJECT);<br align="left"/>    CLEAR(WPARM);<br align="left"/>    SHOW();<br align="left"/>    SIGNAL(WIP2,SIG_CLEAR);<br align="left"/>    SIGNAL(WIP3,SIG_CLEAR);<br align="left"/></font></td></tr></table>>];
+}

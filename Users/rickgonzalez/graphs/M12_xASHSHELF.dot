@@ -1,0 +1,35 @@
+digraph {
+ node [shape=oval];
+"0" -> "9"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>DROP(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "12"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>GRAB(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "4"[fontcolor=orange, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_SHOW)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">REF_MACHINE(WIP1);MOV(WTEMP1,R_WPARM);MAP(WTEMP1,WIP2);<br align="left"/></font></td></tr></table>>];
+"0" -> "20"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_HIDE)<br align="left"/></b></font></td></tr>
+</table>>];
+"0" -> "30"[fontcolor=orange, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>WAIT(,SIG_CLOSE)<br align="left"/></b></font></td></tr>
+</table>>];
+"12" -> "13"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>EQUALi(BPARM,1)<br align="left"/></b></font></td></tr>
+</table>>];
+"12" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"13" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>CLEAR(BFRAME,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">        ASSIGN(BPARM,0);<br align="left"/>        CLEAR(WOBJECT);<br align="left"/>        SHOW();<br align="left"/></font></td></tr></table>>];
+"20" -> "21"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>SHOW(0,0)<br align="left"/></b></font></td></tr>
+</table>>];
+"21" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"30" -> "31"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>ASSIGN(WOBJECT,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">CLEAR(WOBJECT);ASHOW(); ASSIGN(BPARM,0); ASSIGN(WPARM,0);<br align="left"/></font></td></tr></table>>];
+"31" -> "0"[fontcolor=blue, label=< <table border="0"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+</table>>];
+"4" -> "5"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>MOV(BFRAME,R_WPARM)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">        MAP(BFRAME,S12_ING_D);<br align="left"/>        O_ACCEPT(WTEMP1);<br align="left"/>        SHOW(WIP3);<br align="left"/></font></td></tr></table>>];
+"5" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>GT(BFRAME,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ASSIGN(WPARM,1);<br align="left"/></font></td></tr></table>>];
+"5" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>Z_EPSILON(,)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ASSIGN(WPARM,0);<br align="left"/></font></td></tr></table>>];
+"9" -> "0"[fontcolor=blue, label=< <table border="1"><tr><td><font face="Courier New" point-size="10"><b>SHOW(WOBJECT,0)<br align="left"/></b></font></td></tr>
+<tr><td><font point-size="8" color ="blue">ASSIGN(BPARM,1);<br align="left"/></font></td></tr></table>>];
+}
