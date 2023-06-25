@@ -14,7 +14,7 @@ insert into transitions
          ASHOW(WSPRITE, V_LOOP);',''),
         ('M_FLYBINa',1,2,'GRAB','WIP2','','PLAYWAVE(WIP4);',''),
         ('M_FLYBINa',2,3,'Z_EPSILON','','','WRITE(''this is some text to write.'');',''),
-        ('M_FLYBINa',3,1,'Z_EPSILON','','','',''),
+        ('M_FLYBINa',3,1,'Z_EPSILON','','','WRITE(''WIP2:'', WIP2);',''),
 
         ('M_FLYBINb',0,'BAIT_0','Z_EPSILON','','',
         'MOV(WSPRITE,WIP1);
@@ -40,3 +40,7 @@ create table if not exists states (
 
 insert into states ([automaton],[state],[entry],[exit]) values 
 ('M_FLYBINb','FINAL','WRITE(''>>>>>> Entered FINAL state'');','WRITE(''>>>>>> Left FINAL state'');');
+
+delete from views where view_name = 'IDV_S10_THAOR_PAN';
+insert into views values (0x264c,'IDV_S10_THAOR_PAN',1,1,1,5,'wdepanel.vct','PARCHPAN');
+

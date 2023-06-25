@@ -11,21 +11,21 @@
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<ellipse fill="none" stroke="black" cx="168" cy="-484" rx="27" ry="18"/>
-<text text-anchor="middle" x="168" y="-479.8" font-family="Times,serif" font-size="14.00">0</text>
+<ellipse fill="none" stroke="black" cx="169" cy="-484" rx="27" ry="18"/>
+<text text-anchor="middle" x="169" y="-479.8" font-family="Times,serif" font-size="14.00">0</text>
 </g>
 <!-- 5 -->
 <g id="node2" class="node">
 <title>5</title>
-<ellipse fill="none" stroke="black" cx="62" cy="-390" rx="27" ry="18"/>
-<text text-anchor="middle" x="62" y="-385.8" font-family="Times,serif" font-size="14.00">5</text>
+<ellipse fill="none" stroke="black" cx="61" cy="-390" rx="27" ry="18"/>
+<text text-anchor="middle" x="61" y="-385.8" font-family="Times,serif" font-size="14.00">5</text>
 </g>
 <!-- 0&#45;&gt;5 -->
 <g id="edge1" class="edge">
 <title>0&#45;&gt;5</title>
-<path fill="none" stroke="black" d="M151.9,-469.03C134.52,-453.94 106.64,-429.74 86.53,-412.29"/>
-<polygon fill="black" stroke="black" points="88.89,-409.71 79.05,-405.79 84.3,-414.99 88.89,-409.71"/>
-<text text-anchor="start" x="132" y="-434.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="orange">WAIT(SIG_EJECT)</text>
+<path fill="none" stroke="black" d="M153.06,-469.43C135.28,-454.27 106.28,-429.57 85.58,-411.94"/>
+<polygon fill="black" stroke="black" points="88.04,-409.43 78.15,-405.61 83.5,-414.76 88.04,-409.43"/>
+<text text-anchor="start" x="132.5" y="-434.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="orange">WAIT(,SIG_EJECT)</text>
 </g>
 <!-- 7 -->
 <g id="node5" class="node">
@@ -36,10 +36,10 @@
 <!-- 5&#45;&gt;7 -->
 <g id="edge4" class="edge">
 <title>5&#45;&gt;7</title>
-<path fill="none" stroke="black" d="M42.8,-377.07C35.14,-371.17 27.15,-363.31 23,-354 14.47,-334.88 16.08,-311.1 19.49,-292.93"/>
-<polygon fill="black" stroke="black" points="22.86,-293.9 21.58,-283.39 16.02,-292.41 22.86,-293.9"/>
+<path fill="none" stroke="black" d="M42.29,-376.97C34.81,-371.05 27.03,-363.2 23,-354 14.59,-334.83 16.19,-311.05 19.57,-292.9"/>
+<polygon fill="black" stroke="black" points="22.94,-293.88 21.64,-283.36 16.1,-292.39 22.94,-293.88"/>
 <polygon fill="none" stroke="black" points="26,-331 26,-351 298,-351 298,-331 26,-331"/>
-<text text-anchor="start" x="97.19" y="-338.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="blue">SHOW(0IDS_CARDANI)</text>
+<text text-anchor="start" x="93.59" y="-338.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="blue">SHOW(0,IDS_CARDANI)</text>
 <polygon fill="none" stroke="black" points="26,-309 26,-329 298,-329 298,-309 26,-309"/>
 <text text-anchor="start" x="29" y="-315.2" font-family="Times,serif" font-size="12.00" fill="blue">ANIMATE(0);PLAYWAVE(SOUND_CARDEJECT);</text>
 <polygon fill="none" stroke="black" points="23,-306 23,-354 301,-354 301,-306 23,-306"/>
@@ -62,7 +62,7 @@
 <path fill="none" stroke="black" d="M73.81,-119.6C72.51,-101.14 73.47,-72.2 89,-54 106.18,-33.86 135.06,-25.22 158.64,-21.56"/>
 <polygon fill="black" stroke="black" points="159.07,-25.03 168.55,-20.29 158.18,-18.09 159.07,-25.03"/>
 <polygon fill="none" stroke="black" points="92,-79 92,-99 298,-99 298,-79 92,-79"/>
-<text text-anchor="start" x="126.59" y="-86.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="blue">MOV(WOBJECTR_WPARM)</text>
+<text text-anchor="start" x="122.99" y="-86.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="blue">MOV(WOBJECT,R_WPARM)</text>
 <polygon fill="none" stroke="black" points="92,-57 92,-77 298,-77 298,-57 92,-57"/>
 <text text-anchor="start" x="95" y="-63.2" font-family="Times,serif" font-size="12.00" fill="blue">MAPi(WOBJECT,S06_CARD_INDEX);</text>
 <polygon fill="none" stroke="black" points="89,-54 89,-102 301,-102 301,-54 89,-54"/>
@@ -70,10 +70,10 @@
 <!-- 20&#45;&gt;0 -->
 <g id="edge3" class="edge">
 <title>20&#45;&gt;0</title>
-<path fill="none" stroke="black" d="M223.84,-20.56C247.75,-23.45 281.83,-31.54 301,-54 325.29,-82.45 315,-99.59 315,-137 315,-391 315,-391 315,-391 315,-442.68 248.9,-466.42 205.35,-476.45"/>
-<polygon fill="black" stroke="black" points="204.81,-472.99 195.76,-478.51 206.27,-479.83 204.81,-472.99"/>
+<path fill="none" stroke="black" d="M223.84,-20.56C247.75,-23.45 281.83,-31.54 301,-54 325.29,-82.45 315,-99.59 315,-137 315,-391 315,-391 315,-391 315,-442.43 249.35,-466.25 206.1,-476.37"/>
+<polygon fill="black" stroke="black" points="205.61,-472.89 196.58,-478.44 207.1,-479.73 205.61,-472.89"/>
 <polygon fill="none" stroke="black" points="318.5,-265 318.5,-285 481.5,-285 481.5,-265 318.5,-265"/>
-<text text-anchor="start" x="353.19" y="-272.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="orange">GRAB(WOBJECT)</text>
+<text text-anchor="start" x="349.59" y="-272.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="orange">GRAB(WOBJECT,)</text>
 <polygon fill="none" stroke="black" points="318.5,-243 318.5,-263 481.5,-263 481.5,-243 318.5,-243"/>
 <text text-anchor="start" x="321.5" y="-249.2" font-family="Times,serif" font-size="12.00" fill="blue">CLEAR(WSPRITE); SHOW(0);</text>
 <polygon fill="none" stroke="black" points="315,-240 315,-288 484,-288 484,-240 315,-240"/>
@@ -83,11 +83,11 @@
 <title>7&#45;&gt;11</title>
 <path fill="none" stroke="black" d="M33.61,-246.28C41.72,-225.75 55.58,-190.68 65.24,-166.24"/>
 <polygon fill="black" stroke="black" points="68.36,-167.85 68.78,-157.26 61.85,-165.28 68.36,-167.85"/>
-<polygon fill="none" stroke="black" points="65,-199 65,-219 229,-219 229,-199 65,-199"/>
-<text text-anchor="start" x="68" y="-206.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="blue">MOV(WOBJECTIDD_CARD01)</text>
-<polygon fill="none" stroke="black" points="65,-177 65,-197 229,-197 229,-177 65,-177"/>
-<text text-anchor="start" x="85.34" y="-183.2" font-family="Times,serif" font-size="12.00" fill="blue">REF_MACHINE(WIP1);</text>
-<polygon fill="none" stroke="black" points="62,-174 62,-222 232,-222 232,-174 62,-174"/>
+<polygon fill="none" stroke="black" points="65.5,-199 65.5,-219 236.5,-219 236.5,-199 65.5,-199"/>
+<text text-anchor="start" x="68.5" y="-206.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="blue">MOV(WOBJECT,IDD_CARD01)</text>
+<polygon fill="none" stroke="black" points="65.5,-177 65.5,-197 236.5,-197 236.5,-177 65.5,-177"/>
+<text text-anchor="start" x="89.34" y="-183.2" font-family="Times,serif" font-size="12.00" fill="blue">REF_MACHINE(WIP1);</text>
+<polygon fill="none" stroke="black" points="62,-174 62,-222 239,-222 239,-174 62,-174"/>
 </g>
 </g>
 </svg>

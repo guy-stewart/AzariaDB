@@ -20,7 +20,7 @@
 <path fill="none" stroke="black" d="M52.44,-30.69C63.03,-31.15 72,-28.92 72,-24 72,-21 68.67,-19 63.67,-18"/>
 <polygon fill="black" stroke="black" points="64.15,-14.52 53.95,-17.4 63.72,-21.51 64.15,-14.52"/>
 <polygon fill="none" stroke="black" points="75,-25 75,-45 387,-45 387,-25 75,-25"/>
-<text text-anchor="start" x="205.8" y="-32.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="orange">CLICK()</text>
+<text text-anchor="start" x="202.2" y="-32.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="orange">CLICK(,)</text>
 <polygon fill="none" stroke="black" points="75,-3 75,-23 387,-23 387,-3 75,-3"/>
 <text text-anchor="start" x="78" y="-9.2" font-family="Times,serif" font-size="12.00" fill="blue">PLAYWAVE(SOUND_CLICK); SIGNAL(WIP1,SIG_DEC1);</text>
 <polygon fill="none" stroke="black" points="72,0 72,-48 390,-48 390,0 72,0"/>

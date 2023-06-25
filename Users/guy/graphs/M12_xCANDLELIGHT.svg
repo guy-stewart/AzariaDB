@@ -5,62 +5,62 @@
  -->
 <!-- Pages: 1 -->
 <svg width="575pt" height="270pt"
- viewBox="0.00 0.00 575.02 270.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 575.00 270.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 266)">
-<polygon fill="white" stroke="none" points="-4,4 -4,-266 571.02,-266 571.02,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-266 571,-266 571,4 -4,4"/>
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<ellipse fill="none" stroke="black" cx="199.02" cy="-238" rx="27" ry="18"/>
-<text text-anchor="middle" x="199.02" y="-233.8" font-family="Times,serif" font-size="14.00">0</text>
+<ellipse fill="none" stroke="black" cx="199" cy="-238" rx="27" ry="18"/>
+<text text-anchor="middle" x="199" y="-233.8" font-family="Times,serif" font-size="14.00">0</text>
 </g>
 <!-- 0&#45;&gt;0 -->
 <g id="edge2" class="edge">
 <title>0&#45;&gt;0</title>
-<path fill="none" stroke="black" d="M220.32,-249.7C232.59,-252.08 244.02,-248.18 244.02,-238 244.02,-231.16 238.86,-227.15 231.75,-225.99"/>
-<polygon fill="black" stroke="black" points="231.73,-222.48 221.83,-226.26 231.92,-229.48 231.73,-222.48"/>
-<polygon fill="none" stroke="black" points="247.52,-239 247.52,-259 564.52,-259 564.52,-239 247.52,-239"/>
-<text text-anchor="start" x="355.61" y="-246.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="orange">WAIT(SIG_HIDE)</text>
-<polygon fill="none" stroke="black" points="247.52,-217 247.52,-237 564.52,-237 564.52,-217 247.52,-217"/>
-<text text-anchor="start" x="250.52" y="-223.2" font-family="Times,serif" font-size="12.00" fill="blue">CLEAR(WSPRITE);ASHOW(0);SIGNAL(WIP3,SIG_EMPTY;</text>
-<polygon fill="none" stroke="black" points="244.02,-214 244.02,-262 567.02,-262 567.02,-214 244.02,-214"/>
+<path fill="none" stroke="black" d="M220.29,-249.7C232.57,-252.08 244,-248.18 244,-238 244,-231.16 238.84,-227.15 231.73,-225.99"/>
+<polygon fill="black" stroke="black" points="231.7,-222.48 221.8,-226.26 231.9,-229.48 231.7,-222.48"/>
+<polygon fill="none" stroke="black" points="247.5,-239 247.5,-259 564.5,-259 564.5,-239 247.5,-239"/>
+<text text-anchor="start" x="351.99" y="-246.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="orange">WAIT(,SIG_HIDE)</text>
+<polygon fill="none" stroke="black" points="247.5,-217 247.5,-237 564.5,-237 564.5,-217 247.5,-217"/>
+<text text-anchor="start" x="250.5" y="-223.2" font-family="Times,serif" font-size="12.00" fill="blue">CLEAR(WSPRITE);ASHOW(0);SIGNAL(WIP3,SIG_EMPTY;</text>
+<polygon fill="none" stroke="black" points="244,-214 244,-262 567,-262 567,-214 244,-214"/>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
 <title>1</title>
-<ellipse fill="none" stroke="black" cx="62.02" cy="-112" rx="27" ry="18"/>
-<text text-anchor="middle" x="62.02" y="-107.8" font-family="Times,serif" font-size="14.00">1</text>
+<ellipse fill="none" stroke="black" cx="61" cy="-112" rx="27" ry="18"/>
+<text text-anchor="middle" x="61" y="-107.8" font-family="Times,serif" font-size="14.00">1</text>
 </g>
 <!-- 0&#45;&gt;1 -->
 <g id="edge1" class="edge">
 <title>0&#45;&gt;1</title>
-<path fill="none" stroke="black" d="M172.04,-235.23C124.56,-231.5 29.21,-221.01 9.02,-196 -4.38,-179.4 -1.09,-166.79 9.02,-148 13.55,-139.58 21.1,-132.84 29.09,-127.62"/>
-<polygon fill="black" stroke="black" points="30.66,-130.76 37.59,-122.75 27.17,-124.69 30.66,-130.76"/>
-<polygon fill="none" stroke="black" points="12.02,-173 12.02,-193 374.02,-193 374.02,-173 12.02,-173"/>
-<text text-anchor="start" x="142.61" y="-180.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="orange">WAIT(SIG_SHOW)</text>
-<polygon fill="none" stroke="black" points="12.02,-151 12.02,-171 374.02,-171 374.02,-151 12.02,-151"/>
-<text text-anchor="start" x="15.02" y="-157.2" font-family="Times,serif" font-size="12.00" fill="blue">MOV(WSPRITE,WIP1);ASHOW(WIP1);PLAYWAVE(SOUND_FIRE);</text>
-<polygon fill="none" stroke="black" points="9.02,-148 9.02,-196 377.02,-196 377.02,-148 9.02,-148"/>
+<path fill="none" stroke="black" d="M172.01,-235.23C124.54,-231.5 29.18,-221.01 9,-196 -4.4,-179.4 -1.03,-166.83 9,-148 13.38,-139.76 20.67,-133.11 28.42,-127.91"/>
+<polygon fill="black" stroke="black" points="30.15,-130.96 36.99,-122.86 26.6,-124.92 30.15,-130.96"/>
+<polygon fill="none" stroke="black" points="12,-173 12,-193 374,-193 374,-173 12,-173"/>
+<text text-anchor="start" x="138.99" y="-180.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="orange">WAIT(,SIG_SHOW)</text>
+<polygon fill="none" stroke="black" points="12,-151 12,-171 374,-171 374,-151 12,-151"/>
+<text text-anchor="start" x="15" y="-157.2" font-family="Times,serif" font-size="12.00" fill="blue">MOV(WSPRITE,WIP1);ASHOW(WIP1);PLAYWAVE(SOUND_FIRE);</text>
+<polygon fill="none" stroke="black" points="9,-148 9,-196 377,-196 377,-148 9,-148"/>
 </g>
 <!-- 2 -->
 <g id="node3" class="node">
 <title>2</title>
-<ellipse fill="none" stroke="black" cx="253.02" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="253.02" y="-13.8" font-family="Times,serif" font-size="14.00">2</text>
+<ellipse fill="none" stroke="black" cx="252" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="252" y="-13.8" font-family="Times,serif" font-size="14.00">2</text>
 </g>
 <!-- 1&#45;&gt;2 -->
 <g id="edge3" class="edge">
 <title>1&#45;&gt;2</title>
-<path fill="none" stroke="black" d="M83.56,-100.63C117.18,-84.43 182.31,-53.06 221.3,-34.28"/>
-<polygon fill="black" stroke="black" points="222.71,-37.49 230.2,-29.99 219.67,-31.18 222.71,-37.49"/>
-<text text-anchor="start" x="185.02" y="-62.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="blue">SIGNAL(WIP4SIG_SHOW)</text>
+<path fill="none" stroke="black" d="M82.53,-100.63C116.15,-84.43 181.28,-53.06 220.28,-34.28"/>
+<polygon fill="black" stroke="black" points="221.68,-37.49 229.17,-29.99 218.64,-31.18 221.68,-37.49"/>
+<text text-anchor="start" x="184.5" y="-62.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="blue">SIGNAL(WIP4,SIG_SHOW)</text>
 </g>
 <!-- 2&#45;&gt;0 -->
 <g id="edge4" class="edge">
 <title>2&#45;&gt;0</title>
-<path fill="none" stroke="black" d="M278.69,-24.24C296.99,-29.16 321.1,-38.2 337.02,-54 341.63,-58.57 408.17,-156.86 377.02,-196 359.91,-217.5 284.38,-228.68 237.38,-233.66"/>
-<polygon fill="black" stroke="black" points="237.2,-230.16 227.6,-234.64 237.9,-237.13 237.2,-230.16"/>
-<text text-anchor="start" x="380.02" y="-109.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="blue">SIGNAL(WIP2SIG_SHOW)</text>
+<path fill="none" stroke="black" d="M278.38,-23.06C298.53,-27.45 325.7,-36.35 343,-54 349.29,-60.42 405.27,-160.47 377,-196 359.88,-217.5 284.36,-228.68 237.35,-233.66"/>
+<polygon fill="black" stroke="black" points="237.18,-230.16 227.58,-234.64 237.88,-237.13 237.18,-230.16"/>
+<text text-anchor="start" x="381.5" y="-109.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="blue">SIGNAL(WIP2,SIG_SHOW)</text>
 </g>
 </g>
 </svg>

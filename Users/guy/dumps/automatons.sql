@@ -119,6 +119,8 @@ insert into automatons ([name]) values
 ('M_COMPASS'),
 ('M_EYEINFO'),
 ('M_FISHSTATION'),
+('M_FLYBINa'),
+('M_FLYBINb'),
 ('M_GOPABIN'),
 ('M_HALO'),
 ('M_ID'),

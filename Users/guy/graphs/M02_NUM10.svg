@@ -20,7 +20,7 @@
 <path fill="none" stroke="black" d="M52.44,-59.69C63.03,-60.15 72,-57.92 72,-53 72,-50 68.67,-48 63.67,-47"/>
 <polygon fill="black" stroke="black" points="64.15,-43.52 53.95,-46.4 63.72,-50.51 64.15,-43.52"/>
 <polygon fill="none" stroke="black" points="75,-83 75,-103 269,-103 269,-83 75,-83"/>
-<text text-anchor="start" x="150.4" y="-90.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="orange">WAIT()</text>
+<text text-anchor="start" x="146.8" y="-90.2" font-family="Courier New" font-weight="bold" font-size="12.00" fill="orange">WAIT(,)</text>
 <polygon fill="none" stroke="black" points="75,-3 75,-81 269,-81 269,-3 75,-3"/>
 <text text-anchor="start" x="78" y="-67.2" font-family="Times,serif" font-size="12.00" fill="blue"> &#160;&#160;&#160;REF_MACHINE(WIP_S02_VIAL);</text>
 <text text-anchor="start" x="78" y="-52.8" font-family="Times,serif" font-size="12.00" fill="blue"> &#160;&#160;&#160;MOV(BFRAME,R_WPARM);</text>
