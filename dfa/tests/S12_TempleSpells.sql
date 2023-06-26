@@ -2,6 +2,8 @@ delete from games;
 
 ------------------------------------RESOURCES
 
+-- introducing 'SIG_BURN' used to burn nystrom. I suggest we keep this as a universal signal for all machines ...
+insert into constants ([name],[value]) values ('SIG_BURN', 0x1FEEDC0DEF00D);
 
 --where the spells/scrolls currently live
 -- ('4609', '0x1201', '4643', 'IDV_TMCUT', '30', '100', '60', '187', '2', 'M_OBJECTBIN', '0x2201', '', '', ''),
@@ -454,10 +456,9 @@ INSERT INTO "main"."machines" ("id", "name", "view_id", "view_name", "left", "to
 ('8720', 'S12_SHELF_1_INGREDIENTS_MGR', '4633', 'IDV_TMCU1', '10', '10', '12', '14', '1', 'M12_xING_MGR', 'S12_SHELF_1_ING1', 'S12_SHELF_1_ING2', 'S12_SHELF_1_ING3', 'S12_SHELF_1_ING4'),
 
 ('8721', 'S12_SHELF_1_CANDLELIGHT', '4633', 'IDV_TMCU1', '272', '59', '299', '113','1', 'M12_xCANDLELIGHT', 'IDS_CANNY1', 'S12_SHELF_1_SPELLPORTAL', 'S12_SHELF_1_CANDLE', 'S12_SHELF_1_MAGIC'),
-('8722', 'S12_SHELF_1_NYSTROMADDED', '4633', 'IDV_TMCU1', '242','79','320','160', '1', 'M12_xNYSTROMADDED', 'IDS_CANGRN1', '', '', ''),
+('8722', 'S12_SHELF_1_NYSTROMADDED', '4633', 'IDV_TMCU1', '242','79','320','160', '1', 'M12_xNYSTROMADDED', 'IDS_CANGRN1', '', '', 'S12_SHELF_1_SCROLL'),
 ('8723', 'S12_SHELF_1_SPELLPORTAL', '4633', 'IDV_TMCU1', '107', '25', '167', '85', '1', 'M12_xSPELLPORTAL', 'S12_SHELF_1_INGREDIENTS_MGR','S12_SHELF_1_SCROLL', 'S12_SHELF_1_CANDLELIGHT', 'S12_SHELF_1_NYSTROMADDED'),
 ('8724', 'S12_SHELF_1_MAGIC', '4633', 'IDV_TMCU1', '0', '5', '35', '45', '1', 'M12_xMAGIC', '','','','');
-
 
 
 INSERT INTO "main"."transitions" ("automaton", "state", "new_state", "opcode", "param_1", "param_2", "code", "guard") 
@@ -481,7 +482,11 @@ SIGNAL(WIP2,SIG_SHOW);',''),
 --('M12_xSCROLL', 13, 0, 'SHOW','', 'IDS_SCRHUNG', 'SIGNAL(WIP2,SIG_SHOW);',''), --signal ingredients to look themselves up with this wparm
 
 ('M12_xSCROLL', 'occupied', 30, 'GRAB', '0', '','','R_WPARM == 0'),  
-('M12_xSCROLL', 30, 0, 'SHOW', '0', '0','SIGNAL(WIP2,SIG_HIDE);SIGNAL(WIP3,SIG_HIDE); SIGNAL(WIP4,SIG_HIDE);',''); --remove the place holders and snuff the candle, drain nystrom
+('M12_xSCROLL', 30, 0, 'SHOW', '0', '0','
+// remove the place holders and snuff the candle, drain nystrom
+SIGNAL(WIP2,SIG_HIDE);
+SIGNAL(WIP3,SIG_HIDE);
+SIGNAL(WIP4,SIG_HIDE);','');
 -------------------------------------------------------------------------------------
 
 INSERT INTO "main"."transitions" ("automaton", "state", "new_state", "opcode", "param_1", "param_2", "code") 
@@ -591,45 +596,71 @@ WPARM=0;'),--SWALLOW UP THE OBJECT
 ('M12_xASHSHELF', 30, 31, 'ASSIGN', 'WOBJECT', '0', 'CLEAR(WOBJECT);ASHOW(); ASSIGN(BPARM,0); ASSIGN(WPARM,0);'),
 ('M12_xASHSHELF', 31, 0, 'Z_EPSILON', '', '', ''),
 -------------------------------------------------------------------------------------
-('M12_xCANDLE', '0', '10', 'DRAG', '0', 'IDD_MATCH', ''),
-('M12_xCANDLE', '0', '50', 'WAIT', '', 'SIG_EMPTY', ''),
+
+('M12_xCANDLE', '0', '0', 'DRAG', '0', 'IDD_MATCH', '
+REF_MACHINE(WIP4);         // WIP4 is the scroll
+MOV(BFRAME,R_WPARM);       // R_WPARM is the spell id
+MAPi(BFRAME,S12_ING_NY);   // BFRAME is the cost for the spell
+// magic candle can''t light without enough nystrom!
+if (BPARM == BFRAME) {
+    // check to see if the spell is ready
+    SIGNAL(WIP3, SIG_CHECK);
+    REF_MACHINE(WIP3);
+    if ((R_WPARM > 0) && (R_WPARM == R_BPARM)) {
+                SIGNAL(WIP1, SIG_SHOW); // WIP1 is the candle light
+                BPARM = 0; // --BPARM GOES TO ZERO AS THE NYSTROM CATCHES FIRE
+        }
+    }
+}
+'),
+('M12_xCANDLE', '0', '0', 'DRAG', '0', 'IDD_SCOOPF', '
+/*      WIP4 is the scroll
+        R_WPARM is the spell id (??)
+        BFRAME is how much for the spell
+        BPARM is how much stored in the candle
+*/
+REF_MACHINE(WIP4);       // WIP4 is the scroll
+MOV(BFRAME,R_WPARM);     // R_WPARM is the spell id (??)
+MAPi(BFRAME,S12_ING_NY); // BFRAME is how much for the spell
+if (BPARM < BFRAME) {    // BPARM is how much stored in the candle
+    ADDI(BPARM,1);
+    PLAYWAVE(SOUND_SLURP);
+    SIGNAL(WIP2, SIG_SHOW); // WIP2 is the nystrom meter (M12_xNYSTROMADDED)
+    HANDOFF(0,IDD_SCOOPE);
+}'), 
+('M12_xCANDLE', '0', '0', 'WAIT', '', 'SIG_EMPTY', '
+ASSIGN(BPARM,0);SIGNAL(WIP2,SIG_HIDE);'),
 ('M12_xCANDLE', '0', '0', 'CLICK', '0', '0', 'SIGNAL(WIP1,SIG_HIDE);'),
 
-('M12_xCANDLE', '0', '100', 'DRAG', '0', 'IDD_SCOOPF', ''),
-
--- magic candle can't light without enough nystrom!
-('M12_xCANDLE', '10', '15', 'REF_MACHINE', 'WIP4', '0', 'MOV(BFRAME,R_WPARM);MAPi(BFRAME,S12_ING_NY);'),
-('M12_xCANDLE', '15', '20', 'EQUAL', 'BPARM', 'BFRAME', ''),
-('M12_xCANDLE', '15', '0', 'Z_EPSILON', '', '', ''),
-
--- magic candle only lights when the spell is ready
-('M12_xCANDLE', '20', '21', 'SIGNAL', 'WIP3', 'SIG_CHECK', 'REF_MACHINE(WIP3);'), -- check the ingredients
-('M12_xCANDLE', '21', '22', 'GTi', 'R_WPARM', '0', ''), 
-('M12_xCANDLE', '21', '0', 'Z_EPSILON', '', '', ''),
-
-('M12_xCANDLE', '22', '0', 'EQUAL', 'R_WPARM', 'R_BPARM', 'SIGNAL(WIP1,SIG_SHOW);ASSIGN(BPARM,0);'), --BPARM GOES TO ZERO AS THE NYSTROM CATCHES FIRE
-('M12_xCANDLE', '22', '0', 'Z_EPSILON', '', '', ''),
-
-('M12_xCANDLE', '50', '0', 'Z_EPSILON', '', '', 'ASSIGN(BPARM,0);SIGNAL(WIP2,SIG_HIDE);'),
-
---get the total amount required for the spell from the map
--- magic candle doesn't take more than is needed
-('M12_xCANDLE', '100', '101', 'REF_MACHINE', 'WIP4', '0', 'MOV(BFRAME,R_WPARM);MAPi(BFRAME,S12_ING_NY);'),--BFRAME is how much for the spell
-('M12_xCANDLE', '101', '102', 'LT', 'BPARM', 'BFRAME', 'ADDI(BPARM,1);PLAYWAVE(SOUND_SLURP);SIGNAL(WIP2,SIG_SHOW);'),
-('M12_xCANDLE', '101', '0', 'Z_EPSILON', '', '', ''),
-('M12_xCANDLE', '102', '0', 'HANDOFF', '0', 'IDD_SCOOPE', ''),
 
 -------------------------------------------------------------------------------------
 
-('M12_xCANDLELIGHT', '0', '1', 'WAIT', '', 'SIG_SHOW', 'MOV(WSPRITE,WIP1);ASHOW(WIP1);PLAYWAVE(SOUND_FIRE);'), 
-('M12_xCANDLELIGHT', '1', '2', 'SIGNAL', 'WIP4', 'SIG_SHOW', ''), --play magic  and  light wick
-('M12_xCANDLELIGHT', '2', '0', 'SIGNAL', 'WIP2', 'SIG_SHOW', ''),
+('M12_xCANDLELIGHT', '0', '0', 'WAIT', '', 'SIG_SHOW', '
+MOV(WSPRITE,WIP1);
+ASHOW(WIP1);
+PLAYWAVE(SOUND_FIRE);
+SIGNAL(WIP4, SIG_SHOW); // play magic and light wick
+SIGNAL(WIP2, SIG_SHOW);'),
+('M12_xCANDLELIGHT', '0', '0', 'WAIT', '', 'SIG_HIDE', '
+CLEAR(WSPRITE);
+ASHOW(0);
+SIGNAL(WIP3,SIG_EMPTY;'),
 
+-- WIP4 is the scroll
+('M12_xNYSTROMADDED', '0', '0', 'WAIT', '', 'SIG_HIDE', 'SHOW();'),
+('M12_xNYSTROMADDED', '0', '0', 'WAIT', '', 'SIG_SHOW', 'SHOW(IDS_CANGRN1);'),
 
-('M12_xCANDLELIGHT', '0', '0', 'WAIT', '', 'SIG_HIDE', 'CLEAR(WSPRITE);ASHOW(0);SIGNAL(WIP3,SIG_EMPTY;'),
-
-('M12_xNYSTROMADDED', '0', '0', 'WAIT', '', 'SIG_SHOW', 'MOV(WSPRITE,WIP1);SHOW(WIP1);'),
-('M12_xNYSTROMADDED', '0', '0', 'WAIT', '', 'SIG_HIDE', 'CLEAR(WSPRITE);SHOW(0);'),
+--get the total amount required for the spell from the map
+-- magic candle doesn't take more than is needed
+-- ('M12_xCANDLE', '100', '101', 'REF_MACHINE', 'WIP4', '0', 'MOV(BFRAME,R_WPARM);MAPi(BFRAME,S12_ING_NY);'),--BFRAME is how much for the spell
+/*
+('M12_xNYSTROMADDED', '101', '0', 'LT', 'BPARM', 'BFRAME', '
+ADDI(BPARM,1);
+PLAYWAVE(SOUND_SLURP);
+SHOW(IDS_CANGRN1);
+HANDOFF(0,IDD_SCOOPE);'),
+('M12_xNYSTROMADDED', '101', '0', 'Z_EPSILON', '', '', ''),
+*/
 
 -------------------------------------------------------------------------------------
 ('M12_xMAGIC', 0, 10, 'WAIT', '', 'SIG_SHOW', ''),
