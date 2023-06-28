@@ -455,6 +455,7 @@ insert into spr_names values
 ('IDS_MOON5','m5',0x659),
 ('IDS_MOON6','m6',0x65a),
 ('IDS_MOON7','m7',0x65b),
+('IDS_MOONSPIN','moonspin',0x662),
 ('IDS_MSA10001','MSA10001',0x3ab2),
 ('IDS_MSH10001','MSH10001',0x3ab3),
 ('IDS_MSI10001','MSI10001',0x3ab4),

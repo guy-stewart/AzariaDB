@@ -1,7 +1,7 @@
 drop table if exists constants;
 create table constants
 (
-    [name]      text unique primary key on conflist replace not null,
+    [name]      text unique primary key on conflict replace not null,
     [value]     text
 );
 
@@ -86,6 +86,7 @@ insert into constants ([name],[value]) values
 ('S02_BIN___XX-S02_LOCK__XX',0x1),
 ('S02_BIN___XX-S02_VIAL__XX',0x2),
 ('SCROLL_SPELL',0x6),
+('SIG_BURN',0xc0def00d),
 ('SIG_DEC1',0x19),
 ('SIG_DEC10',0x1b),
 ('SIG_INC1',0x18),
