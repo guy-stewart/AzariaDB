@@ -79,15 +79,33 @@ insert into automatons ([name]) values
 ('M12_ING_STD','0',''}',
 ('M12_SPRING','0',''}',
 ('M12_WATER','0',''}',
-('M12_xASHSHELF','0',''}',
-('M12_xCANDLE','0',''}',
+('M12_xCANDLE','0',' The candle casts the spell.
+WIP1: CANDLELIGHT
+WIP2: NYSTROMADDED
+WIP3: INGREDIENTS_MGR
+WIP4: SCROLL holder
+SIG_EMPTY: From candlelight when candle burns out
+'}',
 ('M12_xCANDLELIGHT','0',''}',
-('M12_xING_MGR','0',''}',
+('M12_xING_MGR','0','used in the temple to hold ingredients for spell making.
+WIP1: The scroll holder
+WIP2: The scroll map
+SIG_SHOW: A scroll was dropped
+SIG_HIDE: The scroll was grabbed
+SIG_CLOSE: The spell is cast
+SIG_CHECK: Check spell ingredients'}',
 ('M12_xMAGIC','0',''}',
 ('M12_xNYSTROMADDED','0',''}',
-('M12_xPLANT','0',''}',
+('M12_xPLANT','0','used in the temple to hold ingredients for spell making.
+WIP1: The scroll holder
+WIP2: The scroll map
+SIG_SHOW: A scroll was dropped
+SIG_HIDE: The scroll was grabbed
+SIG_CLOSE: The spell is cast'}',
 ('M12_xSCROLL','0',''}',
 ('M12_xSPELLPORTAL','0',''}',
+('M16_DICEDROP','0',''}',
+('M16_DICEROLL','0',''}',
 ('M17_DOORWAY','0',''}',
 ('M17_FFIELD','0',''}',
 ('M17_FOULWIND','0',''}',

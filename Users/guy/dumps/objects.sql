@@ -322,6 +322,8 @@ insert into objects ([object],[object_id],[class],[icon],[cursor],[actor]) value
 ('IDD_REVERSIB',0x6011,'IDC_TOKEN','ReversiB','ReversiB','ReversiB'),
 ('IDD_GOBTRFLY',0x6012,'IDC_TOKEN','GoBtrfly','GoBtrfly','GoBtrfly'),
 ('IDD_GODRAGON',0x6013,'IDC_TOKEN','GoDragon','GoDragon','GoDragon'),
+('IDD_DICE',0x61af,'IDC_NULL','die','die','die'),
+('IDD_SHAKE',0x61b0,'IDC_NULL','diceshake','diceshake','diceshake'),
 ('IDD_SPINSPELL',0x7000,'IDC_SPELL','spinspel','spinspel','spinspel'),
 ('IDD_SPINNER',0x7001,'IDC_SPELL','h2oSp01','h2oSp01','h2oSp01'),
 ('IDD_FREQUENCY',0x7002,'IDC_SPELL','Beemer','Beemer','Beemer'),

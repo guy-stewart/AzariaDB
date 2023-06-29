@@ -613,33 +613,9 @@ insert into transitions ([automaton], [state], [new_state], [opcode], [param_1],
 ('M12_WATER','3','4','SIGNAL','WIP1','','','',''),
 ('M12_WATER','4','5','WAIT','0','0','','',''),
 ('M12_WATER','5','0','SHOW','0','0','','',''),
-('M12_xASHSHELF','0','9','DROP','0','0','','',''),
-('M12_xASHSHELF','0','12','GRAB','0','0','','',''),
-('M12_xASHSHELF','0','4','WAIT','','SIG_SHOW','REF_MACHINE(WIP1);MOV(WTEMP1,R_WPARM);MAP(WTEMP1,WIP2);','',''),
-('M12_xASHSHELF','0','20','WAIT','','SIG_HIDE','','',''),
-('M12_xASHSHELF','0','30','WAIT','','SIG_CLOSE','','',''),
-('M12_xASHSHELF','12','13','EQUALi','BPARM','1','','',''),
-('M12_xASHSHELF','12','0','Z_EPSILON','','','','',''),
-('M12_xASHSHELF','13','0','CLEAR','BFRAME','','
-        ASSIGN(BPARM,0);
-        CLEAR(WOBJECT);
-        SHOW();','',''),
-('M12_xASHSHELF','20','21','SHOW','0','0','','',''),
-('M12_xASHSHELF','21','0','Z_EPSILON','','','','',''),
-('M12_xASHSHELF','30','31','ASSIGN','WOBJECT','0','CLEAR(WOBJECT);ASHOW(); ASSIGN(BPARM,0); ASSIGN(WPARM,0);','',''),
-('M12_xASHSHELF','31','0','Z_EPSILON','','','','',''),
-('M12_xASHSHELF','4','5','MOV','BFRAME','R_WPARM','
-        MAP(BFRAME,S12_ING_D);
-        O_ACCEPT(WTEMP1);
-        SHOW(WIP3);','',''),
-('M12_xASHSHELF','5','0','GT','BFRAME','0','ASSIGN(WPARM,1);','',''),
-('M12_xASHSHELF','5','0','Z_EPSILON','','','ASSIGN(WPARM,0);','',''),
-('M12_xASHSHELF','9','0','SHOW','WOBJECT','0','ASSIGN(BPARM,1);','',''),
 ('M12_xCANDLE','0','0','CLICK','0','0','SIGNAL(WIP1,SIG_HIDE);','',''),
 ('M12_xCANDLE','0','0','DRAG','0','IDD_MATCH','
-REF_MACHINE(WIP4);         // WIP4 is the scroll
-MOV(BFRAME,R_WPARM);       // R_WPARM is the spell id
-MAPi(BFRAME,S12_ING_NY);   // BFRAME is the cost for the spell
+
 // magic candle can't light without enough nystrom!
 if (BPARM == BFRAME) {
     // check to see if the spell is ready
@@ -653,14 +629,9 @@ if (BPARM == BFRAME) {
 }
 ','',''),
 ('M12_xCANDLE','0','0','DRAG','0','IDD_SCOOPF','
-/*      WIP4 is the scroll
-        R_WPARM is the spell id (??)
-        BFRAME is how much for the spell
-        BPARM is how much stored in the candle
+/*   BFRAME is how much for the spell
+     BPARM is how much stored in the candle
 */
-REF_MACHINE(WIP4);       // WIP4 is the scroll
-MOV(BFRAME,R_WPARM);     // R_WPARM is the spell id (??)
-MAPi(BFRAME,S12_ING_NY); // BFRAME is how much for the spell
 if (BPARM < BFRAME) {    // BPARM is how much stored in the candle
     ADDI(BPARM,1);
     PLAYWAVE(SOUND_SLURP);
@@ -699,82 +670,77 @@ SIGNAL(WIP3,SIG_EMPTY;','',''),
         ASSIGN(BPARM,0);
         ASSIGN(WPARM,0);
 ','',''),
-('M12_xING_MGR','0','9','WAIT','0','SIG_CHECK','','',''),
-('M12_xING_MGR','10','11','REF_MACHINE','WIP1','','ADD(BPARM,R_WPARM);','',''),
-('M12_xING_MGR','11','12','REF_MACHINE','WIP2','','ADD(BPARM,R_WPARM);','',''),
-('M12_xING_MGR','12','13','REF_MACHINE','WIP3','','ADD(BPARM,R_WPARM);','',''),
-('M12_xING_MGR','13','19','REF_MACHINE','WIP4','','ADD(BPARM,R_WPARM);','',''),
-('M12_xING_MGR','19','20','ASSIGN','WPARM','0','','',''),
-('M12_xING_MGR','20','21','REF_MACHINE','WIP1','','ADD(WPARM,R_BPARM);','',''),
-('M12_xING_MGR','21','22','REF_MACHINE','WIP2','','ADD(WPARM,R_BPARM);','',''),
-('M12_xING_MGR','22','23','REF_MACHINE','WIP3','','ADD(WPARM,R_BPARM);','',''),
-('M12_xING_MGR','23','0','REF_MACHINE','WIP4','','ADD(WPARM,R_BPARM);','',''),
-('M12_xING_MGR','9','10','ASSIGN','BPARM','0','','',''),
+('M12_xING_MGR','0','0','WAIT','0','SIG_CHECK','BPARM=0;
+// check all the machines for ready or idle ...
+if (  (IFSTATE('ready', WIP1) || IFSTATE('0', WIP1))
+   && (IFSTATE('ready', WIP2) || IFSTATE('0', WIP2))
+   && (IFSTATE('ready', WIP3) || IFSTATE('0', WIP3))
+   && (IFSTATE('ready', WIP4) || IFSTATE('0', WIP4))) {
+        WRITE('winner winner chicken dinner');
+        BPARM=1;
+        WPARM=1;
+}','',''),
 ('M12_xMAGIC','0','10','WAIT','','SIG_SHOW','','',''),
 ('M12_xMAGIC','10','11','VIDEO','','IDS_RAIN','','',''),
 ('M12_xMAGIC','11','0','Z_EPSILON','','','','',''),
 ('M12_xNYSTROMADDED','0','0','WAIT','','SIG_HIDE','SHOW();','',''),
 ('M12_xNYSTROMADDED','0','0','WAIT','','SIG_SHOW','SHOW(IDS_CANGRN1);','',''),
-('M12_xPLANT','0','5','WAIT','','SIG_SHOW','
-REF_MACHINE(WIP1);
-MOV(BFRAME,R_WPARM);
-MAP(BFRAME,WIP2);','',''),
-('M12_xPLANT','5','Dstate','GT','BFRAME','0','
-ASSIGN(WPARM,1);
-MOV(WOBJECT,BFRAME);
-MAPi(WOBJECT,S12_NATURE_REP);
-O_ACCEPT(WOBJECT);
-C_ACCEPT(WOBJECT);
-SHOW(WIP3);','',''),
-('M12_xPLANT','5','0','Z_EPSILON','','','ASSIGN(WPARM,0);','',''),
-('M12_xPLANT','Dstate','Gstate','DROP','0','0','
-SHOW(WOBJECT);
-BPARM=1;
-SIGNAL(WIP4,SIG_CHECK);','',''),
-('M12_xPLANT','Dstate','0','WAIT','','SIG_HIDE','SHOW();','',''),
-('M12_xPLANT','Gstate','5','GRAB','0','0','
+('M12_xPLANT','0','show_hint','WAIT','','SIG_SHOW','','',''),
+('M12_xPLANT','hold_if_invalid','show_hint','GRAB','','','','',''),
+('M12_xPLANT','hold_if_invalid','ready','IS_A','WOBJECT','WACCEPT','','',''),
+('M12_xPLANT','hold_if_invalid','no_scroll','WAIT','','SIG_HIDE','','',''),
+('M12_xPLANT','no_scroll','0','GRAB','0','0','WOBJECT=0;
+SHOW();','',''),
+('M12_xPLANT','no_scroll','hold_if_invalid','WAIT','0','SIG_SHOW','','',''),
+('M12_xPLANT','ready','show_hint','GRAB','0','0','WOBJECT=0;','',''),
+('M12_xPLANT','ready','no_scroll','WAIT','0','SIG_HIDE','','',''),
+('M12_xPLANT','ready','0','WAIT','','SIG_CLOSE','
 WOBJECT=0;
-SIGNAL(WIP4,SIG_CHECK);','',''),
-('M12_xPLANT','Gstate','0','WAIT','','SIG_CLOSE','
-WOBJECT=0;
-ASHOW();
-BPARM=0;
-WPARM=0;','',''),
-('M12_xSCROLL','0','vacant','REF_MACHINE','WIP2','0','
-SIGNAL(WIP2,SIG_CHECK);
-C_ACCEPT(0,IDC_SCROLL);','',''),
-('M12_xSCROLL','12','occupied','NEQUAL','WTEMP1','WIP1','PLAYWAVE(SOUND_HURT);','',''),
-('M12_xSCROLL','12','occupied','Z_EPSILON','','','
-SHOW(0,IDS_SCRHUNG);
-SIGNAL(WIP2,SIG_SHOW);','',''),
-('M12_xSCROLL','30','0','SHOW','0','0','
+ASHOW();','','consume the object'),
+('M12_xPLANT','show_hint','ready','DROP','0','0','SHOW(WOBJECT);','',''),
+('M12_xPLANT','show_hint','0','WAIT','','SIG_HIDE','','',''),
+('M12_xPLANT','show_hint','0','Z_EPSILON','','','','(WACCEPT==0)',''),
+('M12_xSCROLL','0','vacant','REF_MACHINE','WIP2','0','C_ACCEPT(0,IDC_SCROLL);','',''),
+('M12_xSCROLL','occupied','vacant','GRAB','0','','SHOW();
 // remove the place holders and snuff the candle, drain nystrom
 SIGNAL(WIP2,SIG_HIDE);
 SIGNAL(WIP3,SIG_HIDE);
 SIGNAL(WIP4,SIG_HIDE);','',''),
-('M12_xSCROLL','occupied','30','GRAB','0','','','R_WPARM == 0',''),
-('M12_xSCROLL','vacant','12','DROP','0','0','
-MOV(WPARM,WOBJECT);
-MAPi(WPARM,S12_SCROLL);
-MOV(WTEMP1,WPARM);
-MAPi(WTEMP1,S12_ING_LOC);','',''),
-('M12_xSPELLPORTAL','0','11','GRAB','0','0','','',''),
-('M12_xSPELLPORTAL','0','1','WAIT','','SIG_SHOW','','',''),
-('M12_xSPELLPORTAL','1','3','SIGNAL','WIP1','SIG_CLOSE','','',''),
-('M12_xSPELLPORTAL','11','12','CLEAR','WOBJECT','','
-        CLEAR(WOBJECT);
-        CLEAR(WPARM);
-        SHOW();
-        SIGNAL(WIP3,SIG_HIDE);
-        SIGNAL(WIP4,SIG_HIDE);
-        ','',''),
-('M12_xSPELLPORTAL','12','0','SIGNAL','WIP1','SIG_SHOW','','',''),
-('M12_xSPELLPORTAL','3','4','REF_MACHINE','WIP2','','
-        MOV(WPARM,R_WPARM);
-        MAPi(WPARM,S12_SCROLLL_MK);
-        MOV(WOBJECT,WPARM); 
+('M12_xSCROLL','vacant','occupied','DROP','0','0','SHOW(0,IDS_SCRHUNG);
+SIGNAL(WIP2,SIG_SHOW);','',''),
+('M12_xSPELLPORTAL','0','ready','WAIT','','SIG_SHOW','
+SIGNAL(WIP1, SIG_CLOSE);
+REF_MACHINE(WIP2);
+WOBJECT=R_WOBJECT;
+MAPi(WOBJECT,S12_SCROLL);
+MAPi(WOBJECT,S12_SCROLLL_MK);
+ASHOW(WOBJECT);
 ','',''),
-('M12_xSPELLPORTAL','4','0','ASHOW','WOBJECT','','','',''),
+('M12_xSPELLPORTAL','ready','0','GRAB','','','WOBJECT=0;
+SHOW();
+SIGNAL(WIP3,SIG_HIDE);
+SIGNAL(WIP4,SIG_HIDE);
+SIGNAL(WIP1,SIG_SHOW);','',''),
+('M16_DICEDROP','0','2','O_ACCEPT','0','IDD_SHAKE','','',''),
+('M16_DICEDROP','2','3','DROP','0','0','SIGNAL(WIP1,SIG_SHOW);','',''),
+('M16_DICEDROP','3','0','ESTIME','','.5','SIGNAL(WIP2,SIG_SHOW);','',''),
+('M16_DICEROLL','0','2','WAIT','0','SIG_SHOW','','',''),
+('M16_DICEROLL','2','4','MOV','WSPRITE','WIP1','','',''),
+('M16_DICEROLL','4','5','ASHOW','WSPRITE','V_LOOP','','',''),
+('M16_DICEROLL','5','6','ESTIME','','2','','',''),
+('M16_DICEROLL','6','7','RAND','6','1','','',''),
+('M16_DICEROLL','7','8','MOV','BFRAME','WRAND','
+    MAPi(BFRAME,S16_DICE_MAP);
+    SHOW(BFRAME);
+','',''),
+('M16_DICEROLL','8','0','GRAB','','IDD_SHAKE',' 
+    SIGNAL(WIP2,SIG_HIDE); 
+    CLEAR(WOBJECT);
+    SHOW();
+','',''),
+('M16_DICEROLL','8','9','WAIT','0','SIG_HIDE','','',''),
+('M16_DICEROLL','9','0','CLEAR','','WOBJECT','SHOW(); 
+','',''),
 ('M17_DOORWAY','0','50','CLICK','0','0','','',''),
 ('M17_DOORWAY','0','1','WAIT','0','SIG_CLOSE','','',''),
 ('M17_DOORWAY','1','2','SIGNAL','WIP2','SIG_ON','','',''),
@@ -1635,6 +1601,11 @@ CLEAR(WPARM);','',''),
 ('M_TINYFISH','6','7','GRAB','WIP2','','','',''),
 ('M_TINYFISH','7','8','CLEAR','WOBJECT','','','',''),
 ('M_TINYFISH','8','9','CLEAR','WPARM','','','',''),
+('M_TINYFISH','8','0','GRAB','IDD_DICE','','','',''),
+('M_TINYFISH','8','9','GRAB','IDD_DICE','','','',''),
+('M_TINYFISH','8','9','GRAB','IDD_DICE','','','',''),
+('M_TINYFISH','8','9','GRAB','IDD_DICE','','','',''),
+('M_TINYFISH','8','9','GRAB','IDD_DICE','','','',''),
 ('M_TINYFISH','9','10','CLEAR','WSPRITE','','','',''),
 ('M_VIAL','0','1','SHOW','0','0','','',''),
 ('M_VIAL','1','10','LTEi','WPARM','20','ASSIGN(LWEALTH,10);ASSIGN(WPARM,MAX_VIAL_STORAGE);MOV(BPARM,LWEALTH);SIGNALi(SIG_SHOW,S1_VIALMETER);','',''),

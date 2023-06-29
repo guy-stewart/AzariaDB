@@ -339,48 +339,69 @@ insert into states ([automaton],[state],[entry],[exit],[doc]) values
 ('M12_WATER','3','','',''),
 ('M12_WATER','4','','',''),
 ('M12_WATER','5','','',''),
-('M12_xASHSHELF','0','','',''),
-('M12_xASHSHELF','12','','',''),
-('M12_xASHSHELF','13','','',''),
-('M12_xASHSHELF','20','','',''),
-('M12_xASHSHELF','21','','',''),
-('M12_xASHSHELF','30','','',''),
-('M12_xASHSHELF','31','','',''),
-('M12_xASHSHELF','4','','',''),
-('M12_xASHSHELF','5','','',''),
-('M12_xASHSHELF','9','','',''),
-('M12_xCANDLE','0','','',''),
+('M12_xCANDLE','0','','REF_MACHINE(WIP4);    // ... the scroll holder
+BFRAME=R_WOBJECT;       // ... the scroll 
+MAPi(BFRAME,S12_SCROLL); // ... the spell id
+MAPi(BFRAME,S12_ING_NY);   // ... the spell cost
+',''),
 ('M12_xCANDLELIGHT','0','','',''),
 ('M12_xING_MGR','0','','',''),
-('M12_xING_MGR','10','','',''),
-('M12_xING_MGR','11','','',''),
-('M12_xING_MGR','12','','',''),
-('M12_xING_MGR','13','','',''),
-('M12_xING_MGR','19','','',''),
-('M12_xING_MGR','20','','',''),
-('M12_xING_MGR','21','','',''),
-('M12_xING_MGR','22','','',''),
-('M12_xING_MGR','23','','',''),
-('M12_xING_MGR','9','','',''),
 ('M12_xMAGIC','0','','',''),
 ('M12_xMAGIC','10','','',''),
 ('M12_xMAGIC','11','','',''),
 ('M12_xNYSTROMADDED','0','','',''),
-('M12_xPLANT','0','','',''),
-('M12_xPLANT','5','','',''),
-('M12_xPLANT','Dstate','','',''),
-('M12_xPLANT','Gstate','','',''),
+('M12_xPLANT','0','','','IDLE
+Wait here when no scroll
+or ingredient not required 
+for the current scroll spell'),
+('M12_xPLANT','hold_if_invalid','// find the ingredient
+// from S12_ING_x in wip2
+// and store in it bframe
+REF_MACHINE(WIP1);
+BFRAME=R_WOBJECT;
+MAPi(BFRAME,S12_SCROLL);
+MAP(BFRAME,WIP2);
+WACCEPT = BFRAME;
+if (WACCEPT > 0) {
+        MAPi(WACCEPT,S12_NATURE_REP);
+        C_ACCEPT(WACCEPT);
+}','','Wait here if the object
+is invalid for the spell'),
+('M12_xPLANT','no_scroll','','','1. There is no scroll attached
+2. An ingredient is present'),
+('M12_xPLANT','ready','','','1. There is a scroll attached
+2. An ingredient is present'),
+('M12_xPLANT','show_hint','// find the ingredient
+// from S12_ING_x in wip2
+// and store in it bframe
+REF_MACHINE(WIP1);
+BFRAME=R_WOBJECT;
+MAPi(BFRAME,S12_SCROLL);
+MAP(BFRAME,WIP2);
+WACCEPT = BFRAME;
+if (WACCEPT > 0) {
+        SHOW(WIP3); // show hint
+        MAPi(WACCEPT,S12_NATURE_REP);
+        C_ACCEPT(WACCEPT);
+}','SHOW();','1. There is a scroll attached
+2. If this ingredient is required
+   then a hint is displayed'),
 ('M12_xSCROLL','0','','',''),
-('M12_xSCROLL','12','','',''),
-('M12_xSCROLL','30','','',''),
 ('M12_xSCROLL','occupied','','',''),
 ('M12_xSCROLL','vacant','','',''),
 ('M12_xSPELLPORTAL','0','','',''),
-('M12_xSPELLPORTAL','1','','',''),
-('M12_xSPELLPORTAL','11','','',''),
-('M12_xSPELLPORTAL','12','','',''),
-('M12_xSPELLPORTAL','3','','',''),
-('M12_xSPELLPORTAL','4','','',''),
+('M12_xSPELLPORTAL','ready','','',''),
+('M16_DICEDROP','0','','',''),
+('M16_DICEDROP','2','','',''),
+('M16_DICEDROP','3','','',''),
+('M16_DICEROLL','0','','',''),
+('M16_DICEROLL','2','','',''),
+('M16_DICEROLL','4','','',''),
+('M16_DICEROLL','5','','',''),
+('M16_DICEROLL','6','','',''),
+('M16_DICEROLL','7','','',''),
+('M16_DICEROLL','8','','',''),
+('M16_DICEROLL','9','','',''),
 ('M17_DOORWAY','0','','',''),
 ('M17_DOORWAY','1','','',''),
 ('M17_DOORWAY','2','','',''),
