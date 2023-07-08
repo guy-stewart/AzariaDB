@@ -55,7 +55,7 @@
 <text text-anchor="start" x="335.99" y="-158.5" font-family="Courier New" font-weight="bold" font-size="10.00">SMP_RECYCLE</text>
 <polygon fill="none" stroke="black" points="261,-119.5 261,-149.5 477,-149.5 477,-119.5 261,-119.5"/>
 <text text-anchor="start" x="264" y="-137.5" font-family="Courier New" font-size="10.00" fill="green">SMP_RECYCLE::M_RECYCLE(&#39;&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="264" y="-125.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;0&#39;: wObject:IDD_SCOOPE}</text>
+<text text-anchor="start" x="264" y="-125.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;0&#39;: wObject:IDD_CROWBAR}</text>
 <polygon fill="none" stroke="black" points="261,-99.5 261,-117.5 477,-117.5 477,-99.5 261,-99.5"/>
 <text text-anchor="start" x="366" y="-105.5" font-family="Courier New" font-size="10.00" fill="blue">_</text>
 <polygon fill="none" stroke="black" points="258,-96.5 258,-172.5 480,-172.5 480,-96.5 258,-96.5"/>

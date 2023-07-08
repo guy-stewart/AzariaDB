@@ -22,9 +22,9 @@
 <!-- 0 -->
 <g id="node2" class="node">
 <title>0</title>
-<polyline fill="none" stroke="darkred" stroke-width="5" points="196.5,-146 213.5,-146"/>
+<polyline fill="none" stroke="darkred" stroke-width="3" points="197.5,-147 212.5,-147"/>
 <text text-anchor="start" x="201" y="-154.9" font-family="Courier New" font-weight="bold" font-size="14.00">0</text>
-<path fill="none" stroke="darkred" stroke-width="5" d="M199.83,-139C199.83,-139 210.17,-139 210.17,-139 215.33,-139 220.5,-144.17 220.5,-149.33 220.5,-149.33 220.5,-167.67 220.5,-167.67 220.5,-172.83 215.33,-178 210.17,-178 210.17,-178 199.83,-178 199.83,-178 194.67,-178 189.5,-172.83 189.5,-167.67 189.5,-167.67 189.5,-149.33 189.5,-149.33 189.5,-144.17 194.67,-139 199.83,-139"/>
+<path fill="none" stroke="darkred" stroke-width="3" d="M200.83,-142C200.83,-142 209.17,-142 209.17,-142 213.33,-142 217.5,-146.17 217.5,-150.33 217.5,-150.33 217.5,-166.67 217.5,-166.67 217.5,-170.83 213.33,-175 209.17,-175 209.17,-175 200.83,-175 200.83,-175 196.67,-175 192.5,-170.83 192.5,-166.67 192.5,-166.67 192.5,-150.33 192.5,-150.33 192.5,-146.17 196.67,-142 200.83,-142"/>
 </g>
 <!-- 1 -->
 <g id="node3" class="node">
@@ -36,15 +36,15 @@
 <!-- 0&#45;&gt;1 -->
 <g id="edge1" class="edge">
 <title>0&#45;&gt;1</title>
-<path fill="none" stroke="black" d="M185.47,-132.78C180.39,-126.99 174.73,-121.04 169,-116 158.18,-106.47 148.81,-110.72 142,-98 132.77,-80.76 132.14,-70.89 142,-54 147.64,-44.33 157.05,-37.13 166.85,-31.85"/>
+<path fill="none" stroke="black" d="M188.8,-136.65C182.93,-129.71 176.01,-122.18 169,-116 158.18,-106.47 148.81,-110.72 142,-98 132.77,-80.76 132.14,-70.89 142,-54 147.64,-44.33 157.05,-37.13 166.85,-31.85"/>
 <polygon fill="black" stroke="black" points="168.15,-35.11 175.7,-27.67 165.17,-28.78 168.15,-35.11"/>
 <text text-anchor="start" x="146" y="-74" font-family="Courier New" font-weight="bold" font-size="10.00" fill="orange">WAIT(0,SIG_SHOW)</text>
 </g>
 <!-- 1&#45;&gt;0 -->
 <g id="edge2" class="edge">
 <title>1&#45;&gt;0</title>
-<path fill="none" stroke="black" d="M230.82,-35.39C236.93,-40.53 242.62,-46.78 246,-54 254.29,-71.71 251.81,-79.33 246,-98 243.24,-106.86 238.66,-115.56 233.53,-123.46"/>
-<polygon fill="black" stroke="black" points="230.83,-121.22 227.97,-131.42 236.57,-125.23 230.83,-121.22"/>
+<path fill="none" stroke="black" d="M230.82,-35.39C236.93,-40.53 242.62,-46.78 246,-54 254.29,-71.71 251.81,-79.33 246,-98 242.77,-108.38 237.03,-118.55 230.85,-127.46"/>
+<polygon fill="black" stroke="black" points="228.12,-125.26 224.97,-135.38 233.74,-129.44 228.12,-125.26"/>
 <polygon fill="none" stroke="black" points="254,-77 254,-95 770,-95 770,-77 254,-77"/>
 <text text-anchor="start" x="454.99" y="-84" font-family="Courier New" font-weight="bold" font-size="10.00" fill="blue">REF_MACHINE(WIP1,0)</text>
 <polygon fill="none" stroke="black" points="254,-57 254,-75 770,-75 770,-57 254,-57"/>
@@ -59,7 +59,7 @@
 <text text-anchor="start" x="441" y="-182.5" font-family="Courier New" font-weight="bold" font-size="10.00">S12_ING2</text>
 <polygon fill="none" stroke="black" points="261,-143.5 261,-173.5 669,-173.5 669,-143.5 261,-143.5"/>
 <text text-anchor="start" x="264" y="-161.5" font-family="Courier New" font-size="10.00" fill="green">S12_ING2::M12_ING_NATB(&#39;SMP_EYEINFO&#39;,&#39;S12_ING_B&#39;,&#39;&#39;,&#39;IDS_PLNTSCRL&#39;)</text>
-<text text-anchor="start" x="264" y="-149.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;0&#39;: wParm:6 wSprite:PLNTSCRL}</text>
+<text text-anchor="start" x="264" y="-149.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;0&#39;: wParm:2 wSprite:PLNTSCRL}</text>
 <polygon fill="none" stroke="black" points="261,-123.5 261,-141.5 669,-141.5 669,-123.5 261,-123.5"/>
 <text text-anchor="start" x="462" y="-129.5" font-family="Courier New" font-size="10.00" fill="blue">_</text>
 <polygon fill="none" stroke="black" points="258,-120.5 258,-196.5 672,-196.5 672,-120.5 258,-120.5"/>

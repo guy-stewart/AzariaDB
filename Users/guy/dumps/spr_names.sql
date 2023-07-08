@@ -491,6 +491,7 @@ insert into spr_names values
 ('IDS_NAMEPLATE','namefill',0x46),
 ('IDS_NEWSHOVL','shovel',0x1175),
 ('IDS_NYBREATH','Spelx09',0x77a3),
+('IDS_NYBUCKET_GLOW','NYBUCKET_GLOW',0x61db),
 ('IDS_NYPLANT','nyplant',0x214d),
 ('IDS_NYPLANTBIN','nyplantbin',0x214c),
 ('IDS_NYSMASK','NYSMASK',0x1179),

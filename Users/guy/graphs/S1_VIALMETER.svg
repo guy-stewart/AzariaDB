@@ -134,7 +134,7 @@
 <text text-anchor="start" x="419.99" y="-298.5" font-family="Courier New" font-weight="bold" font-size="10.00">S1_VIALMETER</text>
 <polygon fill="none" stroke="black" points="279,-259.5 279,-289.5 633,-289.5 633,-259.5 279,-259.5"/>
 <text text-anchor="start" x="282" y="-277.5" font-family="Courier New" font-size="10.00" fill="green">S1_VIALMETER::M_VIALMETER(&#39;SMP_VIAL&#39;,&#39;IDS_NYSMETER&#39;,&#39;&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="282" y="-265.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;0&#39;: bParm:18 wParm:20 wSprite:NYSMETER bFrame:18}</text>
+<text text-anchor="start" x="282" y="-265.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;0&#39;: wParm:20 wSprite:NYSMETER}</text>
 <polygon fill="none" stroke="black" points="279,-239.5 279,-257.5 633,-257.5 633,-239.5 279,-239.5"/>
 <text text-anchor="start" x="453" y="-245.5" font-family="Courier New" font-size="10.00" fill="blue">_</text>
 <polygon fill="none" stroke="black" points="276,-236.5 276,-312.5 636,-312.5 636,-236.5 276,-236.5"/>

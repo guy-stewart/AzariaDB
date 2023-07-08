@@ -325,7 +325,7 @@ insert into objects ([object],[object_id],[class],[icon],[cursor],[actor]) value
 ('IDD_DICE',0x61af,'IDC_NULL','die','die','die'),
 ('IDD_SHAKE',0x61b0,'IDC_NULL','diceshake','diceshake','diceshake'),
 ('IDD_BLOBBALL',0x61b2,'IDC_NULL','blobball','blobball','blobball'),
-('IDD_STAMP',0x61da,'IDC_NULL','STAMP','STAPM','STAMP'),
+('IDD_STAMP',0x61da,'IDC_NULL','STAMP','STAMP','STAMP'),
 ('IDD_SPINSPELL',0x7000,'IDC_SPELL','spinspel','spinspel','spinspel'),
 ('IDD_SPINNER',0x7001,'IDC_SPELL','h2oSp01','h2oSp01','h2oSp01'),
 ('IDD_FREQUENCY',0x7002,'IDC_SPELL','Beemer','Beemer','Beemer'),
