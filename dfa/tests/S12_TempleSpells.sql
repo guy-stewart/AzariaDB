@@ -6,7 +6,6 @@ create table if not exists automatons
     [doc]     text,
     PRIMARY KEY ([name]) ON CONFLICT REPLACE);
     
-
 ------------------------------------RESOURCES
 
 -- introducing 'SIG_BURN' used to burn nystrom. I suggest we keep this as a universal signal for all machines ...
@@ -690,7 +689,7 @@ SIGNAL(WIP2, SIG_SHOW);'),
 ('M12_xCANDLELIGHT', '0', '0', 'WAIT', '', 'SIG_HIDE', '
 CLEAR(WSPRITE);
 ASHOW(0);
-SIGNAL(WIP3,SIG_EMPTY;'),
+SIGNAL(WIP3,SIG_EMPTY);'),
 
 -- WIP4 is the scroll
 ('M12_xNYSTROMADDED', '0', '0', 'WAIT', '', 'SIG_HIDE', 'SHOW();'),
