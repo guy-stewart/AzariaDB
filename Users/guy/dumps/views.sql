@@ -298,4 +298,7 @@ insert into views values (0x1,'IDV_MAIN_PANEL',0,0,0,1,'mpmask.vct','GUI'),
 (0x2711,'IDV_CANDWALL',1,3,1,1,'smlpanel.vct','candwall'),
 (0x2712,'IDV_CARDMACH',1,3,1,1,'smlpanel.vct','cardmach'),
 (0x2713,'IDV_CDOOR',1,3,1,1,'smlpanel.vct','cdoor'),
-(0x6000,'IDV_BOARD',1,0,1,6,'surround.vct','board');
+(0x6000,'IDV_BOARD',1,0,1,6,'surround.vct','board'),
+(0x9c41,'IDV_CU_GRASSPATCH1',1,3,1,1,'smlpanel.vct','grasspatchcu'),
+(0x9c42,'IDV_CU_DIRTPATCH1',1,3,1,1,'smlpanel.vct','sanddirtcu'),
+(0x9c43,'IDV_CU_DIRTPATCH2',1,3,1,1,'smlpanel.vct','sanddirtcu2');

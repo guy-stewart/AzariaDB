@@ -6,6 +6,9 @@ create table isa
     PRIMARY KEY ([class],[member]) ON CONFLICT REPLACE);
 
 insert into isa ([class],[member])  values
+('ISA_TOOL_STRIKER','IDD_PICK'),
+('ISA_TOOL_DIGGER','IDD_SHOVEL'),
+('ISA_TOOL_PRYER','IDD_CROWBAR'),
 ('ISA_BAIT','IDD_BAIT0'),
 ('ISA_BAIT','IDD_BAIT1'),
 ('ISA_BAIT','IDD_BAIT2'),
