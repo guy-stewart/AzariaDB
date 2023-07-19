@@ -657,12 +657,10 @@ if (BPARM == BFRAME) {
     SIGNAL(WIP3, SIG_CHECK);
     REF_MACHINE(WIP3);
     if ((R_WPARM > 0) && (R_WPARM == R_BPARM)) {
-                SIGNAL(WIP1, SIG_SHOW); // WIP1 is the candle light
-                BPARM = 0; // --BPARM GOES TO ZERO AS THE NYSTROM CATCHES FIRE
-        }
+        SIGNAL(WIP1, SIG_SHOW); // WIP1 is the candle light
+        BPARM = 0; // --BPARM GOES TO ZERO AS THE NYSTROM CATCHES FIRE
     }
-}
-'),
+}'),
 ('M12_xCANDLE', '0', '0', 'DRAG', '0', 'IDD_SCOOPF', '
 /*   BFRAME is how much for the spell
      BPARM is how much stored in the candle
