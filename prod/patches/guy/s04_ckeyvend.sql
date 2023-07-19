@@ -1,8 +1,24 @@
 
 delete from games;
 
-delete from transitions where [name] like 'M04_%';
-insert into transitions ([name], [state], [new_state], [opcode], [param_1], [param_2], [code]) values ('0x0030','0','1','WAIT','0','0', ''),
+insert into machines ([id],[name],[view_name],[left],[top],[right],[bottom],[local_visible],[dfa_name], [wip1_name],[wip2_name],[wip3_name],[wip4_name]) values
+(0x402,'S04_KEYCLAMP_1','IDV_ckeycf01',222,91,342,178,0,'M04_KEYCLAMP','S04_REDSLIDER_1','S04_GRNSLIDER_1','S04_BLUSLIDER_1',''),
+(0x403,'S04_REDSLIDER_1','IDV_ckeycf01',78,103,100,188,0,'M04_SLIDER','IDS_RED_SLIDE','S04_KEYCLAMP_1','16',''),
+(0x404,'S04_GRNSLIDER_1','IDV_ckeycf01',105,103,127,188,0,'M04_SLIDER','IDS_GRN_SLIDE','S04_KEYCLAMP_1','4',''),
+(0x405,'S04_BLUSLIDER_1','IDV_ckeycf01',129,103,151,188,0,'M04_SLIDER','IDS_BLU_SLIDE','S04_KEYCLAMP_1','1',''),
+(0x406,'S04_KEYCLAMP_2','IDV_ckeycf02',222,91,342,178,0,'M04_KEYCLAMP','S04_REDSLIDER_2','S04_GRNSLIDER_2','S04_BLUSLIDER_2',''),
+(0x407,'S04_REDSLIDER_2','IDV_ckeycf02',78,103,100,188,0,'M04_SLIDER','IDS_RED_SLIDE','S04_KEYCLAMP_2','16',''),
+(0x408,'S04_GRNSLIDER_2','IDV_ckeycf02',105,103,127,188,0,'M04_SLIDER','IDS_GRN_SLIDE','S04_KEYCLAMP_2','4',''),
+(0x409,'S04_BLUSLIDER_2','IDV_ckeycf02',129,103,151,188,0,'M04_SLIDER','IDS_BLU_SLIDE','S04_KEYCLAMP_2','1',''),
+(0x40a,'S04_KEYCLAMP_3','IDV_ckeycf03',222,91,342,178,0,'M04_KEYCLAMP','S04_REDSLIDER_3','S04_GRNSLIDER_3','S04_BLUSLIDER_3',''),
+(0x40b,'S04_REDSLIDER_3','IDV_ckeycf03',78,103,100,188,0,'M04_SLIDER','IDS_RED_SLIDE','S04_KEYCLAMP_3','16',''),
+(0x40c,'S04_GRNSLIDER_3','IDV_ckeycf03',105,103,127,188,0,'M04_SLIDER','IDS_GRN_SLIDE','S04_KEYCLAMP_3','4',''),
+(0x40d,'S04_BLUSLIDER_3','IDV_ckeycf03',129,103,151,188,0,'M04_SLIDER','IDS_BLU_SLIDE','S04_KEYCLAMP_3','1',''),
+(0x400,'S04_VIAL','IDV_ckeyvend',130,130,200,200,0,'M04_VIAL','','','',''),
+(0x401,'S04_BIN','IDV_ckeyvend',116,205,223,285,0,'M04_BIN','','','','');
+
+delete from transitions where [automaton] like 'M04_%';
+insert into transitions ([automaton], [state], [new_state], [opcode], [param_1], [param_2], [code]) values ('0x0030','0','1','WAIT','0','0', ''),
 
 -- 2 scoops for a key.
 -- [0] wait for 1st scoop:
@@ -26,44 +42,42 @@ insert into transitions ([name], [state], [new_state], [opcode], [param_1], [par
 ('M04_KEYCLAMP','0','1','C_ACCEPT','0','IDC_KEY', ''),
 -- [1] wait for a dropped key then configure the sliders
 ('M04_KEYCLAMP','1','2','DROP','0','0', '
-    SUBI(WOBJECT,IDD_CITY_KEY1);
-    REF_MACHINE(WIP3);
-    MOV(R_BFRAME,WOBJECT);
-    MODI(R_BFRAME,4);
-    DIVI(WOBJECT,4);
-    REF_MACHINE(WIP2);
-    MOV(R_BFRAME,WOBJECT);
-    MODI(R_BFRAME,4);
-    DIVI(WOBJECT,4);
-    REF_MACHINE(WIP1);
-    MOV(R_BFRAME,WOBJECT);
-    SHOW(0,IDS_KEY_CFGWKEY);
-    CLEAR(WOBJECT);'),
+WPARM = WOBJECT - IDD_CITY_KEY1;
+SIGNAL(WIP1, SIG_SHOW);
+SIGNAL(WIP2, SIG_SHOW);
+SIGNAL(WIP3, SIG_SHOW);
+SHOW(0,IDS_KEY_CFGWKEY);
+WOBJECT=0;'),
 -- [2] when key is grabbed then configure per sliders
 ('M04_KEYCLAMP','2','1','GRAB','','0','
     REF_MACHINE(WIP1);
     MOV(WOBJECT,R_BFRAME);
-    CLEAR(R_BFRAME);
     MULI(WOBJECT,4);
     REF_MACHINE(WIP2);
     ADD(WOBJECT,R_BFRAME);
-    CLEAR(R_BFRAME);
     MULI(WOBJECT,4);
     REF_MACHINE(WIP3);
     ADD(WOBJECT,R_BFRAME);
-    CLEAR(R_BFRAME);
     ADDI(WOBJECT,IDD_CITY_KEY1);
     HANDOFF(WOBJECT);
-    SHOW();'),
+    SHOW();
+    SIGNAL(WIP1, SIG_HIDE);
+    SIGNAL(WIP2, SIG_HIDE);
+    SIGNAL(WIP3, SIG_HIDE);
+    '),
 
 -- [0] init the sprite for the slider
 ('M04_SLIDER','0','1','MOV','WSPRITE','WIP1', ''),
-('M04_SLIDER','1','5','SHOW','WSPRITE','', ''),
-('M04_SLIDER','5','10','CLICK','','', ''),
---('M04_SLIDER','5','1','WAIT','','', ''), -- bframe has been modified by the keyclamp.
-('M04_SLIDER','10','20','ADDI','BFRAME','1', ''),
-('M04_SLIDER','20','1','LTEi','BFRAME','3', ''),
-('M04_SLIDER','20','1','Z_EPSILON','','','ASSIGN(BFRAME,0);');
+('M04_SLIDER','1','idle','SHOW','WSPRITE','', ''),
+('M04_SLIDER','idle','1','CLICK','','', '
+BFRAME = BFRAME + 1;
+if (BFRAME > 3) BFRAME=0;'),
+('M04_SLIDER','idle','1','WAIT','','SIG_SHOW', '
+REF_MACHINE(WIP2);
+BFRAME= (R_WPARM / WIP3);
+MOD(BFRAME,4);'), -- bframe has been modified by the keyclamp.
+('M04_SLIDER','idle','1','WAIT','','SIG_HIDE', 'BFRAME=0;');
+
 
 delete from objects where [object] like 'IDD_CITY_KEY%';
 insert into objects values

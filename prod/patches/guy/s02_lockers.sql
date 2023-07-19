@@ -1,7 +1,7 @@
 
-delete from transitions where [name] like 'M02\_%' ESCAPE '\';
+delete from transitions where [automaton] like 'M02\_%' ESCAPE '\';
 
-insert into transitions ([name], [state], [new_state], [opcode], [param_1], [param_2], [code]) values 
+insert into transitions ([automaton], [state], [new_state], [opcode], [param_1], [param_2], [code]) values 
 -- Open / Empty
 ('M02_BIN','0','4','DROP','','','
     ASHOW(WOBJECT);
@@ -18,12 +18,12 @@ insert into transitions ([name], [state], [new_state], [opcode], [param_1], [par
 ('M02_BIN','9','4','WAIT','','SIG_OPEN',''),
 
 ('M02_DN1','0','1','CLICK','','','PLAYWAVE(SOUND_CLICK);'),
-('M02_DN1','1','0','IFSTATE','M02_LOCKED','WIP_S02_LOCK',''),
-('M02_DN1','1','0','Z_EPSILON','','','SIGNAL(WIP_S02_VIAL, SIG_DEC1);'),
+('M02_DN1','1','0','IFSTATE','M02_LOCKED','WIP2',''),
+('M02_DN1','1','0','Z_EPSILON','','','SIGNAL(WIP1, SIG_DEC1);'),
 
 ('M02_DN10','0','1','CLICK','','','PLAYWAVE(SOUND_CLICK);'),
-('M02_DN10','1','0','IFSTATE','M02_LOCKED','WIP_S02_LOCK',''),
-('M02_DN10','1','0','Z_EPSILON','','','SIGNAL(WIP_S02_VIAL, SIG_DEC10);'),
+('M02_DN10','1','0','IFSTATE','M02_LOCKED','WIP2',''),
+('M02_DN10','1','0','Z_EPSILON','','','SIGNAL(WIP1, SIG_DEC10);'),
 
 ('M02_LOCK','0','1','C_ACCEPT','','IDC_KEY',''),
 -- 1: unlocked state:
@@ -50,26 +50,27 @@ insert into transitions ([name], [state], [new_state], [opcode], [param_1], [par
 ('M02_LOCK','15','2','DROP','WPARM','',''),
 
 ('M02_NUM1','0','0','WAIT','','','
-    REF_MACHINE(WIP_S02_VIAL);
-    MOV(BFRAME,R_WPARM);
-    SUB(BFRAME,R_BPARM);
+    REF_MACHINE(WIP1);
+    BFRAME = R_WPARM - R_BPARM;
     MODI(BFRAME,10);
+    if (BFRAME < 0) {BFRAME=0;}
+    if (BFRAME > 9) {BFRAME=9;}
     SHOW(0,IDS_CITYNUM);'),
 
 ('M02_NUM10','0','0','WAIT','','','
-    REF_MACHINE(WIP_S02_VIAL);
-    MOV(BFRAME,R_WPARM);
-    SUB(BFRAME,R_BPARM);
-    DIVI(BFRAME,10);
+    REF_MACHINE(WIP1);
+    BFRAME = (R_WPARM - R_BPARM) / 10 ;
+    if (BFRAME < 0) {BFRAME=0;}
+    if (BFRAME > 9) {BFRAME=9;}
     SHOW(0,IDS_CITYNUM);'),
 
 ('M02_UP1','0','1','CLICK','','','PLAYWAVE(SOUND_CLICK);'),
-('M02_UP1','1','0','IFSTATE','M02_LOCKED','WIP_S02_LOCK',''),
-('M02_UP1','1','0','Z_EPSILON','','','SIGNAL(WIP_S02_VIAL,SIG_INC1);'),
+('M02_UP1','1','0','IFSTATE','M02_LOCKED','WIP2',''),
+('M02_UP1','1','0','Z_EPSILON','','','SIGNAL(WIP1,SIG_INC1);'),
 
 ('M02_UP10','0','1','CLICK','','','PLAYWAVE(SOUND_CLICK);'),
-('M02_UP10','1','0','IFSTATE','M02_LOCKED','WIP_S02_LOCK',''),
-('M02_UP10','1','0','Z_EPSILON','','','SIGNAL(WIP_S02_VIAL,SIG_INC10);'),
+('M02_UP10','1','0','IFSTATE','M02_LOCKED','WIP2',''),
+('M02_UP10','1','0','Z_EPSILON','','','SIGNAL(WIP1,SIG_INC10);'),
 
 -- BPARM is the amount of nystrom in the vial, WPARM is the asking price:
 ('M02_VIAL','0','10','DRAG','','IDD_SCOOPE',''),
@@ -81,24 +82,24 @@ insert into transitions ([name], [state], [new_state], [opcode], [param_1], [par
 ('M02_VIAL','5','8','LTEi','WPARM','99',''),
 ('M02_VIAL','5','8','Z_EPSILON','','','ASSIGN(WPARM,99);'),
 ('M02_VIAL','8','0','Z_EPSILON','','','
-    SIGNAL(WIP_DISP10,0);
-    SIGNAL(WIP_DISP01,0);'),
-('M02_VIAL','10','0','NOTSTATE','M02_KEYED','WIP_S02_LOCK',''), -- locker is keyed
+    SIGNAL(WIP3,0);
+    SIGNAL(WIP1,0);'),
+('M02_VIAL','10','0','NOTSTATE','M02_KEYED','WIP2',''), -- locker is keyed
 ('M02_VIAL','10','0','EQUALi','BPARM','',''), -- vial is empty
 ('M02_VIAL','10','0','Z_EPSILON','','','
     SUBI(BPARM,1);
     PLAYWAVE(SOUND_SLURP);
     HANDOFF(0,IDD_SCOOPF);
-    SIGNAL(WIP_DISP10,0);
-    SIGNAL(WIP_DISP01,0);'),
-('M02_VIAL','22','0','NOTSTATE','M02_LOCKED','WIP_S02_LOCK',''),
+    SIGNAL(WIP3,0);
+    SIGNAL(WIP1,0);'),
+('M02_VIAL','22','0','NOTSTATE','M02_LOCKED','WIP2',''),
 ('M02_VIAL','22','24','GTE','BPARM','WPARM',''),
 ('M02_VIAL','22','24','Z_EPSILON','','','
     ADDI(BPARM,1);
     PLAYWAVE(SOUND_SPIT);
     HANDOFF(0,IDD_SCOOPE);'),
-('M02_VIAL','24','25','SIGNAL','WIP_DISP10','',''),
-('M02_VIAL','25','26','SIGNAL','WIP_DISP01','',''),
+('M02_VIAL','24','25','SIGNAL','WIP3','',''),
+('M02_VIAL','25','26','SIGNAL','WIP1','',''),
 ('M02_VIAL','26','0','LT','BPARM','WPARM',''),
 ('M02_VIAL','26','0','Z_EPSILON','','','
     MOV(WTEMP1,WTHIS);
