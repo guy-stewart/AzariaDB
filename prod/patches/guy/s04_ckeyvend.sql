@@ -29,10 +29,10 @@ insert into transitions ([automaton], [state], [new_state], [opcode], [param_1],
 ('M04_VIAL','1','0','DRAG','0','IDD_SCOOPF', '
     PLAYWAVE(SOUND_SLURP);
     HANDOFF(0,IDD_SCOOPE);
-    SIGNALi(0,S04_BIN);'),
+    SIGNAL(S04_BIN,SIG_VEND);'),
 
 -- [0] wait for a signal from the vial that 2 scoops were delivered.
-('M04_BIN','0','1','WAIT','','', '
+('M04_BIN','0','1','WAIT','SIG_VEND','', '
     ASSIGN(WOBJECT,IDD_CITY_KEY1);
     SHOW(0,IDS_KEY_IN_BIN);'),
 -- [1] wait for someone to take the key from the bin.
