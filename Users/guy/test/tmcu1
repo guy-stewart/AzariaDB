@@ -1,0 +1,35 @@
+
+setsleep(2);
+warp(IDV_TMCU1);
+holder = S12_SHELF_1_SCROLL;
+scroll = IDD_SCR003;
+slew(holder);
+grab(holder);
+drop(SMP_EYEINFO,scroll);
+grab(SMP_EYEINFO);
+
+
+scroll = IDD_SCR003;
+drop(holder, scroll);
+drop(S12_SHELF_1_ING1, IDD_YMUSHSPT);
+drop(S12_SHELF_1_ING3, IDD_YMUSHSPT);
+drop(S12_SHELF_1_ING4, IDD_FISHASH2);
+drag(S12_SHELF_1_CANDLE,IDD_SCOOPF);
+recycle();
+drag(S12_SHELF_1_CANDLE,IDD_MATCH);
+recycle();
+grab(S12_SHELF_1_SPELLPORTAL);
+recycle();
+grab(holder);
+recycle();
+
+scroll = IDD_SCR002;
+drop(holder, scroll);
+drop(S12_SHELF_1_ING1, IDD_GOPAR);
+drop(S12_SHELF_1_ING4, IDD_FISHASH1);
+drag(S12_SHELF_1_CANDLE,IDD_SCOOPF);
+recycle();
+drag(S12_SHELF_1_CANDLE,IDD_SCOOPF);
+recycle();
+drag(S12_SHELF_1_CANDLE,IDD_MATCH);
+recycle();

@@ -1,0 +1,21 @@
+// 
+
+m='S27_TICKLEPLANT';
+slew(m);
+grab(m);
+t = 5;
+setsleep(t);
+puzzle = 'S27_MEMFUSE';
+object = 'IDD_MEMFUSE';
+slew(puzzle);
+sleep(t);
+drop(puzzle, object);
+puzzle = 'S27_MEMSPELL';
+object = 'IDD_MEMSPELL';
+slew(puzzle);
+sleep(t);
+drop(puzzle,object);
+sleep(t);
+grab(puzzle);
+sleep(t);
+drop(puzzle,object);

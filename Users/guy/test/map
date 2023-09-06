@@ -1,0 +1,12 @@
+
+setsleep(5);
+warp('IDV_N2A');
+// slew('S21_p3BERRYTREE');
+grab('S21_p3BERRYTREE');
+berry = got();
+write('got '+ berry);
+assert(berry=='IDD_WFLWRSPT', 'berry is instead ' + berry);
+recycle();
+
+warp('IDV_LEVERCU');
+grab('S21_LEVER');
