@@ -1,18 +1,21 @@
 drop table if exists constants;
 create table constants
 (
-    [name]      text unique primary key on conflist replace not null,
+    [name]      text unique primary key on conflict replace not null,
     [value]     text
 );
 
 insert into constants ([name],[value]) values 
 ('1000/1',0x3e8),
 ('ADD_CATCH_TIME',0x78),
+('BROWN_SQUARE',0x2),
 ('BURN_TIME',0x1e),
 ('CHEMCOST',0x0),
+('CHEM_COUNT',0x14),
 ('DETIME',0x7),
 ('EMOTIONS_PER_LEVEL',0x10),
 ('FISH_BURN_TIME',0xa),
+('GREEN_SQUARE',0x3),
 ('HAS_TEMPLATE',0x10),
 ('IDD_CITY_KEY1',0x200),
 ('IDD_FISH1',0x1140),
@@ -86,18 +89,31 @@ insert into constants ([name],[value]) values
 ('S02_BIN___XX-S02_LOCK__XX',0x1),
 ('S02_BIN___XX-S02_VIAL__XX',0x2),
 ('SCROLL_SPELL',0x6),
+('SIG_BURN',0xc0def00d),
+('SIG_CHECK',0x1c),
+('SIG_CLOSE',0x1e),
 ('SIG_DEC1',0x19),
 ('SIG_DEC10',0x1b),
 ('SIG_INC1',0x18),
 ('SIG_INC10',0x1a),
+('SIG_OPEN',0x1d),
 ('SYNC_FISH1',0x1),
 ('SYNC_FOULWIND',0x0),
 ('TEMPLATE_CHEM1',0x3),
 ('TEMPLATE_CHEM2',0x4),
 ('TEMPLATE_COST',0x2),
 ('TEMPLATE_OBJECTS',0x1),
+('VIOLET_SQUARE',0x1),
 ('WIP_DISP01',0x10),
 ('WIP_DISP10',0x12),
 ('WIP_S02_EBIN',0x14),
 ('WIP_S02_LOCK',0x11),
-('WIP_S02_VIAL',0x10);
+('WIP_S02_VIAL',0x10),
+('back5',0x6),
+('banish',0x3),
+('bomb1',0x1),
+('bomb2',0x7),
+('bomb3',0x5),
+('frozen',0x2),
+('gopa',0x4),
+('wealth',0x8);

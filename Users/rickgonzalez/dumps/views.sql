@@ -12,7 +12,7 @@ create table views
     2 : SCROLLVIEW,
     3 : INVENTORY,
     4 : TELETYPE,
-    5 : TEXTVIEW,
+    5 : CTRLVIEW,
     6 : SURROUND,
     7 : COMPASS,
     8 : CTRLVIEW,
@@ -26,275 +26,289 @@ create table views
 	[surface_filename] text -- background image
 );
 
-insert into views values (0x1,'IDV_MAIN_PANEL',0,0,0,1,'mpmask.vct','GUI');
-insert into views values (0x2,'IDV_INVENTORY',1,0,0,3,'inventory.vct','inventor');
-insert into views values (0x3,'IDV_ID',1,0,0,1,'myid.vct','id');
-insert into views values (0x5,'IDV_OTHERID',1,0,0,1,'otherid.vct','you');
-insert into views values (0x7,'IDV_COMPASS',1,0,0,7,'compass.vct','compass');
-insert into views values (0x8,'IDV_S_TELETYPE',1,0,0,4,'combox.vct','teletype');
-insert into views values (0xa,'IDV_PLAYERNAME',1,0,0,8,'myname.vct','namefill');
-insert into views values (0xb,'IDV_OTHERNAME',1,0,0,8,'othrname.vct','namefill');
-insert into views values (0x20,'IDV_TOPMENU',1,0,1,6,'surround.vct','spacemen');
-insert into views values (0x21,'IDV_CFGPLAYER1',1,0,1,10,'wdepanel.vct','spacebak');
-insert into views values (0x22,'IDV_CFGPLAYER2',1,0,1,10,'wdepanel.vct','spacebak');
-insert into views values (0x23,'IDV_CFGPROV',1,0,1,9,'wdepanel.vct','spacebak');
-insert into views values (0x24,'IDV_CFGSESS',1,0,1,9,'wdepanel.vct','spacebak');
-insert into views values (0x25,'IDV_CFGNEWSESS',1,0,1,9,'wdepanel.vct','spacebak');
-insert into views values (0x26,'IDV_CFGGAME',1,0,1,11,'wdepanel.vct','spacebak');
-insert into views values (0x27,'IDV_CFGAV',1,0,1,12,'wdepanel.vct','spacebak');
-insert into views values (0x60,'IDV_CONTINENT',1,0,1,2,'wdepanel.vct','contin~1');
-insert into views values (0xc8,'IDV_ORIE',1,1,1,6,'surround.vct','ORIE');
-insert into views values (0xc9,'IDV_DOORS',1,0,1,1,'smlpanel.vct','DOORS');
-insert into views values (0xca,'IDV_ETMAP',1,0,1,1,'smlpanel.vct','ETMAP');
-insert into views values (0xcb,'IDV_NIMAP',1,0,1,1,'smlpanel.vct','NIMAP');
-insert into views values (0xcc,'IDV_RBBING',1,0,1,1,'smlpanel.vct','RBBING');
-insert into views values (0xcd,'IDV_TRANSL',1,0,1,1,'smlpanel.vct','TRANSL');
-insert into views values (0xce,'IDV_CHART',1,0,1,1,'smlpanel.vct','CHART');
-insert into views values (0xcf,'IDV_MLAYOUT',1,0,1,1,'smlpanel.vct','MLAYOUT');
-insert into views values (0xd0,'IDV_TOPMAP',1,0,1,1,'smlpanel.vct','TOPMAP');
-insert into views values (0xd1,'IDV_BOTMAP',1,0,1,1,'smlpanel.vct','BOTMAP');
-insert into views values (0x1f9,'IDV_CTO1',1,1,1,6,'surround.vct','CTO1');
-insert into views values (0x1fa,'IDV_CTO2',1,1,1,6,'surround.vct','CTO2');
-insert into views values (0x1fb,'IDV_CTO3',1,1,1,6,'surround.vct','CTO3');
-insert into views values (0x200,'IDV_LOCKERR',1,3,1,6,'surround.vct','lockerS');
-insert into views values (0x201,'IDV_LOCKERN',1,3,1,1,'smlpanel.vct','lockerSw');
-insert into views values (0x202,'IDV_LOCKERW',1,3,1,1,'smlpanel.vct','lockerSw');
-insert into views values (0x203,'IDV_LOCKERS',1,3,1,1,'smlpanel.vct','lockerSw');
-insert into views values (0x204,'IDV_LOCKERCU00',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x205,'IDV_LOCKERCU01',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x206,'IDV_LOCKERCU02',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x207,'IDV_LOCKERCU03',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x208,'IDV_LOCKERCU04',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x209,'IDV_LOCKERCU05',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x20a,'IDV_LOCKERCU06',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x20b,'IDV_LOCKERCU07',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x20c,'IDV_LOCKERCU08',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x20d,'IDV_LOCKERCU09',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x20e,'IDV_LOCKERCU10',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x20f,'IDV_LOCKERCU11',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x210,'IDV_LOCKERCU12',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x211,'IDV_LOCKERCU13',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x212,'IDV_LOCKERCU14',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x213,'IDV_LOCKERCU15',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x214,'IDV_LOCKERCU16',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x215,'IDV_LOCKERCU17',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x216,'IDV_LOCKERCU18',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x217,'IDV_LOCKERCU19',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x218,'IDV_LOCKERCU20',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x219,'IDV_LOCKERCU21',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x21a,'IDV_LOCKERCU22',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x21b,'IDV_LOCKERCU23',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x21c,'IDV_LOCKERCU24',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x21d,'IDV_LOCKERCU25',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x21e,'IDV_LOCKERCU26',1,3,1,1,'smlpanel.vct','lockercu');
-insert into views values (0x220,'IDV_ctya',1,3,1,6,'surround.vct','ctya');
-insert into views values (0x221,'IDV_ctyb',1,3,1,6,'surround.vct','ctyb');
-insert into views values (0x222,'IDV_ctyc',1,3,1,6,'surround.vct','ctyc');
-insert into views values (0x223,'IDV_ctyd',1,3,1,6,'surround.vct','ctyd');
-insert into views values (0x224,'IDV_ctye',1,3,1,6,'surround.vct','ctye');
-insert into views values (0x225,'IDV_ctyf',1,3,1,6,'surround.vct','ctyf');
-insert into views values (0x226,'IDV_ctyg',1,3,1,6,'surround.vct','ctyg');
-insert into views values (0x227,'IDV_ctyh',1,3,1,6,'surround.vct','ctyh');
-insert into views values (0x228,'IDV_ctyi',1,3,1,6,'surround.vct','ctyi');
-insert into views values (0x229,'IDV_ctyj',1,3,1,6,'surround.vct','ctyj');
-insert into views values (0x22a,'IDV_ctyk',1,3,1,6,'surround.vct','ctyk');
-insert into views values (0x22b,'IDV_ctyl',1,3,1,6,'surround.vct','ctyl');
-insert into views values (0x22c,'IDV_ctym',1,3,1,6,'surround.vct','ctym');
-insert into views values (0x22d,'IDV_ctyn',1,3,1,6,'surround.vct','ctyn');
-insert into views values (0x22e,'IDV_ctyo',1,3,1,6,'surround.vct','ctyo');
-insert into views values (0x22f,'IDV_ctyp',1,3,1,6,'surround.vct','ctyp');
-insert into views values (0x230,'IDV_ctyq',1,3,1,6,'surround.vct','ctyq');
-insert into views values (0x231,'IDV_ctyr',1,3,1,6,'surround.vct','ctyr');
-insert into views values (0x232,'IDV_ctys',1,3,1,6,'surround.vct','ctys');
-insert into views values (0x233,'IDV_ctyt',1,3,1,6,'surround.vct','ctyt');
-insert into views values (0x234,'IDV_CTLIB1A',1,1,1,6,'surround.vct','CTLIB1A');
-insert into views values (0x235,'IDV_CTLIB1B',1,1,1,6,'surround.vct','CTLIB1B');
-insert into views values (0x240,'IDV_ctysmith',1,3,1,6,'surround.vct','ctysmith');
-insert into views values (0x241,'IDV_ckeycf01',1,3,1,1,'smlpanel.vct','ckeycf01');
-insert into views values (0x242,'IDV_ckeycf02',1,3,1,1,'smlpanel.vct','ckeycf01');
-insert into views values (0x243,'IDV_ckeycf03',1,3,1,1,'smlpanel.vct','ckeycf01');
-insert into views values (0x247,'IDV_ckeyvend',1,3,1,1,'smlpanel.vct','ckeyvend');
-insert into views values (0x250,'IDV_ctyhouse',1,3,1,6,'surround.vct','ctyhouse');
-insert into views values (0x251,'IDV_chouse01',1,3,1,1,'smlpanel.vct','chouse1');
-insert into views values (0x252,'IDV_chouse02',1,3,1,1,'smlpanel.vct','chouse2');
-insert into views values (0x253,'IDV_chouse03',1,3,1,1,'smlpanel.vct','chouse3');
-insert into views values (0x500,'IDV_ctychem',1,3,1,6,'surround.vct','ctychem');
-insert into views values (0x501,'IDV_chempan',1,3,1,1,'smlpanel.vct','chempan');
-insert into views values (0x604,'IDV_CLIBMON1',1,3,1,1,'smlpanel.vct','MONITOR');
-insert into views values (0x605,'IDV_CLIBMON2',1,3,1,1,'smlpanel.vct','MONITOR');
-insert into views values (0x606,'IDV_CLIBMON3',1,3,1,1,'smlpanel.vct','MONITOR');
-insert into views values (0x607,'IDV_CLIBMON4',1,3,1,1,'smlpanel.vct','MONITOR');
-insert into views values (0x608,'IDV_CLIBMON5',1,3,1,1,'smlpanel.vct','MONITOR');
-insert into views values (0x609,'IDV_CLIBMON6',1,3,1,1,'smlpanel.vct','MONITOR');
-insert into views values (0x610,'IDV_CLIBMUS1',1,3,1,1,'smlpanel.vct','CLIBMUS1');
-insert into views values (0x611,'IDV_CLIBMUS2',1,3,1,1,'smlpanel.vct','CLIBMUS2');
-insert into views values (0x620,'IDV_CARDMACH1',1,3,1,1,'smlpanel.vct','cardmach');
-insert into views values (0x621,'IDV_CARDMACH2',1,3,1,1,'smlpanel.vct','cardmach');
-insert into views values (0x622,'IDV_CARDMACH3',1,3,1,1,'smlpanel.vct','cardmach');
-insert into views values (0x623,'IDV_CARDMACH4',1,3,1,1,'smlpanel.vct','cardmach');
-insert into views values (0x624,'IDV_CARDMACH5',1,3,1,1,'smlpanel.vct','cardmach');
-insert into views values (0x625,'IDV_CARDMACH6',1,3,1,1,'smlpanel.vct','cardmach');
-insert into views values (0x700,'IDV_ctytrade',1,3,1,6,'surround.vct','ctytrade');
-insert into views values (0x800,'IDV_MANPAN',1,3,1,6,'surround.vct','MANPAN');
-insert into views values (0x801,'IDV_MANREP1',1,3,1,1,'smlpanel.vct','manrep');
-insert into views values (0x802,'IDV_MANREP2',1,3,1,1,'smlpanel.vct','manrep');
-insert into views values (0x803,'IDV_MANREP3',1,3,1,1,'smlpanel.vct','manrep');
-insert into views values (0x804,'IDV_MANREP4',1,3,1,1,'smlpanel.vct','manrep');
-insert into views values (0x805,'IDV_MANREP5',1,3,1,1,'smlpanel.vct','manrep');
-insert into views values (0x806,'IDV_MANREP6',1,3,1,1,'smlpanel.vct','manrep');
-insert into views values (0x807,'IDV_MANREP7',1,3,1,1,'smlpanel.vct','manrep');
-insert into views values (0x808,'IDV_MANREP8',1,3,1,1,'smlpanel.vct','manrep');
-insert into views values (0x809,'IDV_MANREP9',1,3,1,1,'smlpanel.vct','manrep');
-insert into views values (0x810,'IDV_MANREP10',1,3,1,1,'smlpanel.vct','manrep');
-insert into views values (0x811,'IDV_MANFUR',1,3,1,1,'smlpanel.vct','manrep');
-insert into views values (0x900,'IDV_STRATPAN',1,3,1,6,'surround.vct','STRATPAN');
-insert into views values (0x901,'IDV_STRATMON1',1,3,1,8,'wdepanel.vct','STRATMON');
-insert into views values (0x902,'IDV_STRATMON2',1,3,1,8,'wdepanel.vct','STRATMON');
-insert into views values (0x903,'IDV_STRATMAP',2,3,0,2,'monmask.vct','contin~1');
-insert into views values (0x1000,'IDV_SCN10PT0',1,0,1,6,'surround.vct','SCN10PT0');
-insert into views values (0x1001,'IDV_SCN10PT1',1,0,1,6,'surround.vct','SCN10PT1');
-insert into views values (0x1002,'IDV_SCN10PIT',1,1,1,1,'smlpanel.vct','SCN10PIT');
-insert into views values (0x1101,'IDV_FA1PAN',1,1,1,6,'surround.vct','fa1pan');
-insert into views values (0x1102,'IDV_FH1PTH1',1,1,1,6,'surround.vct','FH1PTH1');
-insert into views values (0x1103,'IDV_FALTAR',1,1,1,1,'smlpanel.vct','FALTAR');
-insert into views values (0x1104,'IDV_FH1PAN',1,1,1,6,'surround.vct','fh1pan');
-insert into views values (0x1105,'IDV_GRBDRT1',1,1,1,1,'smlpanel.vct','grbdrt1');
-insert into views values (0x1106,'IDV_GRBDRT2',1,1,1,1,'smlpanel.vct','grbdrt2');
-insert into views values (0x1108,'IDV_SHORE',1,1,1,1,'smlpanel.vct','SHORE');
-insert into views values (0x1109,'IDV_LUNCHCU',1,1,1,1,'smlpanel.vct','LUNCHCU');
-insert into views values (0x1127,'IDV_PATH1',1,1,1,6,'surround.vct','PATH1');
-insert into views values (0x1128,'IDV_PATH2',1,1,1,6,'surround.vct','PATH2');
-insert into views values (0x1211,'IDV_TM1PAN',1,0,1,6,'surround.vct','TM1pan');
-insert into views values (0x1212,'IDV_TM2PAN',1,0,1,6,'surround.vct','TM2pan');
-insert into views values (0x1213,'IDV_VESTPAN1',1,0,1,1,'wdepanel.vct','VESTPAN');
-insert into views values (0x1215,'IDV_VESTPAN2',1,0,1,1,'wdepanel.vct','VESTPAN');
-insert into views values (0x1216,'IDV_TM3PAN',1,0,1,6,'surround.vct','TM3pan');
-insert into views values (0x1217,'IDV_TM4PAN',1,0,1,6,'surround.vct','TM4pan');
-insert into views values (0x1218,'IDV_TM5PAN',1,0,1,6,'surround.vct','TM5pan');
-insert into views values (0x1219,'IDV_TMCU1',1,0,1,1,'smlpanel.vct','TMCU1');
-insert into views values (0x1220,'IDV_TMCU2',1,0,1,1,'smlpanel.vct','TMCU2');
-insert into views values (0x1221,'IDV_TMCU3',1,0,1,1,'smlpanel.vct','TMCU3');
-insert into views values (0x1222,'IDV_TMCU4',1,0,1,1,'smlpanel.vct','TMCU4');
-insert into views values (0x1223,'IDV_TMCUT',1,0,1,1,'wdepanel.vct','TMCUT');
-insert into views values (0x125d,'IDV_MOON1',1,1,1,6,'surround.vct','MOON1');
-insert into views values (0x125e,'IDV_MOON2',1,1,1,6,'surround.vct','MOON2');
-insert into views values (0x125f,'IDV_MOON3',1,1,1,6,'surround.vct','MOON3');
-insert into views values (0x1260,'IDV_MOON4',1,1,1,6,'surround.vct','MOON4');
-insert into views values (0x1261,'IDV_MOON5',1,1,1,6,'surround.vct','MOON5');
-insert into views values (0x1262,'IDV_MOONDISK1',1,0,1,1,'smlpanel.vct','MOONDISK');
-insert into views values (0x1263,'IDV_MOONDISK2',1,0,1,1,'smlpanel.vct','MOONDISK');
-insert into views values (0x1264,'IDV_MOONDISK3',1,0,1,1,'smlpanel.vct','MOONDISK');
-insert into views values (0x1265,'IDV_MOONDISK4',1,0,1,1,'smlpanel.vct','MOONDISK');
-insert into views values (0x1266,'IDV_MOONDISK5',1,0,1,1,'smlpanel.vct','MOONDISK');
-insert into views values (0x1267,'IDV_MOONDISK6',1,0,1,1,'smlpanel.vct','MOONDISK');
-insert into views values (0x1268,'IDV_MOONDISK7',1,0,1,1,'smlpanel.vct','MOONDISK');
-insert into views values (0x1300,'IDV_VIL2',1,2,1,6,'surround.vct','vil2');
-insert into views values (0x1301,'IDV_VIL3',1,2,1,6,'surround.vct','vil3');
-insert into views values (0x1302,'IDV_VIL4',1,2,1,6,'surround.vct','vil4');
-insert into views values (0x1303,'IDV_VIL5',1,2,1,6,'surround.vct','vil5');
-insert into views values (0x1304,'IDV_VIL6',1,2,1,6,'surround.vct','vil6');
-insert into views values (0x1305,'IDV_VIL7',1,2,1,6,'surround.vct','vil7');
-insert into views values (0x1306,'IDV_VIL8',1,2,1,6,'surround.vct','vil8');
-insert into views values (0x1307,'IDV_VIL9',1,2,1,6,'surround.vct','vil9');
-insert into views values (0x1308,'IDV_CROW0000',1,3,1,1,'smlpanel.vct','CROW0000');
-insert into views values (0x1309,'IDV_BUCK0000',1,3,1,1,'smlpanel.vct','BUCK0000');
-insert into views values (0x130a,'IDV_SHOV0000',1,3,1,1,'smlpanel.vct','SHOV0000');
-insert into views values (0x130b,'IDV_PICK0000',1,3,1,1,'smlpanel.vct','PICK0000');
-insert into views values (0x130c,'IDV_GRUB0000',1,0,1,1,'smlpanel.vct','GRUB0000');
-insert into views values (0x130d,'IDV_WOOD0000',1,3,1,1,'smlpanel.vct','WOOD0000');
-insert into views values (0x130e,'IDV_SIGNPAN',1,0,1,1,'wdepanel.vct','SIGNPAN');
-insert into views values (0x130f,'IDV_SIGNPANENG',1,0,1,1,'wdepanel.vct','SIGNPANENG');
-insert into views values (0x1310,'IDV_TRAYR',1,3,1,1,'smlpanel.vct','TRAYR');
-insert into views values (0x1311,'IDV_TRAYL',1,3,1,1,'smlpanel.vct','TRAYL');
-insert into views values (0x1324,'IDV_VHB1',1,3,1,6,'surround.vct','VHB1');
-insert into views values (0x1325,'IDV_VHB2',1,3,1,6,'surround.vct','VHB2');
-insert into views values (0x1326,'IDV_VHB3',1,3,1,6,'surround.vct','VHB3');
-insert into views values (0x1327,'IDV_VHM1',1,3,1,6,'surround.vct','VHM1');
-insert into views values (0x1328,'IDV_VHM2',1,3,1,6,'surround.vct','VHM2');
-insert into views values (0x1329,'IDV_VHS1',1,3,1,6,'surround.vct','VHS1');
-insert into views values (0x132a,'IDV_VHSE',1,3,1,6,'surround.vct','VHSE');
-insert into views values (0x132c,'IDV_VILDOOR',1,0,1,1,'wdepanel.vct','VILDOOR');
-insert into views values (0x1501,'IDV_TMPLPTH1',1,2,1,6,'surround.vct','tmplpth1');
-insert into views values (0x1502,'IDV_TMPLPTH2',1,2,1,6,'surround.vct','tmplpth2');
-insert into views values (0x1503,'IDV_TMPLPTH3',1,2,1,6,'surround.vct','tmplpth3');
-insert into views values (0x1504,'IDV_TMPLPTH4',1,2,1,6,'surround.vct','tmplpth4');
-insert into views values (0x1505,'IDV_TMPLPTH5',1,2,1,6,'surround.vct','tmplpth5');
-insert into views values (0x1506,'IDV_TMPLPTH6',1,2,1,6,'surround.vct','tmplpth6');
-insert into views values (0x1507,'IDV_TMPLPTH7',1,2,1,6,'surround.vct','tmplpth7');
-insert into views values (0x1508,'IDV_TMPLPTH8',1,2,1,6,'surround.vct','tmplpth8');
-insert into views values (0x1509,'IDV_TMPLPTH9',1,2,1,6,'surround.vct','tmplpth9');
-insert into views values (0x150e,'IDV_LAKEB1',1,1,1,6,'surround.vct','LAKEB1');
-insert into views values (0x150f,'IDV_LAKEB2',1,1,1,6,'surround.vct','LAKEB2');
-insert into views values (0x1511,'IDV_MEMSTONE',1,3,1,1,'smlpanel.vct','memstone');
-insert into views values (0x1601,'IDV_GRNDCNT1',1,0,1,6,'surround.vct','GRNDCNT1');
-insert into views values (0x1701,'IDV_QUARSA',1,0,1,6,'surround.vct','QUARSA');
-insert into views values (0x1702,'IDV_QUARSB',1,0,1,6,'surround.vct','QUARSB');
-insert into views values (0x1703,'IDV_aMINEPAN',1,0,1,1,'wdepanel.vct','MINEPAN1');
-insert into views values (0x1704,'IDV_aCV1aPAN',1,0,1,6,'surround.vct','CV1a');
-insert into views values (0x1705,'IDV_aCV1bPAN',1,0,1,6,'surround.vct','CV1b');
-insert into views values (0x1706,'IDV_bMINEPAN',1,1,1,1,'wdepanel.vct','MINEPAN1');
-insert into views values (0x1707,'IDV_bCV1aPAN',1,1,1,6,'surround.vct','CV1a');
-insert into views values (0x1708,'IDV_bCV1bPAN',1,1,1,6,'surround.vct','CV1b');
-insert into views values (0x1709,'IDV_cMINEPAN',1,1,1,1,'wdepanel.vct','MINEPAN1');
-insert into views values (0x170a,'IDV_cCV1aPAN',1,1,1,6,'surround.vct','CV1a');
-insert into views values (0x170b,'IDV_cCV1bPAN',1,1,1,6,'surround.vct','CV1b');
-insert into views values (0x170c,'IDV_dMINEPAN',1,0,1,1,'wdepanel.vct','MINEPAN1');
-insert into views values (0x170d,'IDV_dCV1aPAN',1,1,1,6,'surround.vct','CV2a');
-insert into views values (0x170e,'IDV_dCV1bPAN',1,1,1,6,'surround.vct','CV2b');
-insert into views values (0x170f,'IDV_eMINEPAN',1,1,1,1,'wdepanel.vct','MINEPAN1');
-insert into views values (0x1710,'IDV_eCV1aPAN',1,1,1,6,'surround.vct','CV2a');
-insert into views values (0x1711,'IDV_eCV1bPAN',1,1,1,6,'surround.vct','CV2b');
-insert into views values (0x1fa4,'IDV_N2A',1,1,1,6,'surround.vct','N2A');
-insert into views values (0x1fa5,'IDV_N2B',1,1,1,6,'surround.vct','N2B');
-insert into views values (0x1fa6,'IDV_N2C',1,1,1,6,'surround.vct','N2C');
-insert into views values (0x1fa7,'IDV_N2D2',1,1,1,6,'surround.vct','N2D2');
-insert into views values (0x1fa8,'IDV_MAPBOX1',1,1,1,1,'smlpanel.vct','MAPBOX1');
-insert into views values (0x1fa9,'IDV_LEVERCU',1,3,1,1,'smlpanel.vct','levercu');
-insert into views values (0x1faa,'IDV_MAPROOM',1,3,1,6,'surround.vct','MAPROOM');
-insert into views values (0x2101,'IDV_NAT1a',1,1,1,6,'surround.vct','nat1a');
-insert into views values (0x2102,'IDV_NAT1b',1,1,1,6,'surround.vct','nat1b');
-insert into views values (0x2103,'IDV_NAT1c',1,1,1,6,'surround.vct','nat1c');
-insert into views values (0x2104,'IDV_NAT1d',1,1,1,6,'surround.vct','nat1d');
-insert into views values (0x2105,'IDV_NAT1e',1,1,1,6,'surround.vct','nat1e');
-insert into views values (0x2106,'IDV_NAT1f',1,1,1,6,'surround.vct','nat1f');
-insert into views values (0x2107,'IDV_NAT1g',1,1,1,6,'surround.vct','nat1g');
-insert into views values (0x2108,'IDV_NAT1h',1,1,1,6,'surround.vct','nat1h');
-insert into views values (0x2109,'IDV_NAT1i',1,1,1,6,'surround.vct','nat1i');
-insert into views values (0x2110,'IDV_NAT1j',1,1,1,6,'surround.vct','nat1j');
-insert into views values (0x2111,'IDV_NAT1k',1,1,1,6,'surround.vct','nat1k');
-insert into views values (0x2112,'IDV_NAT1l',1,1,1,6,'surround.vct','nat1l');
-insert into views values (0x2113,'IDV_NAT1m',1,1,1,6,'surround.vct','nat1m');
-insert into views values (0x2114,'IDV_NAT1n',1,1,1,6,'surround.vct','nat1n');
-insert into views values (0x2115,'IDV_NAT1o',1,1,1,6,'surround.vct','nat1o');
-insert into views values (0x2116,'IDV_NAT1p',1,1,1,6,'surround.vct','nat1p');
-insert into views values (0x2117,'IDV_RUBBLECU',1,3,1,1,'smlpanel.vct','RUBBLECU');
-insert into views values (0x2201,'IDV_PARCHPAN',1,0,1,1,'wdepanel.vct','PARCHPAN');
-insert into views values (0x2202,'IDV_SPELLPAN',1,0,1,1,'wdepanel.vct','PARCHPAN');
-insert into views values (0x2203,'IDV_ENCHANTPAN',1,0,1,1,'wdepanel.vct','PARCHPAN');
-insert into views values (0x2401,'IDV_EYEA',1,0,1,6,'surround.vct','eyea');
-insert into views values (0x2402,'IDV_EYEB',1,0,1,6,'surround.vct','eyeb');
-insert into views values (0x2403,'IDV_EYEC1P',1,0,1,1,'wdepanel.vct','eyec1p');
-insert into views values (0x2500,'IDV_WR4',1,1,1,6,'surround.vct','WR4');
-insert into views values (0x2501,'IDV_WR1',1,1,1,6,'surround.vct','WR1');
-insert into views values (0x2502,'IDV_WR2',1,1,1,6,'surround.vct','WR2');
-insert into views values (0x2503,'IDV_WR3',1,1,1,6,'surround.vct','WR3');
-insert into views values (0x2504,'IDV_W4LOCK',1,0,1,1,'wdepanel.vct','W4LOCK');
-insert into views values (0x2505,'IDV_WALL1EN',1,0,1,6,'surround.vct','WALL1EN');
-insert into views values (0x2506,'IDV_WALL1IN',1,0,1,6,'surround.vct','WALL1IN');
-insert into views values (0x2507,'IDV_WALL2EN',1,0,1,6,'surround.vct','WALL2EN');
-insert into views values (0x2508,'IDV_WALL2IN',1,0,1,6,'surround.vct','WALL2IN');
-insert into views values (0x2509,'IDV_PL1P',1,0,1,1,'wdepanel.vct','PL1P');
-insert into views values (0x2510,'IDV_PL2P',1,0,1,1,'wdepanel.vct','PL2P');
-insert into views values (0x2511,'IDV_HIDDENR1',1,0,1,6,'surround.vct','HIDDENR1');
-insert into views values (0x2512,'IDV_HIDDENR2',1,0,1,6,'surround.vct','HIDDENR2');
-insert into views values (0x2612,'IDV_BANISH',1,1,1,6,'surround.vct','BANISH');
-insert into views values (0x2649,'IDV_KAMIOZA',1,0,1,6,'surround.vct','KAMIOZA');
-insert into views values (0x264a,'IDV_MEFPAN',1,1,1,1,'wdepanel.vct','PARCHPAN');
-insert into views values (0x264b,'IDV_S24_RATHE_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN');
-insert into views values (0x264c,'IDV_S10_THAOR_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN');
-insert into views values (0x264d,'IDV_S16_PERST_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN');
-insert into views values (0x264e,'IDV_S09_AMBLE_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN');
-insert into views values (0x2711,'IDV_CANDWALL',1,3,1,1,'smlpanel.vct','candwall');
-insert into views values (0x2712,'IDV_CARDMACH',1,3,1,1,'smlpanel.vct','cardmach');
-insert into views values (0x2713,'IDV_CDOOR',1,3,1,1,'smlpanel.vct','cdoor');
-insert into views values (0x6000,'IDV_BOARD',1,0,1,6,'surround.vct','board');
+insert into views values (0x1,'IDV_MAIN_PANEL',0,0,0,1,'mpmask.vct','GUI'),
+(0x2,'IDV_INVENTORY',1,0,0,3,'inventory.vct','inventor'),
+(0x3,'IDV_ID',1,0,0,1,'myid.vct','id'),
+(0x5,'IDV_OTHERID',1,0,0,1,'otherid.vct','you'),
+(0x7,'IDV_COMPASS',1,0,0,7,'compass.vct','compass'),
+(0x8,'IDV_S_TELETYPE',1,0,0,4,'combox.vct','teletype'),
+(0xa,'IDV_PLAYERNAME',1,0,0,8,'myname.vct','namefill'),
+(0xb,'IDV_OTHERNAME',1,0,0,8,'othrname.vct','namefill'),
+(0x20,'IDV_TOPMENU',1,0,1,6,'surround.vct','spacemen'),
+(0x21,'IDV_CFGPLAYER1',1,0,1,10,'wdepanel.vct','spacebak'),
+(0x22,'IDV_CFGPLAYER2',1,0,1,10,'wdepanel.vct','spacebak'),
+(0x23,'IDV_CFGPROV',1,0,1,9,'wdepanel.vct','spacebak'),
+(0x24,'IDV_CFGSESS',1,0,1,9,'wdepanel.vct','spacebak'),
+(0x25,'IDV_CFGNEWSESS',1,0,1,9,'wdepanel.vct','spacebak'),
+(0x26,'IDV_CFGGAME',1,0,1,11,'wdepanel.vct','spacebak'),
+(0x27,'IDV_CFGAV',1,0,1,12,'wdepanel.vct','spacebak'),
+(0x60,'IDV_CONTINENT',1,0,1,2,'wdepanel.vct','contin~1'),
+(0xc8,'IDV_ORIE',1,1,1,6,'surround.vct','ORIE'),
+(0xc9,'IDV_DOORS',1,0,1,1,'smlpanel.vct','DOORS'),
+(0xca,'IDV_ETMAP',1,0,1,1,'smlpanel.vct','ETMAP'),
+(0xcb,'IDV_NIMAP',1,0,1,1,'smlpanel.vct','NIMAP'),
+(0xcc,'IDV_RBBING',1,0,1,1,'smlpanel.vct','RBBING'),
+(0xcd,'IDV_TRANSL',1,0,1,1,'smlpanel.vct','TRANSL'),
+(0xce,'IDV_CHART',1,0,1,1,'smlpanel.vct','CHART'),
+(0xcf,'IDV_MLAYOUT',1,0,1,1,'smlpanel.vct','MLAYOUT'),
+(0xd0,'IDV_TOPMAP',1,0,1,1,'smlpanel.vct','TOPMAP'),
+(0xd1,'IDV_BOTMAP',1,0,1,1,'smlpanel.vct','BOTMAP'),
+(0x1f9,'IDV_CTO1',1,1,1,6,'surround.vct','CTO1'),
+(0x1fa,'IDV_CTO2',1,1,1,6,'surround.vct','CTO2'),
+(0x1fb,'IDV_CTO3',1,1,1,6,'surround.vct','CTO3'),
+(0x200,'IDV_LOCKERR',1,3,1,6,'surround.vct','lockerS'),
+(0x201,'IDV_LOCKERN',1,3,1,1,'smlpanel.vct','lockerSw'),
+(0x202,'IDV_LOCKERW',1,3,1,1,'smlpanel.vct','lockerSw'),
+(0x203,'IDV_LOCKERS',1,3,1,1,'smlpanel.vct','lockerSw'),
+(0x204,'IDV_LOCKERCU00',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x205,'IDV_LOCKERCU01',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x206,'IDV_LOCKERCU02',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x207,'IDV_LOCKERCU03',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x208,'IDV_LOCKERCU04',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x209,'IDV_LOCKERCU05',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x20a,'IDV_LOCKERCU06',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x20b,'IDV_LOCKERCU07',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x20c,'IDV_LOCKERCU08',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x20d,'IDV_LOCKERCU09',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x20e,'IDV_LOCKERCU10',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x20f,'IDV_LOCKERCU11',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x210,'IDV_LOCKERCU12',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x211,'IDV_LOCKERCU13',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x212,'IDV_LOCKERCU14',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x213,'IDV_LOCKERCU15',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x214,'IDV_LOCKERCU16',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x215,'IDV_LOCKERCU17',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x216,'IDV_LOCKERCU18',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x217,'IDV_LOCKERCU19',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x218,'IDV_LOCKERCU20',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x219,'IDV_LOCKERCU21',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x21a,'IDV_LOCKERCU22',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x21b,'IDV_LOCKERCU23',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x21c,'IDV_LOCKERCU24',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x21d,'IDV_LOCKERCU25',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x21e,'IDV_LOCKERCU26',1,3,1,1,'smlpanel.vct','lockercu'),
+(0x220,'IDV_ctya',1,3,1,6,'surround.vct','ctya'),
+(0x221,'IDV_ctyb',1,3,1,6,'surround.vct','ctyb'),
+(0x222,'IDV_ctyc',1,3,1,6,'surround.vct','ctyc'),
+(0x223,'IDV_ctyd',1,3,1,6,'surround.vct','ctyd'),
+(0x224,'IDV_ctye',1,3,1,6,'surround.vct','ctye'),
+(0x225,'IDV_ctyf',1,3,1,6,'surround.vct','ctyf'),
+(0x226,'IDV_ctyg',1,3,1,6,'surround.vct','ctyg'),
+(0x227,'IDV_ctyh',1,3,1,6,'surround.vct','ctyh'),
+(0x228,'IDV_ctyi',1,3,1,6,'surround.vct','ctyi'),
+(0x229,'IDV_ctyj',1,3,1,6,'surround.vct','ctyj'),
+(0x22a,'IDV_ctyk',1,3,1,6,'surround.vct','ctyk'),
+(0x22b,'IDV_ctyl',1,3,1,6,'surround.vct','ctyl'),
+(0x22c,'IDV_ctym',1,3,1,6,'surround.vct','ctym'),
+(0x22d,'IDV_ctyn',1,3,1,6,'surround.vct','ctyn'),
+(0x22e,'IDV_ctyo',1,3,1,6,'surround.vct','ctyo'),
+(0x22f,'IDV_ctyp',1,3,1,6,'surround.vct','ctyp'),
+(0x230,'IDV_ctyq',1,3,1,6,'surround.vct','ctyq'),
+(0x231,'IDV_ctyr',1,3,1,6,'surround.vct','ctyr'),
+(0x232,'IDV_ctys',1,3,1,6,'surround.vct','ctys'),
+(0x233,'IDV_ctyt',1,3,1,6,'surround.vct','ctyt'),
+(0x234,'IDV_CTLIB1A',1,1,1,6,'surround.vct','CTLIB1A'),
+(0x235,'IDV_CTLIB1B',1,1,1,6,'surround.vct','CTLIB1B'),
+(0x240,'IDV_ctysmith',1,3,1,6,'surround.vct','ctysmith'),
+(0x241,'IDV_ckeycf01',1,3,1,1,'smlpanel.vct','ckeycf01'),
+(0x242,'IDV_ckeycf02',1,3,1,1,'smlpanel.vct','ckeycf01'),
+(0x243,'IDV_ckeycf03',1,3,1,1,'smlpanel.vct','ckeycf01'),
+(0x247,'IDV_ckeyvend',1,3,1,1,'smlpanel.vct','ckeyvend'),
+(0x250,'IDV_ctyhouse',1,3,1,6,'surround.vct','ctyhouse'),
+(0x251,'IDV_chouse01',1,3,1,1,'smlpanel.vct','chouse1'),
+(0x252,'IDV_chouse02',1,3,1,1,'smlpanel.vct','chouse2'),
+(0x253,'IDV_chouse03',1,3,1,1,'smlpanel.vct','chouse3'),
+(0x500,'IDV_ctychem',1,3,1,6,'surround.vct','ctychem'),
+(0x501,'IDV_chempan',1,3,1,1,'smlpanel.vct','chempan'),
+(0x604,'IDV_CLIBMON1',1,3,1,1,'smlpanel.vct','MONITOR'),
+(0x605,'IDV_CLIBMON2',1,3,1,1,'smlpanel.vct','MONITOR'),
+(0x606,'IDV_CLIBMON3',1,3,1,1,'smlpanel.vct','MONITOR'),
+(0x607,'IDV_CLIBMON4',1,3,1,1,'smlpanel.vct','MONITOR'),
+(0x608,'IDV_CLIBMON5',1,3,1,1,'smlpanel.vct','MONITOR'),
+(0x609,'IDV_CLIBMON6',1,3,1,1,'smlpanel.vct','MONITOR'),
+(0x610,'IDV_CLIBMUS1',1,3,1,1,'smlpanel.vct','CLIBMUS1'),
+(0x611,'IDV_CLIBMUS2',1,3,1,1,'smlpanel.vct','CLIBMUS2'),
+(0x620,'IDV_CARDMACH1',1,3,1,1,'smlpanel.vct','cardmach'),
+(0x621,'IDV_CARDMACH2',1,3,1,1,'smlpanel.vct','cardmach'),
+(0x622,'IDV_CARDMACH3',1,3,1,1,'smlpanel.vct','cardmach'),
+(0x623,'IDV_CARDMACH4',1,3,1,1,'smlpanel.vct','cardmach'),
+(0x624,'IDV_CARDMACH5',1,3,1,1,'smlpanel.vct','cardmach'),
+(0x625,'IDV_CARDMACH6',1,3,1,1,'smlpanel.vct','cardmach'),
+(0x700,'IDV_ctytrade',1,3,1,6,'surround.vct','ctytrade'),
+(0x800,'IDV_MANPAN',1,3,1,6,'surround.vct','MANPAN'),
+(0x801,'IDV_MANREP1',1,3,1,1,'smlpanel.vct','manrep'),
+(0x802,'IDV_MANREP2',1,3,1,1,'smlpanel.vct','manrep'),
+(0x803,'IDV_MANREP3',1,3,1,1,'smlpanel.vct','manrep'),
+(0x804,'IDV_MANREP4',1,3,1,1,'smlpanel.vct','manrep'),
+(0x805,'IDV_MANREP5',1,3,1,1,'smlpanel.vct','manrep'),
+(0x806,'IDV_MANREP6',1,3,1,1,'smlpanel.vct','manrep'),
+(0x807,'IDV_MANREP7',1,3,1,1,'smlpanel.vct','manrep'),
+(0x808,'IDV_MANREP8',1,3,1,1,'smlpanel.vct','manrep'),
+(0x809,'IDV_MANREP9',1,3,1,1,'smlpanel.vct','manrep'),
+(0x810,'IDV_MANREP10',1,3,1,1,'smlpanel.vct','manrep'),
+(0x811,'IDV_MANFUR',1,3,1,1,'smlpanel.vct','manrep'),
+(0x900,'IDV_STRATPAN',1,3,1,6,'surround.vct','STRATPAN'),
+(0x901,'IDV_STRATMON1',1,3,1,8,'wdepanel.vct','STRATMON'),
+(0x902,'IDV_STRATMON2',1,3,1,8,'wdepanel.vct','STRATMON'),
+(0x903,'IDV_STRATMAP',2,3,0,2,'monmask.vct','contin~1'),
+(0x1000,'IDV_SCN10PT0',1,0,1,6,'surround.vct','SCN10PT0'),
+(0x1001,'IDV_SCN10PT1',1,0,1,6,'surround.vct','SCN10PT1'),
+(0x1002,'IDV_SCN10PIT',1,1,1,1,'smlpanel.vct','SCN10PIT'),
+(0x1101,'IDV_FA1PAN',1,1,1,6,'surround.vct','fa1pan'),
+(0x1102,'IDV_FH1PTH1',1,1,1,6,'surround.vct','FH1PTH1'),
+(0x1103,'IDV_FALTAR',1,1,1,1,'smlpanel.vct','FALTAR'),
+(0x1104,'IDV_FH1PAN',1,1,1,6,'surround.vct','fh1pan'),
+(0x1105,'IDV_GRBDRT1',1,1,1,1,'smlpanel.vct','grbdrt1'),
+(0x1106,'IDV_GRBDRT2',1,1,1,1,'smlpanel.vct','grbdrt2'),
+(0x1108,'IDV_SHORE',1,1,1,1,'smlpanel.vct','SHORE'),
+(0x1109,'IDV_LUNCHCU',1,1,1,1,'smlpanel.vct','LUNCHCU'),
+(0x1127,'IDV_PATH1',1,1,1,6,'surround.vct','PATH1'),
+(0x1128,'IDV_PATH2',1,1,1,6,'surround.vct','PATH2'),
+(0x1211,'IDV_TM1PAN',1,0,1,6,'surround.vct','TM1pan'),
+(0x1212,'IDV_TM2PAN',1,0,1,6,'surround.vct','TM2pan'),
+(0x1213,'IDV_VESTPAN1',1,0,1,1,'wdepanel.vct','VESTPAN'),
+(0x1215,'IDV_VESTPAN2',1,0,1,1,'wdepanel.vct','VESTPAN'),
+(0x1216,'IDV_TM3PAN',1,0,1,6,'surround.vct','TM3pan'),
+(0x1217,'IDV_TM4PAN',1,0,1,6,'surround.vct','TM4pan'),
+(0x1218,'IDV_TM5PAN',1,0,1,6,'surround.vct','TM5pan'),
+(0x1219,'IDV_TMCU1',1,0,1,1,'smlpanel.vct','TMCU1'),
+(0x1220,'IDV_TMCU2',1,0,1,1,'smlpanel.vct','TMCU2'),
+(0x1221,'IDV_TMCU3',1,0,1,1,'smlpanel.vct','TMCU3'),
+(0x1222,'IDV_TMCU4',1,0,1,1,'smlpanel.vct','TMCU4'),
+(0x1223,'IDV_TMCUT',1,0,1,1,'wdepanel.vct','TMCUT'),
+(0x125d,'IDV_MOON1',1,1,1,6,'surround.vct','MOON1'),
+(0x125e,'IDV_MOON2',1,1,1,6,'surround.vct','MOON2'),
+(0x125f,'IDV_MOON3',1,1,1,6,'surround.vct','MOON3'),
+(0x1260,'IDV_MOON4',1,1,1,6,'surround.vct','MOON4'),
+(0x1261,'IDV_MOON5',1,1,1,6,'surround.vct','MOON5'),
+(0x1262,'IDV_MOONDISK1',1,0,1,1,'smlpanel.vct','MOONDISK'),
+(0x1263,'IDV_MOONDISK2',1,0,1,1,'smlpanel.vct','MOONDISK'),
+(0x1264,'IDV_MOONDISK3',1,0,1,1,'smlpanel.vct','MOONDISK'),
+(0x1265,'IDV_MOONDISK4',1,0,1,1,'smlpanel.vct','MOONDISK'),
+(0x1266,'IDV_MOONDISK5',1,0,1,1,'smlpanel.vct','MOONDISK'),
+(0x1267,'IDV_MOONDISK6',1,0,1,1,'smlpanel.vct','MOONDISK'),
+(0x1268,'IDV_MOONDISK7',1,0,1,1,'smlpanel.vct','MOONDISK'),
+(0x1300,'IDV_VIL2',1,2,1,6,'surround.vct','vil2'),
+(0x1301,'IDV_VIL3',1,2,1,6,'surround.vct','vil3'),
+(0x1302,'IDV_VIL4',1,2,1,6,'surround.vct','vil4'),
+(0x1303,'IDV_VIL5',1,2,1,6,'surround.vct','vil5'),
+(0x1304,'IDV_VIL6',1,2,1,6,'surround.vct','vil6'),
+(0x1305,'IDV_VIL7',1,2,1,6,'surround.vct','vil7'),
+(0x1306,'IDV_VIL8',1,2,1,6,'surround.vct','vil8'),
+(0x1307,'IDV_VIL9',1,2,1,6,'surround.vct','vil9'),
+(0x1308,'IDV_CROW0000',1,3,1,1,'smlpanel.vct','CROW0000'),
+(0x1309,'IDV_BUCK0000',1,3,1,1,'smlpanel.vct','BUCK0000'),
+(0x130a,'IDV_SHOV0000',1,3,1,1,'smlpanel.vct','SHOV0000'),
+(0x130b,'IDV_PICK0000',1,3,1,1,'smlpanel.vct','PICK0000'),
+(0x130c,'IDV_GRUB0000',1,0,1,1,'smlpanel.vct','GRUB0000'),
+(0x130d,'IDV_WOOD0000',1,3,1,1,'smlpanel.vct','WOOD0000'),
+(0x130e,'IDV_SIGNPAN',1,0,1,1,'wdepanel.vct','SIGNPAN'),
+(0x130f,'IDV_SIGNPANENG',1,0,1,1,'wdepanel.vct','SIGNPANENG'),
+(0x1310,'IDV_TRAYR',1,3,1,1,'smlpanel.vct','TRAYR'),
+(0x1311,'IDV_TRAYL',1,3,1,1,'smlpanel.vct','TRAYL'),
+(0x1315,'IDV_DICE0000',1,3,1,1,'smlpanel.vct','DICE0000'),
+(0x1324,'IDV_VHB1',1,3,1,6,'surround.vct','VHB1'),
+(0x1325,'IDV_VHB2',1,3,1,6,'surround.vct','VHB2'),
+(0x1326,'IDV_VHB3',1,3,1,6,'surround.vct','VHB3'),
+(0x1327,'IDV_VHM1',1,3,1,6,'surround.vct','VHM1'),
+(0x1328,'IDV_VHM2',1,3,1,6,'surround.vct','VHM2'),
+(0x1329,'IDV_VHS1',1,3,1,6,'surround.vct','VHS1'),
+(0x132a,'IDV_VHSE',1,3,1,6,'surround.vct','VHSE'),
+(0x132c,'IDV_VILDOOR',1,0,1,1,'wdepanel.vct','VILDOOR'),
+(0x1501,'IDV_TMPLPTH1',1,2,1,6,'surround.vct','tmplpth1'),
+(0x1502,'IDV_TMPLPTH2',1,2,1,6,'surround.vct','tmplpth2'),
+(0x1503,'IDV_TMPLPTH3',1,2,1,6,'surround.vct','tmplpth3'),
+(0x1504,'IDV_TMPLPTH4',1,2,1,6,'surround.vct','tmplpth4'),
+(0x1505,'IDV_TMPLPTH5',1,2,1,6,'surround.vct','tmplpth5'),
+(0x1506,'IDV_TMPLPTH6',1,2,1,6,'surround.vct','tmplpth6'),
+(0x1507,'IDV_TMPLPTH7',1,2,1,6,'surround.vct','tmplpth7'),
+(0x1508,'IDV_TMPLPTH8',1,2,1,6,'surround.vct','tmplpth8'),
+(0x1509,'IDV_TMPLPTH9',1,2,1,6,'surround.vct','tmplpth9'),
+(0x150e,'IDV_LAKEB1',1,1,1,6,'surround.vct','LAKEB1'),
+(0x150f,'IDV_LAKEB2',1,1,1,6,'surround.vct','LAKEB2'),
+(0x1511,'IDV_MEMSTONE',1,3,1,1,'smlpanel.vct','memstone'),
+(0x1601,'IDV_GRNDCNT1',1,0,1,6,'surround.vct','GRNDCNT1'),
+(0x1701,'IDV_QUARSA',1,0,1,6,'surround.vct','QUARSA'),
+(0x1702,'IDV_QUARSB',1,0,1,6,'surround.vct','QUARSB'),
+(0x1703,'IDV_aMINEPAN',1,0,1,1,'wdepanel.vct','MINEPAN1'),
+(0x1704,'IDV_aCV1aPAN',1,0,1,6,'surround.vct','CV1a'),
+(0x1705,'IDV_aCV1bPAN',1,0,1,6,'surround.vct','CV1b'),
+(0x1706,'IDV_bMINEPAN',1,1,1,1,'wdepanel.vct','MINEPAN1'),
+(0x1707,'IDV_bCV1aPAN',1,1,1,6,'surround.vct','CV1a'),
+(0x1708,'IDV_bCV1bPAN',1,1,1,6,'surround.vct','CV1b'),
+(0x1709,'IDV_cMINEPAN',1,1,1,1,'wdepanel.vct','MINEPAN1'),
+(0x170a,'IDV_cCV1aPAN',1,1,1,6,'surround.vct','CV1a'),
+(0x170b,'IDV_cCV1bPAN',1,1,1,6,'surround.vct','CV1b'),
+(0x170c,'IDV_dMINEPAN',1,0,1,1,'wdepanel.vct','MINEPAN1'),
+(0x170d,'IDV_dCV1aPAN',1,1,1,6,'surround.vct','CV2a'),
+(0x170e,'IDV_dCV1bPAN',1,1,1,6,'surround.vct','CV2b'),
+(0x170f,'IDV_eMINEPAN',1,1,1,1,'wdepanel.vct','MINEPAN1'),
+(0x1710,'IDV_eCV1aPAN',1,1,1,6,'surround.vct','CV2a'),
+(0x1711,'IDV_eCV1bPAN',1,1,1,6,'surround.vct','CV2b'),
+(0x19bb,'IDV_CTLTEST1',1,3,1,1,'wdepanel.vct','spacebak'),
+(0x1fa4,'IDV_N2A',1,1,1,6,'surround.vct','N2A'),
+(0x1fa5,'IDV_N2B',1,1,1,6,'surround.vct','N2B'),
+(0x1fa6,'IDV_N2C',1,1,1,6,'surround.vct','N2C'),
+(0x1fa7,'IDV_N2D2',1,1,1,6,'surround.vct','N2D2'),
+(0x1fa8,'IDV_MAPBOX1',1,1,1,1,'smlpanel.vct','MAPBOX1'),
+(0x1fa9,'IDV_LEVERCU',1,3,1,1,'smlpanel.vct','levercu'),
+(0x1faa,'IDV_MAPROOM',1,3,1,6,'surround.vct','MAPROOM'),
+(0x2101,'IDV_NAT1a',1,1,1,6,'surround.vct','nat1a'),
+(0x2102,'IDV_NAT1b',1,1,1,6,'surround.vct','nat1b'),
+(0x2103,'IDV_NAT1c',1,1,1,6,'surround.vct','nat1c'),
+(0x2104,'IDV_NAT1d',1,1,1,6,'surround.vct','nat1d'),
+(0x2105,'IDV_NAT1e',1,1,1,6,'surround.vct','nat1e'),
+(0x2106,'IDV_NAT1f',1,1,1,6,'surround.vct','nat1f'),
+(0x2107,'IDV_NAT1g',1,1,1,6,'surround.vct','nat1g'),
+(0x2108,'IDV_NAT1h',1,1,1,6,'surround.vct','nat1h'),
+(0x2109,'IDV_NAT1i',1,1,1,6,'surround.vct','nat1i'),
+(0x2110,'IDV_NAT1j',1,1,1,6,'surround.vct','nat1j'),
+(0x2111,'IDV_NAT1k',1,1,1,6,'surround.vct','nat1k'),
+(0x2112,'IDV_NAT1l',1,1,1,6,'surround.vct','nat1l'),
+(0x2113,'IDV_NAT1m',1,1,1,6,'surround.vct','nat1m'),
+(0x2114,'IDV_NAT1n',1,1,1,6,'surround.vct','nat1n'),
+(0x2115,'IDV_NAT1o',1,1,1,6,'surround.vct','nat1o'),
+(0x2116,'IDV_NAT1p',1,1,1,6,'surround.vct','nat1p'),
+(0x2117,'IDV_RUBBLECU',1,3,1,1,'smlpanel.vct','RUBBLECU'),
+(0x2201,'IDV_PARCHPAN',1,0,1,1,'wdepanel.vct','PARCHPAN'),
+(0x2202,'IDV_SPELLPAN',1,0,1,1,'wdepanel.vct','PARCHPAN'),
+(0x2203,'IDV_ENCHANTPAN',1,0,1,1,'wdepanel.vct','PARCHPAN'),
+(0x2401,'IDV_EYEA',1,0,1,6,'surround.vct','eyea'),
+(0x2402,'IDV_EYEB',1,0,1,6,'surround.vct','eyeb'),
+(0x2403,'IDV_EYEC1P',1,0,1,1,'wdepanel.vct','eyec1p'),
+(0x2500,'IDV_WR4',1,1,1,6,'surround.vct','WR4'),
+(0x2501,'IDV_WR1',1,1,1,6,'surround.vct','WR1'),
+(0x2502,'IDV_WR2',1,1,1,6,'surround.vct','WR2'),
+(0x2503,'IDV_WR3',1,1,1,6,'surround.vct','WR3'),
+(0x2504,'IDV_W4LOCK',1,0,1,1,'wdepanel.vct','W4LOCK'),
+(0x2505,'IDV_WALL1EN',1,0,1,6,'surround.vct','WALL1EN'),
+(0x2506,'IDV_WALL1IN',1,0,1,6,'surround.vct','WALL1IN'),
+(0x2507,'IDV_WALL2EN',1,0,1,6,'surround.vct','WALL2EN'),
+(0x2508,'IDV_WALL2IN',1,0,1,6,'surround.vct','WALL2IN'),
+(0x2509,'IDV_PL1P',1,0,1,1,'wdepanel.vct','PL1P'),
+(0x2510,'IDV_PL2P',1,0,1,1,'wdepanel.vct','PL2P'),
+(0x2511,'IDV_HIDDENR1',1,0,1,6,'surround.vct','HIDDENR1'),
+(0x2512,'IDV_HIDDENR2',1,0,1,6,'surround.vct','HIDDENR2'),
+(0x2612,'IDV_BANISH',1,1,1,6,'surround.vct','BANISH'),
+(0x2616,'IDV_KAMIOZAREACH',1,3,1,1,'smlpanel.vct','KAMIOZAREACH'),
+(0x2649,'IDV_KAMIOZA',1,0,1,6,'surround.vct','KAMIOZA'),
+(0x264a,'IDV_MEFPAN',1,1,1,1,'wdepanel.vct','PARCHPAN'),
+(0x264b,'IDV_S24_RATHE_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN'),
+(0x264c,'IDV_S10_THAOR_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN'),
+(0x264d,'IDV_S16_PERST_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN'),
+(0x264e,'IDV_S09_AMBLE_PAN',1,1,1,1,'wdepanel.vct','PARCHPAN'),
+(0x2711,'IDV_CANDWALL',1,3,1,1,'smlpanel.vct','candwall'),
+(0x2712,'IDV_CARDMACH',1,3,1,1,'smlpanel.vct','cardmach'),
+(0x2713,'IDV_CDOOR',1,3,1,1,'smlpanel.vct','cdoor'),
+(0x6000,'IDV_BOARD',1,0,1,6,'surround.vct','board'),
+(0x9c41,'IDV_CU_GRASSPATCH1',1,3,1,1,'smlpanel.vct','grasspatchcu'),
+(0x9c42,'IDV_CU_DIRTPATCH1',1,3,1,1,'smlpanel.vct','sanddirtcu'),
+(0x9c43,'IDV_CU_DIRTPATCH2',1,3,1,1,'smlpanel.vct','sanddirtcu2'),
+(0x9ca4,'IDV_TESTPAN',1,3,1,1,'smlpanel.vct','testscreen'),
+(0x9ca5,'IDV_RACEPAN',1,0,1,1,'wdepanel.vct','RACEPAN'),
+(0x9d08,'IDV_HILLS1A',1,0,1,6,'surround.vct','hills1a'),
+(0x9d09,'IDV_HILLS1B',1,0,1,6,'surround.vct','hills1b'),
+(0x9d0a,'IDV_HILLS1C',1,0,1,6,'surround.vct','hills1c'),
+(0x9d0b,'IDV_HILLS1D',1,0,1,6,'surround.vct','hills1d'),
+(0x9d0c,'IDV_HILLS1E',1,0,1,6,'surround.vct','hills1e'),
+(0x9d0d,'IDV_HILLS1F',1,0,1,6,'surround.vct','hills1f');
