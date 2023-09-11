@@ -1,0 +1,31 @@
+// datalog
+
+// writing to the new table columns with the key and value
+meflintext('meflin_101','this is test meflin_101').
+meflintext('meflin_117','this is test meflin_117').
+meflintext('meflin_198','this is test meflin_198').
+meflintext('meflin_200','this is test meflin_200').
+
+// the ?appears to set a variable from the table
+meflintext('meflin_200', ?instructions);
+write('the instructions are:',instructions);
+
+sounds('SOUND_FIRE',?value,?id);
+write('the sound value is:',value);
+write('the sound id is:',id);
+
+// I don't think this form adds any value since we can detect database tables without the '?' ...
+fishbait('IDD_BAIT2')?
+
+//My guess is this tilde ~ removes the data
+// fishbait('IDD_BAIT0')~
+// fishbait('IDD_BAIT1')~
+// fishbait('IDD_BAIT2')~
+// meflintext('meflin_1%')~
+
+// TODO: work with tables that don't conform to datalog column names ...
+write('read sounds table');
+success = sounds('SOUND_FIRE',?value,?id);
+if (success) {
+    write('success',value);
+}

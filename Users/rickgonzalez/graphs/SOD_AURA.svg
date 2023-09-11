@@ -189,7 +189,7 @@
 <polygon fill="none" stroke="black" points="330.53,-644.5 330.53,-683.5 559.53,-683.5 559.53,-644.5 330.53,-644.5"/>
 <text text-anchor="start" x="333.53" y="-672.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_OTHERID @pos(left:0, top:0)</text>
 <text text-anchor="start" x="333.53" y="-661.5" font-family="Courier New" font-size="10.00" fill="green">SOD_AURA::M_O_AURA(&#39;&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="333.53" y="-650.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;0&#39;:</text>
+<text text-anchor="start" x="333.53" y="-650.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;0&#39;:</text>
 <polygon fill="none" stroke="black" points="327.53,-641.5 327.53,-705.5 562.53,-705.5 562.53,-641.5 327.53,-641.5"/>
 </g>
 </g>
