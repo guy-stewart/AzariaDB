@@ -1,0 +1,19 @@
+
+
+
+warp('IDV_MANREP1');
+// clear out the chems ...
+grab(S08_CHEM1_1);
+recycle();
+grab('S08_CHEM2_1');
+recycle();
+grab('S08_CARDHOLD_1');
+grab('S08_CARDHOLD_1');
+recycle();
+
+drop('S08_CARDHOLD_1', 'IDD_CARD02');
+drop('S08_CHEM1_1','IDD_CHEMV01');
+drop('S08_CHEM2_1','IDD_CHEMV19');
+drag('S08_HOPPER_1', 'IDD_SCOOPF');
+drag('S08_HOPPER_1', 'IDD_SCOOPF');
+drag('S08_HOPPER_1', 'IDD_SCOOPF');

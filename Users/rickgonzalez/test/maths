@@ -1,0 +1,21 @@
+
+
+true =1;
+false=0;
+
+x = 5 * 4;
+if (x != 20) {
+    write('expected x to be 20 but x is ', x);
+}
+y = (1 + 2)*2+10;
+if (y != 16) {
+    write('expected 16 got ', y);
+}
+
+z = y == (1 + 2)*2+10;
+write('z = ',z);
+
+a = false != (y == (1 + 2)*2+10);
+write('a = ',a);
+
+write('a = ',a, '; z = ', z, '; x = ', x);

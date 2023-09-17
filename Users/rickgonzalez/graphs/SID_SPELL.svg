@@ -322,7 +322,7 @@
 <polygon fill="none" stroke="black" points="603.5,-1190.5 603.5,-1229.5 814.5,-1229.5 814.5,-1190.5 603.5,-1190.5"/>
 <text text-anchor="start" x="606.5" y="-1218.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_ID @pos(left:10, top:50)</text>
 <text text-anchor="start" x="606.5" y="-1207.5" font-family="Courier New" font-size="10.00" fill="green">SID_SPELL::M_IDSPELL(&#39;&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="606.5" y="-1196.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;0&#39;: wObject:IDD_BOMB2</text>
+<text text-anchor="start" x="606.5" y="-1196.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;0&#39;:</text>
 <polygon fill="none" stroke="black" points="600.5,-1187.5 600.5,-1251.5 817.5,-1251.5 817.5,-1187.5 600.5,-1187.5"/>
 </g>
 </g>

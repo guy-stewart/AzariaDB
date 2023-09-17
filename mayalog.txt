@@ -1,0 +1,111 @@
+--------------------------------
+--------------------------------
+|      _    ___   _   ___      |
+|     | |  / _ \ /_\ |   \     |
+|     | |_| (_) / _ \| |) |    |
+|     |____\___/_/ \_\___/     |
+--------------------------------
+--------------------------------
+**** LOAD VIEWS FROM SQL DATABASE
+select view_id, view_name, Z, backgroundAudio, locator_view, behavior_id, portal_filename, surface_filename from views order by view_id
+**** LOAD PANEL_NAV FROM SQL DATABASE
+select [from], forward, back,views.view_id from views, panel_nav where views.view_name=panel_nav.[from] order by views.view_id ASC
+**** LOAD TRIGGERS FROM SQL DATABASE
+select [from], left, top, right, bottom, [to], facing, views.view_id from views, triggers where views.view_name=triggers.[from] order by views.view_id ASC
+**** ATTEMPT TO LOAD TRANSITIONS WITH CODEBLOCK FROM SQL DATABASE
+stmt:select [automaton],[state],new_state,opcode,param_1,param_2,code,guard,doc from transitions order by [automaton],[state],opcode
+**** LOAD MACHINES FROM SQL DATABASE
+stmt:select name,view_name,left,top,right,bottom,local_visible,dfa_name,wip1_name,wip2_name,wip3_name,wip4_name from machines order by view_id
+stmt:select object,object_id,class,icon,cursor,actor from objects order by object_id
+**** LOAD OBJECTS FROM SQL DATABASE
+run('system/trace')
+	system/trace
+ _______
+|__   __|
+   | |_ __ __ _  ___ ___
+   | | '__/ _` |/ __/ _ \
+   | | | | (_| | (_|  __/
+   |_|_|  \__,_|\___\___|
+tracing 
+------------------------------
+------------------------------
+      _    ___ _  _ _  __     
+     | |  |_ _| \| | |/ /     
+     | |__ | || .` | ' <      
+     |____|___|_|\_|_|\_\     
+------------------------------
+------------------------------
+🛑 OPEN_EMPTY       not found in     M02_LOCK 10->0 IFSTATE(OPEN_EMPTY,0x0,WIP1,0x0)
+🛑 SID_DEC_ENERGY   not found in M17_FOULWIND 4->0 SIGNALi(0,0x0,SID_DEC_ENERGY,0x0)
+🛑 happy            not found in         M_ID 20->playForward ASSIGN(WSPRITE,0x4,happy,0x0)
+🛑 hurt             not found in         M_ID 21->playForward ASSIGN(WSPRITE,0x4,hurt,0x0)
+🛑 kiss             not found in         M_ID 22->playOnce ASSIGN(WSPRITE,0x4,kiss,0x0)
+🛑 mad              not found in         M_ID 23->playForward ASSIGN(WSPRITE,0x4,mad,0x0)
+🛑 sad              not found in         M_ID 24->playForward ASSIGN(WSPRITE,0x4,sad,0x0)
+🛑 surprised        not found in         M_ID 25->playForward ASSIGN(WSPRITE,0x4,surprised,0x0)
+🛑 stress           not found in         M_ID 26->playForward ASSIGN(WSPRITE,0x4,stress,0x0)
+🛑 wave             not found in         M_ID 27->playForward ASSIGN(WSPRITE,0x4,wave,0x0)
+🛑 dead             not found in         M_ID 30->playOnce ASSIGN(WSPRITE,0x4,dead,0x0)
+🛑 happy            not found in         M_ID setId->sitting ASSIGN(WSPRITE,0x4,happy,0x0)
+🛑 S12_BUTTERFLY    not found in     M_NATURE 5->6 SIGNALi(SIG_OPEN,0x0,S12_BUTTERFLY,0x0)
+🛑 SOD_ID           not found in     M_O_AURA 9->0 SIGNALi(0,0x0,SOD_ID,0x0)
+🛑 IDS_BIRDS        not found in M_TIMEDVPLAY2 1->2 SHOW(0,0x0,IDS_BIRDS,0x0)
+GDBT_MACHINES::Link()
+Load GUILoad namefillLoad namefillLoad inventorLoad idLoad youLoad teletypeLoad spacemenLoad compassTODO: S0_ALARM_1**** LOAD GAME FROM SQL DATABASE
+stmt:select [game],[name],[RefMachine],[state],[bParm],[wParm],[wObject],[wSprite],[b],[bFrame],[wAccept],[dEtime] from games  where game = 'Azaria' order by name,state
+-------------------------------
+run('system/startup')
+-------------------------------
+Normal Startup:
+	system/startup
+     _____ _             _
+    / ____| |           | |
+   | (___ | |_ __ _ _ __| |_ _   _ _ __
+    \___ \| __/ _` | '__| __| | | | '_ \
+    ____) | || (_| | |  | |_| |_| | |_) |
+    |_____/ \__\__,_|_|   \__|\__,_| .__/
+                                  | |
+                                  |_|
+-------------------------------
+run('mefresp_setup')
+-------------------------------
+	mefresp_setup
+QUERY::'select p_0,p_1,p_2 from mefResp where p_0 like '1' and p_1 like '1' and p_2 like 'IDD_AMULET1';'
+🛑 sqlFetchRows: - Failed to fetch data: no such table: mefResp
+🛑 S01_NATURE::SIGNALri((null),S12_BUTTERFLY) Missing machine 0xb10dce81
+		p1: name:'SIG_OPEN' type:TEXT_TYPE rowid:0
+		p2: name:'S12_BUTTERFLY' type:NUL_TYPE rowid:0
+🛑 S01_NATURE::SIGNALri((null),S12_BUTTERFLY) Missing machine 0xb10dce81
+		p1: name:'SIG_OPEN' type:TEXT_TYPE rowid:0
+		p2: name:'S12_BUTTERFLY' type:NUL_TYPE rowid:0
+🛑 S01_NATURE::SIGNALri((null),S12_BUTTERFLY) Missing machine 0xb10dce81
+		p1: name:'SIG_OPEN' type:TEXT_TYPE rowid:0
+		p2: name:'S12_BUTTERFLY' type:NUL_TYPE rowid:0
+🛑 S01_NATURE::SIGNALri((null),S12_BUTTERFLY) Missing machine 0xb10dce81
+		p1: name:'SIG_OPEN' type:TEXT_TYPE rowid:0
+		p2: name:'S12_BUTTERFLY' type:NUL_TYPE rowid:0
+🛑 S01_NATURE::SIGNALri((null),S12_BUTTERFLY) Missing machine 0xb10dce81
+		p1: name:'SIG_OPEN' type:TEXT_TYPE rowid:0
+		p2: name:'S12_BUTTERFLY' type:NUL_TYPE rowid:0
+🛑 S01_NATURE::SIGNALri((null),S12_BUTTERFLY) Missing machine 0xb10dce81
+		p1: name:'SIG_OPEN' type:TEXT_TYPE rowid:0
+		p2: name:'S12_BUTTERFLY' type:NUL_TYPE rowid:0
+🛑 S01_NATURE::SIGNALri((null),S12_BUTTERFLY) Missing machine 0xb10dce81
+		p1: name:'SIG_OPEN' type:TEXT_TYPE rowid:0
+		p2: name:'S12_BUTTERFLY' type:NUL_TYPE rowid:0
+🛑 S01_NATURE::SIGNALri((null),S12_BUTTERFLY) Missing machine 0xb10dce81
+		p1: name:'SIG_OPEN' type:TEXT_TYPE rowid:0
+		p2: name:'S12_BUTTERFLY' type:NUL_TYPE rowid:0
+🛑 S01_NATURE::SIGNALri((null),S12_BUTTERFLY) Missing machine 0xb10dce81
+		p1: name:'SIG_OPEN' type:TEXT_TYPE rowid:0
+		p2: name:'S12_BUTTERFLY' type:NUL_TYPE rowid:0
+Game::~Game()
+run('system/shutdown')
+	system/shutdown
+   _____ _           _      _
+  / ____| |         | |    | |
+ | (___ | |__  _   _| |_ __| | _____      ___ __
+  \___ \| '_ \| | | | __/ _` |/ _ \ \ /\ / / '_ \
+  ____) | | | | |_| | || (_| | (_) \ V  V /| | | |
+ |_____/|_| |_|\__,_|\__\__,_|\___/ \_/\_/ |_| |_|
+TODO: S0_ALARM_1

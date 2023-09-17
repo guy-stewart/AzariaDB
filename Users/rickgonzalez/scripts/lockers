@@ -1,0 +1,14 @@
+
+warp(IDV_ctyg);
+warp(IDV_LOCKERR);
+warp(IDV_LOCKERW);
+warp(IDV_LOCKERCU00);
+get(IDD_CITY_KEY_0);
+drop(S02_LOCK__00);
+grab(S02_UP1___00);
+grab(S02_UP1___00);
+grab(S02_UP1___00);
+get(IDD_BOMB1);
+drop(S02_BIN___00);
+grab(S02_LOCK__00);
+

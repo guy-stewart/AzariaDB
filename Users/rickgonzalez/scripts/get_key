@@ -1,0 +1,21 @@
+
+// At the end of this script you will have a key in hand:
+grab(SMP_VIAL);
+drag(S04_VIAL);
+drag(SMP_VIAL);
+drag(S04_VIAL);
+drag(SMP_VIAL);
+drag(S04_VIAL);
+drop(SMP_VIAL);
+grab(S04_BIN);
+settrace(IDV_ckeyvend,0);
+settrace(IDV_ckeycf01,1);
+warp(IDV_ckeycf02);
+drop(S04_KEYCLAMP_1);
+grab(S04_REDSLIDER_1);
+grab(S04_REDSLIDER_1);
+grab(S04_REDSLIDER_1);
+grab(S04_GRNSLIDER_1);
+grab(S04_BLUSLIDER_1);
+grab(S04_BLUSLIDER_1);
+grab(S04_KEYCLAMP_1);

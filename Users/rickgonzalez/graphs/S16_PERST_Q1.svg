@@ -196,7 +196,7 @@
 <polygon fill="none" stroke="black" points="275,-1008.5 275,-1047.5 738,-1047.5 738,-1008.5 275,-1008.5"/>
 <text text-anchor="start" x="278" y="-1036.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_OTHERID @pos(left:0, top:0)</text>
 <text text-anchor="start" x="278" y="-1025.5" font-family="Courier New" font-size="10.00" fill="green">S16_PERST_Q1::M_MEF_TALK(&#39;IDS_M2T10000&#39;,&#39;15&#39;,&#39;SOUND_PERSTQ1&#39;,&#39;IDS_M2I10000&#39;)</text>
-<text text-anchor="start" x="278" y="-1014.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;0&#39;:</text>
+<text text-anchor="start" x="278" y="-1014.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;0&#39;: bFrame:16</text>
 <polygon fill="none" stroke="black" points="272,-1005.5 272,-1069.5 741,-1069.5 741,-1005.5 272,-1005.5"/>
 </g>
 </g>
