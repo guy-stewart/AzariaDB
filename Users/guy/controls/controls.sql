@@ -36,11 +36,9 @@ GREEN = 0x00FF00
 BLUE  = 0xFF0000
 */
 
-drop table if exists controls;
-create table controls
-(
+create table IF NOT EXISTS controls (
     [view]    text,
-    [id]   int,
+    [id]   text,
     [type] text,
     [image]     text,
     [image_selected]     text,
@@ -50,22 +48,22 @@ create table controls
     [values] text,
     [default] text,
     [ids_font] text,
-    [font_color] int,
+    [font_color] TEXT,
     [code] text,
     PRIMARY KEY ([view],[id]) ON CONFLICT REPLACE);
 
 
-insert into controls (view, id, [type],[image],image_selected,x,y,border,[values],[default],[ids_font],[font_color],[code]) values
-('IDV_CTLTEST1', 1, 'LABEL',    'IDS_REDDOT',       '',                   200, 130, 0,
+insert into controls ([view], [id],[type],[image],[image_selected],[x],[y],[border],[values],[default],[ids_font],[font_color],[code]) values
+('IDV_CTLTEST1', '1', 'LABEL',    'IDS_REDDOT',       '',                   200, 130, 0,
 ' This is a test string
       line two
       line three
 and this is line FOUR.','', 'IDS_FONTTNR12', 0xFF8888,''), 
 
-('IDV_CTLTEST1', 2, 'BUTTON',   'IDS_BTN_OK',       'IDS_BTN_OK_HI',       50,  60, 0, '','','',0,''),
-('IDV_CTLTEST1', 3, 'BUTTON',   'IDS_BTN_DOWN',     'IDS_BTN_OK_HI',       50, 110, 0, '','','',0,''),
-('IDV_CTLTEST1', 4, 'CHECKBOX', 'IDS_BTN_VILCULT',  'IDS_BTN_VILCULT_HI',  50, 160, 0, '','','',0,''),
-('IDV_CTLTEST1', 5, 'EDITBOX',  'IDS_STD_EDITBOXM', 'IDS_BTN_DOWN_HI',    200,  50, 10, 'My Edit Box', 'default','IDS_FONTTNR12',0x44FFFF,'');
+('IDV_CTLTEST1', '2', 'BUTTON',   'IDS_BTN_OK',       'IDS_BTN_OK_HI',       50,  60, 0, '','','',0,''),
+('IDV_CTLTEST1', '3', 'BUTTON',   'IDS_BTN_DOWN',     'IDS_BTN_OK_HI',       50, 110, 0, '','','',0,''),
+('IDV_CTLTEST1', '4', 'CHECKBOX', 'IDS_BTN_VILCULT',  'IDS_BTN_VILCULT_HI',  50, 160, 0, '','','',0,''),
+('IDV_CTLTEST1', '5', 'EDITBOX',  'IDS_STD_EDITBOXM', 'IDS_BTN_DOWN_HI',    200,  50, 10, 'My Edit Box', 'default','IDS_FONTTNR12',0x44FFFF,'');
 
 delete from views where view_name = 'IDV_CTLTEST1';
 insert into views ([view_id],[view_name],[Z],[backgroundAudio],[locator_view],[behavior_id],[portal_filename],[surface_filename] ) values

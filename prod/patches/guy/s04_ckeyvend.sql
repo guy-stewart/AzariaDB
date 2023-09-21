@@ -33,45 +33,44 @@ insert into transitions ([automaton], [state], [new_state], [opcode], [param_1],
 
 -- [0] wait for a signal from the vial that 2 scoops were delivered.
 ('M04_BIN','0','1','WAIT','SIG_VEND','', '
-    ASSIGN(WOBJECT,IDD_CITY_KEY1);
-    SHOW(0,IDS_KEY_IN_BIN);'),
+    ASSIGN(WOBJECT,IDD_CITY_KEY_0);
+    SHOW(IDS_KEY_IN_BIN);'),
 -- [1] wait for someone to take the key from the bin.
 ('M04_BIN','1','0','GRAB','','', 'SHOW(0,0);'),
 
 -- [0] start state, init the class acceptor
-('M04_KEYCLAMP','0','1','C_ACCEPT','0','IDC_KEY', ''),
+('M04_KEYCLAMP','0','VACANT','C_ACCEPT','0','IDC_KEY', ''),
 -- [1] wait for a dropped key then configure the sliders
-('M04_KEYCLAMP','1','2','DROP','0','0', '
-WPARM = WOBJECT - IDD_CITY_KEY1;
+('M04_KEYCLAMP','VACANT','OCCUPIED','DROP','0','0', '
+WPARM = WOBJECT;
+MAP(WPARM, KEY);
 SIGNAL(WIP1, SIG_SHOW);
 SIGNAL(WIP2, SIG_SHOW);
 SIGNAL(WIP3, SIG_SHOW);
-SHOW(0,IDS_KEY_CFGWKEY);
-WOBJECT=0;'),
--- [2] when key is grabbed then configure per sliders
-('M04_KEYCLAMP','2','1','GRAB','','0','
+SHOW(0,IDS_KEY_CFGWKEY);'),
+-- [2] when a slider changes then configure the key
+('M04_KEYCLAMP','OCCUPIED','OCCUPIED','WAIT','','','
     REF_MACHINE(WIP1);
-    MOV(WOBJECT,R_BFRAME);
-    MULI(WOBJECT,4);
+    WOBJECT=R_BFRAME*4;
     REF_MACHINE(WIP2);
-    ADD(WOBJECT,R_BFRAME);
-    MULI(WOBJECT,4);
+    WOBJECT=(WOBJECT+R_BFRAME)*4;
     REF_MACHINE(WIP3);
-    ADD(WOBJECT,R_BFRAME);
-    ADDI(WOBJECT,IDD_CITY_KEY1);
-    HANDOFF(WOBJECT);
+    WOBJECT = WOBJECT + R_BFRAME;
+    WOBJECT = "IDD_CITY_KEY_"+WOBJECT;'),
+-- [2] when the key is removed then clear the sliders:
+('M04_KEYCLAMP','OCCUPIED','VACANT','GRAB','','0','
     SHOW();
     SIGNAL(WIP1, SIG_HIDE);
     SIGNAL(WIP2, SIG_HIDE);
-    SIGNAL(WIP3, SIG_HIDE);
-    '),
+    SIGNAL(WIP3, SIG_HIDE);'),
 
 -- [0] init the sprite for the slider
 ('M04_SLIDER','0','1','MOV','WSPRITE','WIP1', ''),
 ('M04_SLIDER','1','idle','SHOW','WSPRITE','', ''),
 ('M04_SLIDER','idle','1','CLICK','','', '
 BFRAME = BFRAME + 1;
-if (BFRAME > 3) BFRAME=0;'),
+if (BFRAME > 3) BFRAME=0;
+SIGNAL(WIP2);'),
 ('M04_SLIDER','idle','1','WAIT','','SIG_SHOW', '
 REF_MACHINE(WIP2);
 BFRAME= (R_WPARM / WIP3);
@@ -81,67 +80,135 @@ MOD(BFRAME,4);'), -- bframe has been modified by the keyclamp.
 
 delete from objects where [object] like 'IDD_CITY_KEY%';
 insert into objects values
-('IDD_CITY_KEY_0x200',0x200,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x201',0x201,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x202',0x202,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x203',0x203,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x204',0x204,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x205',0x205,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x206',0x206,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x207',0x207,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x208',0x208,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x209',0x209,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x20a',0x20a,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x20b',0x20b,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x20c',0x20c,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x20d',0x20d,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x20e',0x20e,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x20f',0x20f,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x210',0x210,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x211',0x211,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x212',0x212,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x213',0x213,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x214',0x214,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x215',0x215,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x216',0x216,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x217',0x217,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x218',0x218,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x219',0x219,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x21a',0x21a,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x21b',0x21b,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x21c',0x21c,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x21d',0x21d,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x21e',0x21e,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x21f',0x21f,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x220',0x220,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x221',0x221,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x222',0x222,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x223',0x223,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x224',0x224,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x225',0x225,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x226',0x226,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x227',0x227,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x228',0x228,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x229',0x229,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x22a',0x22a,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x22b',0x22b,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x22c',0x22c,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x22d',0x22d,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x22e',0x22e,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x22f',0x22f,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x230',0x230,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x231',0x231,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x232',0x232,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x233',0x233,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x234',0x234,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x235',0x235,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x236',0x236,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x237',0x237,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x238',0x238,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x239',0x239,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x23a',0x23a,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x23b',0x23b,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x23c',0x23c,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x23d',0x23d,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x23e',0x23e,'IDC_KEY','citykey1','citykey1','citykey1'),
-('IDD_CITY_KEY_0x23f',0x23f,'IDC_KEY','citykey1','citykey1','citykey1');
+('IDD_CITY_KEY_0','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_1','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_2','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_3','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_4','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_5','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_6','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_7','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_8','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_9','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_10','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_11','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_12','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_13','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_14','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_15','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_16','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_17','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_18','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_19','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_20','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_21','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_22','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_23','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_24','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_25','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_26','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_27','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_28','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_29','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_30','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_31','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_32','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_33','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_34','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_35','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_36','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_37','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_38','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_39','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_40','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_41','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_42','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_43','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_44','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_45','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_46','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_47','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_48','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_49','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_50','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_51','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_52','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_53','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_54','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_55','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_56','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_57','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_58','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_59','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_60','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_61','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_62','','IDC_KEY','citykey1','citykey1','citykey1'),
+('IDD_CITY_KEY_63','','IDC_KEY','citykey1','citykey1','citykey1');
+
+delete from map where op = 'KEY';
+insert into map ([op],[key],[value]) values
+('KEY','IDD_CITY_KEY_0','0'),
+('KEY','IDD_CITY_KEY_1','1'),
+('KEY','IDD_CITY_KEY_2','2'),
+('KEY','IDD_CITY_KEY_3','3'),
+('KEY','IDD_CITY_KEY_4','4'),
+('KEY','IDD_CITY_KEY_5','5'),
+('KEY','IDD_CITY_KEY_6','6'),
+('KEY','IDD_CITY_KEY_7','7'),
+('KEY','IDD_CITY_KEY_8','8'),
+('KEY','IDD_CITY_KEY_9','9'),
+('KEY','IDD_CITY_KEY_10','10'),
+('KEY','IDD_CITY_KEY_11','11'),
+('KEY','IDD_CITY_KEY_12','12'),
+('KEY','IDD_CITY_KEY_13','13'),
+('KEY','IDD_CITY_KEY_14','14'),
+('KEY','IDD_CITY_KEY_15','15'),
+('KEY','IDD_CITY_KEY_16','16'),
+('KEY','IDD_CITY_KEY_17','17'),
+('KEY','IDD_CITY_KEY_18','18'),
+('KEY','IDD_CITY_KEY_19','19'),
+('KEY','IDD_CITY_KEY_20','20'),
+('KEY','IDD_CITY_KEY_21','21'),
+('KEY','IDD_CITY_KEY_22','22'),
+('KEY','IDD_CITY_KEY_23','23'),
+('KEY','IDD_CITY_KEY_24','24'),
+('KEY','IDD_CITY_KEY_25','25'),
+('KEY','IDD_CITY_KEY_26','26'),
+('KEY','IDD_CITY_KEY_27','27'),
+('KEY','IDD_CITY_KEY_28','28'),
+('KEY','IDD_CITY_KEY_29','29'),
+('KEY','IDD_CITY_KEY_30','30'),
+('KEY','IDD_CITY_KEY_31','31'),
+('KEY','IDD_CITY_KEY_32','32'),
+('KEY','IDD_CITY_KEY_33','33'),
+('KEY','IDD_CITY_KEY_34','34'),
+('KEY','IDD_CITY_KEY_35','35'),
+('KEY','IDD_CITY_KEY_36','36'),
+('KEY','IDD_CITY_KEY_37','37'),
+('KEY','IDD_CITY_KEY_38','38'),
+('KEY','IDD_CITY_KEY_39','39'),
+('KEY','IDD_CITY_KEY_40','40'),
+('KEY','IDD_CITY_KEY_41','41'),
+('KEY','IDD_CITY_KEY_42','42'),
+('KEY','IDD_CITY_KEY_43','43'),
+('KEY','IDD_CITY_KEY_44','44'),
+('KEY','IDD_CITY_KEY_45','45'),
+('KEY','IDD_CITY_KEY_46','46'),
+('KEY','IDD_CITY_KEY_47','47'),
+('KEY','IDD_CITY_KEY_48','48'),
+('KEY','IDD_CITY_KEY_49','49'),
+('KEY','IDD_CITY_KEY_50','50'),
+('KEY','IDD_CITY_KEY_51','51'),
+('KEY','IDD_CITY_KEY_52','52'),
+('KEY','IDD_CITY_KEY_53','53'),
+('KEY','IDD_CITY_KEY_54','54'),
+('KEY','IDD_CITY_KEY_55','55'),
+('KEY','IDD_CITY_KEY_56','56'),
+('KEY','IDD_CITY_KEY_57','57'),
+('KEY','IDD_CITY_KEY_58','58'),
+('KEY','IDD_CITY_KEY_59','59'),
+('KEY','IDD_CITY_KEY_60','60'),
+('KEY','IDD_CITY_KEY_61','61'),
+('KEY','IDD_CITY_KEY_62','62'),
+('KEY','IDD_CITY_KEY_63','63'),
+('KEY','IDD_CITY_KEY_64','64');

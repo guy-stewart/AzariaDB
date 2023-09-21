@@ -32,7 +32,7 @@
 <path fill="none" stroke="black" d="M288.83,-309.6C298.82,-309.98 307.04,-306.11 307.04,-298 307.04,-293.31 304.29,-290.04 300.05,-288.19"/>
 <polygon fill="black" stroke="black" points="300.76,-284.76 290.33,-286.64 299.65,-291.67 300.76,-284.76"/>
 <polygon fill="none" stroke="black" points="310.04,-311 310.04,-329 466.04,-329 466.04,-311 310.04,-311"/>
-<text text-anchor="start" x="361.04" y="-318" font-family="Courier New" font-weight="bold" font-size="10.00" fill="orange">WAIT(0,0)</text>
+<text text-anchor="start" x="337.03" y="-318" font-family="Courier New" font-weight="bold" font-size="10.00" fill="orange">WAIT(SIG_UPDATE,)</text>
 <polygon fill="none" stroke="black" points="310.04,-267 310.04,-309 466.04,-309 466.04,-267 310.04,-267"/>
 <text text-anchor="start" x="313.04" y="-297" font-family="Courier New" font-size="10.00" fill="blue"> &#160;&#160;&#160;REF_MACHINE(WIP3);</text>
 <text text-anchor="start" x="313.04" y="-285" font-family="Courier New" font-size="10.00" fill="blue"> &#160;&#160;&#160;MOV(BPARM,R_BFRAME);</text>

@@ -15,6 +15,21 @@ create table transitions
 insert into transitions ([automaton], [state], [new_state], [opcode], [param_1], [param_2], [code], [guard], [doc]) values
 ('0x0030','0','1','WAIT','0','0','','',''),
 ('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
+('0x0030','0','1','WAIT','0','0','','',''),
 ('0x0030','1','0','LTEi','0x72','0','','',''),
 ('0x0030','1','2','SUBI','0x72','1','','',''),
 ('0x0030','2','3','PLAYWAVE','0','SOUND_HURT','','',''),
@@ -92,181 +107,177 @@ insert into transitions ([automaton], [state], [new_state], [opcode], [param_1],
 ('0x1001','6','7','EMTIME','0','1000/1','','',''),
 ('0x1001','7','8','ADDI','WSPRITE','1','','',''),
 ('0x1001','8','5','SUBI','WPARM','1','','',''),
-('M02_BIN','0','4','DROP','','','
+('M02_BIN','0','OPEN_EMPTY','Z_EPSILON','','','','',''),
+('M02_BIN','LOCKED_EMPTY','OPEN_EMPTY','WAIT','','SIG_OPEN','','',''),
+('M02_BIN','LOCKED_OCCUPIED','OPEN_OCCUPIED','WAIT','','SIG_OPEN','','',''),
+('M02_BIN','OPEN_EMPTY','OPEN_OCCUPIED','DROP','','','
     ASHOW(WOBJECT);
     MOV(WTEMP1,WOBJECT);','',''),
-('M02_BIN','0','8','WAIT','','SIG_CLOSE','','',''),
-('M02_BIN','4','0','GRAB','','','   SHOW();
+('M02_BIN','OPEN_EMPTY','LOCKED_EMPTY','WAIT','','SIG_CLOSE','','',''),
+('M02_BIN','OPEN_OCCUPIED','OPEN_EMPTY','GRAB','','','   SHOW();
     ASSIGN(WTEMP1,0);','',''),
-('M02_BIN','4','9','WAIT','','SIG_CLOSE','','',''),
-('M02_BIN','8','0','WAIT','','SIG_OPEN','','',''),
-('M02_BIN','9','4','WAIT','','SIG_OPEN','','',''),
-('M02_DN1','0','1','CLICK','','','PLAYWAVE(SOUND_CLICK);','',''),
-('M02_DN1','1','0','IFSTATE','M02_LOCKED','WIP_S02_LOCK','','',''),
-('M02_DN1','1','0','Z_EPSILON','','','SIGNAL(WIP_S02_VIAL, SIG_DEC1);','',''),
-('M02_DN10','0','1','CLICK','','','PLAYWAVE(SOUND_CLICK);','',''),
-('M02_DN10','1','0','IFSTATE','M02_LOCKED','WIP_S02_LOCK','','',''),
-('M02_DN10','1','0','Z_EPSILON','','','SIGNAL(WIP_S02_VIAL, SIG_DEC10);','',''),
-('M02_LOCK','0','1','C_ACCEPT','','IDC_KEY','','',''),
-('M02_LOCK','1','2','DROP','','','','',''),
-('M02_LOCK','10','0','IFSTATE','M02_OPENEMPTY','WTEMP1','','',''),
-('M02_LOCK','10','15','Z_EPSILON','','','
+('M02_BIN','OPEN_OCCUPIED','LOCKED_OCCUPIED','WAIT','','SIG_CLOSE','','',''),
+('M02_DN1','0','0','CLICK','','','PLAYWAVE(SOUND_CLICK);
+SIGNAL(WIP1, SIG_DEC1);','',''),
+('M02_DN10','0','0','CLICK','','','PLAYWAVE(SOUND_CLICK);
+SIGNAL(WIP1, SIG_DEC10);','',''),
+('M02_LOCK','0','UNLOCKED','C_ACCEPT','','IDC_KEY','','',''),
+('M02_LOCK','10','0','IFSTATE','OPEN_EMPTY','WIP1','','',''),
+('M02_LOCK','10','M02_LOCKED','Z_EPSILON','','','
     PLAYWAVE(SOUND_LEVER);
-    SIGNAL(WTEMP1,SIG_CLOSE);','',''),
-('M02_LOCK','15','2','DROP','WPARM','','','',''),
-('M02_LOCK','2','9','Z_EPSILON','','','
+    SIGNAL(WIP1,SIG_CLOSE);','',''),
+('M02_LOCK','2','M02_KEYED','Z_EPSILON','','','
     PLAYWAVE(SOUND_LEVER);
-    MOV(WTEMP1,WTHIS);
-    ADDI(WTEMP1,1);
-    SIGNAL(WTEMP1,SIG_OPEN);
+    SIGNAL(WIP1,SIG_OPEN);
     O_ACCEPT(WOBJECT);
     SHOW(0,IDS_LOCKWKEY);','',''),
-('M02_LOCK','9','10','GRAB','','','
+('M02_LOCK','M02_KEYED','10','GRAB','','','
     CLEAR(WOBJECT);
-    SHOW();
-    MOV(WTEMP1,WTHIS);
-    ADDI(WTEMP1,1);','',''),
-('M02_NUM1','0','0','WAIT','','','
-    REF_MACHINE(WIP_S02_VIAL);
-    MOV(BFRAME,R_WPARM);
-    SUB(BFRAME,R_BPARM);
-    MODI(BFRAME,10);
-    SHOW(0,IDS_CITYNUM);','',''),
-('M02_NUM10','0','0','WAIT','','','
-    REF_MACHINE(WIP_S02_VIAL);
-    MOV(BFRAME,R_WPARM);
-    SUB(BFRAME,R_BPARM);
-    DIVI(BFRAME,10);
-    SHOW(0,IDS_CITYNUM);','',''),
-('M02_UP1','0','1','CLICK','','','PLAYWAVE(SOUND_CLICK);','',''),
-('M02_UP1','1','0','IFSTATE','M02_LOCKED','WIP_S02_LOCK','','',''),
-('M02_UP1','1','0','Z_EPSILON','','','SIGNAL(WIP_S02_VIAL,SIG_INC1);','',''),
-('M02_UP10','0','1','CLICK','','','PLAYWAVE(SOUND_CLICK);','',''),
-('M02_UP10','1','0','IFSTATE','M02_LOCKED','WIP_S02_LOCK','','',''),
-('M02_UP10','1','0','Z_EPSILON','','','SIGNAL(WIP_S02_VIAL,SIG_INC10);','',''),
-('M02_VIAL','0','10','DRAG','','IDD_SCOOPE','','',''),
-('M02_VIAL','0','22','DRAG','','IDD_SCOOPF','','',''),
-('M02_VIAL','0','5','WAIT','','SIG_INC1','ADDI(WPARM,1);','',''),
-('M02_VIAL','0','5','WAIT','','SIG_DEC1','SUBI(WPARM,1);','',''),
-('M02_VIAL','0','5','WAIT','','SIG_INC10','ADDI(WPARM,10);','',''),
-('M02_VIAL','0','5','WAIT','','SIG_DEC10','SUBI(WPARM,10);','',''),
-('M02_VIAL','10','0','EQUALi','BPARM','','','',''),
-('M02_VIAL','10','0','NOTSTATE','M02_KEYED','WIP_S02_LOCK','','',''),
-('M02_VIAL','10','0','Z_EPSILON','','','
-    SUBI(BPARM,1);
-    PLAYWAVE(SOUND_SLURP);
-    HANDOFF(0,IDD_SCOOPF);
-    SIGNAL(WIP_DISP10,0);
-    SIGNAL(WIP_DISP01,0);','',''),
-('M02_VIAL','22','24','GTE','BPARM','WPARM','','',''),
-('M02_VIAL','22','0','NOTSTATE','M02_LOCKED','WIP_S02_LOCK','','',''),
-('M02_VIAL','22','24','Z_EPSILON','','','
-    ADDI(BPARM,1);
-    PLAYWAVE(SOUND_SPIT);
-    HANDOFF(0,IDD_SCOOPE);','',''),
-('M02_VIAL','24','25','SIGNAL','WIP_DISP10','','','',''),
-('M02_VIAL','25','26','SIGNAL','WIP_DISP01','','','',''),
-('M02_VIAL','26','0','LT','BPARM','WPARM','','',''),
-('M02_VIAL','26','0','Z_EPSILON','','','
-    MOV(WTEMP1,WTHIS);
-    ADDI(WTEMP1,2);
-    SIGNAL(WTEMP1,SIG_OPEN);','',''),
-('M02_VIAL','5','8','LTEi','WPARM','99','','',''),
-('M02_VIAL','5','8','Z_EPSILON','','','ASSIGN(WPARM,99);','',''),
-('M02_VIAL','8','0','Z_EPSILON','','','
-    SIGNAL(WIP_DISP10,0);
-    SIGNAL(WIP_DISP01,0);','',''),
-('M04_BIN','0','1','WAIT','','','
-    ASSIGN(WOBJECT,IDD_CITY_KEY1);
-    SHOW(0,IDS_KEY_IN_BIN);','',''),
-('M04_BIN','1','0','GRAB','','','SHOW(0,0);','',''),
-('M04_KEYCLAMP','0','1','C_ACCEPT','0','IDC_KEY','','',''),
-('M04_KEYCLAMP','1','2','DROP','0','0','
-    SUBI(WOBJECT,IDD_CITY_KEY1);
-    REF_MACHINE(WIP3);
-    MOV(R_BFRAME,WOBJECT);
-    MODI(R_BFRAME,4);
-    DIVI(WOBJECT,4);
-    REF_MACHINE(WIP2);
-    MOV(R_BFRAME,WOBJECT);
-    MODI(R_BFRAME,4);
-    DIVI(WOBJECT,4);
-    REF_MACHINE(WIP1);
-    MOV(R_BFRAME,WOBJECT);
-    SHOW(0,IDS_KEY_CFGWKEY);
-    CLEAR(WOBJECT);','',''),
-('M04_KEYCLAMP','2','1','GRAB','','0','
-    REF_MACHINE(WIP1);
-    MOV(WOBJECT,R_BFRAME);
-    CLEAR(R_BFRAME);
-    MULI(WOBJECT,4);
-    REF_MACHINE(WIP2);
-    ADD(WOBJECT,R_BFRAME);
-    CLEAR(R_BFRAME);
-    MULI(WOBJECT,4);
-    REF_MACHINE(WIP3);
-    ADD(WOBJECT,R_BFRAME);
-    CLEAR(R_BFRAME);
-    ADDI(WOBJECT,IDD_CITY_KEY1);
-    HANDOFF(WOBJECT);
     SHOW();','',''),
+('M02_LOCK','M02_LOCKED','2','DROP','WPARM','','','',''),
+('M02_LOCK','UNLOCKED','2','DROP','','','','',''),
+('M02_NUM1','0','0','WAIT','SIG_SHOW','','
+    REF_MACHINE(WIP1);
+    BFRAME = R_WPARM % 10;
+    if (BFRAME < 0) {BFRAME=0;}
+    if (BFRAME > 9) {BFRAME=9;}
+    SHOW(0,IDS_CITYNUM);','',''),
+('M02_NUM10','0','0','WAIT','SIG_SHOW','','
+    REF_MACHINE(WIP1);
+    BFRAME = R_WPARM / 10 ;
+    if (BFRAME < 0) {BFRAME=0;}
+    if (BFRAME > 9) {BFRAME=9;}
+    SHOW(0,IDS_CITYNUM);','',''),
+('M02_UP1','0','0','CLICK','','','PLAYWAVE(SOUND_CLICK);
+SIGNAL(WIP1,SIG_INC1);','',''),
+('M02_UP10','0','1','CLICK','','','PLAYWAVE(SOUND_CLICK);
+SIGNAL(WIP1,SIG_INC10);','',''),
+('M02_VIAL','0','WITHDRAW','DRAG','','IDD_SCOOPE','','',''),
+('M02_VIAL','0','DEPOSIT','DRAG','','IDD_SCOOPF','','',''),
+('M02_VIAL','0','5','WAIT','','SIG_INC1','if (NOTSTATE(M02_LOCKED,WIP2)) {
+    ADDI(WPARM,1);
+}','',''),
+('M02_VIAL','0','5','WAIT','','SIG_DEC1','if (NOTSTATE(M02_LOCKED,WIP2)) {
+    SUBI(WPARM,1);
+}','',''),
+('M02_VIAL','0','5','WAIT','','SIG_INC10','if (NOTSTATE(M02_LOCKED,WIP2)) {
+    ADDI(WPARM,10);
+}','',''),
+('M02_VIAL','0','5','WAIT','','SIG_DEC10','if (NOTSTATE(M02_LOCKED,WIP2)) {
+    SUBI(WPARM,10);
+}','',''),
+('M02_VIAL','5','0','Z_EPSILON','','','
+if (WPARM >99) WPARM = 99;
+SIGNAL(WIP3,SIG_SHOW);
+SIGNAL(WIP1,SIG_SHOW);','',''),
+('M02_VIAL','DEPOSIT','0','Z_EPSILON','','','
+if (IFSTATE(M02_LOCKED, WIP2)) {
+    if (WPARM>0) {
+        WPARM = WPARM - 1;
+        BPARM = BPARM + 1;
+        PLAYWAVE(SOUND_SPIT);
+        HANDOFF(0,IDD_SCOOPE);
+    }
+    if (WPARM <= 0) {
+        SIGNAL(WIP4, SIG_OPEN);
+    }
+    SIGNAL(WIP1, SIG_SHOW);
+    SIGNAL(WIP3, SIG_SHOW);
+}','',''),
+('M02_VIAL','WITHDRAW','0','Z_EPSILON','','','
+if (IFSTATE(M02_KEYED, WIP2)) {
+    if (BPARM > 0) {
+        BPARM = BPARM - 1;
+        PLAYWAVE(SOUND_SLURP);
+        HANDOFF(0,IDD_SCOOPF);
+    }
+}','',''),
+('M04_BIN','0','1','WAIT','SIG_VEND','','
+    ASSIGN(WOBJECT,IDD_CITY_KEY_0);
+    SHOW(IDS_KEY_IN_BIN);','',''),
+('M04_BIN','1','0','GRAB','','','SHOW(0,0);','',''),
+('M04_KEYCLAMP','0','VACANT','C_ACCEPT','0','IDC_KEY','','',''),
+('M04_KEYCLAMP','OCCUPIED','VACANT','GRAB','','0','
+    SHOW();
+    SIGNAL(WIP1, SIG_HIDE);
+    SIGNAL(WIP2, SIG_HIDE);
+    SIGNAL(WIP3, SIG_HIDE);','',''),
+('M04_KEYCLAMP','OCCUPIED','OCCUPIED','WAIT','','','
+    REF_MACHINE(WIP1);
+    WOBJECT=R_BFRAME*4;
+    REF_MACHINE(WIP2);
+    WOBJECT=(WOBJECT+R_BFRAME)*4;
+    REF_MACHINE(WIP3);
+    WOBJECT = WOBJECT + R_BFRAME;
+    WOBJECT = "IDD_CITY_KEY_"+WOBJECT;','',''),
+('M04_KEYCLAMP','VACANT','OCCUPIED','DROP','0','0','
+WPARM = WOBJECT;
+MAP(WPARM, KEY);
+SIGNAL(WIP1, SIG_SHOW);
+SIGNAL(WIP2, SIG_SHOW);
+SIGNAL(WIP3, SIG_SHOW);
+SHOW(0,IDS_KEY_CFGWKEY);','',''),
 ('M04_SLIDER','0','1','MOV','WSPRITE','WIP1','','',''),
-('M04_SLIDER','1','5','SHOW','WSPRITE','','','',''),
-('M04_SLIDER','10','20','ADDI','BFRAME','1','','',''),
-('M04_SLIDER','20','1','LTEi','BFRAME','3','','',''),
-('M04_SLIDER','20','1','Z_EPSILON','','','ASSIGN(BFRAME,0);','',''),
-('M04_SLIDER','5','10','CLICK','','','','',''),
+('M04_SLIDER','1','idle','SHOW','WSPRITE','','','',''),
+('M04_SLIDER','idle','1','CLICK','','','
+BFRAME = BFRAME + 1;
+if (BFRAME > 3) BFRAME=0;
+SIGNAL(WIP2);','',''),
+('M04_SLIDER','idle','1','WAIT','','SIG_SHOW','
+REF_MACHINE(WIP2);
+BFRAME= (R_WPARM / WIP3);
+MOD(BFRAME,4);','',''),
+('M04_SLIDER','idle','1','WAIT','','SIG_HIDE','BFRAME=0;','',''),
 ('M04_VIAL','0','1','DRAG','0','IDD_SCOOPF','
     PLAYWAVE(SOUND_SLURP);
     HANDOFF(0,IDD_SCOOPE);','',''),
 ('M04_VIAL','1','0','DRAG','0','IDD_SCOOPF','
     PLAYWAVE(SOUND_SLURP);
     HANDOFF(0,IDD_SCOOPE);
-    SIGNALi(0,S04_BIN);','',''),
-('M05_BUBBLE','0','1','WAIT','0','0','','',''),
-('M05_BUBBLE','1','0','VIDEO','0','IDS_CHEMBUBL','','',''),
-('M05_CHEM','0','1','WAIT','0','0','','',''),
-('M05_CHEM','1','2','SHOW','0','IDS_CHEMFILL','','',''),
-('M05_CHEM','2','3','ANIMATE','0','0','','',''),
-('M05_CHEM','20','21','GRAB','0','0','','',''),
-('M05_CHEM','21','22','CLEAR','WOBJECT','','','',''),
-('M05_CHEM','22','23','CLEAR','WSPRITE','','','',''),
-('M05_CHEM','23','0','SHOW','0','0','','',''),
-('M05_CHEM','3','4','REF_MACHINE','WIP1','','','',''),
-('M05_CHEM','4','5','MOV','WOBJECT','R_BFRAME','','',''),
-('M05_CHEM','5','20','ADDI','WOBJECT','IDD_CHEMV01','','',''),
-('M05_DOWN','0','1','CLICK','0','0','','',''),
-('M05_DOWN','1','2','PLAYWAVE','0','SOUND_CLICK','','',''),
-('M05_DOWN','2','0','SIGNAL','WIP1','SIG_DEC1','','',''),
+    SIGNAL(S04_BIN,SIG_VEND);','',''),
+('M05_BUBBLE','0','0','WAIT','0','0','VIDEO(0,IDS_CHEMBUBL);','',''),
+('M05_CHEM','0','20','WAIT','','','
+    SHOW(0,IDS_CHEMFILL);
+    ANIMATE(0,0);
+    REF_MACHINE(WIP1);
+    MOV(WOBJECT,R_BFRAME);
+    MAP(WOBJECT,CHEM_IDDX);','',''),
+('M05_CHEM','20','0','GRAB','','','
+    CLEAR(WOBJECT);
+    CLEAR(WSPRITE);
+    SHOW(0,0);','',''),
+('M05_DOWN','0','0','CLICK','','','
+    PLAYWAVE(0,SOUND_CLICK);
+    SIGNAL(WIP1,SIG_DEC1);','',''),
 ('M05_ICON','0','2','WAIT','0','SIG_INC1','ADDI(BFRAME,1);','',''),
 ('M05_ICON','0','7','WAIT','0','SIG_DEC1','SUBI(BFRAME,1);','',''),
 ('M05_ICON','2','20','GTEi','BFRAME','WIP4','ASSIGN(BFRAME,0);','',''),
 ('M05_ICON','2','20','Z_EPSILON','','','','',''),
 ('M05_ICON','20','0','Z_EPSILON','','','
     SHOW(0,IDS_CHEMS);
-    SIGNAL(WIP1,);
-    SIGNAL(WIP2,);
-    SIGNAL(WIP3,);','',''),
+    SIGNAL(WIP1, SIG_UPDATE);
+    SIGNAL(WIP2, SIG_UPDATE);
+    SIGNAL(WIP3, SIG_UPDATE);','',''),
 ('M05_ICON','7','20','LTi','BFRAME','0','
     ASSIGN(BFRAME,WIP4);
     SUBI  (BFRAME,1);','',''),
 ('M05_ICON','7','20','Z_EPSILON','','','','',''),
-('M05_NUM1','0','1','WAIT','0','0','','',''),
-('M05_NUM1','1','2','REF_MACHINE','WIP1','','','',''),
-('M05_NUM1','2','3','MOV','BFRAME','R_BPARM','','',''),
-('M05_NUM1','3','4','MODI','BFRAME','10','','',''),
-('M05_NUM1','4','0','SHOW','0','IDS_CITYNUM','','',''),
-('M05_NUM10','0','1','WAIT','0','0','','',''),
-('M05_NUM10','1','2','REF_MACHINE','WIP1','','','',''),
-('M05_NUM10','2','3','MOV','BFRAME','R_BPARM','','',''),
-('M05_NUM10','3','4','DIVI','BFRAME','10','','',''),
-('M05_NUM10','4','0','SHOW','0','IDS_CITYNUM','','',''),
-('M05_UP','0','1','CLICK','0','0','','',''),
-('M05_UP','1','2','PLAYWAVE','0','SOUND_CLICK','','',''),
-('M05_UP','2','0','SIGNAL','WIP1','SIG_INC1','','',''),
+('M05_NUM1','0','0','WAIT','SIG_UPDATE','','
+    REF_MACHINE(WIP1);
+    MOV(BFRAME,R_BPARM);
+    MODI(BFRAME,10);
+    SHOW(0,IDS_CITYNUM);','',''),
+('M05_NUM10','0','0','WAIT','SIG_UPDATE','','
+    REF_MACHINE(WIP1);
+    MOV(BFRAME,R_BPARM);
+    DIVI(BFRAME,10);
+    SHOW(0,IDS_CITYNUM);','',''),
+('M05_UP','0','0','CLICK','','','
+    PLAYWAVE(0,SOUND_CLICK);
+    SIGNAL(WIP1,SIG_INC1);','',''),
 ('M05_VIAL','0','7','CLICK','0','0','','',''),
 ('M05_VIAL','0','1','DRAG','0','IDD_SCOOPF','','',''),
-('M05_VIAL','0','0','WAIT','0','0','
+('M05_VIAL','0','0','WAIT','SIG_UPDATE','','
     REF_MACHINE(WIP3);
     MOV(BPARM,R_BFRAME);
     MAPi(BPARM,CHEMCOST);','',''),
@@ -280,46 +291,70 @@ insert into transitions ([automaton], [state], [new_state], [opcode], [param_1],
     SIGNAL(WIP2);
     SUB(WPARM,BPARM);','',''),
 ('M05_VIAL','7','0','Z_EPSILON','','','','',''),
-('M06_CYCLE_COMP1','0','10','WAIT','','SIG_INC1','REF_MACHINE(WIP1);MOV(BFRAME,R_WPARM);','',''),
-('M06_CYCLE_COMP1','0','10','WAIT','','SIG_DEC1','REF_MACHINE(WIP1);MOV(BFRAME,R_WPARM);','',''),
-('M06_CYCLE_COMP1','0','10','WAIT','','SIG_SHOW','REF_MACHINE(WIP1);MOV(BFRAME,R_WPARM);','',''),
-('M06_CYCLE_COMP1','10','11','MOV','WTEMP1','BFRAME',' MAPi(WTEMP1,S06_COMPONENTA);','',''),
-('M06_CYCLE_COMP1','11','12','MOV','WTEMP2','WTEMP1','MAPi(WTEMP2,S06_CHEMFILMSTRIP);','',''),
-('M06_CYCLE_COMP1','12','0','MOV','BFRAME','WTEMP2','SHOW(0,IDS_CHEMS);','',''),
-('M06_CYCLE_COMP2','0','10','WAIT','','SIG_INC1','REF_MACHINE(WIP1);MOV(BFRAME,R_WPARM);','',''),
-('M06_CYCLE_COMP2','0','10','WAIT','','SIG_DEC1','REF_MACHINE(WIP1);MOV(BFRAME,R_WPARM);','',''),
-('M06_CYCLE_COMP2','0','10','WAIT','','SIG_SHOW','ASSIGN(BFRAME,6);REF_MACHINE(WIP1);MOV(BFRAME,R_WPARM);','',''),
-('M06_CYCLE_COMP2','10','11','MOV','WTEMP1','BFRAME',' MAPi(WTEMP1,S06_COMPONENTB);','',''),
-('M06_CYCLE_COMP2','11','12','MOV','WTEMP2','WTEMP1','MAPi(WTEMP2,S06_CHEMFILMSTRIP);','',''),
-('M06_CYCLE_COMP2','12','0','MOV','BFRAME','WTEMP2','SHOW(0,IDS_CHEMS);','',''),
-('M06_CYCLE_COMP3','0','10','WAIT','','SIG_INC1','REF_MACHINE(WIP1);MOV(BFRAME,R_WPARM);','',''),
-('M06_CYCLE_COMP3','0','10','WAIT','','SIG_DEC1','REF_MACHINE(WIP1);MOV(BFRAME,R_WPARM);','',''),
-('M06_CYCLE_COMP3','0','10','WAIT','','SIG_SHOW','ASSIGN(BFRAME,6);REF_MACHINE(WIP1);MOV(BFRAME,R_WPARM);','',''),
-('M06_CYCLE_COMP3','10','11','MOV','WTEMP1','BFRAME',' MAPi(WTEMP1,S06_COMPONENTC);','',''),
-('M06_CYCLE_COMP3','11','0','MOV','BFRAME','WTEMP1','SUBI(BFRAME,1);SHOW(0,IDS_VIALCNT);','',''),
-('M06_CYCLE_TEMPL_ANIM','0','1','WAIT','','SIG_INC1','SHOW(0,IDS_MACHANI);ANIMATE();PLAYWAVE(SOUND_RATCHET);SIGNAL(WIP1,SIG_INC1);','',''),
-('M06_CYCLE_TEMPL_ANIM','0','1','WAIT','','SIG_DEC1','SHOW(0,IDS_MACHANI);ANIMATE(0,V_REVERSE);PLAYWAVE(SOUND_RATCHET); SIGNAL(WIP1,SIG_DEC1);','',''),
-('M06_CYCLE_TEMPL_ANIM','1','0','Z_EPSILON','','','','',''),
-('M06_CYCLE_TEMPL_DN_BTN','0','0','CLICK','','','PLAYWAVE(SOUND_CLICK); SIGNAL(WIP1,SIG_DEC1);','',''),
-('M06_CYCLE_TEMPL_UP_BTN','0','0','CLICK','','','PLAYWAVE(SOUND_CLICK); SIGNAL(WIP1,SIG_INC1);','',''),
-('M06_CYCLE_VIEW','0','1','ASSIGN','WPARM','0','','',''),
-('M06_CYCLE_VIEW','1','2','MOV','WOBJECT','WPARM','MAPi(WOBJECT,S06_MAN_OBJECTS);ASHOW(WOBJECT); SIGNAL(WIP1,SIG_DEC1);SIGNAL(WIP2,SIG_DEC1);SIGNAL(WIP3,SIG_DEC1);','',''),
-('M06_CYCLE_VIEW','10','2','GTEi','WPARM','24','ASSIGN(WPARM,24);','',''),
-('M06_CYCLE_VIEW','10','11','MOV','WOBJECT','WPARM','MAPi(WOBJECT,S06_MAN_OBJECTS);ASHOW(WOBJECT);SIGNAL(WIP1,SIG_INC1);SIGNAL(WIP2,SIG_INC1);SIGNAL(WIP3,SIG_INC1);','',''),
-('M06_CYCLE_VIEW','11','2','Z_EPSILON','','','','',''),
-('M06_CYCLE_VIEW','2','10','WAIT','','SIG_INC1',' ADDI(WPARM,1);','',''),
-('M06_CYCLE_VIEW','2','20','WAIT','','SIG_DEC1',' SUBI(WPARM,1);','',''),
-('M06_CYCLE_VIEW','2','30','WAIT','','SIG_SHOW','REF_MACHINE(WIP4);','',''),
-('M06_CYCLE_VIEW','20','2','LTi','WPARM','0','ASSIGN(WPARM,0);','',''),
-('M06_CYCLE_VIEW','20','21','MOV','WOBJECT','WPARM','MAPi(WOBJECT,S06_MAN_OBJECTS);ASHOW(WOBJECT); SIGNAL(WIP1,SIG_DEC1);SIGNAL(WIP2,SIG_DEC1);SIGNAL(WIP3,SIG_DEC1);','',''),
-('M06_CYCLE_VIEW','21','2','Z_EPSILON','','','','',''),
-('M06_CYCLE_VIEW','30','31','MOV','WPARM','R_WPARM','','',''),
-('M06_CYCLE_VIEW','31','2','MOV','WOBJECT','R_WPARM','MAPi(WOBJECT,S06_MAN_OBJECTS);ASHOW(WOBJECT);','',''),
-('M06_EJECT_CARD_ANIM','0','5','WAIT','','SIG_EJECT','','',''),
-('M06_EJECT_CARD_ANIM','11','20','MOV','WOBJECT','R_WPARM','MAPi(WOBJECT,S06_CARD_INDEX);','',''),
+('M06_CYCLE_COMP1','0','10','WAIT','','SIG_INC1','','',''),
+('M06_CYCLE_COMP1','0','10','WAIT','','SIG_DEC1','','',''),
+('M06_CYCLE_COMP1','0','10','WAIT','','SIG_SHOW','','',''),
+('M06_CYCLE_COMP1','10','0','Z_EPSILON','','','REF_MACHINE(WIP1);
+BFRAME = R_WPARM;
+MAPi(BFRAME,S06_COMPONENTA);
+MAPi(BFRAME,S06_CHEMFILMSTRIP);
+SHOW(0,IDS_CHEMS);','',''),
+('M06_CYCLE_COMP2','0','10','WAIT','','SIG_INC1','','',''),
+('M06_CYCLE_COMP2','0','10','WAIT','','SIG_DEC1','','',''),
+('M06_CYCLE_COMP2','0','10','WAIT','','SIG_SHOW','','',''),
+('M06_CYCLE_COMP2','10','0','Z_EPSILON','','','REF_MACHINE(WIP1);
+BFRAME = R_WPARM;
+MAPi(BFRAME,S06_COMPONENTB);
+MAPi(BFRAME,S06_CHEMFILMSTRIP);
+SHOW(0,IDS_CHEMS);','',''),
+('M06_CYCLE_COMP3','0','10','WAIT','','SIG_INC1','','',''),
+('M06_CYCLE_COMP3','0','10','WAIT','','SIG_DEC1','','',''),
+('M06_CYCLE_COMP3','0','10','WAIT','','SIG_SHOW','','',''),
+('M06_CYCLE_COMP3','10','0','Z_EPSILON','','','REF_MACHINE(WIP1);
+BFRAME = R_WPARM;
+MAPi(BFRAME,S06_COMPONENTC);
+MAPi(BFRAME,S06_CHEMFILMSTRIP);
+SHOW(0,IDS_VIALCNT);','',''),
+('M06_CYCLE_TEMPL_ANIM','0','0','WAIT','','SIG_INC1','SHOW(0,IDS_MACHANI);
+ANIMATE();
+PLAYWAVE(SOUND_RATCHET);
+SIGNAL(WIP1,SIG_INC1);','',''),
+('M06_CYCLE_TEMPL_ANIM','0','0','WAIT','','SIG_DEC1','SHOW(0,IDS_MACHANI);
+ANIMATE(0,V_REVERSE);
+PLAYWAVE(SOUND_RATCHET);
+SIGNAL(WIP1,SIG_DEC1);','',''),
+('M06_CYCLE_TEMPL_DN_BTN','0','0','CLICK','','','PLAYWAVE(SOUND_CLICK);
+SIGNAL(WIP1,SIG_DEC1);','',''),
+('M06_CYCLE_TEMPL_UP_BTN','0','0','CLICK','','','PLAYWAVE(SOUND_CLICK);
+SIGNAL(WIP1,SIG_INC1);','',''),
+('M06_CYCLE_VIEW','0','1','Z_EPSILON','','','WPARM=0;
+SIGNAL(WIP1,SIG_DEC1);
+SIGNAL(WIP2,SIG_DEC1);
+SIGNAL(WIP3,SIG_DEC1);','',''),
+('M06_CYCLE_VIEW','1','2','Z_EPSILON','','','WOBJECT=WPARM;
+MAPi(WOBJECT,S06_MAN_OBJECTS);
+ASHOW(WOBJECT,CURSOR);
+','',''),
+('M06_CYCLE_VIEW','2','1','WAIT','','SIG_INC1','WPARM = WPARM + 1;
+if (WPARM > 23) {WPARM=0;}
+SIGNAL(WIP1,SIG_INC1);
+SIGNAL(WIP2,SIG_INC1);
+SIGNAL(WIP3,SIG_INC1);','',''),
+('M06_CYCLE_VIEW','2','1','WAIT','','SIG_DEC1','SUBI(WPARM,1);
+if (WPARM<0) {WPARM=23;}
+SIGNAL(WIP1,SIG_DEC1);
+SIGNAL(WIP2,SIG_DEC1);
+SIGNAL(WIP3,SIG_DEC1);','',''),
+('M06_CYCLE_VIEW','2','1','WAIT','','SIG_SHOW','REF_MACHINE(WIP4);
+WPARM=R_WPARM;','',''),
+('M06_EJECT_CARD_ANIM','0','20','WAIT','','SIG_EJECT','
+SHOW(0,IDS_CARDANI);
+ANIMATE(0);
+PLAYWAVE(SOUND_CARDEJECT);
+REF_MACHINE(WIP1);
+WOBJECT=R_WPARM;
+MAPi(WOBJECT,S06_CARD_INDEX);','',''),
 ('M06_EJECT_CARD_ANIM','20','0','GRAB','WOBJECT','','CLEAR(WSPRITE); SHOW(0);','',''),
-('M06_EJECT_CARD_ANIM','5','7','SHOW','0','IDS_CARDANI','ANIMATE(0);PLAYWAVE(SOUND_CARDEJECT);','',''),
-('M06_EJECT_CARD_ANIM','7','11','MOV','WOBJECT','IDD_CARD01','REF_MACHINE(WIP1);','',''),
 ('M06_EJECT_CARD_BTN','0','0','CLICK','','','PLAYWAVE(SOUND_CLICK);SIGNAL(WIP1, SIG_EJECT);','',''),
 ('M06_EJECT_TEMPL_ANIM','0','1','C_ACCEPT','','IDC_TEMPLATE','','',''),
 ('M06_EJECT_TEMPL_ANIM','1','30','DROP','','','','',''),
@@ -486,7 +521,9 @@ insert into transitions ([automaton], [state], [new_state], [opcode], [param_1],
 ('M10_DRYPIT','21','25','GTEi','BPARM','1','
     PLAYWAVE(SOUND_SLURP);
     SUBI(BPARM,1);
-    HANDOFF(0,IDD_SCOOPF);','',''),
+    HANDOFF(0,IDD_SCOOPF);
+    ADDI(LKARMA,1);
+    SIGNAL(SID_HALO,SIG_ADD);','',''),
 ('M10_DRYPIT','21','10','Z_EPSILON','0','','','',''),
 ('M10_DRYPIT','25','0','EQUALi','BPARM','MAX_DRYPIT-1','SIGNALi(SIG_CLOSE,S10_FLOWER);','',''),
 ('M10_DRYPIT','25','0','Z_EPSILON','','','','',''),
@@ -512,46 +549,73 @@ insert into transitions ([automaton], [state], [new_state], [opcode], [param_1],
     PLAYWAVE(SOUND_BUZZFUZZ);
     SHOW(0,IDS_FLOPN1);
     ANIMATE(0,V_REVERSE);','',''),
-('M11_ASCENT','0','1','WAIT','0','0','','',''),
-('M11_ASCENT','1','2','SHOW','0','IDS_SPIRIT0','','',''),
-('M11_ASCENT','2','3','ANIMATE','0','0','','',''),
-('M11_ASCENT','3','4','ESTIME','0','4','','',''),
-('M11_ASCENT','3','4','GRAB','0','IDD_SPRINGS','','',''),
-('M11_ASCENT','4','5','CLEAR','WOBJECT','','','',''),
-('M11_ASCENT','5','6','CLEAR','WPARM','','','',''),
-('M11_ASCENT','6','7','CLEAR','WSPRITE','','','',''),
-('M11_ASCENT','7','0','SHOW','0','0','','',''),
-('M11_FIRE','0','1','DROP','0','IDD_LOG','','',''),
-('M11_FIRE','1','2','PLAYWAVE','0','SOUND_CLUNK','','',''),
-('M11_FIRE','2','20','SHOW','0','IDS_FISHWOOD','','',''),
-('M11_FIRE','20','21','DRAG','0','IDD_MATCH','','',''),
-('M11_FIRE','20','0','GRAB','0','0','','',''),
-('M11_FIRE','21','22','SHOW','0','IDS_BURNWOOD','','',''),
-('M11_FIRE','22','30','ANIMATE','0','V_LOOP|V_REWIND','','',''),
-('M11_FIRE','30','31','ADDI','WPARM','BURN_TIME','','',''),
-('M11_FIRE','31','32','CLEAR','DETIME','','','',''),
-('M11_FIRE','32','40','PLAYWAVE','0','SOUND_FIRE','','',''),
-('M11_FIRE','40','50','DROP','0','IDD_WATER','','',''),
-('M11_FIRE','40','30','DROP','0','IDD_LOG','','',''),
-('M11_FIRE','40','50','ESTIME','WPARM','','','',''),
-('M11_FIRE','50','51','CLEAR','WOBJECT','','','',''),
-('M11_FIRE','51','52','CLEAR','WSPRITE','','','',''),
-('M11_FIRE','52','53','CLEAR','WPARM','','','',''),
-('M11_FIRE','53','54','SHOW','0','0','','',''),
-('M11_FIRE','54','0','STOPWAVE','0','0','','',''),
-('M11_GRILL','0','1','C_ACCEPT','0','IDC_FISH','','',''),
-('M11_GRILL','1','10','DROP','0','0','','',''),
-('M11_GRILL','10','20','SHOW','WOBJECT','','','',''),
-('M11_GRILL','20','50','ANIMATE','0','V_LOOP','','',''),
-('M11_GRILL','50','60','ESTIME','0','FISH_BURN_TIME','','',''),
-('M11_GRILL','50','80','GRAB','0','0','','',''),
-('M11_GRILL','60','61','MAP_OBJ','0','OP_BURN','','',''),
-('M11_GRILL','60','50','NOTSTATE','ON_FIRE','WIP1','','',''),
-('M11_GRILL','61','62','SHOW','0','IDS_FISHASH','','',''),
-('M11_GRILL','62','63','PLAYWAVE','0','SOUND_FIRE','','',''),
-('M11_GRILL','63','70','SIGNAL','WIP2','','','',''),
-('M11_GRILL','70','80','GRAB','0','0','','',''),
-('M11_GRILL','80','1','SHOW','0','0','','',''),
+('M11_ASCENT','0','3','WAIT','0','SIG_BURNED','
+   SHOW(IDS_SPIRIT0);
+   ANIMATE();
+   ESTIME(4);
+ ','',''),
+('M11_ASCENT','3','0','GRAB','0','IDD_SPRINGS','
+   CLEAR(WOBJECT);
+   CLEAR(WPARM);
+   CLEAR(WSPRITE);
+   SHOW();
+ ','',''),
+('M11_FIRE','0','logLoaded','DROP','0','IDD_LOG','
+    PLAYWAVE(SOUND_CLUNK);
+    SHOW(0,IDS_FISHWOOD);
+    ASSIGN(BPARM,0);
+ ','',''),
+('M11_FIRE','addLog','burning','ADDI','WPARM','BURN_TIME','','',''),
+('M11_FIRE','burning','addLog','DROP','0','IDD_LOG','','',''),
+('M11_FIRE','burning','extinguished','DROP','0','IDD_BUCKF','
+   PLAYWAVE(SOUND_SPLASH);
+   ASSIGN(BPARM,0);
+   HANDOFF(IDD_BUCKE);
+   SIGNAL(WIP1, SIG_EXTINGUISHED);
+ ','',''),
+('M11_FIRE','burning','extinguished','ESTIME','WPARM','','
+   ASSIGN(BPARM,0);
+   CLEAR(DETIME);
+ ','',''),
+('M11_FIRE','extinguished','0','CLEAR','WOBJECT','','
+    CLEAR(WSPRITE);
+    CLEAR(WPARM);
+    SHOW();
+    STOPWAVE();
+ ','',''),
+('M11_FIRE','logLoaded','burning','DRAG','0','IDD_MATCH','
+    ASHOW(IDS_BURNWOOD,V_LOOP);
+    ADDI(WPARM,BURN_TIME);
+    ASSIGN(BPARM,1); //for others to reference
+    SIGNAL(WIP1, SIG_FIRE);
+    CLEAR(DETIME);
+    PLAYWAVE(SOUND_FIRE);
+ ','',''),
+('M11_FIRE','logLoaded','0','GRAB','0','0','','',''),
+('M11_GRILL','0','emptyGrill','C_ACCEPT','0','IDC_FISH','
+    REF_MACHINE(WIP1);
+ ','',''),
+('M11_GRILL','burned','takenAsh','GRAB','0','0','','',''),
+('M11_GRILL','burning','burned','ESTIME','0','FISH_BURN_TIME','
+    MAP_OBJ(0,OP_BURN);
+    SHOW(IDS_FISHASH);
+    PLAYWAVE(SOUND_FIRE); 
+    //Cast off soul
+    SIGNAL(WIP2,SIG_BURNED);
+ ','',''),
+('M11_GRILL','burning','fishOnGrill','WAIT','','SIG_EXTINGUISHED','
+   CLEAR(DETIME);
+ ','',''),
+('M11_GRILL','emptyGrill','fishOnGrill','DROP','0','0','
+    SHOW(WOBJECT);
+    ANIMATE(0,V_LOOP);
+ ','',''),
+('M11_GRILL','fishOnGrill','burning','EQUAL','R_BPARM','1','','',''),
+('M11_GRILL','fishOnGrill','emptyGrill','GRAB','0','0','
+    SHOW();
+ ','',''),
+('M11_GRILL','fishOnGrill','burning','WAIT','','SIG_FIRE','','',''),
+('M11_GRILL','takenAsh','emptyGrill','SHOW','0','0','','',''),
 ('M12_ASHSHELF','0','10','C_ACCEPT','0','IDC_FISHASH','','',''),
 ('M12_ASHSHELF','10','11','DROP','0','0','','',''),
 ('M12_ASHSHELF','11','12','SHOW','WOBJECT','','','',''),
@@ -626,7 +690,6 @@ if (BPARM == BFRAME) {
                 BPARM = 0; // --BPARM GOES TO ZERO AS THE NYSTROM CATCHES FIRE
         }
     }
-}
 ','',''),
 ('M12_xCANDLE','0','0','DRAG','0','IDD_SCOOPF','
 /*   BFRAME is how much for the spell
@@ -681,7 +744,7 @@ if (  (IFSTATE('ready', WIP1) || IFSTATE('0', WIP1))
         WPARM=1;
 }','',''),
 ('M12_xMAGIC','0','10','WAIT','','SIG_SHOW','','',''),
-('M12_xMAGIC','10','11','VIDEO','','IDS_RAIN','','',''),
+('M12_xMAGIC','10','11','VIDEO','','IDS_SPEFFECT','','',''),
 ('M12_xMAGIC','11','0','Z_EPSILON','','','','',''),
 ('M12_xNYSTROMADDED','0','0','WAIT','','SIG_HIDE','SHOW();','',''),
 ('M12_xNYSTROMADDED','0','0','WAIT','','SIG_SHOW','SHOW(IDS_CANGRN1);','',''),
@@ -728,11 +791,30 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M16_BLOBDROP','3','4','MOV','WSPRITE','WIP1','','',''),
 ('M16_BLOBDROP','4','0','SHOW','WSPRITE','','','',''),
 ('M16_BLOBDROP','5','0','Z_EPSILON','','','','',''),
-('M16_BLOBHOLDER','0','ballpresent','SHOW','0','IDD_BLOBBALL','ACCEPT(IDD_BLOBBALL);','',''),
+('M16_BLOBHOLDER','0','ballpresent','ACCEPT','','IDD_BLOBBALL','
+    MOV(WOBJECT,IDD_BLOBBALL);
+    SHOW(WOBJECT);
+','',''),
 ('M16_BLOBHOLDER','ballempty','0','DROP','','','','',''),
+('M16_BLOBHOLDER','ballempty','resetting','WAIT','','SIG_RESET','','',''),
+('M16_BLOBHOLDER','ballempty','resetting','WAIT','','SIG_RESET','','',''),
+('M16_BLOBHOLDER','ballempty','resetting','WAIT','','SIG_RESET','','',''),
+('M16_BLOBHOLDER','ballempty','resetting','WAIT','','SIG_RESET','','',''),
 ('M16_BLOBHOLDER','ballempty','resetting','WAIT','','SIG_RESET','','',''),
 ('M16_BLOBHOLDER','ballpresent','ballempty','GRAB','','IDD_BLOBBALL','SHOW();','',''),
 ('M16_BLOBHOLDER','resetting','0','Z_EPSILON','','','','',''),
+('M16_BLOBHOLDER','resetting','0','Z_EPSILON','','','','',''),
+('M16_BLOBHOLDER','resetting','0','Z_EPSILON','','','','',''),
+('M16_BLOBHOLDER','resetting','0','Z_EPSILON','','','','',''),
+('M16_BLOBHOLDER','resetting','0','Z_EPSILON','','','','',''),
+('M16_BLOBHOLDER_E','0','ballempty','ACCEPT','','IDD_BLOBBALL','','',''),
+('M16_BLOBHOLDER_E','ballempty','ballholding','DROP','','','
+    MOV(WOBJECT,IDD_BLOBBALL);
+    SHOW(WOBJECT); 
+','',''),
+('M16_BLOBHOLDER_E','ballempty','resetting','WAIT','','SIG_RESET','','',''),
+('M16_BLOBHOLDER_E','ballholding','ballempty','GRAB','','IDD_BLOBBALL','SHOW();','',''),
+('M16_BLOBHOLDER_E','resetting','0','Z_EPSILON','','','','',''),
 ('M16_BLOBHOLE','0','2','O_ACCEPT','0','IDD_BLOBBALL','','',''),
 ('M16_BLOBHOLE','2','0','DROP','0','0','SHOW();','',''),
 ('M16_BLOBRESET','0','0','CLICK','0','','
@@ -757,10 +839,30 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
    SIGNAL(S16_BLOBFILL3,SIG_RESET);
    SIGNAL(S16_BLOBFILL4,SIG_RESET);
    SIGNAL(S16_BLOBFILL5,SIG_RESET); ','',''),
+('M16_COMBINER','0','ready','O_ACCEPT','0','IDD_DICE','
+    SHOW();
+    ASSIGN(WPARM,0);
+    REF_MACHINE(WIP3);
+','',''),
+('M16_COMBINER','holding','0','GRAB','','','SHOW();SIGNAL(WIP3,SIG_CLOSE);','',''),
+('M16_COMBINER','holding','0','WAIT','0','SIG_CLOSE','','',''),
+('M16_COMBINER','ready','holding','DROP','0','0','
+        if(R_WPARM == 1){
+            ASSIGN(WPARM,2);
+            ASSIGN(WOBJECT,WIP2);
+            SHOW(WOBJECT);
+        }
+        if(R_WPARM == 0){
+            ASSIGN(WPARM,1);
+            ASSIGN(WOBJECT,WIP1);
+            SHOW(WOBJECT);
+         
+        }    
+','',''),
 ('M16_DICEDROP','0','2','O_ACCEPT','0','IDD_SHAKE','','',''),
 ('M16_DICEDROP','2','0','DRAG','0','0','PLAYWAVE(SOUND_DICESHAKE);','',''),
 ('M16_DICEDROP','2','3','DROP','0','0','SIGNAL(WIP1,SIG_SHOW);','',''),
-('M16_DICEDROP','3','0','ESTIME','','.5','SIGNAL(WIP2,SIG_SHOW);','',''),
+('M16_DICEDROP','3','0','ESTIME','','1','SIGNAL(WIP2,SIG_SHOW);','',''),
 ('M16_DICEROLL','0','2','WAIT','0','SIG_SHOW','PLAYWAVE(SOUND_DICEROLL);','',''),
 ('M16_DICEROLL','2','4','MOV','WSPRITE','WIP1','','',''),
 ('M16_DICEROLL','4','5','ASHOW','WSPRITE','V_LOOP','','',''),
@@ -783,7 +885,7 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M16_DIEROLL','0','2','O_ACCEPT','0','IDD_DICE','','',''),
 ('M16_DIEROLL','2','3','DROP','0','0','','',''),
 ('M16_DIEROLL','3','4','MOV','WSPRITE','WIP1','','',''),
-('M16_DIEROLL','4','5','ASHOW','WSPRITE','V_LOOP','','',''),
+('M16_DIEROLL','4','5','ASHOW','WSPRITE','V_LOOP','PLAYWAVE(SOUND_ONEDIEROLL);','',''),
 ('M16_DIEROLL','5','6','ESTIME','','2','','',''),
 ('M16_DIEROLL','6','7','RAND','6','1','','',''),
 ('M16_DIEROLL','7','8','MOV','BFRAME','WRAND','
@@ -796,7 +898,7 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
     ASHOW(WSPRITE);
     /* BPARM = what you payed
     WPARM = Total owed 
-    l*/
+    */
     ASSIGN(BPARM,0); 
     ASSIGN(WPARM,WIP2);
 ','',''),
@@ -805,59 +907,70 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
     PLAYWAVE(0,SOUND_SPIT);
     ADDI(BPARM,1); 
 ','',''),
-('M16_PAYBUCKET','accept_pay','0','WAIT','SIGNAL','SIG_OFF','SHOW();','',''),
+('M16_PAYBUCKET','accept_pay','0','WAIT','0','SIG_OFF','
+    CLEAR(WSPRITE);
+    SHOW();
+    ','',''),
 ('M16_PAYBUCKET','check_scoop','paid_in_full','EQUAL','BPARM','WPARM','','',''),
 ('M16_PAYBUCKET','check_scoop','accept_pay','Z_EPSILON','','','','',''),
 ('M16_PAYBUCKET','paid_in_full','0','Z_EPSILON','','','
     PLAYWAVE(0,SOUND_LEVER);
     ASHOW();
 ','',''),
-('M16_PAYGRAB','0','open_bin','WAIT','SIGNAL','SIG_OPEN','REF_MACHINE(WIP2);','',''),
+('M16_PAYGRAB','0','open_bin','WAIT','0','SIG_OPEN','REF_MACHINE(WIP2);','',''),
 ('M16_PAYGRAB','open_bin','0','GRAB','WIP1','','
     if(R_WPARM != R_BPARM){
-        SUB(LKARMA,4);
+        ADDI(LKARMA,1);
+        SIGNAL(SID_HALO,SIG_ADD);
         PLAYWAVE(0,SOUND_CLUNK);
     }
     SIGNAL(WIP3,SIG_OFF);
     SIGNAL(WIP2,SIG_OFF);
 ','',''),
-('M16_PAYGRAB','open_bin','0','WAIT','SIGNAL','SIG_CLOSE','','',''),
-('M16_PAYSTAMP','0','startframe','ASSIGN','BFRAME','1','','',''),
+('M16_PAYGRAB','open_bin','0','WAIT','0','SIG_CLOSE','','',''),
+('M16_PAYSTAMP','0','startframe','ASSIGN','BFRAME','1','CLEAR(WSPRITE);','',''),
 ('M16_PAYSTAMP','readyToPay','waiting','CLICK','','','SHOW(WSPRITE);ANIMATE(0,V_REVERSE);SIGNAL(WIP2,SIG_OFF);SIGNAL(WIP3,SIG_CLOSE);PLAYWAVE(0,SOUND_CHAIN);','',''),
 ('M16_PAYSTAMP','readyToPay','0','WAIT','0','SIG_OFF','','',''),
 ('M16_PAYSTAMP','startframe','waiting','SHOW','WIP1','','','',''),
-('M16_PAYSTAMP','waiting','readyToPay','CLICK','','','SHOW(WSPRITE);ANIMATE(); SIGNAL(WIP2,SIG_ON);SIGNAL(WIP3,SIG_OPEN);PLAYWAVE(0,SOUND_CHAIN);','',''),
-('M16_POTTERYCHECK','0','0','WAIT','0','SIG_CHECK','
+('M16_PAYSTAMP','waiting','readyToPay','CLICK','','','SHOW(WSPRITE); ANIMATE(); SIGNAL(WIP2,SIG_ON);SIGNAL(WIP3,SIG_OPEN);PLAYWAVE(0,SOUND_CHAIN);','',''),
+('M16_POTTERY','0','1','MOV','WSPRITE','WIP1','SHOW(WSPRITE);','',''),
+('M16_POTTERYCHECK','0','validate','WAIT','0','SIG_CHECK','
     ASSIGN(WPARM,0);
-    REF_MACHINE(S16_POTTERY1);
+    REF_MACHINE(S16_POTTERYDROP1);
     ADD(WPARM,R_WPARM);
-    REF_MACHINE(S16_POTTERY2);
+    REF_MACHINE(S16_POTTERYDROP2);
     ADD(WPARM,R_WPARM);
-    REF_MACHINE(S16_POTTERY3);
+    REF_MACHINE(S16_POTTERYDROP3);
     ADD(WPARM,R_WPARM);
-    REF_MACHINE(S16_POTTERY4);
+    REF_MACHINE(S16_POTTERYDROP4);
     ADD(WPARM,R_WPARM);
-    REF_MACHINE(S16_POTTERY5);
+    REF_MACHINE(S16_POTTERYDROP5);
     ADD(WPARM,R_WPARM);
-    REF_MACHINE(S16_POTTERY6);
+    REF_MACHINE(S16_POTTERYDROP6);
     ADD(WPARM,R_WPARM);
     //Check to see if we have the 6 required talismen
-    if(WPARM == 6){
-         PLAYWAVE(SOUND_BUZZFUZZ);
-         //signal reset to all the potterys and increase everyones health
-          SIGNAL(S16_POTTERY1,SIG_RESET);
-          SIGNAL(S16_POTTERY2,SIG_RESET);
-          SIGNAL(S16_POTTERY3,SIG_RESET);
-          SIGNAL(S16_POTTERY4,SIG_RESET);
-          SIGNAL(S16_POTTERY5,SIG_RESET);
-          SIGNAL(S16_POTTERY6,SIG_RESET);
-          }
+    ','',''),
+('M16_POTTERYCHECK','success','0','Z_EPSILON','','','
+        PLAYWAVE(SOUND_CHIMES);
+        SIGNAL(S16_POTTERYDROP1,SIG_RESET);
+        SIGNAL(S16_POTTERYDROP2,SIG_RESET);
+        SIGNAL(S16_POTTERYDROP3,SIG_RESET);
+        SIGNAL(S16_POTTERYDROP4,SIG_RESET);
+        SIGNAL(S16_POTTERYDROP5,SIG_RESET);
+        SIGNAL(S16_POTTERYDROP6,SIG_RESET);    
 ','',''),
-('M16_POTTERYDROP','0','1','ACCEPT','WIP2','','','',''),
-('M16_POTTERYDROP','1','waitForDrop','MOV','WSPRITE','WIP1','SHOW(WSPRITE);','',''),
-('M16_POTTERYDROP','containTalisman','checkAllPots','SIGNAL','WIP3','SIG_CHECK','','',''),
-('M16_POTTERYDROP','containTalisman','waitForDrop','WAIT','0','SIG_RESET','','',''),
-('M16_POTTERYDROP','waitForDrop','containTalisman','DROP','0','0','ASSIGN(WPARM,1);','',''),
+('M16_POTTERYCHECK','validate','success','EQUAL','WPARM','6','','',''),
+('M16_POTTERYCHECK','validate','0','Z_EPSILON','','','','',''),
+('M16_POTTERYDROP','0','waitForDrop','ACCEPT','WIP2','','','',''),
+('M16_POTTERYDROP','containTalisman','showSparkle','Z_EPSILON','','','
+    SIGNAL(WIP3,SIG_CHECK); 
+','',''),
+('M16_POTTERYDROP','showSparkle','waitForReset','ASHOW','0','IDS_SPARKLE','','',''),
+('M16_POTTERYDROP','waitForDrop','containTalisman','DROP','0','0','
+    ASSIGN(WPARM,1);
+    PLAYWAVE(SOUND_CLINK);
+    ','',''),
+('M16_POTTERYDROP','waitForReset','waitForDrop','WAIT','0','SIG_RESET','ASHOW();ASSIGN(WPARM,0);','',''),
 ('M17_DOORWAY','0','50','CLICK','0','0','','',''),
 ('M17_DOORWAY','0','1','WAIT','0','SIG_CLOSE','','',''),
 ('M17_DOORWAY','1','2','SIGNAL','WIP2','SIG_ON','','',''),
@@ -882,44 +995,339 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M17_FOULWIND','4','0','NEQUALi','LVIEW','WIP1','','',''),
 ('M17_FOULWIND','4','0','SIGNALi','0','SID_DEC_ENERGY','','',''),
 ('M17_LOCKBURN','0','1','WAIT','0','SIG_BURN','','',''),
+('M17_LOCKBURN','0','1','WAIT','0','SIG_BURN','','',''),
+('M17_LOCKBURN','0','5','WAIT','0','SIG_HIDE','','',''),
+('M17_LOCKBURN','0','1','WAIT','0','SIG_BURN','','',''),
+('M17_LOCKBURN','0','5','WAIT','0','SIG_HIDE','','',''),
+('M17_LOCKBURN','0','1','WAIT','0','SIG_BURN','','',''),
+('M17_LOCKBURN','0','5','WAIT','0','SIG_HIDE','','',''),
+('M17_LOCKBURN','0','1','WAIT','0','SIG_BURN','','',''),
+('M17_LOCKBURN','0','5','WAIT','0','SIG_HIDE','','',''),
+('M17_LOCKBURN','1','2','SHOW','0','IDS_MINEBLOW','','',''),
+('M17_LOCKBURN','1','2','SHOW','0','IDS_MINEBLOW','','',''),
+('M17_LOCKBURN','1','2','SHOW','0','IDS_MINEBLOW','','',''),
+('M17_LOCKBURN','1','2','SHOW','0','IDS_MINEBLOW','','',''),
 ('M17_LOCKBURN','1','2','SHOW','0','IDS_MINEBLOW','','',''),
 ('M17_LOCKBURN','2','3','PLAYWAVE','0','SOUND_EXPLODE','','',''),
+('M17_LOCKBURN','2','3','PLAYWAVE','0','SOUND_EXPLODE','','',''),
+('M17_LOCKBURN','2','3','PLAYWAVE','0','SOUND_EXPLODE','','',''),
+('M17_LOCKBURN','2','3','PLAYWAVE','0','SOUND_EXPLODE','','',''),
+('M17_LOCKBURN','2','3','PLAYWAVE','0','SOUND_EXPLODE','','',''),
 ('M17_LOCKBURN','3','0','VIDEO','0','IDS_EXPLODE1','','',''),
-('M17_LOCKSOCKET','0','40','DROP','0','IDD_CITLOCK','','',''),
-('M17_LOCKSOCKET','0','70','DROP','0','IDD_VILLOCK','','',''),
-('M17_LOCKSOCKET','0','60','DROP','0','IDD_BOMB1','','',''),
-('M17_LOCKSOCKET','0','60','DROP','0','IDD_BOMB2','','',''),
-('M17_LOCKSOCKET','40','42','SIGNAL','WIP1','SIG_CLOSE','','',''),
-('M17_LOCKSOCKET','42','43','SIGNAL','WIP3','SIG_SHOW','','',''),
-('M17_LOCKSOCKET','43','44','SIGNAL','WIP4','SIG_SHOW','','',''),
-('M17_LOCKSOCKET','44','50','ASHOW','WOBJECT','','','',''),
-('M17_LOCKSOCKET','50','55','CLICK','0','0','','',''),
-('M17_LOCKSOCKET','50','51','DRAG','0','IDD_CITKEY','','',''),
-('M17_LOCKSOCKET','50','60','DROP','0','IDD_BOMB1','','',''),
-('M17_LOCKSOCKET','50','60','DROP','0','IDD_BOMB2','','',''),
-('M17_LOCKSOCKET','51','50','SIGNAL','WIP1','SIG_ENTER_1','','',''),
-('M17_LOCKSOCKET','55','50','SIGNAL','WIP1','SIG_CLOSE','','',''),
-('M17_LOCKSOCKET','60','61','SIGNAL','WIP1','SIG_OPEN','','',''),
-('M17_LOCKSOCKET','61','62','SIGNAL','WIP2','SIG_BURN','','',''),
-('M17_LOCKSOCKET','62','63','SIGNAL','WIP3','SIG_HIDE','','',''),
-('M17_LOCKSOCKET','63','64','SIGNAL','WIP4','SIG_HIDE','','',''),
-('M17_LOCKSOCKET','64','0','SHOW','0','0','','',''),
-('M17_LOCKSOCKET','70','72','SIGNAL','WIP1','SIG_CLOSE','','',''),
-('M17_LOCKSOCKET','72','73','SIGNAL','WIP3','SIG_SHOW','','',''),
-('M17_LOCKSOCKET','73','74','SIGNAL','WIP4','SIG_SHOW','','',''),
-('M17_LOCKSOCKET','74','80','ASHOW','WOBJECT','','','',''),
-('M17_LOCKSOCKET','80','85','CLICK','0','0','','',''),
-('M17_LOCKSOCKET','80','81','DRAG','0','IDD_VILKEY','','',''),
-('M17_LOCKSOCKET','80','60','DROP','0','IDD_BOMB1','','',''),
-('M17_LOCKSOCKET','80','60','DROP','0','IDD_BOMB2','','',''),
-('M17_LOCKSOCKET','81','80','SIGNAL','WIP1','SIG_ENTER_1','','',''),
-('M17_LOCKSOCKET','85','80','SIGNAL','WIP1','SIG_CLOSE','','',''),
+('M17_LOCKBURN','3','0','VIDEO','0','IDS_EXPLODE1','','',''),
+('M17_LOCKBURN','3','0','VIDEO','0','IDS_EXPLODE1','','',''),
+('M17_LOCKBURN','3','0','VIDEO','0','IDS_EXPLODE1','','',''),
+('M17_LOCKBURN','3','0','VIDEO','0','IDS_EXPLODE1','','',''),
+('M17_LOCKBURN','5','0','Z_EPSILON','','','
+    SHOW();
+','',''),
+('M17_LOCKBURN','5','0','Z_EPSILON','','','
+    SHOW();
+','',''),
+('M17_LOCKBURN','5','0','Z_EPSILON','','','
+    SHOW();
+','',''),
+('M17_LOCKBURN','5','0','Z_EPSILON','','','
+    SHOW();
+','',''),
+('M17_LOCKSOCKET','0','citlockdropped','DROP','0','IDD_CITLOCK','','',''),
+('M17_LOCKSOCKET','0','villockdropped','DROP','0','IDD_VILLOCK','','',''),
+('M17_LOCKSOCKET','0','bombed','DROP','0','IDD_BOMB1','','',''),
+('M17_LOCKSOCKET','0','bombed','DROP','0','IDD_BOMB2','','',''),
+('M17_LOCKSOCKET','bombed','lockremoved','SIGNAL','WIP1','SIG_OPEN','
+    SIGNAL(WIP2,SIG_BURN);
+    SIGNAL(WIP3,SIG_HIDE);
+    SIGNAL(WIP4,SIG_HIDE);
+','',''),
+('M17_LOCKSOCKET','citclicklocked','citlockshown','SIGNAL','WIP1','SIG_CLOSE','','',''),
+('M17_LOCKSOCKET','citlockdropped','citlockshown','SIGNAL','WIP1','SIG_CLOSE','
+    SIGNAL(WIP2,SIG_HIDE);
+    SIGNAL(WIP3,SIG_SHOW);
+    SIGNAL(WIP4,SIG_SHOW);
+    ASHOW(WOBJECT);
+    ADDI(LKARMA,1);
+    SIGNAL(SID_HALO,SIG_ADD);
+','',''),
+('M17_LOCKSOCKET','citlockshown','citclicklocked','CLICK','0','0','','',''),
+('M17_LOCKSOCKET','citlockshown','citunlocked','DRAG','0','IDD_CITKEY','','',''),
+('M17_LOCKSOCKET','citlockshown','bombed','DROP','0','IDD_BOMB1','','',''),
+('M17_LOCKSOCKET','citlockshown','bombed','DROP','0','IDD_BOMB2','','',''),
+('M17_LOCKSOCKET','citunlocked','citlockshown','SIGNAL','WIP1','SIG_ENTER_1','','',''),
+('M17_LOCKSOCKET','lockremoved','0','SHOW','0','0','','',''),
+('M17_LOCKSOCKET','vilclicklocked','villockshown','SIGNAL','WIP1','SIG_CLOSE','','',''),
+('M17_LOCKSOCKET','villockdropped','villockshown','SIGNAL','WIP1','SIG_CLOSE','
+    SIGNAL(WIP2,SIG_HIDE);
+    SIGNAL(WIP3,SIG_SHOW);
+    SIGNAL(WIP4,SIG_SHOW);
+    ASHOW(WOBJECT);
+    ADDI(LKARMA,1);
+    SIGNAL(SID_HALO,SIG_ADD);
+','',''),
+('M17_LOCKSOCKET','villockshown','vilclicklocked','CLICK','0','0','','',''),
+('M17_LOCKSOCKET','villockshown','vilunlocked','DRAG','0','IDD_VILKEY','','',''),
+('M17_LOCKSOCKET','villockshown','bombed','DROP','0','IDD_BOMB1','','',''),
+('M17_LOCKSOCKET','villockshown','bombed','DROP','0','IDD_BOMB2','','',''),
+('M17_LOCKSOCKET','vilunlocked','villockshown','SIGNAL','WIP1','SIG_ENTER_1','','',''),
 ('M17_MINE','0','1','DRAG','0','IDD_SCOOPE','','',''),
 ('M17_MINE','0','3','DRAG','0','IDD_SCOOPF','','',''),
 ('M17_MINE','1','2','PLAYWAVE','0','SOUND_SLURP','','',''),
 ('M17_MINE','2','0','HANDOFF','0','IDD_SCOOPF','','',''),
 ('M17_MINE','3','4','PLAYWAVE','0','SOUND_SPIT','','',''),
 ('M17_MINE','4','0','HANDOFF','0','IDD_SCOOPE','','',''),
+('M19_BUTTON','0','1','CLICK','0','','
+    SIGNAL(WIP4, SIG_SPIN);
+    SIGNAL(WIP3, SIG_SPIN);
+     SIGNAL(WIP2, SIG_SPIN);
+     SIGNAL(WIP1, SIG_SPIN);
+','',''),
+('M19_BUTTON','1','0','Z_EPSILON','','','','',''),
+('M19_DICEHOLD','0','presentdie','WAIT','','SIG_RESET','
+     MOV(WOBJECT,IDD_DICE);
+     SHOW(WOBJECT);
+','',''),
+('M19_DICEHOLD','presentdie','0','GRAB','','IDD_DICE','
+    SHOW();
+','',''),
+('M19_HOLDER','0','present','ACCEPT','','WIP2','
+    MOV(WOBJECT,WIP2);
+    SHOW(WOBJECT);
+','',''),
+('M19_HOLDER','empty','0','DROP','','','','',''),
+('M19_HOLDER','empty','resetting','WAIT','','SIG_RESET','','',''),
+('M19_HOLDER','present','empty','GRAB','','IDD_PLAYER_B','SHOW();','WIP2 == IDD_PLAYER_B',''),
+('M19_HOLDER','present','empty','GRAB','','IDD_PLAYER_W','SHOW();','WIP2 == IDD_PLAYER_W',''),
+('M19_HOLDER','resetting','0','Z_EPSILON','','','','',''),
+('M19_PAYBUCKET','0','setup','MOV','BFRAME','0','
+    ASSIGN(WSPRITE,WIP1);
+    SHOW(WSPRITE);
+    /* BPARM = what you payed
+    WPARM = Total owed 
+    */
+    ASSIGN(BPARM,0); 
+    ASSIGN(WPARM,WIP2);
+','',''),
+('M19_PAYBUCKET','accept_pay','check_scoop','DRAG','IDD_SCOOPF','','
+    HANDOFF(0,IDD_SCOOPE);
+    PLAYWAVE(0,SOUND_SPIT);
+    ADDI(BPARM,1); 
+','',''),
+('M19_PAYBUCKET','check_scoop','paid_in_full','EQUAL','BPARM','WPARM','','',''),
+('M19_PAYBUCKET','check_scoop','accept_pay','Z_EPSILON','','','','',''),
+('M19_PAYBUCKET','paid_in_full','0','Z_EPSILON','','','
+    PLAYWAVE(0,SOUND_LEVER);
+    SIGNAL(sq_0_t,SIG_RESET);
+    SIGNAL(sq_0_b,SIG_RESET);
+     SIGNAL(S19_DICEHOLD,SIG_RESET);
+    SUBI(BFRAME,1);
+','',''),
+('M19_PAYBUCKET','setup','accept_pay','CLICK','','','
+    ADDI(BFRAME,1);
+','',''),
+('M19_PICK','0','setup','MOV','WSPRITE','WIP1','
+    ASSIGN(WTEMP1,0);
+','',''),
+('M19_PICK','frameMapped','0','WAIT','0','SIG_SPIN','','',''),
+('M19_PICK','randomGenned','frameMapped','MOV','WTEMP1','WRAND','
+    MAPi(WTEMP1,WIP3);
+    MOV(BFRAME,WTEMP1);
+    SHOW(WSPRITE);
+    MOV(WPARM,WTEMP1);
+','',''),
+('M19_PICK','setup','randomGenned','RAND','8','1','','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_1T','MOV(WPARM,1);REF_MACHINE(0,sq_1_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_1B','MOV(WPARM,1);REF_MACHINE(0,sq_1_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_2T','MOV(WPARM,2);REF_MACHINE(0,sq_2_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_2B','MOV(WPARM,2);REF_MACHINE(0,sq_2_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_3T','MOV(WPARM,3);REF_MACHINE(0,sq_3_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_3B','MOV(WPARM,3);REF_MACHINE(0,sq_3_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_4T','MOV(WPARM,4);REF_MACHINE(0,sq_4_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_4B','MOV(WPARM,4);REF_MACHINE(0,sq_4_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_5T','MOV(WPARM,5);REF_MACHINE(0,sq_5_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_5B','MOV(WPARM,5);REF_MACHINE(0,sq_5_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_6T','MOV(WPARM,6);REF_MACHINE(0,sq_6_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_6B','MOV(WPARM,6);REF_MACHINE(0,sq_6_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_7T','MOV(WPARM,7);REF_MACHINE(0,sq_7_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_7B','MOV(WPARM,7);REF_MACHINE(0,sq_7_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_8T','MOV(WPARM,8);REF_MACHINE(0,sq_8_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_8B','MOV(WPARM,8);REF_MACHINE(0,sq_8_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_9T','MOV(WPARM,9);REF_MACHINE(0,sq_9_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_9B','MOV(WPARM,9);REF_MACHINE(0,sq_9_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_10T','MOV(WPARM,10);REF_MACHINE(0,sq_10_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_10B','MOV(WPARM,10);REF_MACHINE(0,sq_10_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_11T','MOV(WPARM,11);REF_MACHINE(0,sq_11_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_11B','MOV(WPARM,11);REF_MACHINE(0,sq_11_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_12T','MOV(WPARM,12);REF_MACHINE(0,sq_12_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_12B','MOV(WPARM,12);REF_MACHINE(0,sq_12_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_13T','MOV(WPARM,13);REF_MACHINE(0,sq_13_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_13B','MOV(WPARM,13);REF_MACHINE(0,sq_13_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_14T','MOV(WPARM,14);REF_MACHINE(0,sq_14_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_14B','MOV(WPARM,14);REF_MACHINE(0,sq_14_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_15T','MOV(WPARM,15);REF_MACHINE(0,sq_15_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_15B','MOV(WPARM,15);REF_MACHINE(0,sq_15_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_16T','MOV(WPARM,16);REF_MACHINE(0,sq_16_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_16B','MOV(WPARM,16);REF_MACHINE(0,sq_16_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_17T','MOV(WPARM,17);REF_MACHINE(0,sq_17_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_17B','MOV(WPARM,17);REF_MACHINE(0,sq_17_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_18T','MOV(WPARM,18);REF_MACHINE(0,sq_18_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_18B','MOV(WPARM,18);REF_MACHINE(0,sq_18_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_19T','MOV(WPARM,19);REF_MACHINE(0,sq_19_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_19B','MOV(WPARM,19);REF_MACHINE(0,sq_19_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_20T','MOV(WPARM,20);REF_MACHINE(0,sq_20_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_20B','MOV(WPARM,20);REF_MACHINE(0,sq_20_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_21T','MOV(WPARM,21);REF_MACHINE(0,sq_21_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_21B','MOV(WPARM,21);REF_MACHINE(0,sq_21_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_22T','MOV(WPARM,22);REF_MACHINE(0,sq_22_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_22B','MOV(WPARM,22);REF_MACHINE(0,sq_22_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_23T','MOV(WPARM,23);REF_MACHINE(0,sq_23_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_23B','MOV(WPARM,23);REF_MACHINE(0,sq_23_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_24T','MOV(WPARM,24);REF_MACHINE(0,sq_24_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_24B','MOV(WPARM,24);REF_MACHINE(0,sq_24_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_25T','MOV(WPARM,25);REF_MACHINE(0,sq_25_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_25B','MOV(WPARM,25);REF_MACHINE(0,sq_25_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_26T','MOV(WPARM,26);REF_MACHINE(0,sq_26_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_26B','MOV(WPARM,26);REF_MACHINE(0,sq_26_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_27T','MOV(WPARM,27);REF_MACHINE(0,sq_27_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_27B','MOV(WPARM,27);REF_MACHINE(0,sq_27_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_28T','MOV(WPARM,28);REF_MACHINE(0,sq_28_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_28B','MOV(WPARM,28);REF_MACHINE(0,sq_28_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_29T','MOV(WPARM,29);REF_MACHINE(0,sq_29_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_29B','MOV(WPARM,29);REF_MACHINE(0,sq_29_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_30T','MOV(WPARM,30);REF_MACHINE(0,sq_30_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_30B','MOV(WPARM,30);REF_MACHINE(0,sq_30_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_31T','MOV(WPARM,31);REF_MACHINE(0,sq_31_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_31B','MOV(WPARM,31);REF_MACHINE(0,sq_31_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_32T','MOV(WPARM,32);REF_MACHINE(0,sq_32_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_32B','MOV(WPARM,32);REF_MACHINE(0,sq_32_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_33T','MOV(WPARM,33);REF_MACHINE(0,sq_33_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_33B','MOV(WPARM,33);REF_MACHINE(0,sq_33_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_34T','MOV(WPARM,34);REF_MACHINE(0,sq_34_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_34B','MOV(WPARM,34);REF_MACHINE(0,sq_34_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_35T','MOV(WPARM,35);REF_MACHINE(0,sq_35_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_35B','MOV(WPARM,35);REF_MACHINE(0,sq_35_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_36T','MOV(WPARM,36);REF_MACHINE(0,sq_36_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_36B','MOV(WPARM,36);REF_MACHINE(0,sq_36_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_37T','MOV(WPARM,37);REF_MACHINE(0,sq_37_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_37B','MOV(WPARM,37);REF_MACHINE(0,sq_37_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_38T','MOV(WPARM,38);REF_MACHINE(0,sq_38_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_38B','MOV(WPARM,38);REF_MACHINE(0,sq_38_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_39T','MOV(WPARM,39);REF_MACHINE(0,sq_39_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_39B','MOV(WPARM,39);REF_MACHINE(0,sq_39_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_40T','MOV(WPARM,40);REF_MACHINE(0,sq_40_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_40B','MOV(WPARM,40);REF_MACHINE(0,sq_40_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_41T','MOV(WPARM,41);REF_MACHINE(0,sq_41_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_41B','MOV(WPARM,41);REF_MACHINE(0,sq_41_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_42T','MOV(WPARM,42);REF_MACHINE(0,sq_42_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_42B','MOV(WPARM,42);REF_MACHINE(0,sq_42_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_43T','MOV(WPARM,43);REF_MACHINE(0,sq_43_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_43B','MOV(WPARM,43);REF_MACHINE(0,sq_43_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_44T','MOV(WPARM,44);REF_MACHINE(0,sq_44_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_44B','MOV(WPARM,44);REF_MACHINE(0,sq_44_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_45T','MOV(WPARM,45);REF_MACHINE(0,sq_45_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_45B','MOV(WPARM,45);REF_MACHINE(0,sq_45_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_46T','MOV(WPARM,46);REF_MACHINE(0,sq_46_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_46B','MOV(WPARM,46);REF_MACHINE(0,sq_46_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_47T','MOV(WPARM,47);REF_MACHINE(0,sq_47_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_47B','MOV(WPARM,47);REF_MACHINE(0,sq_47_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_48T','MOV(WPARM,48);REF_MACHINE(0,sq_48_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_48B','MOV(WPARM,48);REF_MACHINE(0,sq_48_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_49T','MOV(WPARM,49);REF_MACHINE(0,sq_49_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_49B','MOV(WPARM,49);REF_MACHINE(0,sq_49_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_50T','MOV(WPARM,50);REF_MACHINE(0,sq_50_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_50B','MOV(WPARM,50);REF_MACHINE(0,sq_50_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_51T','MOV(WPARM,51);REF_MACHINE(0,sq_51_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_51B','MOV(WPARM,51);REF_MACHINE(0,sq_51_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_52T','MOV(WPARM,52);REF_MACHINE(0,sq_52_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_52B','MOV(WPARM,52);REF_MACHINE(0,sq_52_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_53T','MOV(WPARM,53);REF_MACHINE(0,sq_53_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_53B','MOV(WPARM,53);REF_MACHINE(0,sq_53_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_54T','MOV(WPARM,54);REF_MACHINE(0,sq_54_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_54B','MOV(WPARM,54);REF_MACHINE(0,sq_54_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_55T','MOV(WPARM,55);REF_MACHINE(0,sq_55_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_55B','MOV(WPARM,55);REF_MACHINE(0,sq_55_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_56T','MOV(WPARM,56);REF_MACHINE(0,sq_56_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_56B','MOV(WPARM,56);REF_MACHINE(0,sq_56_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_57T','MOV(WPARM,57);REF_MACHINE(0,sq_57_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_57B','MOV(WPARM,57);REF_MACHINE(0,sq_57_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_58T','MOV(WPARM,58);REF_MACHINE(0,sq_58_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_58B','MOV(WPARM,58);REF_MACHINE(0,sq_58_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_59T','MOV(WPARM,59);REF_MACHINE(0,sq_59_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_59B','MOV(WPARM,59);REF_MACHINE(0,sq_59_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_60T','MOV(WPARM,60);REF_MACHINE(0,sq_60_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_60B','MOV(WPARM,60);REF_MACHINE(0,sq_60_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_61T','MOV(WPARM,61);REF_MACHINE(0,sq_61_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_61B','MOV(WPARM,61);REF_MACHINE(0,sq_61_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_62T','MOV(WPARM,62);REF_MACHINE(0,sq_62_t);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','0','1','WAIT','0','SIG_62B','MOV(WPARM,62);REF_MACHINE(0,sq_62_b);MOV(BPARM,R_BPARM);','',''),
+('M19_PLAYERWATCHER','1','0','PLAYWAVE','0','SOUND_CLICK','','',''),
+('M19_SPELLCASTER','0','collectingColor','WAIT','0','SIG_START','','',''),
+('M19_SPELLCASTER','castspell','pickspell','EQUAL','WTEMP1','WPARM','','',''),
+('M19_SPELLCASTER','castspell','0','Z_EPSILON','0','','','',''),
+('M19_SPELLCASTER','collectingColor','collectingEvent','REF_MACHINE','WIP1','','
+    //Top spinner frame
+    WTEMP1=R_WPARM;
+    MOV(WPARM,WTEMP1);
+    //color to attack violet,green, or brown square
+    MAPi(WPARM,WIP3);
+','',''),
+('M19_SPELLCASTER','collectingEvent','findVictimOne','REF_MACHINE','WIP2','','
+    //Bottom spinner frame
+    WTEMP2=R_WPARM;
+    MOV(BPARM,WTEMP2);
+    //event or spell to cast
+    MAPi(BPARM,WIP4);
+','',''),
+('M19_SPELLCASTER','done','0','Z_EPSILON','','','','',''),
+('M19_SPELLCASTER','findVictimOne','castspell','REF_MACHINE','0','S19_PLAYERWATCHER','
+    //R_WPARM is the squre theyre on,
+    //R_BPARM is either player object
+    //map the square theyre on to a color , then if it matches WPARM execute the event in BPARM
+    MOV(WTEMP1,R_WPARM);
+    MAPi(WTEMP1,S19_SQUARE_MAP);','',''),
+('M19_SPELLCASTER','pickspell','done','EQUAL','BPARM','bomb1','
+    SIGNAL(SID_ID,SIG_BOMB);
+    SUBI(LENERGY,1);
+    SIGNAL(SID_AURA,SIG_SUB);
+','',''),
+('M19_SPELLCASTER','pickspell','done','EQUAL','BPARM','bomb2','
+    SIGNAL(SID_ID,SIG_BOMB);
+    SUBI(LENERGY,2);
+    SIGNAL(SID_AURA,SIG_SUB);
+','',''),
+('M19_SPELLCASTER','pickspell','done','EQUAL','BPARM','bomb3','
+    SIGNAL(SID_ID,SIG_BOMB);
+    SUBI(LENERGY,3);
+    SIGNAL(SID_AURA,SIG_SUB);
+','',''),
+('M19_SPELLCASTER','pickspell','done','EQUAL','BPARM','wealth','
+    SIGNAL(SID_ID,SIG_HAPPY);
+    ADDI(LWEALTH,10);
+','',''),
+('M19_SPELLCASTER','pickspell','done','EQUAL','BPARM','banish','
+    LOADVIEW(0,IDV_BANISH);
+','',''),
+('M19_SPELLCASTER','pickspell','done','EQUAL','BPARM','gopa','
+    ADDI(LENERGY,5);
+    SIGNAL(SID_AURA,SIG_ADD);
+','',''),
+('M19_SPELLCASTER','pickspell','0','Z_EPSILON','','','','',''),
+('M19_SPIN','0','1','WAIT','0','SIG_SPIN','PLAYWAVE(SOUND_SPIN);','',''),
+('M19_SPIN','1','2','ASHOW','WIP1','V_LOOP','','',''),
+('M19_SPIN','2','3','ESTIME','','4','','',''),
+('M19_SPIN','3','reveal','CLEAR','WSPRITE','','','',''),
+('M19_SPIN','reveal','0','SHOW','0','0','
+    if(WIP1 == IDS_BOTSPIN){
+        SIGNALi(SIG_START,S19_SPELLCASTER);
+    }
+','',''),
+('M19_SQUARE','0','squareempty','C_ACCEPT','','ISA_PLAYTOKEN','ASSIGN(BPARM,0);CLEAR(WOBJECT);','',''),
+('M19_SQUARE','resetting','0','Z_EPSILON','','','','',''),
+('M19_SQUARE','squareempty','squareholding','DROP','','','
+    SHOW(WOBJECT);
+    MOV(BPARM,WOBJECT);
+    SIGNALi(WIP2,S19_PLAYERWATCHER); 
+','',''),
+('M19_SQUARE','squareempty','resetting','WAIT','','SIG_RESET','','',''),
+('M19_SQUARE','squareholding','squareempty','GRAB','','','SHOW();','',''),
 ('M24_BIGEYE','0','1','MOV','WSPRITE','WIP1','','',''),
 ('M24_BIGEYE','1','2','ASHOW','WSPRITE','V_LOOP','','',''),
 ('M24_BIGEYE','10','50','IFSTATEi','0','S24_EYEPLATE1','','',''),
@@ -974,36 +1382,6 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M24_EYETEXT','11','0','SHOW','WSPRITE','','','',''),
 ('M24_EYETEXT','20','0','SHOW','0','0','','',''),
 ('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','0','1','CLICK','0','0','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
-('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
 ('M25_EXITDOOR','1','0','LOADVIEW','WIP1','','','',''),
 ('M25_OPNDOOR','0','10','C_ACCEPT','0','IDC_BOMB','','',''),
 ('M25_OPNDOOR','10','40','DROP','0','0','','',''),
@@ -1036,27 +1414,36 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M25_RUMBLE','62','70','SIGNALi','SIG_OPEN','S25_ROLL','','',''),
 ('M25_RUMBLE','70','71','CLICK','0','0','','',''),
 ('M25_RUMBLE','71','70','LOADVIEW','0','IDV_WALL2EN','','',''),
-('M25_SCATTER','0','2','MOV','BFRAME','0','','',''),
-('M25_SCATTER','10','73','CLICK','0','0','','',''),
-('M25_SCATTER','10','60','DRAG','0','IDD_PICK','','',''),
-('M25_SCATTER','10','60','DRAG','0','IDD_SHOVEL','','',''),
-('M25_SCATTER','10','50','DROP','0','0','','',''),
-('M25_SCATTER','2','3','ASSIGN','WSPRITE','IDS_SCATTER','','',''),
-('M25_SCATTER','3','4','SHOW','WSPRITE','','','',''),
-('M25_SCATTER','4','10','C_ACCEPT','0','IDC_BOMB','','',''),
-('M25_SCATTER','50','51','VIDEO','0','IDS_EXPLODE1','','',''),
-('M25_SCATTER','51','52','PLAYWAVE','0','SOUND_EXPLODE','','',''),
-('M25_SCATTER','52','70','ADDI','BPARM','20','','',''),
-('M25_SCATTER','60','61','PLAYWAVE','0','SOUND_POP','','',''),
-('M25_SCATTER','61','70','ADDI','BPARM','1','','',''),
-('M25_SCATTER','70','71','GTEi','BPARM','20','','',''),
-('M25_SCATTER','70','10','Z_EPSILON','','','','',''),
-('M25_SCATTER','71','72','ADDI','BFRAME','1','','',''),
-('M25_SCATTER','72','73','ASSIGN','BPARM','0','','',''),
-('M25_SCATTER','73','74','GTEi','BFRAME','10','','',''),
-('M25_SCATTER','73','10','Z_EPSILON','','','','',''),
-('M25_SCATTER','74','80','SIGNALi','SIG_OPEN','S25_SCAT_ALT','','',''),
-('M25_SCATTER','80','10','LOADVIEW','0','IDV_WALL1EN','','',''),
+('M25_SCATTER','0','notscattered','MOV','BFRAME','0','
+    ASSIGN(WSPRITE,IDS_SCATTER);
+    SHOW(WSPRITE);
+','',''),
+('M25_SCATTER','advanceFrame','checkIfComplete','ADDI','BFRAME','1','
+    ASSIGN(BPARM,0);
+','',''),
+('M25_SCATTER','allowAccess','scattered','CLICK','','','
+    LOADVIEW(0,IDV_WALL1EN);
+','',''),
+('M25_SCATTER','axed','checkDamage','PLAYWAVE','0','SOUND_PICKAXE','
+      ADDI(BPARM,1);
+','',''),
+('M25_SCATTER','bombed','checkDamage','VIDEO','0','IDS_EXPLODE1','
+    //add damage
+    PLAYWAVE(SOUND_EXPLODE);
+    ADDI(BPARM,20);
+','',''),
+('M25_SCATTER','checkDamage','advanceFrame','GTEi','BPARM','20','','',''),
+('M25_SCATTER','checkDamage','notscattered','Z_EPSILON','','','','',''),
+('M25_SCATTER','checkIfComplete','scattered','GTEi','BFRAME','10','
+    SIGNALi(SIG_OPEN,S25_SCAT_ALT);
+','',''),
+('M25_SCATTER','checkIfComplete','notscattered','Z_EPSILON','','','','',''),
+('M25_SCATTER','notscattered','axed','DRAG','0','IDD_PICK','','',''),
+('M25_SCATTER','notscattered','axed','DRAG','0','IDD_SHOVEL','','',''),
+('M25_SCATTER','notscattered','bombed','DROP','IDD_BOMB2','0','','',''),
+('M25_SCATTER','scattered','allowAccess','CLICK','','','
+    LOADVIEW(0,IDV_WALL1EN);
+','',''),
 ('M26_BANISH','0','30','CLICK','0','0','','',''),
 ('M26_BANISH','0','10','DRAG','0','IDD_SCOOPF','','',''),
 ('M26_BANISH','0','20','DRAGFOCUS','0','TRUE','','',''),
@@ -1065,12 +1452,44 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M26_BANISH','30','70','EQUALi','LWEALTH','0','','',''),
 ('M26_BANISH','30','0','Z_EPSILON','','','','',''),
 ('M26_BANISH','70','0','LOADVIEW','WIP1','','','',''),
-('MEFLIN_COORD','0','5','WAIT','','SIG_Q1_GIVEN','','',''),
-('MEFLIN_COORD','10','15','WAIT','','SIG_Q2_GIVEN','','',''),
-('MEFLIN_COORD','15','20','WAIT','','SIG_Q2_SOLVED','','',''),
-('MEFLIN_COORD','20','25','WAIT','','SIG_Q3_GIVEN','','',''),
-('MEFLIN_COORD','25','30','WAIT','','SIG_Q3_SOLVED','','',''),
-('MEFLIN_COORD','5','10','WAIT','','SIG_Q1_SOLVED','','',''),
+('MEFLIN_COORD','0','Q1Started','WAIT','','SIG_Q1_START','','',''),
+('MEFLIN_COORD','0','Q2Started','WAIT','','SIG_Q2_START','','',''),
+('MEFLIN_COORD','0','Q3Started','WAIT','','SIG_Q3_START','','',''),
+('MEFLIN_COORD','Q1Pending','Q1Solved','WAIT','','SIG_Q1_SOLVED','','',''),
+('MEFLIN_COORD','Q1Solved','0','Z_EPSILON','','','','',''),
+('MEFLIN_COORD','Q1Started','Q1Pending','WAIT','','SIG_Q1_GIVEN','','',''),
+('MEFLIN_COORD','Q2Pending','Q2Solved','WAIT','','SIG_Q2_SOLVED','','',''),
+('MEFLIN_COORD','Q2Solved','0','Z_EPSILON','','','','',''),
+('MEFLIN_COORD','Q2Started','Q2Pending','WAIT','','SIG_Q2_GIVEN','','',''),
+('MEFLIN_COORD','Q3Pending','Q3Solved','WAIT','','SIG_Q3_SOLVED','','',''),
+('MEFLIN_COORD','Q3Solved','0','Z_EPSILON','','','','',''),
+('MEFLIN_COORD','Q3Started','Q3Pending','WAIT','','SIG_Q3_GIVEN','','',''),
+('M_ALARM','0','ready','O_ACCEPT','0','IDD_ALARM','
+    ASSIGN(WPARM,0); //WILL BE LVIEW VALUE
+','',''),
+('M_ALARM','alarmGreen','alarmWhite','CLICK','0','','
+    MOV(WSPRITE,IDS_ALARMOFF);
+    SHOW(WSPRITE);
+    LOADVIEW(WPARM);
+','',''),
+('M_ALARM','alarmGreen','alarmRed','WAIT','0','SIG_ALARM','
+    MOV(WSPRITE,IDS_ALARMRED);
+    ASHOW(WSPRITE);
+','',''),
+('M_ALARM','alarmRed','alarmWhite','CLICK','0','','
+    MOV(WSPRITE,IDS_ALARMOFF);
+    SHOW(WSPRITE);
+    LOADVIEW(WPARM);
+','',''),
+('M_ALARM','alarmWhite','alarmGreen','ESTIME','0','2','
+    MOV(WSPRITE,IDS_ALARMGRN);
+    SHOW(WSPRITE);
+','',''),
+('M_ALARM','alarmWhite','0','GRAB','0','0','SHOW();','',''),
+('M_ALARM','ready','alarmWhite','DROP','0','0','
+    SHOW(WOBJECT);
+    MOV(WPARM,LVIEW);
+','',''),
 ('M_ANIBIN','0','1','MOV','WSPRITE','WIP1','','',''),
 ('M_ANIBIN','1','2','ASHOW','WSPRITE','V_LOOP','','',''),
 ('M_ANIBIN','2','2','GRAB','WIP2','','','',''),
@@ -1079,18 +1498,33 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M_ANIPORTAL','2','3','CLICK','0','0','','',''),
 ('M_ANIPORTAL','3','4','SIGNALi','SIG_OPEN','S01_NATURE','','',''),
 ('M_ANIPORTAL','4','1','LOADVIEW','0','IDV_GRNDCNT1','','',''),
-('M_AURA','0','2','Z_EPSILON','0','0','','',''),
-('M_AURA','1','2','WAIT','0','SIG_ADD','','',''),
-('M_AURA','1','3','WAIT','0','SIG_SUB','','',''),
-('M_AURA','1','2','WAIT','0','0','','',''),
-('M_AURA','2','4','ASSIGN','WPARM','','','',''),
-('M_AURA','3','4','ASSIGN','WPARM','V_REVERSE','','',''),
-('M_AURA','4','5','MOV','WSPRITE','LENERGY','','',''),
-('M_AURA','5','6','MODI','WSPRITE','MAX_AURAS','','',''),
-('M_AURA','6','7','ADDI','WSPRITE','IDS_AURA1','','',''),
-('M_AURA','7','8','SHOW','WSPRITE','','','',''),
-('M_AURA','8','9','ANIMATE','WPARM','','','',''),
-('M_AURA','9','1','SIGNALi','0','SID_ID','','',''),
+('M_AURA','0','energyBoost','Z_EPSILON','0','0','','',''),
+('M_AURA','1','energyBoost','WAIT','0','SIG_ADD','','',''),
+('M_AURA','1','energyDrain','WAIT','0','SIG_SUB','','',''),
+('M_AURA','1','energyBoost','WAIT','0','0','','',''),
+('M_AURA','energyBoost','1','ASSIGN','WPARM','','
+       if(LENERGY > (MAX_AURAS - 1)){
+             ASSIGN(LENERGY,(MAX_AURAS -1));
+       }
+        ASSIGN(BPARM,LENERGY);
+        MOV(WSPRITE,BPARM);
+        MAPi(WSPRITE,S00_AURA_MAP);
+        SHOW(WSPRITE);
+        ANIMATE(WPARM);
+        SIGNALi(0,SID_ID);
+','',''),
+('M_AURA','energyDrain','1','ASSIGN','WPARM','V_REVERSE','
+        if(LENERGY <= 0){
+             ASSIGN(LENERGY,1);
+             //Maybe death
+       }      
+       ASSIGN(BPARM,LENERGY);
+        MOV(WSPRITE,BPARM);
+        MAPi(WSPRITE,S00_AURA_MAP);
+        SHOW(WSPRITE);
+        ANIMATE(WPARM);
+        SIGNALi(0,SID_ID);
+','',''),
 ('M_BACKBUTTON','0','1','CLICK','0','0','','',''),
 ('M_BACKBUTTON','1','2','PLAYWAVE','0','SOUND_POPUP','','',''),
 ('M_BACKBUTTON','2','0','LOADVIEW','0','IDV_TOPMENU','','',''),
@@ -1106,10 +1540,13 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M_BAITSTATION','7','8','MIX','WPARM','WOBJECT','','',''),
 ('M_BAITSTATION','8','9','SHOW','0','IDS_POLE1B','','',''),
 ('M_BAITSTATION','9','0','GRAB','0','0','','',''),
-('M_BARD','0','1','ASSIGN','DETIME','1000','','',''),
-('M_BARD','1','3','SYNCPOINT','DETIME','SYNC_FOULWIND','','',''),
-('M_BARD','3','4','ESTIME','0','500','','',''),
-('M_BARD','4','3','SIGNALi','0','S17_aFOULWIND','','',''),
+('M_BARD','0','10','ASSIGN','DETIME','1500','','',''),
+('M_BARD','10','FWcountdown','SYNCPOINT','DETIME','SYNC_FOULWIND','','',''),
+('M_BARD','10','hideStuff','Z_EPSILON','','','','',''),
+('M_BARD','FWcountdown','summonFoulWind','ESTIME','0','1500','','',''),
+('M_BARD','hideStuff','kickOffNature','SIGNALi','SIG_OPEN','S00_HIDER','','',''),
+('M_BARD','kickOffNature','20','SIGNALi','SIG_OPEN','S01_NATURE','','',''),
+('M_BARD','summonFoulWind','FWcountdown','SIGNALi','0','S17_aFOULWIND','','',''),
 ('M_BIN','0','1','O_ACCEPT','WIP1','','','',''),
 ('M_BIN','1','10','SHOW','WIP2','','','',''),
 ('M_BIN','10','10','DROP','0','0','','',''),
@@ -1212,7 +1649,7 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M_DIGGABLE','determinedItem','coverActive','MOV','WSPRITE','WIP2','
         SHOW(WSPRITE);
 ','',''),
-('M_DIGGABLE','displayItem','determinedItem','GRAB','','','','',''),
+('M_DIGGABLE','displayItem','itemGrabbed','GRAB','','','','',''),
 ('M_DIGGABLE','firstWhack','secondWhack','DRAG','','','
         if(WIP3 == ISA_TOOL_DIGGER){
             SHOW(0,IDS_SANDPILE2);
@@ -1230,9 +1667,8 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
             PLAYWAVE(SOUND_THUMP);
          }   
 ','',''),
-('M_DIGGABLE','fixinToHideItem','determinedItem','MAPi','WOBJECT','S00_HIDDENITEM','
-    // WOBJECT is now the object to hide
-','',''),
+('M_DIGGABLE','fixinToHideItem','determinedItem','MAPi','WOBJECT','S00_HIDDENITEM','','',''),
+('M_DIGGABLE','itemGrabbed','0','Z_EPSILON','','','SHOW();','',''),
 ('M_DIGGABLE','moveMe','displayItem','SET_YOFFSET','ADD','50','
         PLAYWAVE(SOUND_CHIMES);
         SHOW(WOBJECT);
@@ -1254,12 +1690,11 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
             PLAYWAVE(SOUND_THUMP);
          }   
 ','',''),
-('M_DIGGABLE','thirdWhack','moveMe','DRAG','','','
-','',''),
+('M_DIGGABLE','thirdWhack','moveMe','DRAG','','','','',''),
 ('M_DISKSPIN','0','5','MOV','BFRAME','0','','',''),
 ('M_DISKSPIN','10','20','LTE','BFRAME','7','','',''),
 ('M_DISKSPIN','10','0','Z_EPSILON','','','ADD(BFRAME,1);','',''),
-('M_DISKSPIN','20','10','CLICK','','','ADD(BFRAME,1);MOV(BPARM,BFRAME);SIGNALi(SIG_CHECK,S28_KAMDOOR);','',''),
+('M_DISKSPIN','20','10','CLICK','','','PLAYWAVE(SOUND_STONERUB);ADD(BFRAME,1);MOV(BPARM,BFRAME);SIGNALi(SIG_CHECK,S28_KAMDOOR);','',''),
 ('M_DISKSPIN','5','10','SHOW','','IDS_MOONSPIN','','',''),
 ('M_EYEINFO','0','100','DROP','0','0','PLAYWAVE(SOUND_POPUP);ASHOW(WOBJECT);CLEAR(WVIEWID);','',''),
 ('M_EYEINFO','0','10','GRAB','0','0','','',''),
@@ -1277,32 +1712,35 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
        
        ','',''),
 ('M_EYEINFO','100','130','IS_A','WOBJECT','ISA_ENCHANTEDSTONE','MOV(WPARM,WOBJECT);
-        MOV(WVIEWID,LVIEW);
-        
+        MOV(WVIEWID,LVIEW);    
+        ','',''),
+('M_EYEINFO','100','130','IS_A','WOBJECT','IDC_NULL','
+        MOV(WPARM,WOBJECT);
+        MOV(WVIEWID,LVIEW);   
         ','',''),
 ('M_EYEINFO','100','0','Z_EPSILON','0','0','','',''),
 ('M_EYEINFO','120','0','LOADVIEW','0','IDV_SPELLPAN','','',''),
 ('M_EYEINFO','130','0','LOADVIEW','0','IDV_ENCHANTPAN','','',''),
-('M_FISHSTATION','0','2','C_ACCEPT','0','IDC_POLE','SHOW();','',''),
-('M_FISHSTATION','2','2','DRAG','0','IDD_BUCKE','HANDOFF(0,IDD_BUCKF);','',''),
-('M_FISHSTATION','2','3','DROP','0','0','','',''),
-('M_FISHSTATION','3','6','IS_A','WOBJECT','ISA_BAITEDPOLE','    SHOW(0,IDS_POLE1LCL);
-    RAND(ADD_CATCH_TIME,MIN_CATCH_TIME);','',''),
-('M_FISHSTATION','3','4','Z_EPSILON','0','0','   SHOW(0,IDS_POLE1LCU);
-    MOV(WPARM,WOBJECT);
-    C_ACCEPT(0,ISA_BAIT);','',''),
-('M_FISHSTATION','4','3','DROP','0','0','   MIX(WPARM,WOBJECT);
-    SHOW(0,IDS_POLE1B);','',''),
-('M_FISHSTATION','4','0','GRAB','0','0','','',''),
-('M_FISHSTATION','6','0','GRAB','0','0','','',''),
-('M_FISHSTATION','6','7','SYNCPOINT','WRAND','SYNC_FISH1','   PLAYWAVE(0,SOUND_HURT);
-    MOV(WPARM,WOBJECT);
-    RAND(9,IDD_FISH1); 
-    MOV(WOBJECT,WRAND);
-    SHOW(0,IDS_POLE1LCT);','',''),
-('M_FISHSTATION','7','3','GRAB','0','0','    MOV(WOBJECT,WPARM);
-    XIM(WOBJECT,WPARM);
-    SHOW(WOBJECT);','',''),
+('M_FISHSTATION','0','vacant','C_ACCEPT','0','IDC_POLE','SHOW();','',''),
+('M_FISHSTATION','baited_pole','0','GRAB','0','0','','',''),
+('M_FISHSTATION','baited_pole','fish_on','SYNCPOINT','WRAND','SYNC_FISH1','PLAYWAVE(0,SOUND_HURT);
+MOV(WPARM,WOBJECT);
+RAND(10,0); 
+MOV(WOBJECT,WRAND);
+MAP(WOBJECT,FISH_CAUGHT);
+SHOW(IDS_POLE1LCT);','',''),
+('M_FISHSTATION','branch','baited_pole','IS_A','WOBJECT','ISA_BAITEDPOLE','SHOW(IDS_POLE1LCL);
+RAND(ADD_CATCH_TIME,MIN_CATCH_TIME);','',''),
+('M_FISHSTATION','branch','pole','Z_EPSILON','','','SHOW(IDS_POLE1LCU);
+MOV(WPARM,WOBJECT);
+C_ACCEPT(0,ISA_BAIT);','',''),
+('M_FISHSTATION','fish_on','branch','GRAB','0','0','MOV(WOBJECT,IDD_POLE1);
+SHOW(IDS_POLE1LCU);','',''),
+('M_FISHSTATION','pole','branch','DROP','0','0','MIX(WPARM,WOBJECT);
+SHOW(IDS_POLE1B);','',''),
+('M_FISHSTATION','pole','0','GRAB','0','0','','',''),
+('M_FISHSTATION','vacant','vacant','DRAG','0','IDD_BUCKE','HANDOFF(0,IDD_BUCKF);','',''),
+('M_FISHSTATION','vacant','branch','DROP','0','0','','',''),
 ('M_FLYBINa','0','1','Z_EPSILON','','','MOV(WSPRITE,WIP1);
          ASHOW(WSPRITE, V_LOOP);','',''),
 ('M_FLYBINa','1','2','GRAB','WIP2','','PLAYWAVE(WIP4);','',''),
@@ -1345,122 +1783,138 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M_GOPABIN','7','2','ASSIGN','WOBJECT','IDD_GOPAB','','',''),
 ('M_GOPABIN','8','2','ASSIGN','WOBJECT','','','',''),
 ('M_GOPABIN','9','0','ASSIGN','WOBJECT','IDD_GOPAR','','',''),
-('M_HALO','0','1','ASHOW','0','IDS_HALO01','','',''),
-('M_HIDEBUTTON','0','0','CLICK','','','
-    SIGNAL(WIP1,SIG_OPEN);
+('M_HALO','0','karmaBoost','Z_EPSILON','0','0','','',''),
+('M_HALO','1','karmaBoost','WAIT','0','SIG_ADD','','',''),
+('M_HALO','1','karmaDrain','WAIT','0','SIG_SUB','','',''),
+('M_HALO','1','karmaBoost','WAIT','0','0','','',''),
+('M_HALO','karmaBoost','1','ASSIGN','WPARM','','
+       if(LKARMA > (MAX_KARMA - 1)){
+             ASSIGN(LKARMA,(MAX_KARMA));
+       }
+        ASSIGN(BPARM,LKARMA);
+        MOV(WSPRITE,BPARM);
+        DIV(WSPRITE,2);
+        MAPi(WSPRITE,S00_KARMA_MAP);
+        ASHOW(WSPRITE);
+        SIGNALi(0,SID_ID);
+','',''),
+('M_HALO','karmaDrain','1','ASSIGN','WPARM','','
+        if(LKARMA <= 0){
+             ASSIGN(LKARMA,1);
+       }      
+        ASSIGN(BPARM,LKARMA);
+        MOV(WSPRITE,BPARM);
+        DIV(WSPRITE,2);
+        MAPi(WSPRITE,S00_KARMA_MAP);
+        ASHOW(WSPRITE);
+        SIGNALi(0,SID_ID);
+','',''),
+('M_HIDELIST','0','0','CLICK','','','
+    SIGNAL(WIP1,SIG_CHECK);
 ','',''),
 ('M_HIDER','0','topOLoop','WAIT','','SIG_OPEN','
-  
-    ASSIGN(WTEMP2,0);
-    RAND(WIP1,1);
-    MOV(WPARM,WRAND); // WPARM will be referenced as the first item to hide
-    
-    RAND(3,1);
+    ASSIGN(WPARM,1);
+    RAND(2,1); //The machine to start at
     ASSIGN(BPARM,WRAND);  // BPARM starting point for locations
     MOV(WTEMP1,BPARM);
     MAPi(WTEMP1,S00_HIDINGPLACE);
     SIGNAL(WTEMP1,SIG_OPEN); // Signal first hidden spot
-    WRITE('FIRST ITEM HIDDEN');
+    WRITE('FIRST ITEM HIDDEN'); 
   ','',''),
-('M_HIDER','objectSelected','topOLoop','LTE','WTEMP2','WIP1','
-        SIGNAL(WTEMP1,SIG_OPEN); 
-        WRITE('NEXT ITEM HIDDEN');    
-','',''),
-('M_HIDER','objectSelected','stopped','Z_EPSILON','','','
+('M_HIDER','objectHidden','topOLoop','LT','WPARM','WIP1','','',''),
+('M_HIDER','objectHidden','stopped','Z_EPSILON','','','
      WRITE('Finished Hiding Items');   
 ','',''),
 ('M_HIDER','stopped','0','WAIT','','SIG_OPEN','','',''),
-('M_HIDER','topOLoop','objectSelected','LTE','WTEMP2','WIP1','  
-            RAND(2,1); 
-            ADD(BPARM,WRAND);
-            MOV(WTEMP1,BPARM);
-            MAPi(WTEMP1,S00_HIDINGPLACE); 
-    
+('M_HIDER','topOLoop','objectHidden','LTE','WPARM','WIP1','  
             //Set wparm to represent the object pointer
-            //X+1 or 1 if we started in the middle
-            if(WPARM < WIP1){
-                ADD(WPARM,1);
-                ADD(WTEMP2,1);
-             }
-            if(WPARM >= WIP1){ 
-                ASSIGN(WPARM,1); 
-                ADD(WTEMP2,1);
-             }
+            ADD(WPARM,1); // the new item is old one +1
+           
+            //climb up the list to find a new hiding place  
+            RAND(2,1); //Location increases by 1 or 2
+            MOV(WTEMP2,BPARM);
+            ADD(WTEMP2,WRAND); 
+            ASSIGN(BPARM,WTEMP2);
+            MAPi(WTEMP2,S00_HIDINGPLACE);  //get the new hider machine into BPARM 
+            SIGNAL(WTEMP2,SIG_OPEN); 
+            WRITE('NEXT ITEM HIDDEN'); 
 ','',''),
-('M_ID','0','20','WAIT','0','SIG_HAPPY','','',''),
-('M_ID','0','21','WAIT','0','SIG_HURT','','',''),
-('M_ID','0','22','WAIT','0','SIG_KISS','','',''),
-('M_ID','0','23','WAIT','0','SIG_MAD','','',''),
-('M_ID','0','24','WAIT','0','SIG_SAD','','',''),
-('M_ID','0','25','WAIT','0','SIG_SURPRISED','','',''),
-('M_ID','0','26','WAIT','0','SIG_STRESS','','',''),
-('M_ID','0','27','WAIT','0','SIG_WAVE','','',''),
-('M_ID','0','50','WAIT','0','SIG_BOMB','','',''),
-('M_ID','0','100','WAIT','0','SIG_CLEAR','','',''),
-('M_ID','0','2','WAIT','0','0','','',''),
-('M_ID','10','11','MOV','WSPRITE','WPARM','','',''),
+('M_ID','0','setId','EQUALi','LSEX','1','
+    if(LWISDOM >= 30){
+       ASSIGN(WPARM,F3);
+    }
+     if(LWISDOM >= 20 && LWISDOM < 31){
+        ASSIGN(WPARM,F2);
+    }
+    if(LWISDOM < 20){
+       ASSIGN(WPARM,F1);
+    }
+','',''),
+('M_ID','0','setId','NEQUALi','LSEX','1','
+    if(LWISDOM >= 30){
+       ASSIGN(WPARM,M3);
+    }
+    if(LWISDOM >= 20 && LWISDOM < 31){
+        ASSIGN(WPARM,M2);
+    }
+    if(LWISDOM < 20){
+       ASSIGN(WPARM,M1);
+    }
+','',''),
 ('M_ID','100','101','SHOW','0','0','','',''),
 ('M_ID','101','0','SIGNAL','WIP4','SIG_CLEAR','','',''),
-('M_ID','11','12','ADD','WSPRITE','BPARM','','',''),
-('M_ID','12','0','SHOW','WSPRITE','','','',''),
-('M_ID','2','3','MOV','WPARM','PTR(WIP1)','','',''),
-('M_ID','20','70','ASSIGN','BPARM','IDp_xxHAPPY','','',''),
-('M_ID','21','70','ASSIGN','BPARM','IDp_xxHURT','','',''),
-('M_ID','22','80','ASSIGN','BPARM','IDp_xxKISS','','',''),
-('M_ID','23','70','ASSIGN','BPARM','IDp_xxMAD','','',''),
-('M_ID','24','70','ASSIGN','BPARM','IDp_xxSAD','','',''),
-('M_ID','25','70','ASSIGN','BPARM','IDp_xxSURPRISED','','',''),
-('M_ID','26','80','ASSIGN','BPARM','IDp_xxSTRESS','','',''),
-('M_ID','27','70','ASSIGN','BPARM','IDp_xxWAVE','','',''),
-('M_ID','3','4','DIVI','WPARM','MAX_WISDOM/MAX_LEVEL','','',''),
-('M_ID','4','5','MULI','WPARM','EMOTIONS_PER_LEVEL','','',''),
-('M_ID','5','7','ADDI','WPARM','IDp_MALE','','',''),
-('M_ID','5','6','EQUALi','PTR(WIP2)','1','','',''),
+('M_ID','20','playForward','ASSIGN','WSPRITE','happy','','',''),
+('M_ID','21','playForward','ASSIGN','WSPRITE','hurt','','',''),
+('M_ID','22','playOnce','ASSIGN','WSPRITE','kiss','','',''),
+('M_ID','23','playForward','ASSIGN','WSPRITE','mad','','',''),
+('M_ID','24','playForward','ASSIGN','WSPRITE','sad','','',''),
+('M_ID','25','playForward','ASSIGN','WSPRITE','surprised','','',''),
+('M_ID','26','playForward','ASSIGN','WSPRITE','stress','','',''),
+('M_ID','27','playForward','ASSIGN','WSPRITE','wave','','',''),
+('M_ID','30','playOnce','ASSIGN','WSPRITE','dead','','',''),
 ('M_ID','50','51','VIDEO','0','IDS_EXPLODE1','','',''),
 ('M_ID','51','21','PLAYWAVE','0','SOUND_EXPLODE','','',''),
-('M_ID','6','7','ADDI','WPARM','IDp_FEMALE','','',''),
-('M_ID','7','8','ASSIGN','BPARM','IDp_xxHAPPY','','',''),
-('M_ID','70','71','MOV','WSPRITE','WPARM','','',''),
-('M_ID','71','72','ADD','WSPRITE','BPARM','','',''),
-('M_ID','72','73','SHOW','WSPRITE','','','',''),
-('M_ID','73','0','ANIMATE','0','V_REWIND','','',''),
-('M_ID','8','10','ASSIGN','BFRAME','0','','',''),
-('M_ID','80','81','MOV','WSPRITE','WPARM','','',''),
-('M_ID','81','82','ADD','WSPRITE','BPARM','','',''),
-('M_ID','82','83','SHOW','WSPRITE','','','',''),
-('M_ID','83','0','ANIMATE','0','0','','',''),
+('M_ID','playForward','sitting','ASSIGN','BFRAME','0','
+    MAP(WSPRITE,WPARM);
+    SHOW(WSPRITE);
+    ANIMATE(0,V_REWIND); //PLAY FORWARD THEN BACK
+','',''),
+('M_ID','playOnce','sitting','ASSIGN','BFRAME','0','
+    MAP(WSPRITE,WPARM);
+    SHOW(WSPRITE);
+    ANIMATE(0,0);
+','',''),
+('M_ID','setId','sitting','ASSIGN','WSPRITE','happy','
+    MAP(WSPRITE,WPARM);
+    ASSIGN(BFRAME,0);
+    SHOW(WSPRITE);
+','',''),
+('M_ID','sitting','20','WAIT','0','SIG_HAPPY','','',''),
+('M_ID','sitting','21','WAIT','0','SIG_HURT','','',''),
+('M_ID','sitting','22','WAIT','0','SIG_KISS','','',''),
+('M_ID','sitting','23','WAIT','0','SIG_MAD','','',''),
+('M_ID','sitting','24','WAIT','0','SIG_SAD','','',''),
+('M_ID','sitting','25','WAIT','0','SIG_SURPRISED','','',''),
+('M_ID','sitting','26','WAIT','0','SIG_STRESS','','',''),
+('M_ID','sitting','27','WAIT','0','SIG_WAVE','','',''),
+('M_ID','sitting','30','WAIT','0','SIG_DEAD','','',''),
+('M_ID','sitting','50','WAIT','0','SIG_BOMB','','',''),
+('M_ID','sitting','100','WAIT','0','SIG_CLEAR','','',''),
+('M_ID','sitting','0','WAIT','0','0','','',''),
 ('M_IDSPELL','0','100','DROP','0','0','','',''),
 ('M_IDSPELL','1','2','SPELL_ME','WOBJECT','SIG_OBJECT','','',''),
 ('M_IDSPELL','10','12','EQUALi','WVIEWID','0','','',''),
 ('M_IDSPELL','10','11','LOADVIEW','WVIEWID','','','',''),
 ('M_IDSPELL','100','101','CLEAR','WVIEWID','','','',''),
-('M_IDSPELL','100','101','CLEAR','WVIEWID','','','',''),
-('M_IDSPELL','100','101','CLEAR','WVIEWID','','','',''),
-('M_IDSPELL','100','101','CLEAR','WVIEWID','','','',''),
 ('M_IDSPELL','101','102','IS_A','WOBJECT','IDC_BOMB','','',''),
 ('M_IDSPELL','101','120','IS_A','WOBJECT','IDC_SCROLL','','',''),
-('M_IDSPELL','101','120','IS_A','WOBJECT','IDC_SCROLL','','',''),
-('M_IDSPELL','101','120','IS_A','WOBJECT','IDC_SCROLL','','',''),
-('M_IDSPELL','101','120','IS_A','WOBJECT','IDC_SCROLL','','',''),
-('M_IDSPELL','101','1','Z_EPSILON','0','0','','',''),
-('M_IDSPELL','101','1','Z_EPSILON','0','0','','',''),
-('M_IDSPELL','101','1','Z_EPSILON','0','0','','',''),
 ('M_IDSPELL','101','1','Z_EPSILON','0','0','','',''),
 ('M_IDSPELL','102','0','SPELL_ME','0','SIG_BOMB','','',''),
 ('M_IDSPELL','11','12','CLEAR','WVIEWID','','','',''),
 ('M_IDSPELL','12','13','SHOW','0','0','','',''),
 ('M_IDSPELL','120','121','MOV','WTEMP1','WOBJECT','','',''),
-('M_IDSPELL','120','121','MOV','WTEMP1','WOBJECT','','',''),
-('M_IDSPELL','120','121','MOV','WTEMP1','WOBJECT','','',''),
-('M_IDSPELL','120','121','MOV','WTEMP1','WOBJECT','','',''),
-('M_IDSPELL','121','122','MOV','WVIEWID','LVIEW','','',''),
-('M_IDSPELL','121','122','MOV','WVIEWID','LVIEW','','',''),
-('M_IDSPELL','121','122','MOV','WVIEWID','LVIEW','','',''),
 ('M_IDSPELL','121','122','MOV','WVIEWID','LVIEW','','',''),
 ('M_IDSPELL','122','1','LOADVIEW','0','IDV_PARCHPAN','','',''),
-('M_IDSPELL','122','1','LOADVIEW','0','IDV_SPELLPAN','','',''),
-('M_IDSPELL','122','1','LOADVIEW','0','IDV_SPELLPAN','','',''),
-('M_IDSPELL','122','1','LOADVIEW','0','IDV_SPELLPAN','','',''),
 ('M_IDSPELL','13','0','SPELL_ME','WOBJECT','SIG_CLEAR','','',''),
 ('M_IDSPELL','2','3','PLAYWAVE','0','SOUND_POPUP','','',''),
 ('M_IDSPELL','20','21','CLEAR','WOBJECT','','','',''),
@@ -1477,35 +1931,27 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M_INV_RIGHT','0','1','CLICK','0','0','','',''),
 ('M_INV_RIGHT','1','2','SENDKEYI','KEY_RIGHT','IDV_INVENTORY','','',''),
 ('M_INV_RIGHT','2','0','PLAYWAVE','0','SOUND_CLICK','','',''),
-('M_KAMDOOR','0','10','WAIT','','SIG_CHECK','ASSIGN(WPARM,0);','',''),
-('M_KAMDOOR','10','20','Z_EPSILON','','','
-    REF_MACHINE(0,S27_MEMSTONE7);
-    MOV(WTEMP1,R_BPARM);
-     if (R_WPARM > 0) { 
-        REF_MACHINE(0,S28_DISK7);
-        MOV(WTEMP2,R_BPARM);
-             if (WTEMP1 == (WTEMP2 - 1)) {
-                ADD(WPARM,1);
-            }}','',''),
-('M_KAMDOOR','20','30','Z_EPSILON','','','
-    REF_MACHINE(0,S27_MEMSTONE6);
-    MOV(WTEMP1,R_BPARM);
-     if (R_WPARM > 0) { 
-        REF_MACHINE(0,S28_DISK6);
-        MOV(WTEMP2,R_BPARM);
-             if (WTEMP1 == (WTEMP2 - 1)) {
-                ADD(WPARM,1);
-            }}','',''),
-('M_KAMDOOR','30','40','Z_EPSILON','','','
-    REF_MACHINE(0,S27_MEMSTONE5);
-    MOV(WTEMP1,R_BPARM);
-     if (R_WPARM > 0) { 
-        REF_MACHINE(0,S28_DISK5);
-        MOV(WTEMP2,R_BPARM);
-             if (WTEMP1 == (WTEMP2 - 1)) {
-                ADD(WPARM,1);
-            }}','',''),
-('M_KAMDOOR','40','50','Z_EPSILON','','','
+('M_KAMALTAR','0','5','ACCEPT','','IDD_SEED','','',''),
+('M_KAMALTAR','10','20','ASHOW','WOBJECT','','','',''),
+('M_KAMALTAR','20','21','SIGNAL','WIP1','SIG_SHOW','','',''),
+('M_KAMALTAR','21','0','GRAB','','','
+    SHOW();
+','',''),
+('M_KAMALTAR','5','10','DROP','','','','',''),
+('M_KAMDOOR','0','startChecking','WAIT','','SIG_CHECK','
+/*
+    Each change in moon disk rotation checks to see 
+    which frame matches are present across all paired moons/disks.
+    it checks to see if the moons are showing
+    at all first (MEMSTONE(X)- R_WPARM), then 
+    counts matches in WPARM up to the 7 required
+*/
+ASSIGN(WPARM,0);
+','',''),
+('M_KAMDOOR','allowEntry','0','CLICK','','','
+    LOADVIEW(0,IDV_KAMIOZA);
+','',''),
+('M_KAMDOOR','fiveChecked','fourChecked','Z_EPSILON','','','
     REF_MACHINE(0,S27_MEMSTONE4);
     MOV(WTEMP1,R_BPARM);
      if (R_WPARM > 0) { 
@@ -1514,7 +1960,7 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
              if (WTEMP1 == (WTEMP2 - 1)) {
                 ADD(WPARM,1);
             }}','',''),
-('M_KAMDOOR','50','60','Z_EPSILON','','','
+('M_KAMDOOR','fourChecked','threeChecked','Z_EPSILON','','','
     REF_MACHINE(0,S27_MEMSTONE3);
     MOV(WTEMP1,R_BPARM);
      if (R_WPARM > 0) { 
@@ -1523,7 +1969,48 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
              if (WTEMP1 == (WTEMP2 - 1)) {
                 ADD(WPARM,1);
             }}','',''),
-('M_KAMDOOR','60','70','Z_EPSILON','','','
+('M_KAMDOOR','oneChecked','success','EQUAL','WPARM','7','','',''),
+('M_KAMDOOR','oneChecked','0','Z_EPSILON','','','','',''),
+('M_KAMDOOR','sevenChecked','sixChecked','Z_EPSILON','','','
+    REF_MACHINE(0,S27_MEMSTONE6);
+    MOV(WTEMP1,R_BPARM);
+     if (R_WPARM > 0) { 
+        REF_MACHINE(0,S28_DISK6);
+        MOV(WTEMP2,R_BPARM);
+             if (WTEMP1 == (WTEMP2 - 1)) {
+                ADD(WPARM,1);
+            }}','',''),
+('M_KAMDOOR','showDoors','allowEntry','Z_EPSILON','','','
+    SIGNAL(WIP1,SIG_SHOW);
+    SIGNAL(WIP2,SIG_SHOW);
+    SIGNAL(WIP3,SIG_SHOW);
+    SIGNAL(WIP4,SIG_SHOW);
+','',''),
+('M_KAMDOOR','sixChecked','fiveChecked','Z_EPSILON','','','
+    REF_MACHINE(0,S27_MEMSTONE5);
+    MOV(WTEMP1,R_BPARM);
+     if (R_WPARM > 0) { 
+        REF_MACHINE(0,S28_DISK5);
+        MOV(WTEMP2,R_BPARM);
+             if (WTEMP1 == (WTEMP2 - 1)) {
+                ADD(WPARM,1);
+            }}','',''),
+('M_KAMDOOR','startChecking','sevenChecked','Z_EPSILON','','','
+    REF_MACHINE(0,S27_MEMSTONE7);
+    MOV(WTEMP1,R_BPARM);
+     if (R_WPARM > 0) { 
+        REF_MACHINE(0,S28_DISK7);
+        MOV(WTEMP2,R_BPARM);
+             if (WTEMP1 == (WTEMP2 - 1)) {
+                ADD(WPARM,1);
+            }}','',''),
+('M_KAMDOOR','success','showDoors','Z_EPSILON','0','','
+    PLAYWAVE(SOUND_CHIMES);
+    SHOW(IDS_KAMDOOR);
+    ANIMATE();
+    //show alt views and allow entry
+','',''),
+('M_KAMDOOR','threeChecked','twoChecked','Z_EPSILON','','','
     REF_MACHINE(0,S27_MEMSTONE2);
     MOV(WTEMP1,R_BPARM);
      if (R_WPARM > 0) { 
@@ -1532,7 +2019,7 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
             if (WTEMP1 == (WTEMP2 - 1)) {
                 ADD(WPARM,1);
             }}','',''),
-('M_KAMDOOR','70','80','Z_EPSILON','','','
+('M_KAMDOOR','twoChecked','oneChecked','Z_EPSILON','','','
     REF_MACHINE(0,S27_MEMSTONE1);
     MOV(WTEMP1,R_BPARM);
      if (R_WPARM > 0) { 
@@ -1541,7 +2028,20 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
             if (WTEMP1 == (WTEMP2 - 1)) {
                 ADD(WPARM,1);
             }}','',''),
-('M_KAMDOOR','80','0','Z_EPSILON','','','','',''),
+('M_KAMDOOR_alt','0','altViewShown','WAIT','','SIG_SHOW','
+     SHOW(WIP1);
+     ANIMATE();
+','',''),
+('M_KAMDOOR_alt','altViewShown','zoomed','CLICK','','','
+     LOADVIEW(0,IDV_MOON5);
+','',''),
+('M_KAMDOOR_alt','altViewShown','0','WAIT','','SIG_HIDE','
+     SHOW();
+','',''),
+('M_KAMDOOR_alt','zoomed','altViewShown','Z_EPSILON','','','','',''),
+('M_KAMRAIN','0','1','WAIT','','SIG_SHOW','','',''),
+('M_KAMRAIN','1','2','VIDEO','','IDS_RAIN','','',''),
+('M_KAMRAIN','2','0','Z_EPSILON','','','','',''),
 ('M_LEVDOOR','0','1','WAIT','0','SIG_OPEN','','',''),
 ('M_LEVDOOR','1','3','MOV','WSPRITE','WIP1','','',''),
 ('M_LEVDOOR','3','4','SHOW','WSPRITE','0','','',''),
@@ -1603,23 +2103,82 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M_MAPBUTTON','1','2','CLICK','0','0','','',''),
 ('M_MAPBUTTON','2','3','PLAYWAVE','0','SOUND_POPUP','','',''),
 ('M_MAPBUTTON','3','1','LOADVIEW','0','IDV_CONTINENT','','',''),
-('M_MEFPAN_OK','0','1','SHOW','0','IDS_BTN_OK','','',''),
-('M_MEFPAN_OK','1','2','CLICK','0','0','','',''),
-('M_MEFPAN_OK','2','3','SIGNAL','SIG_CLOSE','WIP1','PLAYWAVE(SOUND_POPUP);','',''),
-('M_MEFPAN_OK','3','4','CLEAR','WIP1','','SHOW(0);','',''),
-('M_MEFPAN_OK','4','0','LOADVIEW','WIP2','','','',''),
+('M_MEFCURRENT','0','quest1','WAIT','','SIG_Q1','ASSIGN(WPARM,S33_NEELP_Q1);ASSIGN(BPARM,IDV_N2B);','',''),
+('M_MEFCURRENT','0','quest2','WAIT','','SIG_Q2','ASSIGN(WPARM,2);','',''),
+('M_MEFCURRENT','0','quest3','WAIT','','SIG_Q3','ASSIGN(WPARM,3);','',''),
+('M_MEFCURRENT','0','quest4','WAIT','','SIG_Q4','ASSIGN(WPARM,S24_RATHE_Q1);ASSIGN(BPARM,IDV_EYEA);','',''),
+('M_MEFCURRENT','0','quest5','WAIT','','SIG_Q5','ASSIGN(WPARM,5);','',''),
+('M_MEFCURRENT','0','quest6','WAIT','','SIG_Q6','ASSIGN(WPARM,S10_THAOR_Q1);ASSIGN(BPARM,IDV_SCN10PT1);','',''),
+('M_MEFCURRENT','0','quest7','WAIT','','SIG_Q7','ASSIGN(WPARM,7);','',''),
+('M_MEFCURRENT','0','quest8','WAIT','','SIG_Q8','ASSIGN(WPARM,S16_PERST_Q1);ASSIGN(BPARM,IDV_VIL7);','',''),
+('M_MEFCURRENT','0','quest9','WAIT','','SIG_Q9','ASSIGN(WPARM,9);','',''),
+('M_MEFCURRENT','quest1','0','Z_EPSILON','','','','',''),
+('M_MEFCURRENT','quest2','0','Z_EPSILON','','','','',''),
+('M_MEFCURRENT','quest3','0','Z_EPSILON','','','','',''),
+('M_MEFCURRENT','quest4','0','Z_EPSILON','','','','',''),
+('M_MEFCURRENT','quest5','0','Z_EPSILON','','','','',''),
+('M_MEFCURRENT','quest6','0','Z_EPSILON','','','','',''),
+('M_MEFCURRENT','quest7','0','Z_EPSILON','','','','',''),
+('M_MEFCURRENT','quest8','0','Z_EPSILON','','','','',''),
+('M_MEFCURRENT','quest9','0','Z_EPSILON','','','','',''),
+('M_MEFPAN_OK','0','1','SHOW','0','IDS_BTN_OK','
+    //GET THE ACTIVE MEFLIN
+     REF_MACHINE(MEFCURRENT);
+','',''),
+('M_MEFPAN_OK','1','2','CLICK','0','0','
+    PLAYWAVE(SOUND_POPUP); 
+    SIGNAL(SIG_CLOSE,WIP1);
+    REF_MACHINE(MEFCURRENT);
+    MOV(BPARM,R_BPARM);
+','',''),
+('M_MEFPAN_OK','2','0','LOADVIEW','BPARM','','','',''),
 ('M_MEFPAN_OKR','0','1','SHOW','0','IDS_BTN_OK','','',''),
 ('M_MEFPAN_OKR','1','2','CLICK','0','0','PLAYWAVE(SOUND_POPUP); SIGNALi(SIG_CLOSE,S24_RATHE_Q1);','',''),
 ('M_MEFPAN_OKR','2','0','LOADVIEW','WIP2','','','',''),
-('M_MEF_APPROACH','0','1','MOV','WSPRITE','WIP1','','',''),
-('M_MEF_APPROACH','1','2','ASHOW','WSPRITE','V_LOOP','','',''),
-('M_MEF_APPROACH','2','3','CLICK','0','0','','',''),
-('M_MEF_APPROACH','3','4','LOADVIEW','WIP3','','','',''),
-('M_MEF_APPROACH','4','0','SIGNAL','WIP2','SIG_PLAY','','',''),
+('M_MEF_APPROACH','0','setup','MOV','WSPRITE','WIP1',' 
+    MOV(WVIEWID,LVIEW);
+    ASSIGN(WPARM,WIP2);//the active mefs coord
+','',''),
+('M_MEF_APPROACH','chillin','mef_bothered','CLICK','0','0','LOADVIEW(0,IDV_MEFPAN);','',''),
+('M_MEF_APPROACH','mef_bothered','mef_response','REF_MACHINE','0','WIP3','
+    if(IFSTATE(0,WIP3)){
+        //Tell the active meflins coordinator
+        SIGNAL(WIP3,SIG_Q1_START);
+            //Tell the outside world where we at
+            //WTEMP1 will be machine, WTemp2 is wording
+            if(WIP2 == 1){SIGNAL(MEFCURRENT,SIG_Q1); mefQuest("1",?BPARM,?WTEMP1,?WTEMP2,?WTEMP3,?WPARM);}
+            if(WIP2 == 2){SIGNAL(MEFCURRENT,SIG_Q4); mefQuest("4",?BPARM,?WTEMP1,?WTEMP2,?WTEMP3,?WPARM);}
+            if(WIP2 == 3){SIGNAL(MEFCURRENT,SIG_Q6); mefQuest("6",?BPARM,?WTEMP1,?WTEMP2,?WTEMP3,?WPARM);}
+            if(WIP2 == 4){SIGNAL(MEFCURRENT,SIG_Q8); mefQuest("8",?BPARM,?WTEMP1,?WTEMP2,?WTEMP3,?WPARM);}
+    };
+    if(IFSTATE(Q1Pending,WIP3)){
+      //if Q1 is pending then we need to do the alt answers or recognize a winning item
+    };
+    if(IFSTATE(Q1Solved,WIP3)){
+        SIGNAL(WIP3,SIG_Q2_START);
+        if(WIP2 == 1){SIGNAL(MEFCURRENT,SIG_Q2); mefQuest("2",?BPARM,?WTEMP1,?WTEMP2,?WTEMP3,?WPARM);}
+        if(WIP2 == 2){SIGNAL(MEFCURRENT,SIG_Q5); mefQuest("5",?BPARM,?WTEMP1,?WTEMP2,?WTEMP3,?WPARM);}
+        if(WIP2 == 3){SIGNAL(MEFCURRENT,SIG_Q7); mefQuest("7",?BPARM,?WTEMP1,?WTEMP2,?WTEMP3,?WPARM);}
+        if(WIP2 == 4){SIGNAL(MEFCURRENT,SIG_Q9); mefQuest("9",?BPARM,?WTEMP1,?WTEMP2,?WTEMP3,?WPARM);}
+    };
+    if(IFSTATE(Q2Pending,WIP3)){
+        //if Q2 is pending then we need to do the alt answers or recognize a winning item
+    };
+    if(IFSTATE(Q2Solved,WIP3)){
+        //Here only Neelp has a third quest
+        SIGNAL(WIP3,SIG_Q3_START);
+         if(WIP2 == 1){SIGNAL(MEFCURRENT,SIG_Q3); mefQuest("3",?BPARM,?WTEMP1,?WTEMP2,?WTEMP3,?WPARM);}
+    };
+    if(IFSTATE(Q3Pending,WIP3)){
+       //if Q2 is pending then we need to do the alt answers or recognize a winning item
+    };
+','',''),
+('M_MEF_APPROACH','mef_response','0','SIGNAL','BPARM','SIG_PLAY','','',''),
+('M_MEF_APPROACH','setup','chillin','ASHOW','WSPRITE','V_LOOP','','',''),
 ('M_MEF_TALK','0','1','WAIT','','SIG_PLAY','','',''),
 ('M_MEF_TALK','1','2','MOV','WSPRITE','WIP1','','',''),
 ('M_MEF_TALK','10','11','WAIT','','SIG_CLOSE','','',''),
-('M_MEF_TALK','11','14','CLEAR','BFRAME','','','',''),
+('M_MEF_TALK','11','14','CLEAR','WSPRITE','','','',''),
 ('M_MEF_TALK','14','15','SHOW','0','','','',''),
 ('M_MEF_TALK','15','0','Z_EPSILON','0','0','','',''),
 ('M_MEF_TALK','2','3','ASHOW','WSPRITE','','','',''),
@@ -1668,11 +2227,81 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M_NATURE','4','5','SIGNALi','SIG_OPEN','S03_BIRDSBKWD','','',''),
 ('M_NATURE','5','6','SIGNALi','SIG_OPEN','S12_BUTTERFLY','','',''),
 ('M_NATURE','6','7','SIGNALi','SIG_RIPEN','S16_GOPABUSH','','',''),
-('M_NATURE','7','1','ESTIME','','20','','',''),
+('M_NATURE','7','8','SIGNALi','SIG_RIPEN','S10_GOPABUSH','','',''),
+('M_NATURE','8','1','ESTIME','','300','','',''),
 ('M_OBJECTBIN','0','0','GRAB','WIP1','','','',''),
 ('M_OBJECTMAP','0','1','DRAG','WIP1','','','',''),
 ('M_OBJECTMAP','1','2','HANDOFF','WIP2','','','',''),
 ('M_OBJECTMAP','2','0','PLAYWAVE','WIP3','','','',''),
+('M_OLIEOLIE','0','1','WAIT','','SIG_CHECK','','',''),
+('M_OLIEOLIE','1','0','Z_EPSILON','','','
+if ( (IFSTATE(firstWhack, S00_HIDDEN_1)) ){WRITE("Place 1 IDV_PATH2");}
+
+      if( (IFSTATE(firstWhack, S00_HIDDEN_2)) ){
+         WRITE("Place 2 IDV_MOON3");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_3)) ){
+         WRITE("Place 3 IDV_MOON5");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_4 )) ){
+         WRITE("Place 4 IDV_EYEB");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_5 )) ){
+         WRITE("Place 5 IDV_WR3");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_6 )) ){
+         WRITE("Place 6 IDV_CTO1");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_7 )) ){
+         WRITE("Place 7 IDV_VIL4");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_8 )) ){
+         WRITE("Place 8 IDV_TMPLPTH5");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_9)) ){
+         WRITE("Place 9 IDV_EYEB");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_10 )) ){
+         WRITE("Place 10 IDV_WR2");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_11 )) ){
+         WRITE("Place 11 IDV_SCN10PT0");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_12 )) ){
+         WRITE("Place 12 IDV_FA1PAN");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_13 )) ){
+         WRITE("Place 13 IDV_FA1PAN");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_14 )) ){
+         WRITE("Place 14 IDV_FH1PTH1");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_15 )) ){
+         WRITE("Place 15 IDV_SCN10PT0");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_16 )) ){
+         WRITE("Place 16 IDV_CTO3");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_17 )) ){
+         WRITE("Place 17 IDV_CTO2");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_18 )) ){
+         WRITE("Place 18 IDV_ctyh");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_19 )) ){
+         WRITE("Place 19 IDV_TMPLPTH5");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_20 )) ){
+         WRITE("Place 20nIDV_SCN10PT0");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_21 )) ){
+         WRITE("Place 21 IDV_WR3");
+      }
+      if( (IFSTATE(firstWhack, S00_HIDDEN_22 )) ){
+         WRITE("Place 22 IDV_WR3");
+      }
+
+','',''),
 ('M_ORIESPEAKER','0','1','O_ACCEPT','0','IDD_SPEAKER','','',''),
 ('M_ORIESPEAKER','1','2','DROP','0','0','','',''),
 ('M_ORIESPEAKER','2','3','ASSIGN','WOBJECT','IDD_SPEAKER','','',''),
@@ -1699,15 +2328,6 @@ SIGNAL(WIP1,SIG_SHOW);','',''),
 ('M_O_IDSPELL','1','0','SPELL_YOU','WOBJECT','','','',''),
 ('M_O_PED','0','1','GRAB','0','0','','',''),
 ('M_O_PED','0','1','WAIT','0','0','','',''),
-('M_PED','0','2','Z_EPSILON','0','0','','',''),
-('M_PED','1','2','WAIT','0','0','','',''),
-('M_PED','2','3','ASSIGN','WSPRITE','MAX_PEDS','','',''),
-('M_PED','3','4','MUL','WSPRITE','LKARMA','','',''),
-('M_PED','4','5','ASSIGN','WPARM','MAX_KARMA','','',''),
-('M_PED','5','6','DIV','WSPRITE','WPARM','','',''),
-('M_PED','6','7','ASSIGN','WPARM','IDS_PED1','','',''),
-('M_PED','7','8','ADD','WSPRITE','WPARM','','',''),
-('M_PED','8','1','SHOW','WSPRITE','','','',''),
 ('M_PLANTBIN','0','1','MOV','WSPRITE','WIP2','','',''),
 ('M_PLANTBIN','1','5','SHOW','WSPRITE','','','',''),
 ('M_PLANTBIN','10','20','SHOW','0','0','','',''),
@@ -1766,11 +2386,10 @@ CLEAR(WPARM);','',''),
 ('M_STATESCALE','10','11','WAIT','0','SIG_HIDE','','',''),
 ('M_STATESCALE','11','0','SHOW','0','0','','',''),
 ('M_STATESCALE','5','10','SHOW','WSPRITE','0','','',''),
-('M_STATESCALEV','0','1','WAIT','0','SIG_SHOW','','',''),
-('M_STATESCALEV','1','5','MOV','WSPRITE','WIP1','','',''),
+('M_STATESCALEV','0','5','WAIT','0','SIG_SHOW','','',''),
 ('M_STATESCALEV','10','11','WAIT','0','SIG_HIDE','','',''),
 ('M_STATESCALEV','11','0','ASHOW','0','0','','',''),
-('M_STATESCALEV','5','10','ASHOW','WSPRITE','0','','',''),
+('M_STATESCALEV','5','10','ASHOW','WIP1','0','','',''),
 ('M_TALK','0','2','MOV','WSPRITE','WIP4','','',''),
 ('M_TALK','10','11','CLICK','0','0','','',''),
 ('M_TALK','10','20','WAIT','0','0','','',''),
@@ -1785,6 +2404,47 @@ CLEAR(WPARM);','',''),
 ('M_TALK','19','10','SIGNAL','WIP3','','','',''),
 ('M_TALK','2','10','SHOW','WSPRITE','0','','',''),
 ('M_TALK','20','10','SHOW','0','0','','',''),
+('M_TEST1','0','0','CLICK','0','0','
+    ASSIGN(LENERGY,4);
+    SIGNAL(SID_AURA,SIG_ADD);
+','',''),
+('M_TEST2','0','0','CLICK','0','0','
+    ADDI(LENERGY,1);
+    SIGNAL(SID_AURA,SIG_ADD);
+    ','',''),
+('M_TEST3','0','0','CLICK','0','0','
+    SUBI(LENERGY,1);
+    SIGNAL(SID_AURA,SIG_SUB);
+    ','',''),
+('M_TEST4','0','0','CLICK','0','0','
+    ASSIGN(LKARMA,0);
+    SIGNAL(SID_HALO,SIG_ADD);
+','',''),
+('M_TEST5','0','0','CLICK','0','0','
+    ADDI(LKARMA,1);
+    SIGNAL(SID_HALO,SIG_ADD);
+    ','',''),
+('M_TEST6','0','0','CLICK','0','0','
+    SUBI(LKARMA,1);
+    SIGNAL(SID_HALO,SIG_SUB);
+    ','',''),
+('M_TEST7','0','0','CLICK','0','0','
+    ASSIGN(LWISDOM,2);
+    SIGNALi(0,SID_ID);
+','',''),
+('M_TEST8','0','0','CLICK','0','0','
+    ASSIGN(LWISDOM,25);
+    SIGNALi(0,SID_ID);
+','',''),
+('M_TEST9','0','0','CLICK','0','0','
+    ASSIGN(LWISDOM,40);
+    ASSIGN(LSEX,1);
+    SIGNALi(0,SID_ID);
+','',''),
+('M_TEST_MEFLINa','0','1','Z_EPSILON','','','MOV(WSPRITE,WIP1);
+         ASHOW(WSPRITE, V_LOOP);','',''),
+('M_TEST_MEFLINa','1','1','CLICK','','','LOADVIEW(IDV_MEFLINTEXT);
+        SIGNAL(SXX_WAITER, "B");','',''),
 ('M_TEXT_DOWN','0','1','CLICK','0','0','','',''),
 ('M_TEXT_DOWN','1','2','PLAYWAVE','0','SOUND_CLICK','','',''),
 ('M_TEXT_DOWN','2','3','SENDMSGI','10','IDV_S_TELETYPE','','',''),
@@ -1854,4 +2514,28 @@ CLEAR(WPARM);','',''),
 ('M_VPLAY2','2','0','ANIMATE','0','0','','',''),
 ('M_VPLAY3','0','1','WAIT','0','SIG_OPEN','','',''),
 ('M_VPLAY3','1','2','SHOW','0','IDS_BIRDSBKWD','','',''),
-('M_VPLAY3','2','0','ANIMATE','0','0','','','');
+('M_VPLAY3','2','0','ANIMATE','0','0','','',''),
+('m_test_button','0','a','Z_EPSILON','','','SHOW(IDS_BTN_OK);SETTEXT(ID_MYLABEL, "startup text");','',''),
+('m_test_button','a','b','CLICK','','','SIGNAL(SXX_WAITER,"A");','',''),
+('m_test_button','b','c','CLICK','','','SIGNAL(SXX_WAITER,"B");','',''),
+('m_test_button','c','a','CLICK','','','SIGNAL(SXX_WAITER,"C");','',''),
+('m_test_waiter','0','0','WAIT','A','','SETTEXT(ID_MYLABEL,"[A] This Is Some New Text");','',''),
+('m_test_waiter','0','0','WAIT','B','','SETTEXT(ID_MYLABEL,
+"[B]
+Notes:
+  1. Labels need a background (sprite)
+     Text is output to the sprite.
+     Text is cleared by removing the sprite
+  1. The sprite image can be transparent
+     for example, a single color image
+  2. Updated text is not saved.
+     labels revert to the default text.
+");','',''),
+('m_test_waiter','0','0','WAIT','C','','SETTEXT(ID_MYLABEL,
+"[C]
+Labels depend on their background image to clear text.
+If the image is too small text will be left in the view.
+This is a bug, but once fixed the excess text will be clipped, so just
+make sure that your text fits on the label image!
+Click OK to see what I mean.
+");','','');

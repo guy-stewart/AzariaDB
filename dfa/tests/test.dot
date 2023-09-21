@@ -1,36 +1,56 @@
-digraph AbstractSyntaxTree {
-    node [shape=record];
-	ast_node[label="{<A>STMTS&#92;n | {<L> L | <R> R}}"];
-	ast_nodeL[label="{<A>CALL&#92;n | {<L> L | <R> R}}"];
-	ast_nodeLL[label="{<A>ID&#92;nANIMATE | {<L> L | <R> R}}"];
-	ast_nodeL:<L> -> ast_nodeLL:<A>;
-	ast_nodeLR[label="{<A>PARMS&#92;n | {<L> L | <R> R}}"];
-	ast_nodeLRL[label="{<A>ID&#92;nV_LOOP | {<L> L | <R> R}}"];
-	ast_nodeLR:<L> -> ast_nodeLRL:<A>;
-	ast_nodeL:<R> -> ast_nodeLR:<A>;
-	ast_node:<L> -> ast_nodeL:<A>;
-	ast_nodeR[label="{<A>STMTS&#92;n | {<L> L | <R> R}}"];
-	ast_nodeRL[label="{<A>CALL&#92;n | {<L> L | <R> R}}"];
-	ast_nodeRLL[label="{<A>ID&#92;nPLAYWAVE | {<L> L | <R> R}}"];
-	ast_nodeRL:<L> -> ast_nodeRLL:<A>;
-	ast_nodeRLR[label="{<A>PARMS&#92;n | {<L> L | <R> R}}"];
-	ast_nodeRLRL[label="{<A>ID&#92;nSOUND_CLICK | {<L> L | <R> R}}"];
-	ast_nodeRLR:<L> -> ast_nodeRLRL:<A>;
-	ast_nodeRL:<R> -> ast_nodeRLR:<A>;
-	ast_nodeR:<L> -> ast_nodeRL:<A>;
-	ast_nodeRR[label="{<A>STMTS&#92;n | {<L> L | <R> R}}"];
-	ast_nodeRRL[label="{<A>CALL&#92;n | {<L> L | <R> R}}"];
-	ast_nodeRRLL[label="{<A>ID&#92;nMOV | {<L> L | <R> R}}"];
-	ast_nodeRRL:<L> -> ast_nodeRRLL:<A>;
-	ast_nodeRRLR[label="{<A>PARMS&#92;n | {<L> L | <R> R}}"];
-	ast_nodeRRLRL[label="{<A>ID&#92;nWOBJECT | {<L> L | <R> R}}"];
-	ast_nodeRRLR:<L> -> ast_nodeRRLRL:<A>;
-	ast_nodeRRLRR[label="{<A>PARMS&#92;n | {<L> L | <R> R}}"];
-	ast_nodeRRLRRL[label="{<A>ID&#92;nWPARM | {<L> L | <R> R}}"];
-	ast_nodeRRLRR:<L> -> ast_nodeRRLRRL:<A>;
-	ast_nodeRRLR:<R> -> ast_nodeRRLRR:<A>;
-	ast_nodeRRL:<R> -> ast_nodeRRLR:<A>;
-	ast_nodeRR:<L> -> ast_nodeRRL:<A>;
-	ast_nodeR:<R> -> ast_nodeRR:<A>;
-	ast_node:<R> -> ast_nodeR:<A>;
+digraph Automaton {
+ fontname="Courier New"
+	node [shape=oval, fontname="Courier New"];
+	filename[shape = record, fontsize=10, label=< <table border="1"><tr><td><b>S00_HIDDEN_14::M_DIGGABLE<br align="left"/></b></td></tr>
+<tr><td><font point-size="10" color ="brown">start state = 0<br align="left"/></font></td></tr></table>>
+];
+	0[shape = none, fontsize=14, label=< <table border="1" color="darkred" style="rounded"><tr><td sides="b"><b>0<br align="left"/></b></td></tr>
+</table>>];
+"0" -> "fixinToHideItem" [fontcolor=orange,fontsize=10,fontname="Courier New", label=< <table border="1"><tr><td><b>WAIT(,SIG_OPEN)<br align="left"/></b></td></tr>
+<tr><td><font point-size="10" color ="blue">    REF_MACHINE(S00_HIDER);<br align="left"/>    MOV(WOBJECT,R_WPARM);<br align="left"/></font></td></tr></table>>
+];
+	coverActive[shape = none, fontsize=14, label=< <table border="1" color="darkred" style="rounded"><tr><td sides="b"><b>coverActive<br align="left"/></b></td></tr>
+</table>>];
+"coverActive" -> "firstWhack" [fontcolor=blue,fontsize=10,fontname="Courier New", label=< <table border="0"><tr><td><b>C_ACCEPT(WIP3,)<br align="left"/></b></td></tr>
+</table>>
+];
+	determinedItem[shape = none, fontsize=14, label=< <table border="1" color="darkred" style="rounded"><tr><td sides="b"><b>determinedItem<br align="left"/></b></td></tr>
+</table>>];
+"determinedItem" -> "coverActive" [fontcolor=blue,fontsize=10,fontname="Courier New", label=< <table border="1"><tr><td><b>MOV(WSPRITE,WIP2)<br align="left"/></b></td></tr>
+<tr><td><font point-size="10" color ="blue">        SHOW(WSPRITE);<br align="left"/></font></td></tr></table>>
+];
+	displayItem[shape = none, fontsize=14, label=< <table border="1" color="darkred" style="rounded"><tr><td sides="b"><b>displayItem<br align="left"/></b></td></tr>
+</table>>];
+"displayItem" -> "determinedItem" [fontcolor=orange,fontsize=10,fontname="Courier New", label=< <table border="0"><tr><td><b>GRAB(,)<br align="left"/></b></td></tr>
+</table>>
+];
+	firstWhack[shape = none, fontsize=14, label=< <table border="3" color="darkred" style="rounded"><tr><td sides="b"><b>firstWhack<br align="left"/></b></td></tr>
+</table>>];
+"firstWhack" -> "secondWhack" [fontcolor=orange,fontsize=10,fontname="Courier New", label=< <table border="1"><tr><td><b>DRAG(,)<br align="left"/></b></td></tr>
+<tr><td><font point-size="10" color ="blue">        if(WIP3 == ISA_TOOL_DIGGER)&#123;<br align="left"/>            SHOW(0,IDS_SANDPILE2);<br align="left"/>            ANIMATE();<br align="left"/>            PLAYWAVE(SOUND_DIG);<br align="left"/>         &#125;   <br align="left"/>         if(WIP3 == ISA_TOOL_STRIKER)&#123;<br align="left"/>            SHOW(0,IDS_SANDSTRIKE);<br align="left"/>            ANIMATE();<br align="left"/>            PLAYWAVE(SOUND_DIG);<br align="left"/>         &#125;   <br align="left"/>          if(WIP3 == ISA_TOOL_PRYER)&#123;<br align="left"/>            SHOW(0,IDS_SANDWOBBLE);<br align="left"/>            ANIMATE();<br align="left"/>            PLAYWAVE(SOUND_THUMP);<br align="left"/>         &#125;   <br align="left"/></font></td></tr></table>>
+];
+	fixinToHideItem[shape = none, fontsize=14, label=< <table border="1" color="darkred" style="rounded"><tr><td sides="b"><b>fixinToHideItem<br align="left"/></b></td></tr>
+</table>>];
+"fixinToHideItem" -> "determinedItem" [fontcolor=blue,fontsize=10,fontname="Courier New", label=< <table border="1"><tr><td><b>MAP(WOBJECT,S00_HIDDENITEM)<br align="left"/></b></td></tr>
+<tr><td><font point-size="10" color ="blue">    // WOBJECT is now the object to hide<br align="left"/></font></td></tr></table>>
+];
+	moveMe[shape = none, fontsize=14, label=< <table border="1" color="darkred" style="rounded"><tr><td sides="b"><b>moveMe<br align="left"/></b></td></tr>
+</table>>];
+"moveMe" -> "displayItem" [fontcolor=blue,fontsize=10,fontname="Courier New", label=< <table border="1"><tr><td><b>SET_YOFFSET(ADD,50)<br align="left"/></b></td></tr>
+<tr><td><font point-size="10" color ="blue">        PLAYWAVE(SOUND_CHIMES);<br align="left"/>        SHOW(WOBJECT);<br align="left"/></font></td></tr></table>>
+];
+	secondWhack[shape = none, fontsize=14, label=< <table border="1" color="darkred" style="rounded"><tr><td sides="b"><b>secondWhack<br align="left"/></b></td></tr>
+</table>>];
+"secondWhack" -> "thirdWhack" [fontcolor=orange,fontsize=10,fontname="Courier New", label=< <table border="1"><tr><td><b>DRAG(,)<br align="left"/></b></td></tr>
+<tr><td><font point-size="10" color ="blue">        if(WIP3 == ISA_TOOL_DIGGER)&#123;<br align="left"/>            SHOW(0,IDS_SANDPILE3);<br align="left"/>            ANIMATE();<br align="left"/>            PLAYWAVE(SOUND_DIG);<br align="left"/>         &#125;   <br align="left"/>         if(WIP3 == ISA_TOOL_STRIKER)&#123;<br align="left"/>            SHOW(0,IDS_SANDSTRIKE);<br align="left"/>            ANIMATE();<br align="left"/>            PLAYWAVE(SOUND_DIG);<br align="left"/>         &#125;   <br align="left"/>           if(WIP3 == ISA_TOOL_PRYER)&#123;<br align="left"/>            SHOW(0,IDS_SANDFLIP);<br align="left"/>            ANIMATE();<br align="left"/>            PLAYWAVE(SOUND_THUMP);<br align="left"/>         &#125;   <br align="left"/></font></td></tr></table>>
+];
+	thirdWhack[shape = none, fontsize=14, label=< <table border="1" color="darkred" style="rounded"><tr><td sides="b"><b>thirdWhack<br align="left"/></b></td></tr>
+</table>>];
+
+"thirdWhack" -> "moveMe" [fontcolor=orange,fontsize=10,fontname="Courier New", label=< <table border="1"><tr><td><b>DRAG(,)<br align="left"/></b></td></tr>
+<tr><td><font point-size="10" color ="blue">THIS IS MISSING</font></td></tr></table>>
+];
+	status[shape = record, fontsize=10, label=< <table border="1"><tr><td><b>S00_HIDDEN_14<br align="left"/></b></td></tr>
+<tr><td><font point-size="10" color ="green">S00_HIDDEN_14::M_DIGGABLE(&apos;IDV_CU_DIRTPATCH1&apos;,&apos;IDS_SANDDIRTGRSDK&apos;,&apos;ISA_TOOL_DIGGER&apos;,&apos;&apos;)<br align="left"/>			&#123;&apos;firstWhack&apos;: wObject:IDD_AMULET wSprite:sanddirtgrsdk wAccept:ISA_TOOL_DIGGER&#125;<br align="left"/></font></td></tr><tr><td><font point-size="10" color ="blue">_<br align="left"/></font></td></tr></table>>
+];
 }

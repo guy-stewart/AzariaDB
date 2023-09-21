@@ -39,7 +39,7 @@
 <path fill="none" stroke="black" d="M142.15,-136.63C137.38,-133.39 132.18,-130.29 127,-128 92.87,-112.92 68.38,-139.07 45,-110 29.4,-90.61 30.11,-73.95 45,-54 63.2,-29.61 97.68,-21.53 124.68,-19.15"/>
 <polygon fill="black" stroke="black" points="124.83,-22.65 134.59,-18.53 124.39,-15.66 124.83,-22.65"/>
 <polygon fill="none" stroke="black" points="48,-89 48,-107 258,-107 258,-89 48,-89"/>
-<text text-anchor="start" x="132" y="-96" font-family="Courier New" font-weight="bold" font-size="10.00" fill="orange">WAIT(,)</text>
+<text text-anchor="start" x="107.99" y="-96" font-family="Courier New" font-weight="bold" font-size="10.00" fill="orange">WAIT(SIG_VEND,)</text>
 <polygon fill="none" stroke="black" points="48,-57 48,-87 258,-87 258,-57 48,-57"/>
 <text text-anchor="start" x="51" y="-75" font-family="Courier New" font-size="10.00" fill="blue"> &#160;&#160;&#160;ASSIGN(WOBJECT,IDD_CITY_KEY1);</text>
 <text text-anchor="start" x="51" y="-63" font-family="Courier New" font-size="10.00" fill="blue"> &#160;&#160;&#160;SHOW(0,IDS_KEY_IN_BIN);</text>

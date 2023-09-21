@@ -75,7 +75,7 @@
 <path fill="none" stroke="black" d="M283.3,-23.4C301.1,-27.85 323.13,-36.68 334.34,-54 374.92,-116.68 380.09,-162.99 334.34,-222 318.45,-242.5 248.24,-255.03 203.46,-261.09"/>
 <polygon fill="black" stroke="black" points="203.09,-257.61 193.62,-262.36 203.99,-264.55 203.09,-257.61"/>
 <polygon fill="none" stroke="black" points="369.34,-139 369.34,-157 507.34,-157 507.34,-139 369.34,-139"/>
-<text text-anchor="start" x="405.34" y="-146" font-family="Courier New" font-weight="bold" font-size="10.00" fill="blue">ESTIME(,.5)</text>
+<text text-anchor="start" x="408.34" y="-146" font-family="Courier New" font-weight="bold" font-size="10.00" fill="blue">ESTIME(,1)</text>
 <polygon fill="none" stroke="black" points="369.34,-119 369.34,-137 507.34,-137 507.34,-119 369.34,-119"/>
 <text text-anchor="start" x="372.34" y="-125" font-family="Courier New" font-size="10.00" fill="blue">SIGNAL(WIP2,SIG_SHOW);</text>
 <polygon fill="none" stroke="black" points="366.34,-116 366.34,-160 510.34,-160 510.34,-116 366.34,-116"/>

@@ -207,7 +207,7 @@
 <text text-anchor="start" x="494.99" y="-1306.5" font-family="Courier New" font-weight="bold" font-size="10.00">S00_HIDDEN_1</text>
 <polygon fill="none" stroke="black" points="273,-1267.5 273,-1297.5 789,-1297.5 789,-1267.5 273,-1267.5"/>
 <text text-anchor="start" x="276" y="-1285.5" font-family="Courier New" font-size="10.00" fill="green">S00_HIDDEN_1::M_DIGGABLE(&#39;IDV_CU_GRASSPATCH1&#39;,&#39;IDS_SANDDIRTGRS&#39;,&#39;ISA_TOOL_DIGGER&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="276" y="-1273.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;firstWhack&#39;: wObject:11 wSprite:sanddirtgrs wAccept:ISA_TOOL_DIGGER}</text>
+<text text-anchor="start" x="276" y="-1273.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;firstWhack&#39;: wObject:IDD_AMULET wSprite:sanddirtgrs wAccept:ISA_TOOL_DIGGER}</text>
 <polygon fill="none" stroke="black" points="273,-1247.5 273,-1265.5 789,-1265.5 789,-1247.5 273,-1247.5"/>
 <text text-anchor="start" x="528" y="-1253.5" font-family="Courier New" font-size="10.00" fill="blue">_</text>
 <polygon fill="none" stroke="black" points="270,-1244.5 270,-1320.5 792,-1320.5 792,-1244.5 270,-1244.5"/>
