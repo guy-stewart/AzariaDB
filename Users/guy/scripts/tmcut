@@ -1,0 +1,14 @@
+
+warp('IDV_TMCUT');
+
+m='S12_SCR001';
+s='IDD_SCR001';
+grab(m);
+scroll = got();
+if (scroll != s) { write('grab error on ',m);}
+
+m='S12_SCR002';
+s='IDD_SCR002';
+grab(m);
+scroll = got();
+if (scroll != s) { write('grab error on ',m);}

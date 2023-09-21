@@ -1,0 +1,17 @@
+
+
+get(IDD_MATCH);
+ash = IDD_MATCH;
+object = got();
+success = (object == ash);
+
+/*
+x = settrace(IDV_FH1PAN, 1);
+write('settrace(IDV_FH1PAN,1) -->> ' + x);
+
+x = settrace(IDV_FH1PAN, 0);
+write('settrace(IDV_FH1PAN,0) -->> ' + x);
+
+x = settrace(S11_POLESTANDa);
+write('settrace(S11_POLESTANDa,0) -->> ' + x);
+*/

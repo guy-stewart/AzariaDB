@@ -1,0 +1,61 @@
+// datalog
+
+mefQuest('1','S33_NEELP_Q1','
+    "Neelp graciously beckons you to find the"
+    "Sacred Amulet which he thinks he has lost"
+    "somewhere in the Western area of Azaria."
+    "If you return the Amulet he will certainly"
+    "reward you with Gopa."','','NEELP_I1','"Have you found the Sacred Amulet?"').
+ mefQuest('2','S33_NEELP_Q2','
+    "Neelp the Meflin imparts these words:"
+	""
+    "One of our most sacred rituals requires"
+    "the soul of a fish.  If you bring me the"
+    "soul, I will gladly reward you."','','NEELP_I2','"Neelp is asking for a specific item"').
+mefQuest('3','S33_NEELP_Q3','
+    "Neelp the Meflin imparts these words:"
+	""
+    "Bring to me a red Gopa berry for my brew. If you"
+    "bring it to me, and I will reward you."','','NEELP_I3',' "Neelp wishes to know if you have brought"
+    "the item he requested."').
+mefQuest('4','S24_RATHE_Q1','
+    "Rathe the Meflin imparts these words:"
+	""
+	"Find the emerald of light at the bottom "
+	"of a dark lake.  Do this for Rathe and he will"
+	"certainly reward you."','IDD_H20MASK','RATHE_I1','"Rathe recognizes you and wishes"
+	"to know if you have brought his"
+	"plant."').
+mefQuest('5','S24_RATHE_Q2','
+    "Rathe is offering you a once in a lifetime"
+    "enlightenment special"
+	""
+    "Bring to me a green Gopa berry for my brew. If you"
+    "bring it to me, I will reward you."','','RATEH_I2','"Rathe recognizes you and wishes"
+	"to know if you have brought his"
+	"item."').
+mefQuest('6','S10_THAOR_Q1','
+    "Thaor the meflin needs your"
+  	"help to acquire a rare plant which"
+	"grows in the Nystram mines.  TAKE"
+	"PRECAUTION - for the mines emmit a"
+	"most deadly gas from the center of the"
+	"moon."
+    "This scroll produces a helpful spell"','IDD_H20MASK','THAOR_I1','"Thaor wishes to know if you"
+	"have retreived his rare plant?"').
+mefQuest('7','S10_THAOR_Q1','
+    "Thaor would like your help again."
+    ""
+  	"Next to the meflin ancient ruins,"
+	"the last living bud of a beutiful flower"
+	"still grows on a baren tree in the desert." 
+	"Thaor will reward you if you bring it to him."','','THAOR_I2',' "Have you completed your quest?"').
+ mefQuest('8','S16_PERST_Q1','
+   "Perst welcomes you with a quest."
+    "An enchanted stone rests somewhere"
+    "on Azaria.  You must obtain the stone"
+    "and return it to Perst."','','PERST_I1','"Perst seeks the enchanted stone."').
+ mefQuest('9','S16_PERST_Q2','
+    "Perst would like you to manufacture the item" 
+    "contained within this cartridge.  You must go to"
+    "the city, produce the item and return it to her."','IDD_H20MASK','PERST_I2','"Have you brought the item for Perst?"').

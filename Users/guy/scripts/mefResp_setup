@@ -1,0 +1,94 @@
+// datalog
+mefResp('1','1','IDD_AMULET1','','NEELPS1', 'Neelp offers you this wisdom 
+in addition to more material rewards
+You would do well to travel as the ancients did 
+to the center of our world to see the place where time stands still.','1').
+
+mefResp('1','','','FISH','NEELPFSH','Neelp offers you this wisdom in return for the fish
+You would do well to burn the fish to ashes
+and capture its soul in addition to its ashes.
+This is the way of the meflin.','2').
+
+mefResp('1','','','BOMB','NEELPBMB','Neelp thanks you for the bomb and offers you
+a small token of his appreciation.','3').
+
+mefResp('1','','','PLANT','NEELPPLN','Neelp thanks you for the plant and offers you
+a small token of his appreciation.','4').
+
+mefResp('1','','','GOPA','NEELPGOP','Neelp thinks Gopa berries are priceless.
+have a small token of his appreciation.','5').
+
+mefResp('1','','','SPELL','NEELPMAG','Neelp is confused by your generosity.'  
+ ,'7').
+
+mefResp('1','','','BAIT','NEELPBAT','Neelp thanks you for the bait and offers
+you something in return.','6').
+
+mefResp('1','2','IDD_SPRINGS','','NEELPGS2','Neelp is pleased by your efforts.  
+In return for the fish soul, he  
+offers you 3 spells.' ,'8').
+
+mefResp('1','3','IDD_GOPAR','','NEELPGS3','Neelp needed the Red berry to finish 
+his latest batch of Gopa.  He is so 
+pleased that he offers you 3 vials of 
+Gopa.','9').
+
+mefResp('2','8','IDD_ENCSTONE','','MPM1S', 'It is with deep gratitude that Perst offers you this reward').
+
+mefResp('2','9','IDD_LAVA','','MPVTHANK','Even on Azaria,  lava lamps are popular.  
+  Perst offers you this ingredient for your efforts.  
+  The flower I bestow on you is unique in all the world.  
+  Use it when remembering our past.',11).
+
+mefResp('2','','','SPELL','MPM2S', 'Perst thanks you for the spell with life enhancing gopa.' ,'12').
+
+mefResp('2','','','BAIT','MPVBAIT', 'Perst only uses artificial bait from the city .  
+  He offers you some gopa to get you to go away.','13').
+
+mefResp('2','','','FISH','MPVFISH', 'Perst appreciates the fish.','13').
+
+mefResp('2','','','BOMB','MPVBOMB', 'Youve given Perst a dark idea    
+  Here, on Azaria, some dark ideas have lasting consequences.','14').
+
+mefResp('2','','','PLANT','MPVLOTS','Perst collects many things.   
+  It is no wonder that he has your item already.','13').
+
+mefResp('3','6','IDD_NYPlANT','','MYM1S', 'Pleasantly surprised, Thaor offers you a  
+   reward for all your hard efforts.  
+  He offers this advice as well   
+  Around here it is far better to give than to take.','15').
+
+mefResp('3','7','IDD_TREEBUD','','MYG2S', 'Thaor thanks you for this gift and offers you  
+   unique ingredients in return.','11').
+
+mefResp('3','','','SPELL','MYVSPELL','Thaor is great at making spells.   
+  He thanks you for the spell and offers you  
+  some gopa for your trouble.','7').
+
+mefResp('3','','','BOMB','MYG2U','No one has ever benefitted by being violent   
+  with Thaor.  Thaor gives you something anyway   
+  because that is the kind of guy he is.','12').
+
+mefResp('3','','','BAIT','MYVNOT', 'Not a big fishing fan, Thaor does not bait his own hook.','16').
+
+mefResp('4','4','IDD_EMERALD','','M6G1S','Rathe is pleased that you have found the emerald   
+  He offers this wisdom on top of your reward.    
+  Look for through the ancient memories to heal the past.  
+  Our moons are the key and all seven matter.','17').
+
+mefResp('4','5','IDD_GOPAG','','M6G2S','Green Gopa berries give the brew  
+  Its bitter taste - but after all,  
+ that is what drinking Gopa is all about?','9').
+
+mefResp('4','','','BOMB','M6VBOMB', 'Rathe is not as fond of explosives as his brothers.','3').
+
+mefResp('4','','','PLANT','M6VGOOD', 'Rathe thanks you for the plant and offers you  
+  a small token of his appreciation.','7').
+
+mefResp('4','','','GOPA','M6VLOTS', 'Despite his over abundance of gopa berries,   
+  Rathe still provides you with some brew to try.','7').
+
+mefResp('4','','','BAIT','M6VNOT', 'Rathe does not like to fish - try Neelp.' ,'18').
+
+mefResp('4','','','MAGIC','M6VMAGC', 'Rathe tells you that magic items do not   
+  work on meflin.  He offers you this item instead.' ,'3').

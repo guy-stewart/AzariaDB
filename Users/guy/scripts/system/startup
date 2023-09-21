@@ -1,0 +1,15 @@
+/*
+This script runs after the world is fully active. You can do anything you want in this script.
+*/
+
+write("     _____ _             _");
+write("    / ____| |           | |");
+write("   | (___ | |_ __ _ _ __| |_ _   _ _ __");
+write("    \___ \| __/ _` | '__| __| | | | '_ \");
+write("    ____) | || (_| | |  | |_| |_| | |_) |");
+write("    |_____/ \__\__,_|_|   \__|\__,_| .__/");
+write("                                  | |");
+write("                                  |_|");
+
+warp(S00_HIDDEN_10);
+// replay(lockers);

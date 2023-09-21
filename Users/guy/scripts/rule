@@ -1,0 +1,3 @@
+
+rule(x) :- write('running rule(' + x + ').').
+rule('calling rule(x);');
