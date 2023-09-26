@@ -19,7 +19,7 @@ recycle();
 drag(S12_SHELF_1_CANDLE,IDD_MATCH);
 recycle();
 grab(S12_SHELF_1_SPELLPORTAL);
-recycle();
+replay('city/lockup');
 grab(holder);
 recycle();
 
@@ -32,4 +32,5 @@ recycle();
 drag(S12_SHELF_1_CANDLE,IDD_SCOOPF);
 recycle();
 drag(S12_SHELF_1_CANDLE,IDD_MATCH);
-recycle();
+grab(S12_SHELF_1_SPELLPORTAL);
+replay('city/lockup');

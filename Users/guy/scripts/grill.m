@@ -19,6 +19,7 @@ object = got();
 success = (object == ash);
 assert(success, 'failed to get' + ash);
 
+replay('city/lockup');
 recycle();
 
 fish='IDD_FISH2';
@@ -31,4 +32,6 @@ grab('S11_GRILL');
 object = got();
 success = object == ash;
 assert(success, 'failed on ' + fish);
+
+replay('city/lockup');
 drop(SMP_RECYCLE);

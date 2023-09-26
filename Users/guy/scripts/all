@@ -1,3 +1,5 @@
 replay(orie);
 replay(core);
+replay(while);
+replay('city/makebait');
 replay('tour');

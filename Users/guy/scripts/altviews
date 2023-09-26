@@ -1,0 +1,143 @@
+
+/* tables used in this script ... */
+predicate transitions(automaton,state,new_state,opcode,param_1,param_2,code,guard);
+predicate machines(name, view_name, left, top, right, bottom, dfa_name, wip1_name, wip2_name);
+
+/* delete any rows that this script populates ... */
+transitions(M_ALTVIEW,,,,,,,)~
+machines('S02_ALT_%',,,,,,,,)~
+
+/* a simple state machine for showing contents of lockers.
+A 'scale' function would be handy to reduce the apparent size of the image based on distance */
+transitions(M_ALTVIEW,0,0,CLICK,'','','LOADVIEW(WIP1);','').
+transitions(M_ALTVIEW,0,0,WAIT,'SIG_VIEWINIT','',
+'REF_MACHINE(WIP2);
+ASHOW(R_WOBJECT);','').
+
+/* here are all the machine instances based on some calculation performed way back in 1995 before the advent of A.I. ... */
+/*
+static ALTVIEW altviews[] = {
+
+  // these alt views link us from the central locker room LOCKERR to the individual lockers.
+#define S02_EXTERNAL_BIN_Na(UNIT) \
+  	{IDV_LOCKERR, ID(UNIT)+S02_BIN___XX, {3050+(UNIT%3)*80,  120+(UNIT/3)*82, 3050+(UNIT%3+1)*80,  202+(UNIT/3)*82},ALT_LINK_STATIC}
+  S02_EXTERNAL_BIN_Na(0),
+  S02_EXTERNAL_BIN_Na(1),
+  S02_EXTERNAL_BIN_Na(3),
+  S02_EXTERNAL_BIN_Na(4),
+*/
+UNIT=0;
+write('assert first altview ...');
+while (UNIT<=4) {
+    machines(S02_ALT_LOCKER_0+UNIT,IDV_LOCKERR, 3050+(UNIT%3)*80,  120+(UNIT/3)*82, 3050+(UNIT%3+1)*80, 202+(UNIT/3)*82,M_ALTVIEW,IDV_LOCKERCU0+UNIT,S02_BIN___0+UNIT).
+    UNIT = UNIT + 1;
+    if (UNIT==2) UNIT = UNIT + 1;
+}
+
+/*
+#define S02_EXTERNAL_BIN_Nb(UNIT) \
+  	{IDV_LOCKERR, ID(UNIT)+S02_BIN___XX, {10,  120+(UNIT/3)*83, 105,  202+(UNIT/3)*82},ALT_LINK_STATIC}
+  S02_EXTERNAL_BIN_Nb(2),
+  S02_EXTERNAL_BIN_Nb(5),
+*/
+UNIT=2;
+machines(S02_ALT_LOCKER_0+UNIT,IDV_LOCKERR, 10, 120+(UNIT/3)*83, 105, 202+(UNIT/3)*82,M_ALTVIEW, IDV_LOCKERN,S02_BIN___0+UNIT).
+UNIT=5;
+machines(S02_ALT_LOCKER_0+UNIT,IDV_LOCKERR, 10, 120+(UNIT/3)*83, 105, 202+(UNIT/3)*82,M_ALTVIEW, IDV_LOCKERN,S02_BIN___0+UNIT).
+/*
+#define S02_EXTERNAL_BIN_W(UNIT) \
+  	{IDV_LOCKERR, ID(UNIT+9)+S02_BIN___XX, {2295+(UNIT%3)*83,  120+(UNIT/3)*82, 2295+(UNIT%3+1)*83,  202+(UNIT/3)*82},ALT_LINK_STATIC}
+  S02_EXTERNAL_BIN_W(0),
+  S02_EXTERNAL_BIN_W(1),
+  S02_EXTERNAL_BIN_W(2),
+  S02_EXTERNAL_BIN_W(3),
+  S02_EXTERNAL_BIN_W(4),
+  S02_EXTERNAL_BIN_W(5),
+*/
+UNIT=0;
+machines(S02_ALT_LOCKER_0+(UNIT+9),IDV_LOCKERR, 2295+(UNIT%3)*83,  120+(UNIT/3)*82, 2295+(UNIT%3+1)*83,  202+(UNIT/3)*82,M_ALTVIEW,IDV_LOCKERCU0+(UNIT+9),S02_BIN___0+(UNIT+9)).
+UNIT=1;
+while (UNIT<=5) {
+    machines(S02_ALT_LOCKER_+(UNIT+9),IDV_LOCKERR, 2295+(UNIT%3)*83,  120+(UNIT/3)*82, 2295+(UNIT%3+1)*83,  202+(UNIT/3)*82,M_ALTVIEW,IDV_LOCKERCU+(UNIT+9),S02_BIN___+(UNIT+9)).
+    UNIT = UNIT + 1;
+}
+
+/*
+#define S02_EXTERNAL_BIN_S(UNIT) \
+  	{IDV_LOCKERR, ID(UNIT+18)+S02_BIN___XX, {1496+(UNIT%3)*90,  120+(UNIT/3)*88, 1496+(UNIT%3+1)*90,  208+(UNIT/3)*88},ALT_LINK_STATIC}
+  S02_EXTERNAL_BIN_S(0),
+  S02_EXTERNAL_BIN_S(1),
+  S02_EXTERNAL_BIN_S(2),
+  S02_EXTERNAL_BIN_S(3),
+  S02_EXTERNAL_BIN_S(4),
+  S02_EXTERNAL_BIN_S(5),
+*/
+UNIT=0;
+while (UNIT<=5) {
+    machines(S02_ALT_LOCKER_+(UNIT+18),IDV_LOCKERR, 1496+(UNIT%3)*90,  120+(UNIT/3)*88, 1496+(UNIT%3+1)*90,  208+(UNIT/3)*88,M_ALTVIEW,IDV_LOCKERCU+(UNIT+18),S02_BIN___+(UNIT+18)).
+    UNIT = UNIT + 1;
+}
+
+/*
+  // these alt views link us from one of the north, west, or south locker panels to the individual lockers.
+#define S02_EXTERNAL_BIN(UNIT) \
+  	{IDV_LOCKERN, ID(UNIT)+S02_BIN___XX, {66+(UNIT%3)*93,  17+(UNIT/3)*93, 129+(UNIT%3)*93,  79+(UNIT/3)*93},ALT_LINK}
+  S02_EXTERNAL_BIN(0),
+  S02_EXTERNAL_BIN(1),
+  S02_EXTERNAL_BIN(2),
+  S02_EXTERNAL_BIN(3),
+  S02_EXTERNAL_BIN(4),
+  S02_EXTERNAL_BIN(5),
+  S02_EXTERNAL_BIN(6),
+  S02_EXTERNAL_BIN(7),
+  S02_EXTERNAL_BIN(8),
+  */
+UNIT=0;
+while (UNIT<=8) {
+    machines(S02_ALT_LOCKERN_+(UNIT),IDV_LOCKERN, 66+(UNIT%3)*93, 17+(UNIT/3)*93, 129+(UNIT%3)*93, 79+(UNIT/3)*93, M_ALTVIEW,IDV_LOCKERCU0+(UNIT),S02_BIN___0+(UNIT)).
+    UNIT = UNIT + 1;
+}
+  /*
+#undef S02_EXTERNAL_BIN
+#define S02_EXTERNAL_BIN(UNIT) \
+  	{IDV_LOCKERW, ID(UNIT+9)+S02_BIN___XX, {66+(UNIT%3)*93,  17+(UNIT/3)*93, 129+(UNIT%3)*93,  79+(UNIT/3)*93},ALT_LINK}
+  S02_EXTERNAL_BIN(0),
+  S02_EXTERNAL_BIN(1),
+  S02_EXTERNAL_BIN(2),
+  S02_EXTERNAL_BIN(3),
+  S02_EXTERNAL_BIN(4),
+  S02_EXTERNAL_BIN(5),
+  S02_EXTERNAL_BIN(6),
+  S02_EXTERNAL_BIN(7),
+  S02_EXTERNAL_BIN(8),
+  */
+
+UNIT=0;
+machines(S02_ALT_LOCKERW_0+(UNIT),IDV_LOCKERW,66+(UNIT%3)*93,17+(UNIT/3)*93,129+(UNIT%3)*93,79+(UNIT/3)*93, M_ALTVIEW,IDV_LOCKERCU0+(UNIT+9),S02_BIN___0+(UNIT+9)).
+UNIT=1;
+while (UNIT<=8) {
+    machines(S02_ALT_LOCKERW_+(UNIT),IDV_LOCKERW,66+(UNIT%3)*93,17+(UNIT/3)*93,129+(UNIT%3)*93,79+(UNIT/3)*93, M_ALTVIEW,IDV_LOCKERCU+(UNIT+9),S02_BIN___+(UNIT+9)).
+    UNIT = UNIT + 1;
+}
+
+
+  /*
+#undef S02_EXTERNAL_BIN
+#define S02_EXTERNAL_BIN(UNIT) \
+  	{IDV_LOCKERS, ID(UNIT+18)+S02_BIN___XX, {66+(UNIT%3)*93,  17+(UNIT/3)*93, 129+(UNIT%3)*93,  79+(UNIT/3)*93},ALT_LINK}
+  S02_EXTERNAL_BIN(0),
+  S02_EXTERNAL_BIN(1),
+  S02_EXTERNAL_BIN(2),
+  S02_EXTERNAL_BIN(3),
+  S02_EXTERNAL_BIN(4),
+  S02_EXTERNAL_BIN(5),
+  S02_EXTERNAL_BIN(6),
+  S02_EXTERNAL_BIN(7),
+  S02_EXTERNAL_BIN(8),
+};
+*/
+UNIT=0;
+while (UNIT<=8) {
+    machines(S02_ALT_LOCKERS_+(UNIT),IDV_LOCKERS,66+(UNIT%3)*93,17+(UNIT/3)*93,129+(UNIT%3)*93,79+(UNIT/3)*93, M_ALTVIEW,IDV_LOCKERCU+(UNIT+18),S02_BIN___+(UNIT+18)).
+    UNIT = UNIT + 1;
+}

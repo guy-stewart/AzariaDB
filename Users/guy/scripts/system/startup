@@ -11,5 +11,4 @@ write("    |_____/ \__\__,_|_|   \__|\__,_| .__/");
 write("                                  | |");
 write("                                  |_|");
 
-warp(S00_HIDDEN_10);
-// replay(lockers);
+warp(IDV_LOCKERR);

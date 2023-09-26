@@ -17,4 +17,5 @@ drop(s24_eyeplate3,IDD_EYEFUSE);
 grab(S24_BIGEYE);
 drag(S24_EYETEXT);
 
+replay('city/lockup');
 drop(SMP_RECYCLE);

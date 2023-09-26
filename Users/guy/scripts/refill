@@ -1,22 +1,14 @@
 
 
+// fill up on nystrom
 warp(S17_bMINE);
+drop(SMP_RECYCLE);
 grab(SMP_VIAL);
-drag(SMP_VIAL);
-drag(S17_bMINE);
-drag(SMP_VIAL);
-drag(S17_bMINE);
-drag(SMP_VIAL);
-drag(S17_bMINE);
-drag(SMP_VIAL);
-drag(S17_bMINE);
-drag(SMP_VIAL);
-drag(S17_bMINE);
-drag(SMP_VIAL);
-drag(S17_bMINE);
-drag(SMP_VIAL);
-drag(S17_bMINE);
-drag(SMP_VIAL);
-drag(S17_bMINE);
-drag(SMP_VIAL);
-drop(SMP_VIAL);
+if (got() == IDD_SCOOPF) { drag(SMP_VIAL);}
+
+write("got ", got());
+while (got() == IDD_SCOOPE) {
+    drag(S17_bMINE);
+    drag(SMP_VIAL);
+    write("got ", got());
+}

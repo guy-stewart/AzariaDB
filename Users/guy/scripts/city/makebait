@@ -1,0 +1,14 @@
+
+
+bait_number = 4;
+while (bait_number < 8) {
+    if (grab('S02_BIN___0'+bait_number)) {
+        drop(SMP_RECYCLE);
+    }
+    get('IDD_BAIT'+bait_number);
+    replay('city/getcard');
+    if (got() != '') {
+        drop('S02_BIN___0'+bait_number);
+    }
+    bait_number = bait_number + 1;
+}

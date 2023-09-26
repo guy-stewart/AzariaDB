@@ -1,0 +1,29 @@
+
+/*
+Do not use while except for writing test scripts.
+
+While while is a constructive construct, it debilitates our ability to 
+prove the computability of our computations. Use while while testing,
+but never while running state machines.
+*/
+
+// a simple counting loop:
+i = 0;
+while (i<10) {
+    write("while (i<10) with i = ", i);
+    i = i + 1;
+}
+write(done);
+
+// fill up on nystrom
+warp(S17_bMINE);
+drop(SMP_RECYCLE);
+grab(SMP_VIAL);
+if (got() == IDD_SCOOPF) { drag(SMP_VIAL);}
+
+write("got ", got());
+while (got() == IDD_SCOOPE) {
+    drag(S17_bMINE);
+    drag(SMP_VIAL);
+    write("got ", got());
+}

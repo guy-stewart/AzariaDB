@@ -43,6 +43,8 @@ grab('S08_CHEM2_1');
 recycle();
 grab('S08_CARDHOLD_1');
 grab('S08_CARDHOLD_1');
+
+replay('city/lockup');
 recycle();
 
 drop('S08_CARDHOLD_1', 'IDD_CARD02');
@@ -82,5 +84,7 @@ recycle();
 grab('S08_BIN_1');
 sleep(5);
 grab('S08_BIN_1');
-sleep(5);
+sleep(2);
+
+replay('city/lockup');
 recycle();

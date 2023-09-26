@@ -3,9 +3,8 @@
 setsleep(1);
 warp(IDV_ctyc);
 warp(IDV_CTYSMITH);
-grab(SMP_EYEINFO);
-drop(SMP_RECYCLE);
 warp(IDV_ckeyvend);
+drop(SMP_RECYCLE);
 grab(SMP_VIAL);
 drag(S04_VIAL);
 drag(SMP_VIAL);

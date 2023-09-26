@@ -19,3 +19,5 @@ grab(S04_GRNSLIDER_1);
 grab(S04_BLUSLIDER_1);
 grab(S04_BLUSLIDER_1);
 grab(S04_KEYCLAMP_1);
+
+replay('city/lockup');
