@@ -1,0 +1,21 @@
+
+/*
+a rule is parsed and stored much like a function declaration:
+function move(parms) {
+    statements;
+}
+*/
+
+rule(x) :- write('running rule(' + x + ').').
+rule('calling rule(x);');
+
+move(1,X,Y,_) :-
+   write('Move top disk from ' + X + ' to ' + Y).
+move(N,X,Y,Z) :-
+   N>1,
+   M = N-1,
+   move(M,X,Z,Y),
+   move(1,X,Y,_),
+   move(M,Z,Y,X).
+
+move(1,a,b,c)?

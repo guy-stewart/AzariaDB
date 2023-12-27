@@ -1,5 +1,11 @@
 
+
+// TODO: this will get a key based on number from IDD_CITY_KEY_0 to IDD_CITY_KEY_63
+parm(object,IDD_CITY_KEY_0).
+replay(get);
+
 // At the end of this script you will have a key in hand:
+/*
 grab(SMP_VIAL);
 drag(S04_VIAL);
 drag(SMP_VIAL);
@@ -19,3 +25,6 @@ grab(S04_GRNSLIDER_1);
 grab(S04_BLUSLIDER_1);
 grab(S04_BLUSLIDER_1);
 grab(S04_KEYCLAMP_1);
+
+replay('city/lockup');
+*/

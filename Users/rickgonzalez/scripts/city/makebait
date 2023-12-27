@@ -1,0 +1,11 @@
+
+
+bait_number = 4;
+while (bait_number < 8) {
+    get('IDD_BAIT'+bait_number);
+    replay('city/getcard');
+    if (got() != '') {
+        replay('city/lockup');
+    }
+    bait_number = bait_number + 1;
+}

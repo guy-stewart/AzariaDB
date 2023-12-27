@@ -1,0 +1,39 @@
+
+want('%')~
+want(IDD_FISH1).
+want(IDD_FISH2).
+want(IDD_FISH3).
+want(IDD_FISH4).
+want(IDD_FISH5).
+want(IDD_FISH6).
+want(IDD_FISH7).
+want(IDD_FISH8).
+want(IDD_FISH9).
+want(IDD_FISH10).
+
+while (want(?some_fish)) {
+    replay('fishing/go_fish');
+    if (want(got())) {
+        want(got())~
+        replay('city/lockup');
+    } else {
+        write();
+        sleep(120);
+    }
+}
+
+parm(object,IDD_CITY_KEY_0).
+replay(get);
+replay('city/lockup');
+
+parm(object,IDD_LOG).
+replay(get);
+replay('city/lockup');
+
+parm(object,IDD_MATCH).
+replay(get);
+replay('city/lockup');
+
+parm(object, IDD_EMERALD).
+replay(get);
+replay('city/lockup');

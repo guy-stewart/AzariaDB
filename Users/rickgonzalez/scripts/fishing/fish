@@ -1,0 +1,87 @@
+
+
+// settrace(S11_FISHSTATIONf,1);
+
+setsleep(0);
+success = 1;
+fail = 0;
+
+if (fail == assert(fail, '0. assert(fail) failed.'))
+   write('great success!!');
+
+// clean up the scene ...
+grab(S11_FISHSTATIONa);
+grab(S11_FISHSTATIONb);
+grab(S11_FISHSTATIONc);
+grab(S11_FISHSTATIONd);
+grab(S11_FISHSTATIONe);
+grab(S11_FISHSTATIONf);
+grab(S11_FISHSTATIONa);
+grab(S11_FISHSTATIONb);
+grab(S11_FISHSTATIONc);
+grab(S11_FISHSTATIONd);
+grab(S11_FISHSTATIONe);
+grab(S11_FISHSTATIONf);
+drop(S11_POLESTANDa, IDD_POLE1);
+drop(S11_POLESTANDb, IDD_POLE1);
+drop(S11_POLESTANDc, IDD_POLE1);
+drop(S11_POLESTANDd, IDD_POLE1);
+
+setsleep(2);
+
+// --- configure the fishstation A
+if (grab(S11_POLESTANDa) != IDD_POLE1) {
+    drop(S11_POLESTANDa, IDD_POLE1);
+    grab(S11_POLESTANDa);
+}
+assert(got() == IDD_POLE1, '1. pole missing from stand '+S11_POLESTANDa);
+
+drop(S11_FISHSTATIONa);
+grab(S11_LUNCH);
+grab(S11_LUNCHCRUMBS);
+drop(S11_FISHSTATIONa);
+
+// --- configure the remaining fishstations
+if (fail == assert(grab(S11_POLESTANDb) == IDD_POLE1, '2. pole missing from stand.' + S11_POLESTANDb)) get(IDD_POLE1);
+if (fail == assert(grab(S11_POLESTANDb) == IDD_POLE1, '3. pole missing from stand.' + S11_POLESTANDb)) write("!!!!!!!! Great success!!!!");
+drop(S11_FISHSTATIONb);
+grab(S11_GRUBBIN0);
+drop(S11_FISHSTATIONb);
+
+assert(grab(S11_POLESTANDc) == IDD_POLE1, 'pole missing from stand.' + S11_POLESTANDb);
+drop(S11_FISHSTATIONc);
+
+assert(grab(S11_POLESTANDd) == IDD_POLE1, 'pole missing from stand.' + S11_POLESTANDb);
+drop(S11_FISHSTATIONd);
+
+drop(S11_FISHSTATIONe, get(IDD_POLE1));
+drop(S11_FISHSTATIONf, get(IDD_POLE1));
+
+// TODO: go bait hunting ...
+get(IDD_BAIT1);
+drop(S11_FISHSTATIONc);
+get(IDD_BAIT2);
+drop(S11_FISHSTATIONd);
+get(IDD_BAIT3);
+drop(S11_FISHSTATIONe);
+get(IDD_BAIT4);
+drop(S11_FISHSTATIONf);
+
+// settrace(S11_FISHSTATIONf,0);
+
+/*
+setsleep(0);
+grab(S11_FISHSTATIONa);
+grab(S11_FISHSTATIONb);
+grab(S11_FISHSTATIONc);
+grab(S11_FISHSTATIONd);
+grab(S11_FISHSTATIONe);
+grab(S11_FISHSTATIONf);
+
+grab(S11_FISHSTATIONa);
+grab(S11_FISHSTATIONb);
+grab(S11_FISHSTATIONc);
+grab(S11_FISHSTATIONd);
+grab(S11_FISHSTATIONe);
+grab(S11_FISHSTATIONf);
+*/

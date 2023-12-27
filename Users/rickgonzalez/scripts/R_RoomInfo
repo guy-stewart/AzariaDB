@@ -1,0 +1,50 @@
+
+uri = "us-atl-3b185468.colyseus.cloud";
+resourcePath = "/colyseus/api/room?roomId=";
+qparam = "8RaO2zC7-BestPlayers"
+requestBody = "";
+response = https_get(uri+resourcePath+qparam);
+write(response);
+
+//Room Types
+data_array = json_element(response, "clients");
+write(data_array);
+
+
+for (json_iter(data_array, ?session)){
+    write ("session: "+session);
+    sessionid  = json_element(session, "sessionId");
+    write('sessionid is: ' + sessionid);
+}
+// Maybe need something to add the suffix for the iteration
+// so session_X_id = ...
+// or I could build the menu items within the for
+
+maxclients = json_element(response, "maxClients");
+roomid = json_element(response, "roomId");
+locked = json_element(response, "locked");
+
+write ("maxclients: "+maxclients);
+write ("roomid: "+roomid);
+write ("locked: "+locked);
+
+write('////');
+
+roomstate = json_element(response, "state");
+players = json_element(roomstate, "players");
+roomdetail = json_element(roomstate, "roomdetail");
+
+write('////');
+write ("roomstate: "+roomstate);
+write('////');
+write ("players: "+players);
+write('////');
+write ("roomdetail: "+roomdetail);  
+
+
+
+
+
+write('////');
+write('////');
+write('////');

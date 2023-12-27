@@ -84,7 +84,7 @@
 <polygon fill="none" stroke="black" points="287,-287.5 287,-326.5 552,-326.5 552,-287.5 287,-287.5"/>
 <text text-anchor="start" x="290" y="-315.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_MAIN_PANEL @pos(left:155, top:18)</text>
 <text text-anchor="start" x="290" y="-304.5" font-family="Courier New" font-size="10.00" fill="green">SMP_MAPBUTTON::M_MAPBUTTON(&#39;&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="290" y="-293.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;1&#39;:</text>
+<text text-anchor="start" x="290" y="-293.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;1&#39;: wSprite:IDS_BTN_MAP</text>
 <polygon fill="none" stroke="black" points="284,-284.5 284,-348.5 555,-348.5 555,-284.5 284,-284.5"/>
 </g>
 </g>

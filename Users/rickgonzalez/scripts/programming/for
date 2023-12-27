@@ -1,0 +1,63 @@
+// whatever
+
+want('%')~
+want(IDD_FISH1).
+want(IDD_FISH2).
+want(IDD_FISH3).
+want(IDD_FISH4).
+want(IDD_FISH5).
+want(IDD_FISH6).
+want(IDD_FISH7).
+want(IDD_FISH8).
+want(IDD_FISH9).
+want(IDD_FISH10).
+
+for (want(?some_fish)) {
+    write('want(',some_fish,').');
+}
+
+write('======================= IDV_TMCU1 =====================================');
+// list all the machines in the IDV_TMCU1
+predicate machines(name,view_name);
+for (machines(?name,'IDV_TMCU1')) {
+    write('    ',name,'.');
+}
+
+write('=======================    ALL    =====================================');
+// list all the views with their machines ...
+predicate views(view_name);
+predicate machines(name,view_name);
+for (views(?view_name)) {
+    write('view_name:' + view_name);
+    for (machines(?name,view_name)) {
+        write('    ',name,'.');
+    }
+}
+
+
+
+/*
+
+In the future we might iterate over sets defined by comma delimited lists [a,b,c, ...] or ranges [n..n+m]
+for (p:[0,1,2,3]) {
+}
+
+for (i:[0..10]) {
+}
+
+x = [
+IDD_FISH1,
+IDD_FISH2,
+IDD_FISH3,
+IDD_FISH4,
+IDD_FISH5,
+IDD_FISH6,
+IDD_FISH7,
+IDD_FISH8,
+IDD_FISH9,
+IDD_FISH10];
+
+for (some_fish:x) {
+}
+
+*/

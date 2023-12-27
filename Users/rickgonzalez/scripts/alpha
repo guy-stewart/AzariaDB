@@ -1,17 +1,27 @@
 
+write();
+write(,);
+write(,,,);
+write("hello",,"goodbye");
 
-get(IDD_MATCH);
-ash = IDD_MATCH;
-object = got();
-success = (object == ash);
+predicate objects(object,class,icon,cursor,actor);
 
-/*
-x = settrace(IDV_FH1PAN, 1);
-write('settrace(IDV_FH1PAN,1) -->> ' + x);
+write ("objects(IDD_CARD07,?class,,,);");
+objects(IDD_CARD07,?class,,,);
+write("IDD_CARD07 is class ", class);
 
-x = settrace(IDV_FH1PAN, 0);
-write('settrace(IDV_FH1PAN,0) -->> ' + x);
+write ("objects(IDD_CARD07,,,?cursor,);");
+objects(IDD_CARD07,_,,?cursor,);
+write("IDD_CARD07 has cursor ", cursor);
 
-x = settrace(S11_POLESTANDa);
-write('settrace(S11_POLESTANDa,0) -->> ' + x);
-*/
+write ("objects(IDD_CARD07,?class,,?cursor,);");
+objects(IDD_CARD07,?class,,?cursor,);
+write("IDD_CARD07 has class, cursor ", class, ",",cursor);
+
+predicate test(a,b,c,d);
+test(a1,b1,c1,d1).
+test(a2,,c2,).
+test(a3,_,,d3).
+test(_,,c4,d4).
+
+

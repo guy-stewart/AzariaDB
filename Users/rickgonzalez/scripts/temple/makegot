@@ -1,0 +1,10 @@
+
+// find a scroll that makes what we got ...
+warp(IDV_TMCUT);
+
+predicate map(op, key, value);
+target = got();
+
+// ('S12_SCROLLL_MK','1','IDD_ENCHANT'),
+map(S12_SCROLLL_MK, ?scrollno, target);
+

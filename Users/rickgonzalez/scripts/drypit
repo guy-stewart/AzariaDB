@@ -25,3 +25,5 @@ drag(S10_DRYPIT, IDD_SCOOPF);
 drop(SMP_RECYCLE);
 
 assert(grab(S10_FLOWER) == IDD_SEED, "hmmm .... didn't get the seed :(");
+
+replay('city/lockup');

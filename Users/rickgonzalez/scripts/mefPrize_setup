@@ -1,0 +1,34 @@
+
+mefPrize('16', 'a', 'IDD_UNIQUEFLOWER').
+mefPrize('9', 'a', ' IDD_GVIAL').
+mefPrize('9', 'b', 'IDD_GVIAL').
+mefPrize('9', 'c', 'IDD_GVIAL').
+mefPrize('8', 'a', 'IDD_PROTECT').
+mefPrize('8', 'b', 'IDD_BLINDNESS').
+mefPrize('8', 'c', 'IDD_BANISHMENT').
+mefPrize('7', 'a', 'IDD_GVIAL').
+mefPrize('7', 'b', 'IDD_GVIAL').
+mefPrize('6', 'a', 'IDD_FISH1').
+mefPrize('5', 'a', 'IDD_BAIT5').
+mefPrize('4', 'a', 'IDD_BAIT2').
+mefPrize('4', 'b', 'IDD_BAIT4').
+mefPrize('3', 'a', 'IDD_BANISHMENT').
+mefPrize('2', 'a', 'IDD_GVIAL').
+mefPrize('1', 'a', 'IDD_BOMB2').
+mefPrize('1', 'b', 'IDD_GVIAL').
+mefPrize('1', 'c', 'IDD_BOMB2').
+mefPrize('10', 'a', 'IDD_NYBREATH').
+mefPrize('10', 'b', 'IDD_WETBREATH').
+mefPrize('11', 'a', 'IDD_UNIQUEFLOWER').
+mefPrize('12', 'a', 'IDD_GVIAL').
+mefPrize('13', 'a', 'IDD_GVIAL').
+mefPrize('13', 'b', 'IDD_GVIAL').
+mefPrize('14', 'a', 'IDD_HOLDING').
+mefPrize('15', 'a', 'IDD_GVIAL').
+mefPrize('15', 'b', 'IDD_INVISIBLE').
+mefPrize('15', 'c', 'IDD_CHEMV15').
+mefPrize('16', 'b', 'IDD_DEATH').
+mefPrize('17', 'a', 'IDD_PROTECT').
+mefPrize('17', 'b', 'IDD_PICK').
+mefPrize('17', 'c', 'IDD_TRANSFER').
+mefPrize('18', 'a', 'IDD_SHOVEL').

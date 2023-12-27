@@ -1,0 +1,21 @@
+
+item = got();
+slew(S02_BIN___09);
+if (item == "") {
+    write("you need to be holding something to lock it up ...");
+} else {
+    // look for an empty locker ...
+    unit = 0;
+    while (got() != "" && unit < 28) {
+        bin = 'S02_BIN___';
+        if (unit < 10) {
+            bin = 'S02_BIN___0'+unit; 
+        } else {
+            bin = 'S02_BIN___'+unit; 
+        }
+        // drop item in the locker ...
+        drop(bin);
+        unit = unit + 1;
+    }
+}
+recycle();

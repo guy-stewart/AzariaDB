@@ -1,0 +1,33 @@
+
+contents = https_get("file:///Users/guy/Downloads/ipfs/evolutions.json");
+write(contents);
+
+// This is a simple rendezvous service that traps your IP address so that others can find you ...
+myip = https_get("https://omegeth.com/rendezvous");
+write("myip = ", myip);
+// here is a list of everyone that has recently accessed rendezvous ...
+import_csv(peers, "https://omegeth.com/rendezvous.txt",":");
+// dump the list of STUN servers ...
+write('=========== rendezvous list::');
+for (peers(?ip, ?port)) {
+    write("IP: " + ip + "  port: " + port);
+}
+write('=============================');
+
+// The STUN protocol will give you your IP but does not provide a rendezvous service.
+// The STUN protocol is a 'bit-banger' protocol intented for telephony and other embedded applications.
+// STUN does not lend itself to the world of restful APIs.
+write('stun ip::');
+// stun-ip needs a host uri and host port number.
+myip = stun_ip("stun.xten.com",3478);
+write("myip:"+myip);
+
+// This list of STUN servers is served in the form of a ':' delimited table
+// We use the in8 build in predicate constructor "import_csv" which takes a predicate name, URI, and delimiter ...
+import_csv("stun_list","https://raw.githubusercontent.com/pradt2/always-online-stun/master/valid_hosts.txt",":");
+
+// dump the list of STUN servers ...
+write('stun list::');
+for (stun_list(?host, ?port)) {
+    write("host: " + host + "  port: " + port);
+}

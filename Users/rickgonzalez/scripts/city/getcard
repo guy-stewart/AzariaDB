@@ -1,0 +1,28 @@
+
+target = got();
+
+// a blind search for a particular card from the city card machine:
+warp(IDV_CARDMACH1);
+predicate cardmach(card, object);
+
+if (target != "") {
+    // search for the card that makes a bomb: map('CARD_OBJECTS','IDD_CARD12','IDD_BOMB2'),
+    card = "";
+    cardmach(?card, target);
+    if (card != '') {
+        write('searchig for '+card+' used to make '+target);
+        retries = 0;
+        while (got() != card && retries < 30) {
+            drop(SMP_RECYCLE);
+            grab(S06_CYCLE_TEMPL_BTNUP_1);
+            grab(S06_CARD_EJECT_BTN_1);
+            grab(S06_CARD_EJECT_ANIM_1);
+            write('got card ', card);
+            retries = retries + 1;
+        } 
+    }else {
+        write("there is no card for making " + target);
+    }
+} else {
+    write("you need to got() something for this to work.");
+}

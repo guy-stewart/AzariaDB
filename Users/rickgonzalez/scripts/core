@@ -1,11 +1,11 @@
 replay(keys);
 replay(lockers);
-replay(fish);
-replay('grill.m');
+replay('fishing/fish');
+replay('fishing/grill.m');
 replay(tmcu1);
 replay(manrep);
 replay(esp);
 replay('quarry');
 replay('drypit');
 replay('memstone');
-replay('maths');
+replay('programming/maths');

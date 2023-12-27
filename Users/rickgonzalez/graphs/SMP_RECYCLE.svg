@@ -56,7 +56,7 @@
 <polygon fill="none" stroke="black" points="263,-98.5 263,-137.5 528,-137.5 528,-98.5 263,-98.5"/>
 <text text-anchor="start" x="266" y="-126.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_MAIN_PANEL @pos(left:353, top:12)</text>
 <text text-anchor="start" x="266" y="-115.5" font-family="Courier New" font-size="10.00" fill="green">SMP_RECYCLE::M_RECYCLE(&#39;&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="266" y="-104.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;0&#39;: wObject:IDD_FISHASH5</text>
+<text text-anchor="start" x="266" y="-104.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;0&#39;: wObject:IDD_BAIT3</text>
 <polygon fill="none" stroke="black" points="260,-95.5 260,-159.5 531,-159.5 531,-95.5 260,-95.5"/>
 </g>
 </g>

@@ -108,7 +108,7 @@
 <polygon fill="none" stroke="black" points="329,-422.5 329,-461.5 678,-461.5 678,-422.5 329,-422.5"/>
 <text text-anchor="start" x="332" y="-450.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_RACEPAN @pos(left:435, top:0)</text>
 <text text-anchor="start" x="332" y="-439.5" font-family="Courier New" font-size="10.00" fill="green">S19_SPINNER_BOTTOM_SPIN::M19_SPIN(&#39;IDS_BOTSPIN&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="332" y="-428.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;0&#39;:</text>
+<text text-anchor="start" x="332" y="-428.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;0&#39;:</text>
 <polygon fill="none" stroke="black" points="326,-419.5 326,-483.5 681,-483.5 681,-419.5 326,-419.5"/>
 </g>
 </g>

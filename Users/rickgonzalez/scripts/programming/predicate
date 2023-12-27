@@ -1,0 +1,32 @@
+
+
+predicate map(op, key, value);
+
+map(CARD_CHEM1, IDD_CARD00, ?chemical);
+write('map(CARD_CHEM1, IDD_CARD00, ?chemical) --> ',chemical);
+
+// try (and fail) to read a machines/2 using the default predicate column names ...
+m = 'S04_KEYCLAMP_1';
+if (machines(m, ?viewname)) {
+    write("found machine '" + m + "' which lives in view '" + viewname + "'");
+}
+
+// declare predicate machines/2 with valid matching SQL column names:
+predicate machines(name,view_name);
+
+if (machines(m, ?viewname)) {
+    write("found machine '" + m + "' which lives in view '" + viewname + "'");
+}
+
+// get the matching view
+// declare views/4 as such:
+predicate views(view_name, backgroundAudio, behavior_id, surface_filename);
+// declare views/2 as such:
+predicate views(view_name, surface_filename);
+if (views(viewname,?x,?x,?image)) {
+    write("views/4 says '" + viewname + "' uses background image '" + image + "'");
+}
+if (views(viewname,?image)) {
+    write("views/2 says '" + viewname + "' uses background image '" + image + "'");
+}
+

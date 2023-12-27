@@ -95,7 +95,7 @@
 <polygon fill="none" stroke="black" points="329,-366.5 329,-405.5 774,-405.5 774,-366.5 329,-366.5"/>
 <text text-anchor="start" x="332" y="-394.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_RACEPAN @pos(left:435, top:0)</text>
 <text text-anchor="start" x="332" y="-383.5" font-family="Courier New" font-size="10.00" fill="green">S19_SPINNER_BOTTOM_PICK::M19_PICK(&#39;IDS_BOTSPIN&#39;,&#39;8&#39;,&#39;S19_BOTSPIN_MAP&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="332" y="-372.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;frameMapped&#39;: wParm:2 wSprite:bspin bFrame:2</text>
+<text text-anchor="start" x="332" y="-372.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;frameMapped&#39;: wParm:8 wSprite:IDS_BOTSPIN bFrame:8</text>
 <polygon fill="none" stroke="black" points="326,-363.5 326,-427.5 777,-427.5 777,-363.5 326,-363.5"/>
 </g>
 </g>

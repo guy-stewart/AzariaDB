@@ -46,7 +46,6 @@ grab('S08_CARDHOLD_1');
 recycle();
 
 drop('S08_CARDHOLD_1', 'IDD_CARD02');
-sleep(3);
 drop('S08_CHEM1_1','IDD_CHEMV03');
 drop('S08_CHEM2_1','IDD_CHEMV19');
 drag('S08_HOPPER_1', 'IDD_SCOOPF');
@@ -54,9 +53,8 @@ drag('S08_HOPPER_1', 'IDD_SCOOPF');
 drag('S08_HOPPER_1', 'IDD_SCOOPF');
 recycle();
 grab('S08_BIN_1');
-sleep(5);
 grab('S08_BIN_1');
-sleep(5);
+replay('city/lockup');
 recycle();
 
 // clear out the chems ...
@@ -82,5 +80,7 @@ recycle();
 grab('S08_BIN_1');
 sleep(5);
 grab('S08_BIN_1');
-sleep(5);
+sleep(2);
+
+replay('city/lockup');
 recycle();

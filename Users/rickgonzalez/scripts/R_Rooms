@@ -1,0 +1,76 @@
+// https_put()
+// /Rooms'
+//response = https_put(url, postdata);
+/*
+
+*/
+uri = "us-atl-3b185468.colyseus.cloud";
+resourcePath = "/Rooms";
+requestBody = "";
+response = https_get(uri+resourcePath);
+write(response);
+
+//Room Types
+data_array = json_element(response, "rooms");
+write(data_array);
+
+
+for (json_iter(data_array, ?roomtypes)){
+    write("room types:"+roomtypes);
+}
+
+write('////');
+
+
+roomsbytype = json_element(response, "roomsByType");
+write(roomsbytype); 
+
+azariaroom = json_element(roomsbytype, "AzariaRoom");
+write("Number of Azaria rooms: "+ azariaroom); 
+
+write('////roomsById'); //We're gonna read it like an array because it should be
+
+roomobjects =  json_element(response, "roomsById");
+write("room objects: "+ roomobjects); 
+
+
+for (json_iter(roomobjects, ?room)) {
+    roomid = json_element(room, "roomId");
+    write(roomid);
+}    
+
+
+
+// i = 0;
+// while (i < azariaroom) {
+
+//     room = json_element(roomobjects, "");
+//     write("Room: " + room);
+
+
+//     i = i + 1;
+// }
+
+
+
+
+
+
+
+// for (json_iter(data_array, ?data)) {
+//     write ("data: "+data);
+//     id           = json_element(data, "id");
+//     write("          id: " + id);
+//     providerName = json_element(data, "providerName");
+//     write("providerName: " + providerName);
+//     providerId   = json_element(data, "providerId");
+//     write("  providerId: " + providerId);
+//     providerUrl  = json_element(data, "providerUrl");
+//     write(" providerUrl: " + providerUrl);
+//     providerPort = json_element(data, "providerPort");
+//     write("providerPort: " + providerPort);
+// }
+
+write('////');
+write('////');
+write('////');

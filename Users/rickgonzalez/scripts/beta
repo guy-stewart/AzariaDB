@@ -1,19 +1,29 @@
 
+parm(object, IDD_EMERALD).
+replay(get);
+replay('city/lockup');
 
+/*
+item = got();
+if (item == IDD_BOMB1) {
+    write("you got bomb1");
+} else {
+    write("you do not got bomb1");
+}
 
-warp('IDV_MANREP1');
-// clear out the chems ...
-grab(S08_CHEM1_1);
-recycle();
-grab('S08_CHEM2_1');
-recycle();
-grab('S08_CARDHOLD_1');
-grab('S08_CARDHOLD_1');
-recycle();
+count = 0;
+while (count<10) {
+    if (count==0) {
+        write("count == 0 ... ", count);
+    } else if (count == 1) {
+        write("count == 1 ... ", count);
+    } else if (count >= 2 && count <= 6) {
+        write("count is between 2 and 6 inclusive ... ", count);
+    } else {
+        write("count is greater than 6 ", count);
+    }
+    count = count + 1;
+}
 
-drop('S08_CARDHOLD_1', 'IDD_CARD02');
-drop('S08_CHEM1_1','IDD_CHEMV01');
-drop('S08_CHEM2_1','IDD_CHEMV19');
-drag('S08_HOPPER_1', 'IDD_SCOOPF');
-drag('S08_HOPPER_1', 'IDD_SCOOPF');
-drag('S08_HOPPER_1', 'IDD_SCOOPF');
+warp(S00_HIDDEN_10);
+*/

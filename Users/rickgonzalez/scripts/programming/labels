@@ -1,0 +1,13 @@
+
+setsleep(1);
+drag(S10_THAOR_alt1);
+drag(S10_THAOR);
+warp(IDV_MEFLINTEXT);
+setsleep(5);
+grab(SXX_TESTMACHINE);
+grab(SXX_TESTMACHINE);
+grab(SXX_TESTMACHINE);
+grab(SXX_TESTMACHINE);
+setsleep(1);
+drag(S10_THAOR);
+

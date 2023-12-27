@@ -30,7 +30,7 @@ drop(S03_SPEAKERSTANDf);
 sleep(5);
 
 grab(S03_SPEAKERSTANDf);
-drop(SMP_RECYCLE);
+replay('city/lockup');
 
 drag(S03_DOORANIM);
 grab(S03_DOORANIM);

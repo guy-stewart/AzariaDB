@@ -1,0 +1,51 @@
+
+// NEELP PHASE 1:
+setsleep(2);
+warp(S33_NEELP);
+grab(S33_NEELP);
+sleep(5);
+grab(MEFPAN_OK);
+get(IDD_AMULET);
+grab(S33_NEELP);
+drop(SOD_SPELL);
+grab(MEFPAN_PRIZE_A);
+replay('city/lockup');
+grab(MEFPAN_PRIZE_B);
+replay('city/lockup');
+//grab(MEFPAN_PRIZE_C);
+//replay('city/lockup');
+grab(MEFPAN_OK);
+
+// NEELP PHASE 2:
+warp(IDV_FA1PAN);
+grab(S11_NEELP);
+grab(MEFPAN_OK);
+
+
+drop(S11_GRILL,IDD_FISH6);
+
+// put another log on the fire
+parms(object,IDD_LOG).
+replay(get);
+
+drop(S11_FIRE, IDD_LOG);
+
+// get a match ...
+grab(S11_LOGBINB);
+drag(S12_MATCHMAKER_1);
+
+drag(S11_FIRE, IDD_MATCH);
+drop(SID_SPELL);
+sleep(12);
+grab(S11_ASCENT);
+
+grab(S11_NEELP);
+drop(SOD_SPELL);
+
+grab(MEFPAN_PRIZE_A);
+replay('city/lockup');
+grab(MEFPAN_PRIZE_B);
+replay('city/lockup');
+grab(MEFPAN_PRIZE_C);
+replay('city/lockup');
+grab(MEFPAN_OK);

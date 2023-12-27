@@ -1,0 +1,30 @@
+
+parm('object',?object)?
+parm('object',)~
+
+if (object == IDD_CITY_KEY_0) {
+    warp(IDV_ckeyvend);
+    drag(S04_VIAL, IDD_SCOOPF);
+    drop(SMP_VIAL);
+    drag(S04_VIAL, IDD_SCOOPF);
+    drop(SMP_VIAL);
+    grab(S04_BIN);
+} else if (IDD_MATCH == object) {
+    parm('object',IDD_LOG).
+    replay('get');
+    drag(S12_MATCHMAKER_1);
+} else if (IDD_LOG == object) {
+    warp(IDV_TMPLPTH5);
+    warp(S11_LOGBINB);
+    grab(S11_LOGBINB);
+} else if (IDD_EMERALD == object) {
+    grab(S27_TICKLEPLANT);
+    drag(S27_HUNGRYCLAM);
+    drop(SMP_RECYBLE);
+    sleep(3);
+    grab(S27_HUNGRYCLAM);
+} else if (IDD_OMUSHSPT == object) {
+    grab(S21_m5BERRYTREE);
+} else if (IDD_GOPAR == object) {
+    grab(S10_GOPABUSH);
+}

@@ -1,3 +1,8 @@
 replay(orie);
+replay(meflins);
 replay(core);
+replay('programming/while');
+replay('city/makebait');
+replay(gather);
 replay('tour');
+

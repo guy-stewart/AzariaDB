@@ -1,0 +1,44 @@
+/*
+This script expects to receive a shopping list of fish to catch.
+If it catches any fish on the list it returns with that fish "in hand"
+
+INPUT:
+want(IDD_FISHx).
+
+Where want(x) a default predicate containing one or more fish.
+
+Warning: if the want list contains fishing related items such as bait or 
+fishing poles this script might return with one of those items in hand.
+*/
+
+fishstation(1, S11_FISHSTATIONa).
+fishstation(2, S11_FISHSTATIONb).
+fishstation(3, S11_FISHSTATIONc).
+fishstation(4, S11_FISHSTATIONd).
+fishstation(5, S11_FISHSTATIONe).
+fishstation(6, S11_FISHSTATIONf).
+
+station =1;
+while ((station <=6) && (want(got()) == 0)) {
+    fishstation(station, ?machine)?
+    grab(machine);
+    write('go_fish got() --> '+got());
+    if (got() == IDD_POLE1B0) {
+        drop(machine);
+    } else if (got() == IDD_POLE1) {
+        drop(machine);
+        drop(machine, IDD_BAIT0);
+    } else if (got() == '') {
+        drop(machine, IDD_POLE1);
+        drop(machine, IDD_BAIT0);
+    } else if (want(got())) {
+        write('got what you wanted!');
+    } else  {
+        // got the wrong fish???
+        drop(SMP_RECYCLE);
+        drop(machine, IDD_BAIT0);
+    }
+    station = station + 1;
+}
+
+fishstation('%',)~

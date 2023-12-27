@@ -12,3 +12,4 @@ get(IDD_BOMB1);
 drop(S02_BIN___00);
 grab(S02_LOCK__00);
 
+
