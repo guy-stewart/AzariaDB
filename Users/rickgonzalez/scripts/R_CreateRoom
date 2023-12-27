@@ -1,0 +1,28 @@
+
+/*
+
+*/
+
+playerid = "88b098defB751B7401B5f6d8976F";
+playername = "pete";
+ip = "108.82.186.169";
+roomname = "AzariaRoom";
+roomtype = "public";
+roommaxplayers = 50;
+fname = "CoolPeople";
+
+
+uri = "us-atl-3b185468.colyseus.cloud";
+resourcePath = "/matchmake/create/AzariaRoom";
+postdata = "{"
++"playerId:"+ playerid +","
++"playerName:"+ playername +","
++"ip:"+ ip +","
++"roomName:"+ roomname +","
++"roomType:"+ roomtype +","
++"roomMaxPlayers:"+ roommaxplayers +","
++"fname:"+ fname 
++"}";
+write("postdata is -->",postdata);
+response = https_put(uri+resourcePath, postdata);
+write(response);
