@@ -12,12 +12,12 @@
 <!-- filename -->
 <g id="node1" class="node">
 <title>filename</title>
-<polygon fill="none" stroke="black" points="185.19,-268.5 185.19,-318.5 322.19,-318.5 322.19,-268.5 185.19,-268.5"/>
-<polygon fill="none" stroke="black" points="196.19,-294.5 196.19,-311.5 311.19,-311.5 311.19,-294.5 196.19,-294.5"/>
-<text text-anchor="start" x="199.19" y="-301.5" font-family="Courier New" font-weight="bold" font-size="10.00">sq_1_t::M19_SQUARE</text>
-<polygon fill="none" stroke="black" points="196.19,-275.5 196.19,-292.5 311.19,-292.5 311.19,-275.5 196.19,-275.5"/>
-<text text-anchor="start" x="208.19" y="-281.5" font-family="Courier New" font-size="10.00" fill="brown">start state = 0</text>
-<polygon fill="none" stroke="black" points="193.19,-272.5 193.19,-314.5 314.19,-314.5 314.19,-272.5 193.19,-272.5"/>
+<polygon fill="none" stroke="black" points="179.19,-268.5 179.19,-318.5 322.19,-318.5 322.19,-268.5 179.19,-268.5"/>
+<polygon fill="none" stroke="black" points="190.19,-294.5 190.19,-311.5 311.19,-311.5 311.19,-294.5 190.19,-294.5"/>
+<text text-anchor="start" x="193.19" y="-301.5" font-family="Courier New" font-weight="bold" font-size="10.00">sq_11_b::M19_SQUARE</text>
+<polygon fill="none" stroke="black" points="190.19,-275.5 190.19,-292.5 311.19,-292.5 311.19,-275.5 190.19,-275.5"/>
+<text text-anchor="start" x="205.19" y="-281.5" font-family="Courier New" font-size="10.00" fill="brown">start state = 0</text>
+<polygon fill="none" stroke="black" points="187.19,-272.5 187.19,-314.5 314.19,-314.5 314.19,-272.5 187.19,-272.5"/>
 </g>
 <!-- 0 -->
 <g id="node2" class="node">
@@ -101,10 +101,10 @@
 <title>status</title>
 <polygon fill="none" stroke="black" points="413.19,-257.5 413.19,-329.5 808.19,-329.5 808.19,-257.5 413.19,-257.5"/>
 <polygon fill="none" stroke="black" points="424.19,-305.5 424.19,-322.5 797.19,-322.5 797.19,-305.5 424.19,-305.5"/>
-<text text-anchor="start" x="592.19" y="-312.5" font-family="Courier New" font-weight="bold" font-size="10.00">sq_1_t</text>
+<text text-anchor="start" x="589.19" y="-312.5" font-family="Courier New" font-weight="bold" font-size="10.00">sq_11_b</text>
 <polygon fill="none" stroke="black" points="424.19,-264.5 424.19,-303.5 797.19,-303.5 797.19,-264.5 424.19,-264.5"/>
-<text text-anchor="start" x="427.19" y="-292.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_RACEPAN @pos(left:240, top:217)</text>
-<text text-anchor="start" x="427.19" y="-281.5" font-family="Courier New" font-size="10.00" fill="green">sq_1_t::M19_SQUARE(&#39;&#39;,&#39;SIG_1T&#39;,&#39;&#39;,&#39;&#39;)</text>
+<text text-anchor="start" x="427.19" y="-292.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_RACEPAN @pos(left:207, top:196)</text>
+<text text-anchor="start" x="427.19" y="-281.5" font-family="Courier New" font-size="10.00" fill="green">sq_11_b::M19_SQUARE(&#39;&#39;,&#39;SIG_11B&#39;,&#39;&#39;,&#39;&#39;)</text>
 <text text-anchor="start" x="427.19" y="-270.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;squareempty&#39;: bParm:0 wObject:0 wAccept:ISA_PLAYTOKEN</text>
 <polygon fill="none" stroke="black" points="421.19,-261.5 421.19,-325.5 800.19,-325.5 800.19,-261.5 421.19,-261.5"/>
 </g>

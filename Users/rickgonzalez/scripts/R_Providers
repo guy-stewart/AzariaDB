@@ -1,17 +1,13 @@
-// https_put()
-// /Rooms'
 /*
-
+R_Providers
 */
 uri = "us-atl-3b185468.colyseus.cloud";
 resourcePath = "/kam/providers";
 requestBody = "";
 response = https_get(uri+resourcePath);
 write(response);
-
 data_array = json_element(response, "Data");
 write(data_array);
-
 for (json_iter(data_array, ?data)) {
     write ("data: "+data);
     id           = json_element(data, "id");
@@ -25,11 +21,3 @@ for (json_iter(data_array, ?data)) {
     providerPort = json_element(data, "providerPort");
     write("providerPort: " + providerPort);
 }
-
-write('////');
-write('////');
-write('////');
-
-resourcePath = "/Rooms";
-response = https_get(uri+resourcePath);
-write(response);

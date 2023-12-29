@@ -1,0 +1,26 @@
+
+
+
+playerid = "88b098defB751B7401B5f6d8976F";
+playername = "pete";
+ip = "108.82.186.169";
+roomId = "2wo5opA4eCoolPeople";
+
+
+uri = "us-atl-3b185468.colyseus.cloud";
+resourcePath = "/matchmake/joinById/"+roomId;
+
+
+postdata = "{"
++'"playerId":"'+ playerid +'",'
++'"playerName":"'+ playername +'",'
++'"playerIp":"'+ ip + '"'
++"}";
+write("postdata is -->",postdata);
+response = https_put(uri+resourcePath, postdata);
+write(response);
+
+
+//---- we have to take the response and make and post it to accept the reservation
+//--- from the actual client if we want a persistent connection of the 
+//--- azaria client.
