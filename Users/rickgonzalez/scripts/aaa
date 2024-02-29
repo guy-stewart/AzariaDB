@@ -1,0 +1,104 @@
+/*
+https_post_request('us-atl-3b185468.colyseus.cloud/matchmake/create/AzariaRoom','{"playerId":"88b098defB751B7401B5f6d8976F","playerName":"pete","ip":"108.82.186.169","roomName":"AzariaRoom","roomType":"public","roomMaxPlayers":"50","fname":"CoolPeople"}')
+Response:
+{"room":{"clients":1,"locked":false,"private":false,"maxClients":50,"unlisted":false,"createdAt":"2023-12-28T17:47:31.272Z","name":"AzariaRoom","processId":"fZbpRLsoJ","publicAddress":"us-atl-3b185468.colyseus.cloud","roomId":"Z9VhOBnzLCoolPeople"},"sessionId":"Y6Prig0XP"}
+*/
+/*
+playerid = "88b098defB751B7401B5f6d8976F";
+playername = "pete";
+ip = "108.82.186.169";
+roomname = "AzariaRoom";
+roomtype = "public";
+roommaxplayers = 50;
+fname = "CoolPeople";
+
+
+uri = "us-atl-3b185468.colyseus.cloud";
+resourcePath = "/matchmake/create/AzariaRoom";
+postdata = "{"
++'"playerId":"'+ playerid +'",'
++'"playerName":"'+ playername +'",'
++'"ip":"'+ ip +'",'
++'"roomName":"'+ roomname +'",'
++'"roomType":"'+ roomtype +'",'
++'"roomMaxPlayers":"'+ roommaxplayers +'",'
++'"fname":"'+ fname + '"'
++"}";
+write("postdata is -->",postdata);
+response = https_put(uri+resourcePath, postdata);
+write(response);
+*/
+
+//---- we have to take the response and make and post it to accept the reservation
+//--- from the actual client if we want a persistent connection of the 
+//--- azaria client.
+
+playerid = "88b098defB751B7401B5f6d8976F";
+playername = "pete";
+ip = "108.82.186.169";
+roomId = "X8Xv2XG7rboysroom";
+fname = "rboysroom";
+
+uri = "us-atl-3b185468.colyseus.cloud";
+resourcePath = "/matchmake/joinById/"+roomId;
+
+postdata = "{"
++'"playerId":"'+ playerid +'",'
++'"name":"'+ playername +'",'
++'"ip":"'+ ip +'",'
++'"fname":"'+ fname + '"'
++"}";
+write("uri:'"+uri+"'");
+write("resourcePath:'"+resourcePath+"'");
+write("postdata is -->",postdata);
+reservation = https_put(uri+resourcePath, postdata);
+write("reservation:"+reservation);
+
+// sleep(2);
+
+//---- we have to take the response and make and post it to accept the reservation
+//--- from the actual client if we want a persistent connection of the 
+//--- azaria client.
+
+// postdata is -->{"playerId":"88b098defB751B7401B5f6d8976F","playerName":"pete","ip":"108.82.186.169","roomName":"AzariaRoom","roomType":"public","roomMaxPlayers":"50","fname":"CoolPeople"}
+/*
+{
+    "room": {
+        "clients":1,
+        "locked":false,
+        "private":false,
+        "maxClients":50,
+        "unlisted":false,
+        "createdAt":"2024-01-24T06:01:11.530Z",
+        "name":"AzariaRoom",
+        "processId":"fZbpRLsoJ",
+        "publicAddress":"us-atl-3b185468.colyseus.cloud",
+        "roomId":"GyFH3Si0-CoolPeople"
+    },
+    "sessionId":"VnpJxI5Vi"
+}
+*/
+
+// wss://us-atl-3b185468.colyseus.cloud/fZbpRLsoJ/2wo5opA4eCoolPeople?sessionId=VLK6mSxC0
+
+room = json_element(reservation, "room");
+publicAddress = json_element(room, "publicAddress");
+processId = json_element(room, "processId");
+roomId = json_element(room, "roomId");
+sessionId = json_element(reservation, "sessionId");
+
+xxx = publicAddress + "/" + processId + "/" + roomId + '?sessionId=' + sessionId;
+resource = "/" + processId + "/" + roomId + '?sessionId=' + sessionId;
+
+write('URL='+xxx);
+
+// us-atl-3b185468.colyseus.cloud/3NgYiaail/X8Xv2XG7rboysroom?sessionId=WUPqBSQMZ
+// us-atl-3b185468.colyseus.cloud/3NgYiaail/X8Xv2XG7rboysroom?sessionId=mxT-WrgLR
+
+// create a named websocket. The name does not matter, we will call this one 'bob':
+// socket name = 'bob'
+// host name = publicAddress.
+mysock = websocket('mysock', publicAddress, resource);
+write('mysock:<'+mysock+'>');
+// wsSend('mysock',message);
+// wssSocket();

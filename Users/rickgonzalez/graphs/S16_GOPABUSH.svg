@@ -316,14 +316,14 @@
 <!-- status -->
 <g id="node19" class="node">
 <title>status</title>
-<polygon fill="none" stroke="black" points="1346.5,-462.5 1346.5,-534.5 1663.5,-534.5 1663.5,-462.5 1346.5,-462.5"/>
-<polygon fill="none" stroke="black" points="1357.5,-510.5 1357.5,-527.5 1652.5,-527.5 1652.5,-510.5 1357.5,-510.5"/>
-<text text-anchor="start" x="1468.5" y="-517.5" font-family="Courier New" font-weight="bold" font-size="10.00">S16_GOPABUSH</text>
-<polygon fill="none" stroke="black" points="1357.5,-469.5 1357.5,-508.5 1652.5,-508.5 1652.5,-469.5 1357.5,-469.5"/>
-<text text-anchor="start" x="1360.5" y="-497.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_VIL4</text>
+<polygon fill="none" stroke="black" points="1346.5,-462.5 1346.5,-534.5 1717.5,-534.5 1717.5,-462.5 1346.5,-462.5"/>
+<polygon fill="none" stroke="black" points="1357.5,-510.5 1357.5,-527.5 1706.5,-527.5 1706.5,-510.5 1357.5,-510.5"/>
+<text text-anchor="start" x="1495.5" y="-517.5" font-family="Courier New" font-weight="bold" font-size="10.00">S16_GOPABUSH</text>
+<polygon fill="none" stroke="black" points="1357.5,-469.5 1357.5,-508.5 1706.5,-508.5 1706.5,-469.5 1357.5,-469.5"/>
+<text text-anchor="start" x="1360.5" y="-497.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_VIL4 @pos(left:2362, top:140)</text>
 <text text-anchor="start" x="1360.5" y="-486.5" font-family="Courier New" font-size="10.00" fill="green">S16_GOPABUSH::M_GOPABIN(&#39;IDS_GBANIM&#39;,&#39;4&#39;,&#39;0&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="1360.5" y="-475.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;2&#39;: wObject:IDD_GOPAB wSprite:GBANIM bFrame:2</text>
-<polygon fill="none" stroke="black" points="1354.5,-466.5 1354.5,-530.5 1655.5,-530.5 1655.5,-466.5 1354.5,-466.5"/>
+<text text-anchor="start" x="1360.5" y="-475.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;2&#39;: wObject:IDD_GOPAB wSprite:IDS_GBANIM bFrame:2</text>
+<polygon fill="none" stroke="black" points="1354.5,-466.5 1354.5,-530.5 1709.5,-530.5 1709.5,-466.5 1354.5,-466.5"/>
 </g>
 </g>
 </svg>

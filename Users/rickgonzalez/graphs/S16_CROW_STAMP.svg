@@ -47,52 +47,52 @@
 <!-- waiting -->
 <g id="node5" class="node">
 <title>waiting</title>
-<polyline fill="none" stroke="darkred" points="546.58,-128.5 610.58,-128.5"/>
-<text text-anchor="start" x="549.58" y="-136.3" font-family="Courier New" font-weight="bold" font-size="14.00">waiting</text>
-<path fill="none" stroke="darkred" d="M552.58,-125.5C552.58,-125.5 604.58,-125.5 604.58,-125.5 609.08,-125.5 613.58,-130 613.58,-134.5 613.58,-134.5 613.58,-143.5 613.58,-143.5 613.58,-148 609.08,-152.5 604.58,-152.5 604.58,-152.5 552.58,-152.5 552.58,-152.5 548.08,-152.5 543.58,-148 543.58,-143.5 543.58,-143.5 543.58,-134.5 543.58,-134.5 543.58,-130 548.08,-125.5 552.58,-125.5"/>
+<polyline fill="none" stroke="darkred" stroke-width="3" points="546.08,-124.5 611.08,-124.5"/>
+<text text-anchor="start" x="549.58" y="-132.8" font-family="Courier New" font-weight="bold" font-size="14.00">waiting</text>
+<path fill="none" stroke="darkred" stroke-width="3" d="M551.74,-119.5C551.74,-119.5 605.41,-119.5 605.41,-119.5 610.74,-119.5 616.08,-124.83 616.08,-130.17 616.08,-130.17 616.08,-140.83 616.08,-140.83 616.08,-146.17 610.74,-151.5 605.41,-151.5 605.41,-151.5 551.74,-151.5 551.74,-151.5 546.41,-151.5 541.08,-146.17 541.08,-140.83 541.08,-140.83 541.08,-130.17 541.08,-130.17 541.08,-124.83 546.41,-119.5 551.74,-119.5"/>
 </g>
 <!-- startframe&#45;&gt;waiting -->
 <g id="edge4" class="edge">
 <title>startframe&#45;&gt;waiting</title>
-<path fill="none" stroke="black" d="M850.11,-213.9C789.08,-197.29 691.72,-170.79 631.67,-154.45"/>
-<polygon fill="black" stroke="black" points="632.84,-150.87 622.27,-151.62 631,-157.62 632.84,-150.87"/>
-<text text-anchor="start" x="774.58" y="-183" font-family="Courier New" font-weight="bold" font-size="10.00" fill="blue">SHOW(WIP1,)</text>
+<path fill="none" stroke="black" d="M850.11,-213.31C790.55,-196.46 696.36,-169.82 636.04,-152.76"/>
+<polygon fill="black" stroke="black" points="637.13,-149.14 626.56,-149.79 635.23,-155.88 637.13,-149.14"/>
+<text text-anchor="start" x="784.58" y="-183" font-family="Courier New" font-weight="bold" font-size="10.00" fill="blue">SHOW(WIP1,)</text>
 </g>
 <!-- readyToPay -->
 <g id="node4" class="node">
 <title>readyToPay</title>
-<polyline fill="none" stroke="darkred" stroke-width="3" points="533.58,-10.5 623.58,-10.5"/>
-<text text-anchor="start" x="537.08" y="-18.8" font-family="Courier New" font-weight="bold" font-size="14.00">readyToPay</text>
-<path fill="none" stroke="darkred" stroke-width="3" d="M539.24,-5.5C539.24,-5.5 617.91,-5.5 617.91,-5.5 623.24,-5.5 628.58,-10.83 628.58,-16.17 628.58,-16.17 628.58,-26.83 628.58,-26.83 628.58,-32.17 623.24,-37.5 617.91,-37.5 617.91,-37.5 539.24,-37.5 539.24,-37.5 533.91,-37.5 528.58,-32.17 528.58,-26.83 528.58,-26.83 528.58,-16.17 528.58,-16.17 528.58,-10.83 533.91,-5.5 539.24,-5.5"/>
+<polyline fill="none" stroke="darkred" points="534.08,-7.5 623.08,-7.5"/>
+<text text-anchor="start" x="537.08" y="-15.3" font-family="Courier New" font-weight="bold" font-size="14.00">readyToPay</text>
+<path fill="none" stroke="darkred" d="M540.08,-4.5C540.08,-4.5 617.08,-4.5 617.08,-4.5 621.58,-4.5 626.08,-9 626.08,-13.5 626.08,-13.5 626.08,-22.5 626.08,-22.5 626.08,-27 621.58,-31.5 617.08,-31.5 617.08,-31.5 540.08,-31.5 540.08,-31.5 535.58,-31.5 531.08,-27 531.08,-22.5 531.08,-22.5 531.08,-13.5 531.08,-13.5 531.08,-9 535.58,-4.5 540.08,-4.5"/>
 </g>
 <!-- readyToPay&#45;&gt;0 -->
 <g id="edge3" class="edge">
 <title>readyToPay&#45;&gt;0</title>
-<path fill="none" stroke="black" d="M637.87,-23.94C791.35,-27.94 1191.12,-40.32 1210.58,-61 1286.43,-141.62 1226.03,-207.99 1178.58,-308 1173.55,-318.59 1165.75,-328.62 1157.88,-337.07"/>
-<polygon fill="black" stroke="black" points="1155.94,-334.07 1151.41,-343.65 1160.92,-338.98 1155.94,-334.07"/>
+<path fill="none" stroke="black" d="M634.02,-20.02C784.53,-23.08 1190.91,-33.21 1210.58,-54 1288.78,-136.65 1227.1,-205.08 1178.58,-308 1173.58,-318.61 1165.78,-328.63 1157.91,-337.08"/>
+<polygon fill="black" stroke="black" points="1155.97,-334.08 1151.44,-343.66 1160.95,-339 1155.97,-334.08"/>
 <text text-anchor="start" x="1244.58" y="-183" font-family="Courier New" font-weight="bold" font-size="10.00" fill="orange">WAIT(0,SIG_OFF)</text>
 </g>
 <!-- readyToPay&#45;&gt;waiting -->
 <g id="edge2" class="edge">
 <title>readyToPay&#45;&gt;waiting</title>
-<path fill="none" stroke="black" d="M578.58,-42.91C578.58,-61.7 578.58,-89.72 578.58,-110.48"/>
-<polygon fill="black" stroke="black" points="575.08,-110.45 578.58,-120.45 582.08,-110.45 575.08,-110.45"/>
-<polygon fill="none" stroke="black" points="581.58,-83 581.58,-100 1206.58,-100 1206.58,-83 581.58,-83"/>
-<text text-anchor="start" x="869.58" y="-90" font-family="Courier New" font-weight="bold" font-size="10.00" fill="orange">CLICK(,)</text>
-<polygon fill="none" stroke="black" points="581.58,-64 581.58,-81 1206.58,-81 1206.58,-64 581.58,-64"/>
-<text text-anchor="start" x="584.58" y="-70" font-family="Courier New" font-size="10.00" fill="blue">SHOW(WSPRITE);ANIMATE(0,V_REVERSE);SIGNAL(WIP2,SIG_OFF);SIGNAL(WIP3,SIG_CLOSE);PLAYWAVE(0,SOUND_CHAIN);</text>
-<polygon fill="none" stroke="black" points="578.58,-61 578.58,-103 1209.58,-103 1209.58,-61 578.58,-61"/>
+<path fill="none" stroke="black" d="M578.58,-35.81C578.58,-53.4 578.58,-81.43 578.58,-103.13"/>
+<polygon fill="black" stroke="black" points="575.08,-103.12 578.58,-113.12 582.08,-103.12 575.08,-103.12"/>
+<polygon fill="none" stroke="black" points="581.58,-76 581.58,-93 1206.58,-93 1206.58,-76 581.58,-76"/>
+<text text-anchor="start" x="869.58" y="-83" font-family="Courier New" font-weight="bold" font-size="10.00" fill="orange">CLICK(,)</text>
+<polygon fill="none" stroke="black" points="581.58,-57 581.58,-74 1206.58,-74 1206.58,-57 581.58,-57"/>
+<text text-anchor="start" x="584.58" y="-63" font-family="Courier New" font-size="10.00" fill="blue">SHOW(WSPRITE);ANIMATE(0,V_REVERSE);SIGNAL(WIP2,SIG_OFF);SIGNAL(WIP3,SIG_CLOSE);PLAYWAVE(0,SOUND_CHAIN);</text>
+<polygon fill="none" stroke="black" points="578.58,-54 578.58,-96 1209.58,-96 1209.58,-54 578.58,-54"/>
 </g>
 <!-- waiting&#45;&gt;readyToPay -->
 <g id="edge5" class="edge">
 <title>waiting&#45;&gt;readyToPay</title>
-<path fill="none" stroke="black" d="M535.98,-136.96C406.86,-133.6 27.57,-122.13 9.58,-103 -3.21,-89.4 -3.17,-74.64 9.58,-61 42.96,-25.29 363.43,-21.76 508.2,-22.02"/>
-<polygon fill="black" stroke="black" points="508.15,-25.52 518.15,-22.04 508.16,-18.52 508.15,-25.52"/>
-<polygon fill="none" stroke="black" points="12.58,-83 12.58,-100 571.58,-100 571.58,-83 12.58,-83"/>
-<text text-anchor="start" x="267.58" y="-90" font-family="Courier New" font-weight="bold" font-size="10.00" fill="orange">CLICK(,)</text>
-<polygon fill="none" stroke="black" points="12.58,-64 12.58,-81 571.58,-81 571.58,-64 12.58,-64"/>
-<text text-anchor="start" x="15.58" y="-70" font-family="Courier New" font-size="10.00" fill="blue">SHOW(WSPRITE); ANIMATE(); SIGNAL(WIP2,SIG_ON);SIGNAL(WIP3,SIG_OPEN);PLAYWAVE(0,SOUND_CHAIN);</text>
-<polygon fill="none" stroke="black" points="9.58,-61 9.58,-103 574.58,-103 574.58,-61 9.58,-61"/>
+<path fill="none" stroke="black" d="M531.65,-134.91C401.8,-135.54 44.9,-133.8 9.58,-96 -3.17,-82.36 -3.21,-67.6 9.58,-54 26.58,-35.92 366.33,-24.68 512.57,-20.67"/>
+<polygon fill="black" stroke="black" points="512.27,-24.15 522.18,-20.38 512.08,-17.15 512.27,-24.15"/>
+<polygon fill="none" stroke="black" points="12.58,-76 12.58,-93 571.58,-93 571.58,-76 12.58,-76"/>
+<text text-anchor="start" x="267.58" y="-83" font-family="Courier New" font-weight="bold" font-size="10.00" fill="orange">CLICK(,)</text>
+<polygon fill="none" stroke="black" points="12.58,-57 12.58,-74 571.58,-74 571.58,-57 12.58,-57"/>
+<text text-anchor="start" x="15.58" y="-63" font-family="Courier New" font-size="10.00" fill="blue">SHOW(WSPRITE); ANIMATE(); SIGNAL(WIP2,SIG_ON);SIGNAL(WIP3,SIG_OPEN);PLAYWAVE(0,SOUND_CHAIN);</text>
+<polygon fill="none" stroke="black" points="9.58,-54 9.58,-96 574.58,-96 574.58,-54 9.58,-54"/>
 </g>
 <!-- status -->
 <g id="node6" class="node">
@@ -103,7 +103,7 @@
 <polygon fill="none" stroke="black" points="1187.08,-333.5 1187.08,-372.5 1644.08,-372.5 1644.08,-333.5 1187.08,-333.5"/>
 <text text-anchor="start" x="1190.08" y="-361.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_CROW0000 @pos(left:160, top:0)</text>
 <text text-anchor="start" x="1190.08" y="-350.5" font-family="Courier New" font-size="10.00" fill="green">S16_CROW_STAMP::M16_PAYSTAMP(&#39;IDS_STAMP&#39;,&#39;S16_CROW_PAY&#39;,&#39;S16_CROW_GRAB&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="1190.08" y="-339.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;readyToPay&#39;: bFrame:1</text>
+<text text-anchor="start" x="1190.08" y="-339.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;waiting&#39;: wSprite:IDS_STAMP bFrame:1</text>
 <polygon fill="none" stroke="black" points="1184.08,-330.5 1184.08,-394.5 1647.08,-394.5 1647.08,-330.5 1184.08,-330.5"/>
 </g>
 </g>

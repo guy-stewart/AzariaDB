@@ -124,9 +124,9 @@
 <polygon fill="none" stroke="black" points="281,-601.5 281,-618.5 672,-618.5 672,-601.5 281,-601.5"/>
 <text text-anchor="start" x="437" y="-608.5" font-family="Courier New" font-weight="bold" font-size="10.00">S21_DIARY1BIN</text>
 <polygon fill="none" stroke="black" points="281,-560.5 281,-599.5 672,-599.5 672,-560.5 281,-560.5"/>
-<text text-anchor="start" x="284" y="-588.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_MAPROOM @pos(left:251, top:197)</text>
+<text text-anchor="start" x="284" y="-588.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_MAPROOM @pos(left:3049, top:215)</text>
 <text text-anchor="start" x="284" y="-577.5" font-family="Courier New" font-size="10.00" fill="green">S21_DIARY1BIN::M_PLANTBIN(&#39;IDD_DIARY1&#39;,&#39;IDS_DIARY1_BIN&#39;,&#39;60&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="284" y="-566.5" font-family="Courier New" font-size="10.00" fill="green">{&#39;5&#39;: wSprite:DIARY1_BIN</text>
+<text text-anchor="start" x="284" y="-566.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;5&#39;: wSprite:IDS_DIARY1_BIN</text>
 <polygon fill="none" stroke="black" points="278,-557.5 278,-621.5 675,-621.5 675,-557.5 278,-557.5"/>
 </g>
 </g>

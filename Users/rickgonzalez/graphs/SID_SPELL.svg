@@ -149,7 +149,7 @@
 <polygon fill="none" stroke="black" points="477.53,-372.5 477.53,-411.5 688.53,-411.5 688.53,-372.5 477.53,-372.5"/>
 <text text-anchor="start" x="480.53" y="-400.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_ID @pos(left:10, top:50)</text>
 <text text-anchor="start" x="480.53" y="-389.5" font-family="Courier New" font-size="10.00" fill="green">SID_SPELL::M_IDSPELL(&#39;&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="480.53" y="-378.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;0&#39;: wObject:IDD_HALUCINATE</text>
+<text text-anchor="start" x="480.53" y="-378.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;0&#39;: wObject:IDD_GVIAL</text>
 <polygon fill="none" stroke="black" points="474.53,-369.5 474.53,-433.5 691.53,-433.5 691.53,-369.5 474.53,-369.5"/>
 </g>
 </g>

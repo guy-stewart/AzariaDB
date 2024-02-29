@@ -103,7 +103,7 @@
 <polygon fill="none" stroke="black" points="299,-346.5 299,-385.5 822,-385.5 822,-346.5 299,-346.5"/>
 <text text-anchor="start" x="302" y="-374.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_ckeycf02 @pos(left:222, top:91)</text>
 <text text-anchor="start" x="302" y="-363.5" font-family="Courier New" font-size="10.00" fill="green">S04_KEYCLAMP_2::M04_KEYCLAMP(&#39;S04_REDSLIDER_2&#39;,&#39;S04_GRNSLIDER_2&#39;,&#39;S04_BLUSLIDER_2&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="302" y="-352.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;VACANT&#39;: wParm:5 wAccept:IDC_KEY</text>
+<text text-anchor="start" x="302" y="-352.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;VACANT&#39;: wParm:0 wAccept:IDC_KEY</text>
 <polygon fill="none" stroke="black" points="296,-343.5 296,-407.5 825,-407.5 825,-343.5 296,-343.5"/>
 </g>
 </g>

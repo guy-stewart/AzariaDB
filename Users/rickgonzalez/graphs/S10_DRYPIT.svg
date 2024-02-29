@@ -184,14 +184,14 @@
 <!-- status -->
 <g id="node8" class="node">
 <title>status</title>
-<polygon fill="none" stroke="black" points="510.2,-448.5 510.2,-520.5 881.2,-520.5 881.2,-448.5 510.2,-448.5"/>
-<polygon fill="none" stroke="black" points="521.2,-496.5 521.2,-513.5 870.2,-513.5 870.2,-496.5 521.2,-496.5"/>
-<text text-anchor="start" x="665.2" y="-503.5" font-family="Courier New" font-weight="bold" font-size="10.00">S10_DRYPIT</text>
-<polygon fill="none" stroke="black" points="521.2,-455.5 521.2,-494.5 870.2,-494.5 870.2,-455.5 521.2,-455.5"/>
+<polygon fill="none" stroke="black" points="510.2,-448.5 510.2,-520.5 833.2,-520.5 833.2,-448.5 510.2,-448.5"/>
+<polygon fill="none" stroke="black" points="521.2,-496.5 521.2,-513.5 822.2,-513.5 822.2,-496.5 521.2,-496.5"/>
+<text text-anchor="start" x="641.2" y="-503.5" font-family="Courier New" font-weight="bold" font-size="10.00">S10_DRYPIT</text>
+<polygon fill="none" stroke="black" points="521.2,-455.5 521.2,-494.5 822.2,-494.5 822.2,-455.5 521.2,-455.5"/>
 <text text-anchor="start" x="524.2" y="-483.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_SCN10PIT @pos(left:30, top:205)</text>
 <text text-anchor="start" x="524.2" y="-472.5" font-family="Courier New" font-size="10.00" fill="green">S10_DRYPIT::M10_DRYPIT(&#39;&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="524.2" y="-461.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;10&#39;: bParm:5 wParm:20 wSprite:IDS_PITFUL bFrame:2</text>
-<polygon fill="none" stroke="black" points="518.2,-452.5 518.2,-516.5 873.2,-516.5 873.2,-452.5 518.2,-452.5"/>
+<text text-anchor="start" x="524.2" y="-461.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;10&#39;: wParm:20 wSprite:IDS_PITFUL bFrame:0</text>
+<polygon fill="none" stroke="black" points="518.2,-452.5 518.2,-516.5 825.2,-516.5 825.2,-452.5 518.2,-452.5"/>
 </g>
 </g>
 </svg>

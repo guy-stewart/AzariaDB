@@ -101,7 +101,7 @@
 <polygon fill="none" stroke="black" points="375.29,-230.5 375.29,-269.5 652.29,-269.5 652.29,-230.5 375.29,-230.5"/>
 <text text-anchor="start" x="378.29" y="-258.5" font-family="Courier New" font-size="10.00" fill="green">VIEW::IDV_MEFPAN @pos(left:5, top:20)</text>
 <text text-anchor="start" x="378.29" y="-247.5" font-family="Courier New" font-size="10.00" fill="green">MEFPAN_VIEWCAP::M_MEFPAN_VIEWCAP(&#39;&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;)</text>
-<text text-anchor="start" x="378.29" y="-236.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;waiting&#39;: bParm:1 wParm:IDV_VIL7</text>
+<text text-anchor="start" x="378.29" y="-236.5" font-family="Courier New" font-size="10.00" fill="green">{state:&#39;waiting&#39;: bParm:1 wParm:IDV_VIL2</text>
 <polygon fill="none" stroke="black" points="372.29,-227.5 372.29,-291.5 655.29,-291.5 655.29,-227.5 372.29,-227.5"/>
 </g>
 </g>
