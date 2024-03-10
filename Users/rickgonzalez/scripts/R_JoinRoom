@@ -13,7 +13,7 @@ resourcePath = "/matchmake/joinById/"+roomId;
 
 postdata = "{"
 +'"playerId":"'+ playerid +'",'
-+'"playerName":"'+ playername +'",'
++'"name":"'+ playername +'",'
 +'"playerIp":"'+ ip + '"'
 +"}";
 write("postdata is -->",postdata);

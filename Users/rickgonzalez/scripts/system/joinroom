@@ -1,0 +1,54 @@
+
+write("joinroom");
+// quick hack to get player info ...
+playerid   = getOpenPlay("playerid");
+playername =  getOpenPlay("playername");
+ip = getOpenPlay("ip");
+roomId = getOpenPlay("roomid");
+fname = getOpenPlay("fname");
+candidates = getOpenPlay("candidates");
+
+uri = "us-atl-3b185468.colyseus.cloud";
+resourcePath = "/matchmake/joinById/"+roomId;
+
+postdata = "{"
++'"playerId":"'+ playerid +'",'
++'"name":"'+ playername +'",'
++'"ip":"'+ ip +'",'
++'"candidates":'+candidates+','
++'"fname":"'+ fname + '"'
++"}";
+
+write("uri:'"+uri+"'");
+write("resourcePath:'"+resourcePath+"'");
+write("postdata is -->",postdata);
+// request a reservation.
+// ERR?
+reservation = https_put(uri+resourcePath, postdata);
+write("reservation:"+reservation);
+
+//---- we have to take the response and make and post it to accept the reservation
+//--- from the actual client if we want a persistent connection of the 
+//--- azaria client.
+
+room = json_element(reservation, "room");
+publicAddress = json_element(room, "publicAddress");
+processId = json_element(room, "processId");
+roomId = json_element(room, "roomId");
+sessionId = json_element(reservation, "sessionId");
+
+resource = "/" + processId + "/" + roomId + '?sessionId=' + sessionId;
+
+write('URL='+publicAddress+'/'+resource);
+
+// create a named websocket. The name does not matter, we will call this one 'mysock':
+// in other scripts that might run at a future time you can read or write this socket 
+// by its given name: wsSend('mysock', 'message');
+// socket name = 'mysock'
+// host name = publicAddress.
+// we also need to know the protocol (json, webpack, etc).
+// For webpack we perhaps need the schema. This can be given in predicate form.
+// another quick hack to get things working ...
+mysock = websocket('mysock', publicAddress, resource);
+write('mysock:<'+mysock+'>');
+// wsSend('mysock',message);

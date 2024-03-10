@@ -1,0 +1,27 @@
+// players.
+// called by OpenPlay to enumerate all of the players in a room.
+
+uri = "us-atl-3b185468.colyseus.cloud";
+resourcePath = "/colyseus/api/room?roomId=";
+roomid = getOpenPlay("roomid");
+
+response = https_get(uri+resourcePath+roomid);
+
+state = json_element(response, "state");
+
+players = json_element(state, "players");
+write("players: ", players);
+for (json_iter(players, ?player)) {
+    playerid = json_element(player, "playerId");
+    playername = json_element(player, "playerName");
+    playerip = json_element(player, "playerIp");
+    candidates = json_element(player, "candidates");
+    enum_player(playerid, playername, candidates);
+}  
+
+/*
+// perhaps a future in8 syntax:
+with (response.state.players) {
+    enum_player(playerId, playerName, playerIp);
+}
+*/

@@ -1,0 +1,14 @@
+uri = "us-atl-3b185468.colyseus.cloud";
+resourcePath = "/kam/providers";
+response = https_get(uri+resourcePath);
+data_array = json_element(response, "Data");
+for (json_iter(data_array, ?data)) {
+    id           = json_element(data, "id");
+    providerName = json_element(data, "providerName");
+    providerId   = json_element(data, "providerId");
+    providerUrl  = json_element(data, "providerUrl");
+    providerPort = json_element(data, "providerPort");
+    write("providerUrl:"+providerUrl);
+    write("enum_provider('"+id+"','"+providerName+"').");
+    enum_provider(id, providerName);
+}

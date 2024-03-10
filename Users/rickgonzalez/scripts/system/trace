@@ -18,7 +18,8 @@ write("   | | | | (_| | (_|  __/");
 write("   |_|_|  \__,_|\___\___|");
 
 // set trace level 1 for all machines in a view:
-machines = settrace(IDV_MEFLINTEXT,1);
-write('tracing '+machines);
+// machines = settrace(IDV_MEFLINTEXT,1);
+// write('tracing '+machines);
 
-settrace(S04_KEYCLAMP_2, 1);
+// settrace(S04_KEYCLAMP_2, 1);
+// settrace('IDV_PATH2',1);

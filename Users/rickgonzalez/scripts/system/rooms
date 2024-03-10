@@ -1,0 +1,12 @@
+write('sessions');
+
+uri = "us-atl-3b185468.colyseus.cloud";
+resourcePath = "/Rooms";
+response = https_get(uri+resourcePath);
+
+roomobjects =  json_element(response, "roomsById");
+write("response:"+roomobjects);
+for (json_iter(roomobjects, ?room)) {
+    roomid = json_element(room, "roomId");
+    enum_room(roomid, roomid);
+}    

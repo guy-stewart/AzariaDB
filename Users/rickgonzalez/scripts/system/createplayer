@@ -1,0 +1,3 @@
+// called when the player wants to join a game.
+// in OpenPlay this is "add player (me) to the room I just joined."
+write("create player (add player to room)");

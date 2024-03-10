@@ -1,18 +1,25 @@
+
 /*
 This script allows you to enable trace on specific machines before the machines begin execution.
 The script is run early in the VME startup phase, after the engine is loaded but before any views or machines are active.
 This means that other actions such as warp, drop, grab etc will not work.
+
 settrace(target, level) : set trace level for a specific machine or for all machines in a view.
+
 when 'target' is a view settrace returns a list of machines found in that view.
+
 */
+
 write(" _______");
 write("|__   __|");
 write("   | |_ __ __ _  ___ ___");
 write("   | | '__/ _` |/ __/ _ \");
 write("   | | | | (_| | (_|  __/");
 write("   |_|_|  \__,_|\___\___|");
+
 // set trace level 1 for all machines in a view:
-machines = settrace(IDV_MEFLINTEXT,1);
-write('tracing '+machines);
-settrace(S04_KEYCLAMP_2, 1);
-settrace('IDV_PATH2',1);
+// machines = settrace(IDV_MEFLINTEXT,1);
+// write('tracing '+machines);
+
+// settrace(S04_KEYCLAMP_2, 1);
+// settrace('IDV_PATH2',1);

@@ -17,7 +17,7 @@ uri = "us-atl-3b185468.colyseus.cloud";
 resourcePath = "/matchmake/create/AzariaRoom";
 postdata = "{"
 +'"playerId":"'+ playerid +'",'
-+'"playerName":"'+ playername +'",'
++'"name":"'+ playername +'",'
 +'"ip":"'+ ip +'",'
 +'"roomName":"'+ roomname +'",'
 +'"roomType":"'+ roomtype +'",'
