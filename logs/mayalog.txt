@@ -1,0 +1,394 @@
+--------------------------------
+--------------------------------
+|      _    ___   _   ___      |
+|     | |  / _ \ /_\ |   \     |
+|     | |_| (_) / _ \| |) |    |
+|     |____\___/_/ \_\___/     |
+--------------------------------
+--------------------------------
+stmt:select name,value,id from sounds order by name
+**** LOAD VIEWS FROM SQL DATABASE
+select 0, view_name, Z, backgroundAudio, locator_view, behavior_id, portal_filename, surface_filename from views order by Z
+**** LOAD PANEL_NAV FROM SQL DATABASE
+select [from], forward, back from panel_nav order by [from] ASC
+**** LOAD TRIGGERS FROM SQL DATABASE
+select [from], left, top, right, bottom, [to], facing, [code] from triggers order by [from] ASC
+**** ATTEMPT TO LOAD TRANSITIONS WITH CODEBLOCK FROM SQL DATABASE
+stmt:select [automaton],[state],new_state,opcode,param_1,param_2,code,guard,doc from transitions order by [automaton],[state],opcode
+**** LOAD MACHINES FROM SQL DATABASE
+stmt:select name,view_name,left,top,right,bottom,local_visible,dfa_name,wip1_name,wip2_name,wip3_name,wip4_name,z from machines order by view_id asc, z desc
+stmt:select object,class,icon,cursor,actor from objects order by object
+**** LOAD OBJECTS FROM SQL DATABASE
+stmt:select name,value,id from spr_names order by name
+stmt:select [op],[key],[value] from map_obj order by [op],[key]
+stmt:select [op],[key],[value] from map order by [op],[key]
+------------------------------
+------------------------------
+      _    ___ _  _ _  __     
+     | |  |_ _| \| | |/ /     
+     | |__ | || .` | ' <      
+     |____|___|_|\_|_|\_\     
+------------------------------
+------------------------------
+GDBT_MACHINES::Link()
+Wave::PlaySound(lever)
+RETRACT::delete from want where p_0 like '%';
+ASSERT::insert into want (p_0) values ('1');
+ASSERT::insert into want (p_0) values ('2');
+ASSERT::insert into want (p_0) values ('3');
+ASSERT::insert into want (p_0) values ('4');
+ASSERT::insert into want (p_0) values ('5');
+ASSERT::insert into want (p_0) values ('6');
+ASSERT::insert into want (p_0) values ('7');
+ASSERT::insert into want (p_0) values ('8');
+ASSERT::insert into want (p_0) values ('9');
+ASSERT::insert into want (p_0) values ('10');
+🧠 WRITE('Check to see if we want WTEMP1 ')
+RETRACT::delete from want where p_0 like '2';
+🧠 WRITE(' lets hide this ')
+🧠 WRITE('HIDING ITEM ')
+🧠 WRITE('Checking to see if we hid all 10  ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+RETRACT::delete from want where p_0 like '3';
+🧠 WRITE(' lets hide this ')
+🧠 WRITE('HIDING ITEM ')
+🧠 WRITE('Checking to see if we hid all 10  ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+RETRACT::delete from want where p_0 like '1';
+🧠 WRITE(' lets hide this ')
+🧠 WRITE('HIDING ITEM ')
+🧠 WRITE('Checking to see if we hid all 10  ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+RETRACT::delete from want where p_0 like '9';
+🧠 WRITE(' lets hide this ')
+🧠 WRITE('HIDING ITEM ')
+🧠 WRITE('Checking to see if we hid all 10  ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+RETRACT::delete from want where p_0 like '5';
+🧠 WRITE(' lets hide this ')
+🧠 WRITE('HIDING ITEM ')
+🧠 WRITE('Checking to see if we hid all 10  ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+RETRACT::delete from want where p_0 like '7';
+🧠 WRITE(' lets hide this ')
+🧠 WRITE('HIDING ITEM ')
+🧠 WRITE('Checking to see if we hid all 10  ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+RETRACT::delete from want where p_0 like '10';
+🧠 WRITE(' lets hide this ')
+🧠 WRITE('HIDING ITEM ')
+🧠 WRITE('Checking to see if we hid all 10  ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+RETRACT::delete from want where p_0 like '4';
+🧠 WRITE(' lets hide this ')
+🧠 WRITE('HIDING ITEM ')
+🧠 WRITE('Checking to see if we hid all 10  ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+RETRACT::delete from want where p_0 like '8';
+🧠 WRITE(' lets hide this ')
+🧠 WRITE('HIDING ITEM ')
+🧠 WRITE('Checking to see if we hid all 10  ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+🧠 WRITE(' GOT ONE WE DONT WANT ')
+🧠 WRITE('Check to see if we want WTEMP1 ')
+RETRACT::delete from want where p_0 like '6';
+🧠 WRITE(' lets hide this ')
+🧠 WRITE('HIDING ITEM ')
+🧠 WRITE('Checking to see if we hid all 10  ')
+🧠 WRITE(' should be done ')
+🤙 SID_ID::Wait(0) : no transition from state 0
+call('system/config')
+	system/config
+ _______
+|__   __|
+   | |_ __ __ _  ___ ___
+   | | '__/ _` |/ __/ _ \
+   | | | | (_| | (_|  __/
+   |_|_|  \__,_|\___\___|
+Load compassLoad GUILoad namefillLoad namefillLoad inventorLoad idLoad youLoad teletypeLoad spacemen
+-------------------------------
+DONE call('system/config') --> 1
+-------------------------------
+Load spacepanbigTODO: S0_ALARM_1**** LOAD GAME FROM SQL DATABASE
+stmt:select [game],[name],[RefMachine],[state],[bParm],[wParm],[wObject],[wSprite],[b],[bFrame],[wAccept],[dEtime],[seed] from games  where game = 'Azaria' order by name,state
+
+-------------------------------
+spawn('system/startup')
+-------------------------------
+Normal Startup:
+	system/startup
+     _____ _             _
+    / ____| |           | |
+   | (___ | |_ __ _ _ __| |_ _   _ _ __
+    \___ \| __/ _` | '__| __| | | | '_ \
+    ____) | || (_| | |  | |_| |_| | |_) |
+    |_____/ \__\__,_|_|   \__|\__,_| .__/
+                                  | |
+                                  |_|
+hyperstun response:
+HTTP/1.1 200 OK
+Server: nginx/1.26.1
+Date: Sun, 15 Sep 2024 02:47:01 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+X-Proxy-Cache: DISABLED
+
+26
+{"ip":"108.82.186.169","port":"52116"}
+0
+
+
+
+-------------------------------
+DONE call('system/startup') --> 1
+-------------------------------
+clicked in view IDV_QUESTPAN
+View::Grab(POINT(x:273, y:186))
+MachineSet::Grab(POINT x:273, y:86)
+>>>>>>  QL_WORLDTAB::Grab(state:0, dfa:M_QUEST_TAB)
+	{state:'0':}
+	[0] --- GRAB(QL_WORLDTAB)(wObject:'') ---> [switched]
+Load spacepanbig2clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:176, y:191))
+MachineSet::Grab(POINT x:176, y:91)
+>>>>>>  QL_MYTAB::Grab(state:0, dfa:M_QUEST_TAB)
+	{state:'0':}
+	[0] --- GRAB(QL_MYTAB)(wObject:'') ---> [switched]
+Load spacepanbigclicked in view IDV_QUESTPAN
+View::Grab(POINT(x:282, y:195))
+MachineSet::Grab(POINT x:282, y:96)
+>>>>>>  QL_WORLDTAB::Grab(state:0, dfa:M_QUEST_TAB)
+	{state:'0':}
+	[0] --- GRAB(QL_WORLDTAB)(wObject:'') ---> [switched]
+Load spacepanbig2clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:173, y:186))
+MachineSet::Grab(POINT x:173, y:101)
+>>>>>>  QL_MYTAB::Grab(state:0, dfa:M_QUEST_TAB)
+	{state:'0':}
+	[0] --- GRAB(QL_MYTAB)(wObject:'') ---> [switched]
+Load spacepanbigclicked in view IDV_QUESTPAN
+clicked in view IDV_QUESTPAN
+View::Grab(POINT(x:310, y:190))
+MachineSet::Grab(POINT x:310, y:90)
+>>>>>>  QL_WORLDTAB::Grab(state:0, dfa:M_QUEST_TAB)
+	{state:'0':}
+	[0] --- GRAB(QL_WORLDTAB)(wObject:'') ---> [switched]
+Load spacepanbig2clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:161, y:190))
+MachineSet::Grab(POINT x:161, y:90)
+>>>>>>  QL_MYTAB::Grab(state:0, dfa:M_QUEST_TAB)
+	{state:'0':}
+	[0] --- GRAB(QL_MYTAB)(wObject:'') ---> [switched]
+Load spacepanbigclicked in view IDV_QUESTPAN
+View::Grab(POINT(x:124, y:135))
+MachineSet::Grab(POINT x:124, y:35)
+>>>>>>  QL_WORLDEXT::Grab(state:0, dfa:M_QUEST_EXT)
+	{state:'0':}
+	[0] --- GRAB(QL_WORLDEXT)(wObject:'') ---> [exited]
+Load WR3clicked in view IDV_MAIN_PANEL
+View::Grab(POINT(x:441, y:30))
+MachineSet::Grab(POINT x:441, y:30)
+>>>>>>  S0_QL_BTN::Grab(state:open, dfa:M_QLBTN)
+	{state:'open': wParm:IDV_WR3}
+	[open] --- GRAB(S0_QL_BTN)(wObject:'') ---> [closed]
+🛑 ERROR COMPILING 
+
+clicked in view IDV_MAIN_PANEL
+View::Grab(POINT(x:437, y:24))
+MachineSet::Grab(POINT x:437, y:24)
+>>>>>>  S0_QL_BTN::Grab(state:0, dfa:M_QLBTN)
+	{state:'0': wParm:IDV_WR3}
+	[0] --- GRAB(S0_QL_BTN)(wObject:'') ---> [open]
+Load spacepanbigclicked in view IDV_QUESTPAN
+View::Grab(POINT(x:259, y:191))
+MachineSet::Grab(POINT x:259, y:91)
+>>>>>>  QL_WORLDTAB::Grab(state:0, dfa:M_QUEST_TAB)
+	{state:'0':}
+	[0] --- GRAB(QL_WORLDTAB)(wObject:'') ---> [switched]
+Load spacepanbig2clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:245, y:226))
+MachineSet::Grab(POINT x:245, y:164)
+clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:245, y:226))
+MachineSet::Grab(POINT x:245, y:164)
+clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:245, y:226))
+MachineSet::Grab(POINT x:245, y:164)
+VIEW::IDV_MAIN_PANEL @pos(left:353, top:12)
+SMP_RECYCLE::M_RECYCLE('','','','')
+			{state:'0': wObject:IDD_SCOOPE
+clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:158, y:189))
+MachineSet::Grab(POINT x:158, y:96)
+>>>>>>  QL_MYTAB::Grab(state:0, dfa:M_QUEST_TAB)
+	{state:'0':}
+	[0] --- GRAB(QL_MYTAB)(wObject:'') ---> [switched]
+	OnTransition
+	QL_MYTAB::LOADVIEW(WIP1,);
+Load spacepanbig	Z_EPSILON(,); M_QUEST_TAB state:switched		 ----> new state [0]
+clicked in view IDV_QUESTPAN
+View::Grab(POINT(x:256, y:189))
+MachineSet::Grab(POINT x:256, y:89)
+>>>>>>  QL_WORLDTAB::Grab(state:0, dfa:M_QUEST_TAB)
+	{state:'0':}
+	[0] --- GRAB(QL_WORLDTAB)(wObject:'') ---> [switched]
+Load spacepanbig2clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:195, y:267))
+MachineSet::Grab(POINT x:195, y:167)
+clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:175, y:266))
+MachineSet::Grab(POINT x:175, y:166)
+clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:175, y:296))
+MachineSet::Grab(POINT x:175, y:214)
+clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:192, y:231))
+MachineSet::Grab(POINT x:192, y:175)
+clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:186, y:215))
+MachineSet::Grab(POINT x:186, y:163)
+clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:172, y:215))
+MachineSet::Grab(POINT x:172, y:163)
+clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:172, y:232))
+MachineSet::Grab(POINT x:172, y:180)
+clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:183, y:200))
+MachineSet::Grab(POINT x:183, y:148)
+clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:237, y:203))
+MachineSet::Grab(POINT x:237, y:151)
+clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:163, y:173))
+MachineSet::Grab(POINT x:163, y:90)
+>>>>>>  QL_MYTAB::Grab(state:0, dfa:M_QUEST_TAB)
+	{state:'0':}
+	[0] --- GRAB(QL_MYTAB)(wObject:'') ---> [switched]
+	OnTransition
+	QL_MYTAB::LOADVIEW(WIP1,);
+Load spacepanbig	Z_EPSILON(,); M_QUEST_TAB state:switched		 ----> new state [0]
+clicked in view IDV_QUESTPAN
+View::Grab(POINT(x:271, y:189))
+MachineSet::Grab(POINT x:271, y:89)
+>>>>>>  QL_WORLDTAB::Grab(state:0, dfa:M_QUEST_TAB)
+	{state:'0':}
+	[0] --- GRAB(QL_WORLDTAB)(wObject:'') ---> [switched]
+Load spacepanbig2clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:163, y:190))
+MachineSet::Grab(POINT x:163, y:90)
+>>>>>>  QL_MYTAB::Grab(state:0, dfa:M_QUEST_TAB)
+	{state:'0':}
+	[0] --- GRAB(QL_MYTAB)(wObject:'') ---> [switched]
+	OnTransition
+	QL_MYTAB::LOADVIEW(WIP1,);
+Load spacepanbig	Z_EPSILON(,); M_QUEST_TAB state:switched		 ----> new state [0]
+clicked in view IDV_QUESTPAN
+View::Grab(POINT(x:315, y:190))
+MachineSet::Grab(POINT x:315, y:90)
+>>>>>>  QL_WORLDTAB::Grab(state:0, dfa:M_QUEST_TAB)
+	{state:'0':}
+	[0] --- GRAB(QL_WORLDTAB)(wObject:'') ---> [switched]
+Load spacepanbig2clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:202, y:258))
+MachineSet::Grab(POINT x:202, y:164)
+clicked in view IDV_QUESTPANW
+View::Grab(POINT(x:201, y:269))
+MachineSet::Grab(POINT x:201, y:175)
+clicked in view IDV_MAIN_PANEL
+View::Grab(POINT(x:437, y:28))
+MachineSet::Grab(POINT x:437, y:28)
+>>>>>>  S0_QL_BTN::Grab(state:open, dfa:M_QLBTN)
+	{state:'open': wParm:IDV_WR3}
+	[open] --- GRAB(S0_QL_BTN)(wObject:'') ---> [closed]
+	OnTransition
+	S0_QL_BTN::LOADVIEW(WPARM,);
+Load WR3	Z_EPSILON(,); M_QLBTN state:closed		 ----> new state [0]
+	OnTransition
+🛑 ERROR COMPILING 
+
+clicked in view IDV_WR3
+Load W4LOCKGame::~Game()
+call('system/shutdown')
+	system/shutdown
+   _____ _           _      _
+  / ____| |         | |    | |
+ | (___ | |__  _   _| |_ __| | _____      ___ __
+  \___ \| '_ \| | | | __/ _` |/ _ \ \ /\ / / '_ \
+  ____) | | | | |_| | || (_| | (_) \ V  V /| | | |
+ |_____/|_| |_|\__,_|\__\__,_|\___/ \_/\_/ |_| |_|
+
+-------------------------------
+DONE call('system/shutdown') --> 1
+-------------------------------
+TODO: S0_ALARM_1
